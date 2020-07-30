@@ -17,8 +17,6 @@ extends TROPItemRingBase {
         int k = (int)entity.posZ;
         if (entity instanceof EntityLivingBase) {
             ((EntityLivingBase)entity).addPotionEffect(new PotionEffect(6, 20, 2));
-        }
-        if (entity instanceof EntityLivingBase) {
             ((EntityLivingBase)entity).addPotionEffect(new PotionEffect(8, 20, 2));
         }
     }
