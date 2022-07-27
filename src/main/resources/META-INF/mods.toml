@@ -10,7 +10,7 @@ logoFile="logo.png"
 credits="Hummel009"
 authors="Hummel009"
 description='''
-This mod adds the rings of power from LOTR to MC 1.16.5
+This mod adds Rings of Power from the Lord of the Rings to Minecraft
 '''
 [[dependencies.tut]]
     modId="forge" 
