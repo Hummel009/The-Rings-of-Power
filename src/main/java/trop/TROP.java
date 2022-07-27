@@ -44,6 +44,25 @@ public class TROP {
 		TROPCreativeTabs.setupIcons();
 	}
 
+	public static <E, T> List<T> getObjectFieldsOfType(Class<? extends E> clazz, Class<? extends T> type) {
+		ArrayList<Object> list = new ArrayList<>();
+		try {
+			for (Field field : clazz.getDeclaredFields()) {
+				if (field != null) {
+					Object fieldObj = null;
+					if (Modifier.isStatic(field.getModifiers())) {
+						fieldObj = field.get(null);
+					}
+					if (fieldObj != null && type.isAssignableFrom(fieldObj.getClass())) {
+						list.add(fieldObj);
+					}
+				}
+			}
+		} catch (IllegalAccessException | IllegalArgumentException exception) {
+		}
+		return (List<T>) list;
+	}
+
 	@ObjectHolder("trop")
 	@Mod.EventBusSubscriber
 	public static class RegistryEvents {
@@ -92,43 +111,24 @@ public class TROP {
 			register(ring_dvar, "ring_dvar");
 		}
 
+		@SubscribeEvent
+		@SideOnly(Side.CLIENT)
+		public static void onRegistryModel(ModelRegistryEvent event) {
+			for (Item item : getObjectFieldsOfType(TROP.class, Item.class)) {
+				ResourceLocation regName = item.getRegistryName();
+				ModelResourceLocation mrl = new ModelResourceLocation(regName, "inventory");
+				ModelBakery.registerItemVariants(item, mrl);
+				ModelLoader.setCustomModelResourceLocation(item, 0, mrl);
+			}
+		}
+
 		public static void register(Item item, String name) {
 			item.setRegistryName(name);
 			item.setUnlocalizedName(name);
 			item.setMaxDamage(0);
 			item.setMaxStackSize(1);
 			item.setCreativeTab(TROPCreativeTabs.tabRing);
-		    ForgeRegistries.ITEMS.register(item);
+			ForgeRegistries.ITEMS.register(item);
 		}
-
-	    @SubscribeEvent
-	    @SideOnly(Side.CLIENT)
-	    public static void onRegistryModel(ModelRegistryEvent event) {
-	    	for (Item item: getObjectFieldsOfType(TROP.class, Item.class)) {
-			    ResourceLocation regName = item.getRegistryName();
-			    ModelResourceLocation mrl = new ModelResourceLocation(regName, "inventory");
-			    ModelBakery.registerItemVariants(item, mrl);
-			    ModelLoader.setCustomModelResourceLocation(item, 0, mrl);
-	    	}
-	    }
-	}
-
-	public static <E, T> List<T> getObjectFieldsOfType(Class<? extends E> clazz, Class<? extends T> type) {
-		ArrayList<Object> list = new ArrayList<>();
-		try {
-			for (Field field : clazz.getDeclaredFields()) {
-				if (field != null) {
-					Object fieldObj = null;
-					if (Modifier.isStatic(field.getModifiers())) {
-						fieldObj = field.get(null);
-					}
-					if (fieldObj != null && type.isAssignableFrom(fieldObj.getClass())) {
-						list.add(fieldObj);
-					}
-				}
-			}
-		} catch (IllegalAccessException | IllegalArgumentException exception) {
-		}
-		return (List<T>) list;
 	}
 }
