@@ -1,18 +1,18 @@
 package trop;
 
-import com.google.common.base.CaseFormat;
-
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.Properties;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.IForgeRegistry;
 
-@Mod(modid=TROP.MODID, version=TROP.VERSION)
+@Mod("trop")
 public class TROP {
-    public static final String MODID = "trop";
-    public static final String VERSION = "3.0";
-    
 	public static Item ring_great;
 	public static Item ring_naria;
 	public static Item ring_nenia;
@@ -33,61 +33,69 @@ public class TROP {
 	public static Item ring_uvata;
 	public static Item ring_saita;
 	public static Item ring_dvar;
-    
-    @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
-    	ring_great = new TROPItemRingGreat();
-    	ring_naria = new TROPItemRingNaria();
-    	ring_nenia = new TROPItemRingNenia();
-    	ring_vilia = new TROPItemRingVilia();
-    	ring_thror = new TROPItemRingDwarf();
-    	ring_thulin = new TROPItemRingDwarf();
-    	ring_khibil = new TROPItemRingDwarf();
-    	ring_farin = new TROPItemRingDwarf();
-    	ring_khain = new TROPItemRingDwarf();
-    	ring_baraz = new TROPItemRingDwarf();
-    	ring_burin = new TROPItemRingDwarf();
-    	ring_murazor = new TROPItemRingMan();
-    	ring_khommurat = new TROPItemRingMan();
-    	ring_akhorahil = new TROPItemRingMan();
-    	ring_morgomir = new TROPItemRingMan();
-    	ring_jiindur = new TROPItemRingMan();
-    	ring_khamul = new TROPItemRingMan();
-    	ring_uvata = new TROPItemRingMan();
-    	ring_saita = new TROPItemRingMan();
-    	ring_dvar = new TROPItemRingMan();
-    	
-    	this.register(ring_great, "ring_great");
-    	this.register(ring_naria, "ring_naria");
-    	this.register(ring_nenia, "ring_nenia");
-    	this.register(ring_vilia, "ring_vilia");
-    	this.register(ring_thror, "ring_thror");
-    	this.register(ring_thulin, "ring_thulin");
-    	this.register(ring_khibil, "ring_khibil");
-    	this.register(ring_farin, "ring_farin");
-    	this.register(ring_khain, "ring_khain");
-    	this.register(ring_baraz, "ring_baraz");
-    	this.register(ring_burin, "ring_burin");
-    	this.register(ring_murazor, "ring_murazor");
-    	this.register(ring_khommurat, "ring_khommurat");
-    	this.register(ring_akhorahil, "ring_akhorahil");
-    	this.register(ring_morgomir, "ring_morgomir");
-    	this.register(ring_jiindur, "ring_jiindur");
-    	this.register(ring_khamul, "ring_khamul");
-    	this.register(ring_uvata, "ring_uvata");
-    	this.register(ring_saita, "ring_saita");
-    	this.register(ring_dvar, "ring_dvar");
-    }
-    
-    @Mod.EventHandler
-    public void onInit(FMLInitializationEvent event) {
-    	TROPCreativeTabs.setupIcons();
-    }
-    
-    private static void register(Item item, String name) {
-        String lowerUnderscoreName = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, name);
-        item.setUnlocalizedName(name);
-        item.setTextureName("trop:" + lowerUnderscoreName);
-        GameRegistry.registerItem(item, lowerUnderscoreName);
-   }
+
+	public TROP() {
+		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+		MinecraftForge.EVENT_BUS.register(this);
+	}
+
+	private void setup(final FMLCommonSetupEvent event) {
+	}
+
+	@EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+	public static class RegistryEvents {
+		@SubscribeEvent
+		public static void onItemsRegistry(RegistryEvent.Register<Item> event) {
+			IForgeRegistry<Item> r = event.getRegistry();
+			Properties prop = new Properties();
+			prop.tab(TROPCreativeTabs.tabRing);
+			prop.durability(0);
+			ring_great = new TROPItemRingGreat(prop);
+			ring_naria = new TROPItemRingNaria(prop);
+			ring_nenia = new TROPItemRingNenia(prop);
+			ring_vilia = new TROPItemRingVilia(prop);
+			ring_thror = new TROPItemRingDwarf(prop);
+			ring_thulin = new TROPItemRingDwarf(prop);
+			ring_khibil = new TROPItemRingDwarf(prop);
+			ring_farin = new TROPItemRingDwarf(prop);
+			ring_khain = new TROPItemRingDwarf(prop);
+			ring_baraz = new TROPItemRingDwarf(prop);
+			ring_burin = new TROPItemRingDwarf(prop);
+			ring_murazor = new TROPItemRingMan(prop);
+			ring_khommurat = new TROPItemRingMan(prop);
+			ring_akhorahil = new TROPItemRingMan(prop);
+			ring_morgomir = new TROPItemRingMan(prop);
+			ring_jiindur = new TROPItemRingMan(prop);
+			ring_khamul = new TROPItemRingMan(prop);
+			ring_uvata = new TROPItemRingMan(prop);
+			ring_saita = new TROPItemRingMan(prop);
+			ring_dvar = new TROPItemRingMan(prop);
+
+			register(ring_great, "ring_great", r);
+			register(ring_naria, "ring_naria", r);
+			register(ring_nenia, "ring_nenia", r);
+			register(ring_vilia, "ring_vilia", r);
+			register(ring_thror, "ring_thror", r);
+			register(ring_thulin, "ring_thulin", r);
+			register(ring_khibil, "ring_khibil", r);
+			register(ring_farin, "ring_farin", r);
+			register(ring_khain, "ring_khain", r);
+			register(ring_baraz, "ring_baraz", r);
+			register(ring_burin, "ring_burin", r);
+			register(ring_murazor, "ring_murazor", r);
+			register(ring_khommurat, "ring_khommurat", r);
+			register(ring_akhorahil, "ring_akhorahil", r);
+			register(ring_morgomir, "ring_morgomir", r);
+			register(ring_jiindur, "ring_jiindur", r);
+			register(ring_khamul, "ring_khamul", r);
+			register(ring_uvata, "ring_uvata", r);
+			register(ring_saita, "ring_saita", r);
+			register(ring_dvar, "ring_dvar", r);
+
+		}
+
+		private static void register(Item item, String name, IForgeRegistry<Item> r) {
+			r.register(item.setRegistryName(name));
+		}
+	}
 }
