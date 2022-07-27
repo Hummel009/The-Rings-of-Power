@@ -1,29 +1,23 @@
 package trop;
 
 import net.minecraft.entity.*;
-import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionEffect;
+import net.minecraft.item.*;
+import net.minecraft.potion.*;
 import net.minecraft.world.World;
 
-public class TROPItemRingNaria extends TROPItemRingBase {
-	public TROPItemRingNaria() {
-	}
-
+public class TROPItemRingNaria extends Item {
 	@Override
-	public boolean onItemUse(ItemStack itemStack, EntityPlayer entity, World world, int i, int j, int k, int l, float a, float b, float c) {
-		world.spawnEntityInWorld(new EntityLightningBolt(world, i, j, k));
-		world.setBlock(i, j + 1, k, Blocks.fire, 0, 2);
-		return true;
+	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entity) {
+		entity.addPotionEffect(new PotionEffect(Potion.regeneration.id, 3600, 2));
+		entity.addPotionEffect(new PotionEffect(Potion.field_76434_w.id, 3800, 2));
+		return super.onItemRightClick(itemStack, world, entity);
 	}
 
 	@Override
 	public void onUpdate(ItemStack itemstack, World world, Entity entity, int par4, boolean par5) {
 		if (entity instanceof EntityLivingBase) {
-			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(12, 20, 2));
-			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(6, 20, 2));
+			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(Potion.fireResistance.id, 20, 2));
 		}
 	}
 }

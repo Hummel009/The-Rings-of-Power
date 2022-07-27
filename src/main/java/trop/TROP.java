@@ -1,17 +1,15 @@
 package trop;
 
-import com.google.common.base.CaseFormat;
-
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 
-@Mod(modid = "trop", version = "3.0")
+@Mod(modid = "trop", version = "4.0")
 public class TROP {
 	public static Item ring_great;
-	public static Item ring_naria;
 	public static Item ring_nenia;
+	public static Item ring_naria;
 	public static Item ring_vilia;
 	public static Item ring_thror;
 	public static Item ring_thulin;
@@ -38,8 +36,8 @@ public class TROP {
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		ring_great = new TROPItemRingGreat();
-		ring_naria = new TROPItemRingNaria();
 		ring_nenia = new TROPItemRingNenia();
+		ring_naria = new TROPItemRingNaria();
 		ring_vilia = new TROPItemRingVilia();
 		ring_thror = new TROPItemRingDwarf();
 		ring_thulin = new TROPItemRingDwarf();
@@ -59,8 +57,8 @@ public class TROP {
 		ring_dvar = new TROPItemRingMan();
 
 		register(ring_great, "ring_great");
-		register(ring_naria, "ring_naria");
 		register(ring_nenia, "ring_nenia");
+		register(ring_naria, "ring_naria");
 		register(ring_vilia, "ring_vilia");
 		register(ring_thror, "ring_thror");
 		register(ring_thulin, "ring_thulin");
@@ -81,9 +79,11 @@ public class TROP {
 	}
 
 	private static void register(Item item, String name) {
-		String lowerUnderscoreName = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, name);
 		item.setUnlocalizedName(name);
-		item.setTextureName("trop:" + lowerUnderscoreName);
-		GameRegistry.registerItem(item, lowerUnderscoreName);
+		item.setTextureName("trop:" + name);
+		item.setCreativeTab(TROPCreativeTabs.tabRing);
+		item.setMaxDamage(0);
+		item.setMaxStackSize(1);
+		GameRegistry.registerItem(item, name);
 	}
 }
