@@ -1,19 +1,13 @@
 [
-{
-  "modid": "trop",
-  "name": "The Rings of Power",
-  "description": "This mod adds Rings of Power from the Lord of the Rings to Minecraft",
-  "version": "4.0",
-  "credits": "Hummel009",
-  "logoFile": "logo.png",
-  "mcversion": "1.7.10",
-  "url": "lotrminecraftmod.fandom.com/ru",
-  "updateUrl": "",
-  "authors": [ "Hummel009" ],
-  "parent": "",
-  "screenshots": [],
-  "dependencies": [
-     "mod_MinecraftForge"
-  ]
-}
+	{
+		"authorList": "Hummel009",
+		"credits": "Hummel009",
+		"description": "This mod adds Rings of Power from the Lord of the Rings to Minecraft",
+		"logoFile": "logo.png",
+		"mcversion": "1.7.10",
+		"modid": "trop",
+		"name": "The Rings of Power",
+		"url": "https://github.com/Hummel009",
+		"version": "4.0"
+	}
 ]
