@@ -1,12 +1,15 @@
 package trop;
 
-import net.minecraft.entity.*;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
-import net.minecraft.potion.*;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.world.World;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 
 public class TROPItemRingMan extends Item {
 	public TROPItemRingMan(Properties prop) {
@@ -14,17 +17,17 @@ public class TROPItemRingMan extends Item {
 	}
 
 	@Override
-	public ActionResult<ItemStack> use(World world, PlayerEntity entity, Hand hand) {
-		entity.addEffect(new EffectInstance(Effects.REGENERATION, 3600, 2));
-		entity.addEffect(new EffectInstance(Effects.HEALTH_BOOST, 3800, 2));
+	public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
+		entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 3600, 2));
+		entity.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 3800, 2));
 		return super.use(world, entity, hand);
 	}
 
 	@Override
-	public void inventoryTick(ItemStack itemstack, World world, Entity entity, int par4, boolean par5) {
+	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int par4, boolean par5) {
 		if (entity instanceof LivingEntity) {
-			((LivingEntity) entity).addEffect(new EffectInstance(Effects.DAMAGE_BOOST, 20, 2));
-			((LivingEntity) entity).addEffect(new EffectInstance(Effects.NIGHT_VISION, 240, 2));
+			((LivingEntity) entity).addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20, 2));
+			((LivingEntity) entity).addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 240, 2));
 		}
 	}
 }

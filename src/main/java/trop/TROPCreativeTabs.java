@@ -1,9 +1,10 @@
 package trop;
 
-import net.minecraft.item.*;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 
 public class TROPCreativeTabs {
-	public static ItemGroup tabRing = new ItemGroup("ringPower") {
+	public static CreativeModeTab tabRing = new CreativeModeTab("ringPower") {
 		@Override
 		public ItemStack makeIcon() {
 			return new ItemStack(TROP.ring_baraz);

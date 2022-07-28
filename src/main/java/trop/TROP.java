@@ -1,7 +1,7 @@
 package trop;
 
-import net.minecraft.item.Item;
-import net.minecraft.item.Item.Properties;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Item.Properties;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
