@@ -5,7 +5,6 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -25,9 +24,9 @@ public class TROPItemRingMan extends Item {
 
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int par4, boolean par5) {
-		if (entity instanceof LivingEntity) {
-			((LivingEntity) entity).addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20, 2));
-			((LivingEntity) entity).addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 240, 2));
+		if (entity instanceof Player) {
+			((Player) entity).addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20, 2));
+			((Player) entity).addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 240, 2));
 		}
 	}
 }
