@@ -5,7 +5,7 @@ import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 
-@Mod(modid = "trop", version = "4.0")
+@Mod(modid = "trop")
 public class TROP {
 	public static Item ring_great;
 	public static Item ring_nenia;
