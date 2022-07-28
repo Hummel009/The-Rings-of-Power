@@ -14,17 +14,17 @@ public class TROPItemRingVilia extends Item {
 	}
 
 	@Override
-	public ActionResult<ItemStack> use(World world, PlayerEntity entity, Hand hand) {
-		entity.addEffect(new EffectInstance(Effects.REGENERATION, 3600, 2));
-		entity.addEffect(new EffectInstance(Effects.HEALTH_BOOST, 3800, 2));
-		return super.use(world, entity, hand);
+	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity entity, Hand hand) {
+		entity.addPotionEffect(new EffectInstance(Effects.REGENERATION, 3600, 2));
+		entity.addPotionEffect(new EffectInstance(Effects.HEALTH_BOOST, 3800, 2));
+		return super.onItemRightClick(world, entity, hand);
 	}
 
 	@Override
 	public void inventoryTick(ItemStack itemstack, World world, Entity entity, int par4, boolean par5) {
 		if (entity instanceof LivingEntity) {
-			((LivingEntity) entity).addEffect(new EffectInstance(Effects.MOVEMENT_SPEED, 20, 2));
-			((LivingEntity) entity).addEffect(new EffectInstance(Effects.JUMP, 20, 2));
+			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, 20, 2));
+			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, 20, 2));
 		}
 	}
 }

@@ -41,8 +41,9 @@ public class TROP {
 		@SubscribeEvent
 		public static void onItemsRegistry(RegistryEvent.Register<Item> event) {
 			Properties prop = new Properties();
-			prop.tab(TROPCreativeTabs.tabRing);
-			prop.durability(0);
+			prop.group(TROPCreativeTabs.tabRing);
+			prop.maxDamage(0);
+			prop.maxStackSize(0);
 			ring_great = new TROPItemRingGreat(prop);
 			ring_nenia = new TROPItemRingNenia(prop);
 			ring_naria = new TROPItemRingNaria(prop);
