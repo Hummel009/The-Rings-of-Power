@@ -1,5 +1,5 @@
 modLoader="javafml" 
-loaderVersion="[34,)" 
+loaderVersion="[25,)" 
 license="Powered by Hummel009"
 
 [[mods]]
@@ -13,6 +13,6 @@ description='''This mod adds Rings of Power from the Lord of the Rings to Minecr
 [[dependencies.trop]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.15.2]"
+    versionRange="[1.13.2]"
     ordering="NONE"
     side="BOTH"

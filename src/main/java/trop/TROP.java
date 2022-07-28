@@ -42,7 +42,7 @@ public class TROP {
 		public static void onItemsRegistry(RegistryEvent.Register<Item> event) {
 			Properties prop = new Properties();
 			prop.group(TROPCreativeTabs.tabRing);
-			prop.maxDamage(0);
+			prop.defaultMaxDamage(0);
 			prop.maxStackSize(0);
 			ring_great = new TROPItemRingGreat(prop);
 			ring_nenia = new TROPItemRingNenia(prop);
