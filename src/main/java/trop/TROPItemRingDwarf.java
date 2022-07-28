@@ -1,7 +1,6 @@
 package trop;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -25,9 +24,9 @@ public class TROPItemRingDwarf extends Item {
 
 	@Override
 	public void inventoryTick(ItemStack itemstack, World world, Entity entity, int par4, boolean par5) {
-		if (entity instanceof LivingEntity) {
-			((LivingEntity) entity).addEffect(new EffectInstance(Effects.DIG_SPEED, 20, 2));
-			((LivingEntity) entity).addEffect(new EffectInstance(Effects.NIGHT_VISION, 220, 2));
+		if (entity instanceof PlayerEntity) {
+			((PlayerEntity) entity).addEffect(new EffectInstance(Effects.DIG_SPEED, 20, 2));
+			((PlayerEntity) entity).addEffect(new EffectInstance(Effects.NIGHT_VISION, 220, 2));
 		}
 	}
 }
