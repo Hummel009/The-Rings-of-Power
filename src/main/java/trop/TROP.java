@@ -4,13 +4,11 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraftforge.registries.*;
 
 @Mod("trop")
 public class TROP {
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "trop");
+	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "trop");
 	public static RegistryObject<TROPItemRingBase> ring_great = ITEMS.register("ring_great", TROPItemRingGreat::new);
 	public static RegistryObject<TROPItemRingBase> ring_nenia = ITEMS.register("ring_nenia", TROPItemRingNenia::new);
 	public static RegistryObject<TROPItemRingBase> ring_naria = ITEMS.register("ring_naria", TROPItemRingNaria::new);
@@ -33,7 +31,7 @@ public class TROP {
 	public static RegistryObject<TROPItemRingBase> ring_dvar = ITEMS.register("ring_dvar", TROPItemRingMan::new);
 
 	public TROP() {
-        ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 }
