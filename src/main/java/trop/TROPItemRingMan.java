@@ -1,24 +1,28 @@
 package trop;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.*;
-import net.minecraft.potion.*;
-import net.minecraft.world.World;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 
-public class TROPItemRingMan extends Item {
+public class TROPItemRingMan extends TROPItemRingBase {
+
 	@Override
-	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entity) {
-		entity.addPotionEffect(new PotionEffect(Potion.regeneration.id, 3600, 2));
-		entity.addPotionEffect(new PotionEffect(Potion.field_76434_w.id, 3800, 2));
-		return super.onItemRightClick(itemStack, world, entity);
+	public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
+		entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 3600, 2));
+		entity.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 3800, 2));
+		return super.use(world, entity, hand);
 	}
 
 	@Override
-	public void onUpdate(ItemStack itemstack, World world, Entity entity, int par4, boolean par5) {
-		if (entity instanceof EntityPlayer) {
-			((EntityPlayer) entity).addPotionEffect(new PotionEffect(Potion.damageBoost.id, 20, 2));
-			((EntityPlayer) entity).addPotionEffect(new PotionEffect(Potion.nightVision.id, 220, 2));
+	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int par4, boolean par5) {
+		if (entity instanceof Player) {
+			((Player) entity).addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20, 2));
+			((Player) entity).addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 240, 2));
 		}
 	}
 }
