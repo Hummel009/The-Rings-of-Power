@@ -1,94 +1,39 @@
 package trop;
 
 import net.minecraft.item.Item;
-import net.minecraft.item.Item.Properties;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 @Mod("trop")
 public class TROP {
-	public static Item ring_great;
-	public static Item ring_nenia;
-	public static Item ring_naria;
-	public static Item ring_vilia;
-	public static Item ring_thror;
-	public static Item ring_thulin;
-	public static Item ring_khibil;
-	public static Item ring_farin;
-	public static Item ring_khain;
-	public static Item ring_baraz;
-	public static Item ring_burin;
-	public static Item ring_murazor;
-	public static Item ring_khommurat;
-	public static Item ring_akhorahil;
-	public static Item ring_morgomir;
-	public static Item ring_jiindur;
-	public static Item ring_khamul;
-	public static Item ring_uvata;
-	public static Item ring_saita;
-	public static Item ring_dvar;
+	public static DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "trop");
+	public static RegistryObject<TROPItemRingBase> ring_great = ITEMS.register("ring_great", TROPItemRingGreat::new);
+	public static RegistryObject<TROPItemRingBase> ring_nenia = ITEMS.register("ring_nenia", TROPItemRingNenia::new);
+	public static RegistryObject<TROPItemRingBase> ring_naria = ITEMS.register("ring_naria", TROPItemRingNaria::new);
+	public static RegistryObject<TROPItemRingBase> ring_vilia = ITEMS.register("ring_vilia", TROPItemRingVilia::new);
+	public static RegistryObject<TROPItemRingBase> ring_thror = ITEMS.register("ring_thror", TROPItemRingDwarf::new);
+	public static RegistryObject<TROPItemRingBase> ring_thulin = ITEMS.register("ring_thulin", TROPItemRingDwarf::new);
+	public static RegistryObject<TROPItemRingBase> ring_khibil = ITEMS.register("ring_khibil", TROPItemRingDwarf::new);
+	public static RegistryObject<TROPItemRingBase> ring_farin = ITEMS.register("ring_farin", TROPItemRingDwarf::new);
+	public static RegistryObject<TROPItemRingBase> ring_khain = ITEMS.register("ring_khain", TROPItemRingDwarf::new);
+	public static RegistryObject<TROPItemRingBase> ring_baraz = ITEMS.register("ring_baraz", TROPItemRingDwarf::new);
+	public static RegistryObject<TROPItemRingBase> ring_burin = ITEMS.register("ring_burin", TROPItemRingDwarf::new);
+	public static RegistryObject<TROPItemRingBase> ring_murazor = ITEMS.register("ring_murazor", TROPItemRingMan::new);
+	public static RegistryObject<TROPItemRingBase> ring_khommurat = ITEMS.register("ring_khommurat", TROPItemRingMan::new);
+	public static RegistryObject<TROPItemRingBase> ring_akhorahil = ITEMS.register("ring_akhorahil", TROPItemRingMan::new);
+	public static RegistryObject<TROPItemRingBase> ring_morgomir = ITEMS.register("ring_morgomir", TROPItemRingMan::new);
+	public static RegistryObject<TROPItemRingBase> ring_jiindur = ITEMS.register("ring_jiindur", TROPItemRingMan::new);
+	public static RegistryObject<TROPItemRingBase> ring_khamul = ITEMS.register("ring_khamul", TROPItemRingMan::new);
+	public static RegistryObject<TROPItemRingBase> ring_uvata = ITEMS.register("ring_uvata", TROPItemRingMan::new);
+	public static RegistryObject<TROPItemRingBase> ring_saita = ITEMS.register("ring_saita", TROPItemRingMan::new);
+	public static RegistryObject<TROPItemRingBase> ring_dvar = ITEMS.register("ring_dvar", TROPItemRingMan::new);
 
 	public TROP() {
+		ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		MinecraftForge.EVENT_BUS.register(this);
-	}
-
-	@EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-	public static class RegistryEvents {
-		@SubscribeEvent
-		public static void onItemsRegistry(RegistryEvent.Register<Item> event) {
-			Properties prop = new Properties();
-			prop.tab(TROPCreativeTabs.tabRing);
-			prop.durability(0);
-			ring_great = new TROPItemRingGreat(prop);
-			ring_nenia = new TROPItemRingNenia(prop);
-			ring_naria = new TROPItemRingNaria(prop);
-			ring_vilia = new TROPItemRingVilia(prop);
-			ring_thror = new TROPItemRingDwarf(prop);
-			ring_thulin = new TROPItemRingDwarf(prop);
-			ring_khibil = new TROPItemRingDwarf(prop);
-			ring_farin = new TROPItemRingDwarf(prop);
-			ring_khain = new TROPItemRingDwarf(prop);
-			ring_baraz = new TROPItemRingDwarf(prop);
-			ring_burin = new TROPItemRingDwarf(prop);
-			ring_murazor = new TROPItemRingMan(prop);
-			ring_khommurat = new TROPItemRingMan(prop);
-			ring_akhorahil = new TROPItemRingMan(prop);
-			ring_morgomir = new TROPItemRingMan(prop);
-			ring_jiindur = new TROPItemRingMan(prop);
-			ring_khamul = new TROPItemRingMan(prop);
-			ring_uvata = new TROPItemRingMan(prop);
-			ring_saita = new TROPItemRingMan(prop);
-			ring_dvar = new TROPItemRingMan(prop);
-
-			register(ring_great, "ring_great");
-			register(ring_nenia, "ring_nenia");
-			register(ring_naria, "ring_naria");
-			register(ring_vilia, "ring_vilia");
-			register(ring_thror, "ring_thror");
-			register(ring_thulin, "ring_thulin");
-			register(ring_khibil, "ring_khibil");
-			register(ring_farin, "ring_farin");
-			register(ring_khain, "ring_khain");
-			register(ring_baraz, "ring_baraz");
-			register(ring_burin, "ring_burin");
-			register(ring_murazor, "ring_murazor");
-			register(ring_khommurat, "ring_khommurat");
-			register(ring_akhorahil, "ring_akhorahil");
-			register(ring_morgomir, "ring_morgomir");
-			register(ring_jiindur, "ring_jiindur");
-			register(ring_khamul, "ring_khamul");
-			register(ring_uvata, "ring_uvata");
-			register(ring_saita, "ring_saita");
-			register(ring_dvar, "ring_dvar");
-
-		}
-
-		public static void register(Item item, String name) {
-			ForgeRegistries.ITEMS.register(item.setRegistryName(name));
-		}
 	}
 }
