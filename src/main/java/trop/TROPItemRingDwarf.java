@@ -2,7 +2,6 @@ package trop;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
@@ -10,10 +9,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 
-public class TROPItemRingDwarf extends Item {
-	public TROPItemRingDwarf(Properties prop) {
-		super(prop);
-	}
+public class TROPItemRingDwarf extends TROPItemRingBase {
 
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity entity, Hand hand) {
