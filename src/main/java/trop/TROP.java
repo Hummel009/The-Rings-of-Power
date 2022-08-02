@@ -8,7 +8,7 @@ import net.minecraftforge.registries.*;
 
 @Mod("trop")
 public class TROP {
-	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "trop");
+	public static DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "trop");
 	public static RegistryObject<TROPItemRingBase> ring_great = ITEMS.register("ring_great", TROPItemRingGreat::new);
 	public static RegistryObject<TROPItemRingBase> ring_nenia = ITEMS.register("ring_nenia", TROPItemRingNenia::new);
 	public static RegistryObject<TROPItemRingBase> ring_naria = ITEMS.register("ring_naria", TROPItemRingNaria::new);
