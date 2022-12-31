@@ -10,7 +10,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class TROPCreativeTabs {
 	@SubscribeEvent
 	public static void addCreativeTab(CreativeModeTabEvent.Register event) {
-		event.registerCreativeModeTab(new ResourceLocation("xtraarrows", "xtraarrowstab"), builder -> builder.title(Component.translatable("itemGroup.ringPower")).icon(() -> new ItemStack(TROP.ring_jiindur.get())).displayItems((enabledFlags, populator, hasPermissions) -> {
+		event.registerCreativeModeTab(new ResourceLocation("trop", "troptab"), builder -> builder.title(Component.translatable("itemGroup.ringPower")).icon(() -> new ItemStack(TROP.ring_jiindur.get())).displayItems((enabledFlags, populator, hasPermissions) -> {
 			for (RegistryObject<Item> amogus : TROP.sus) {
 				populator.accept(amogus.get());
 			}
