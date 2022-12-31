@@ -41,7 +41,7 @@ public class TROP {
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(TROPCreativeTabs::addCreativeTab);
 	}
 
-	private static <E, T> List<T> getObjectFieldsOfType(Class<? extends E> clazz, Class<? extends T> type) {
+	private static <E, T> List<T> getObjectFieldsOfType(Class<? extends E> clazz, Class type) {
 		ArrayList<Object> list = new ArrayList<>();
 		try {
 			for (Field field : clazz.getDeclaredFields()) {
