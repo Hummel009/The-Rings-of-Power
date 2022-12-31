@@ -1,5 +1,8 @@
 package trop;
 
+import java.lang.reflect.*;
+import java.util.*;
+
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -8,6 +11,7 @@ import net.minecraftforge.registries.*;
 
 @Mod("trop")
 public class TROP {
+	public static List<RegistryObject<Item>> sus;
 	public static DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "trop");
 	public static RegistryObject<Item> ring_great = ITEMS.register("ring_great", TROPItemRingGreat::new);
 	public static RegistryObject<Item> ring_nenia = ITEMS.register("ring_nenia", TROPItemRingNenia::new);
@@ -33,5 +37,28 @@ public class TROP {
 	public TROP() {
 		ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		MinecraftForge.EVENT_BUS.register(this);
+		sus = getObjectFieldsOfType(TROP.class, RegistryObject.class);
+		FMLJavaModLoadingContext.get().getModEventBus().addListener(TROPCreativeTabs::addCreativeTab);
+	}
+
+	private static <E, T> List<T> getObjectFieldsOfType(Class<? extends E> clazz, Class<? extends T> type) {
+		ArrayList<Object> list = new ArrayList<>();
+		try {
+			for (Field field : clazz.getDeclaredFields()) {
+				if (field == null) {
+					continue;
+				}
+				Object fieldObj = null;
+				if (Modifier.isStatic(field.getModifiers())) {
+					fieldObj = field.get(null);
+				}
+				if (fieldObj == null || !type.isAssignableFrom(fieldObj.getClass())) {
+					continue;
+				}
+				list.add(fieldObj);
+			}
+		} catch (IllegalAccessException | IllegalArgumentException e) {
+		}
+		return (List<T>) list;
 	}
 }
