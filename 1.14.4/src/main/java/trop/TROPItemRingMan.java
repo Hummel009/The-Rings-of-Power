@@ -12,8 +12,9 @@ public class TROPItemRingMan extends TROPItemRingBase {
 	@Override
 	public void inventoryTick(ItemStack itemstack, World world, Entity entity, int par4, boolean par5) {
 		if (entity instanceof PlayerEntity) {
-			((PlayerEntity) entity).addPotionEffect(new EffectInstance(Effects.STRENGTH, 20, 2));
-			((PlayerEntity) entity).addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, 240, 2));
+			((PlayerEntity) entity).addPotionEffect(new EffectInstance(Effects.STRENGTH, 20, 1));
+			((PlayerEntity) entity).addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, 220));
+			((PlayerEntity) entity).addPotionEffect(new EffectInstance(Effects.RESISTANCE, 20, 1));
 		}
 	}
 
