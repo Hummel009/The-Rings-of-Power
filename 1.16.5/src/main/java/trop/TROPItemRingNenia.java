@@ -12,7 +12,7 @@ public class TROPItemRingNenia extends TROPItemRingBase {
 	@Override
 	public void inventoryTick(ItemStack itemstack, World world, Entity entity, int par4, boolean par5) {
 		if (entity instanceof PlayerEntity) {
-			((PlayerEntity) entity).addEffect(new EffectInstance(Effects.WATER_BREATHING, 20, 2));
+			((PlayerEntity) entity).addEffect(new EffectInstance(Effects.WATER_BREATHING, 20));
 		}
 	}
 

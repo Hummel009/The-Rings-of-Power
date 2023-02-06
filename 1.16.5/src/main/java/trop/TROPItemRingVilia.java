@@ -12,8 +12,8 @@ public class TROPItemRingVilia extends TROPItemRingBase {
 	@Override
 	public void inventoryTick(ItemStack itemstack, World world, Entity entity, int par4, boolean par5) {
 		if (entity instanceof PlayerEntity) {
-			((PlayerEntity) entity).addEffect(new EffectInstance(Effects.MOVEMENT_SPEED, 20, 2));
-			((PlayerEntity) entity).addEffect(new EffectInstance(Effects.JUMP, 20, 2));
+			((PlayerEntity) entity).addEffect(new EffectInstance(Effects.MOVEMENT_SPEED, 20, 1));
+			((PlayerEntity) entity).addEffect(new EffectInstance(Effects.JUMP, 20, 1));
 		}
 	}
 
