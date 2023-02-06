@@ -12,7 +12,7 @@ public class TROPItemRingNaria extends TROPItemRingBase {
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int par4, boolean par5) {
 		if (entity instanceof Player) {
-			((Player) entity).addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 20, 2));
+			((Player) entity).addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 20));
 		}
 	}
 
