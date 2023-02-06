@@ -14,6 +14,7 @@ public class TROPItemRingMan extends TROPItemRingBase {
 		if (entity instanceof Player) {
 			((Player) entity).addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20, 1));
 			((Player) entity).addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 220));
+			((Player) entity).addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 20, 1));
 		}
 	}
 
