@@ -1,0 +1,8 @@
+/.metadata
+**/.gradle
+**/workspace.xml
+**/build
+**/bin
+**/run
+**/libs/**/*.lang
+**/libs/**/*.txt
