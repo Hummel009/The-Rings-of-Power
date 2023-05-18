@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+    <booleanAttribute key="org.eclipse.debug.core.ATTR_FORCE_SYSTEM_CONSOLE_ENCODING" value="false"/>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+        <listEntry value="/1.19.4"/>
+    </listAttribute>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+        <listEntry value="4"/>
+    </listAttribute>
+    <mapAttribute key="org.eclipse.debug.core.environmentVariables">
+        <mapEntry key="MCP_MAPPINGS" value="official_1.19.4"/>
+        <mapEntry key="MOD_CLASSES" value="examplemod%%D:\Eclipse\Minecraft\The-Rings-of-Power\1.19.4\bin\main;examplemod%%D:\Eclipse\Minecraft\The-Rings-of-Power\1.19.4\bin\main"/>
+    </mapAttribute>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="cpw.mods.bootstraplauncher.BootstrapLauncher"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="1.19.4"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="--launchTarget forgeclientuserdev --version MOD_DEV --assetIndex 3 --assetsDir C:\Users\Hummel009\.gradle\caches\forge_gradle\assets --gameDir . --fml.forgeVersion 45.0.64 --fml.mcVersion 1.19.4 --fml.forgeGroup net.minecraftforge --fml.mcpVersion 20230314.122934"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="1.19.4"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dforge.logging.console.level=debug -Dforge.logging.markers=REGISTRIES -DlegacyClassPath.file=D:\Eclipse\Minecraft\The-Rings-of-Power\1.19.4\build\classpath\runClient_minecraftClasspath.txt -DignoreList=bootstraplauncher,securejarhandler,asm-commons,asm-util,asm-analysis,asm-tree,asm,JarJarFileSystems,client-extra,fmlcore,javafmllanguage,lowcodelanguage,mclanguage,forge- -DmergeModules=jna-5.10.0.jar,jna-platform-5.10.0.jar -Dforge.enabledGameTestNamespaces=examplemod -Dforge.enableGameTest=true -Djava.net.preferIPv6Addresses=system -p C:\Users\Hummel009\.gradle\caches\modules-2\files-2.1\cpw.mods\bootstraplauncher\1.1.2\c546e00443d8432cda6baa1c860346980742628\bootstraplauncher-1.1.2.jar;C:\Users\Hummel009\.gradle\caches\modules-2\files-2.1\cpw.mods\securejarhandler\2.1.6\66c15fc1f522b586476e9e4cccd0cbe192554e8a\securejarhandler-2.1.6.jar;C:\Users\Hummel009\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-commons\9.5\19ab5b5800a3910d30d3a3e64fdb00fd0cb42de0\asm-commons-9.5.jar;C:\Users\Hummel009\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-util\9.5\64b5a1fc8c1b15ed2efd6a063e976bc8d3dc5ffe\asm-util-9.5.jar;C:\Users\Hummel009\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-analysis\9.5\490bacc77de7cbc0be1a30bb3471072d705be4a4\asm-analysis-9.5.jar;C:\Users\Hummel009\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-tree\9.5\fd33c8b6373abaa675be407082fdfda35021254a\asm-tree-9.5.jar;C:\Users\Hummel009\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm\9.5\dc6ea1875f4d64fbc85e1691c95b96a3d8569c90\asm-9.5.jar;C:\Users\Hummel009\.gradle\caches\modules-2\files-2.1\net.minecraftforge\JarJarFileSystems\0.3.19\2464eb7d6b9ddb9db36a82cf8a95193e5c6fe020\JarJarFileSystems-0.3.19.jar --add-modules ALL-MODULE-PATH --add-opens java.base/java.util.jar=cpw.mods.securejarhandler --add-opens java.base/java.lang.invoke=cpw.mods.securejarhandler --add-exports java.base/sun.security.util=cpw.mods.securejarhandler --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump &quot;-Dos.name=Windows 10&quot; -Dos.version=10.0"/>
+    <stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="D:\Eclipse\Minecraft\The-Rings-of-Power\1.19.4\run"/>
+</launchConfiguration>

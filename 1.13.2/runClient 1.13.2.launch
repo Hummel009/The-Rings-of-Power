@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+    <booleanAttribute key="org.eclipse.debug.core.ATTR_FORCE_SYSTEM_CONSOLE_ENCODING" value="false"/>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+        <listEntry value="/1.13.2"/>
+    </listAttribute>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+        <listEntry value="4"/>
+    </listAttribute>
+    <mapAttribute key="org.eclipse.debug.core.environmentVariables">
+        <mapEntry key="FORGE_GROUP" value="net.minecraftforge"/>
+        <mapEntry key="FORGE_VERSION" value="25.0.223"/>
+        <mapEntry key="MCP_MAPPINGS" value="snapshot_20180921-1.13"/>
+        <mapEntry key="MCP_VERSION" value="20190213.203750"/>
+        <mapEntry key="MC_VERSION" value="1.13.2"/>
+        <mapEntry key="MOD_CLASSES" value="examplemod%%D:\Eclipse\Minecraft\The-Rings-of-Power\1.13.2\bin\main;examplemod%%D:\Eclipse\Minecraft\The-Rings-of-Power\1.13.2\bin\main"/>
+        <mapEntry key="assetDirectory" value="C:\Users\Hummel009\.gradle\caches\forge_gradle\assets"/>
+        <mapEntry key="assetIndex" value="1.13.1"/>
+        <mapEntry key="nativesDirectory" value="D:\Eclipse\Minecraft\The-Rings-of-Power\1.13.2\build\natives"/>
+        <mapEntry key="target" value="fmluserdevclient"/>
+    </mapAttribute>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="net.minecraftforge.userdev.LaunchTesting"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="1.13.2"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="1.13.2"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dforge.logging.console.level=debug -Dforge.logging.markers=SCAN,REGISTRIES,REGISTRYDUMP -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump &quot;-Dos.name=Windows 10&quot; -Dos.version=10.0"/>
+    <stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="D:\Eclipse\Minecraft\The-Rings-of-Power\1.13.2\run"/>
+</launchConfiguration>
