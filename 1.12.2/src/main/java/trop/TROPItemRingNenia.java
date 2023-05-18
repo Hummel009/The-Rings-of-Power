@@ -19,7 +19,7 @@ public class TROPItemRingNenia extends Item {
 	@Override
 	public void onUpdate(ItemStack itemstack, World world, Entity entity, int par4, boolean par5) {
 		if (entity instanceof EntityPlayer) {
-			((EntityPlayer) entity).addPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 20, 2));
+			((EntityPlayer) entity).addPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 20));
 		}
 	}
 }

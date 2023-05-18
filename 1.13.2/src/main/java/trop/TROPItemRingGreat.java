@@ -16,7 +16,6 @@ public class TROPItemRingGreat extends Item {
 	@Override
 	public void inventoryTick(ItemStack itemstack, World world, Entity entity, int par4, boolean par5) {
 		if (entity instanceof EntityPlayer) {
-			((EntityPlayer) entity).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 20, 2));
 			((EntityPlayer) entity).addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 20, 2));
 		}
 	}

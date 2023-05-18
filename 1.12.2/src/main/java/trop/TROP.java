@@ -1,9 +1,9 @@
 package trop;
 
-import java.lang.reflect.*;
-import java.util.*;
+import java.util.ArrayList;
 
-import net.minecraft.client.renderer.block.model.*;
+import net.minecraft.client.renderer.block.model.ModelBakery;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -14,9 +14,10 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
-import net.minecraftforge.fml.relauncher.*;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
-@Mod(modid = "trop", version = "4.0")
+@Mod(modid = "trop")
 public class TROP {
 	public static Item ring_great;
 	public static Item ring_naria;
@@ -38,29 +39,11 @@ public class TROP {
 	public static Item ring_uvata;
 	public static Item ring_saita;
 	public static Item ring_dvar;
+	public static ArrayList<Item> itemList = new ArrayList<>();
 
 	@Mod.EventHandler
 	public void onInit(FMLInitializationEvent event) {
 		TROPCreativeTabs.setupIcons();
-	}
-
-	public static <E, T> List<T> getObjectFieldsOfType(Class<? extends E> clazz, Class<? extends T> type) {
-		ArrayList<Object> list = new ArrayList<>();
-		try {
-			for (Field field : clazz.getDeclaredFields()) {
-				if (field != null) {
-					Object fieldObj = null;
-					if (Modifier.isStatic(field.getModifiers())) {
-						fieldObj = field.get(null);
-					}
-					if (fieldObj != null && type.isAssignableFrom(fieldObj.getClass())) {
-						list.add(fieldObj);
-					}
-				}
-			}
-		} catch (IllegalAccessException | IllegalArgumentException exception) {
-		}
-		return (List<T>) list;
 	}
 
 	@ObjectHolder("trop")
@@ -114,7 +97,7 @@ public class TROP {
 		@SubscribeEvent
 		@SideOnly(Side.CLIENT)
 		public static void onRegistryModel(ModelRegistryEvent event) {
-			for (Item item : getObjectFieldsOfType(TROP.class, Item.class)) {
+			for (Item item : itemList) {
 				ResourceLocation regName = item.getRegistryName();
 				ModelResourceLocation mrl = new ModelResourceLocation(regName, "inventory");
 				ModelBakery.registerItemVariants(item, mrl);
@@ -123,6 +106,7 @@ public class TROP {
 		}
 
 		public static void register(Item item, String name) {
+			TROP.itemList.add(item);
 			item.setRegistryName(name);
 			item.setUnlocalizedName(name);
 			item.setMaxDamage(0);
