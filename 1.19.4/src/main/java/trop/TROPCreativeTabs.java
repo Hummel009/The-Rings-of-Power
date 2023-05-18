@@ -9,7 +9,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 public class TROPCreativeTabs {
 	@SubscribeEvent
 	public static void addCreativeTab(CreativeModeTabEvent.Register event) {
-		event.registerCreativeModeTab(new ResourceLocation("trop", "troptab"), builder -> builder.title(Component.translatable("itemGroup.ringPower")).icon(() -> new ItemStack(TROP.ring_jiindur.get())).displayItems((enabledFlags, populator, hasPermissions) -> {
+		event.registerCreativeModeTab(new ResourceLocation("trop", "troptab"), builder -> builder.title(Component.translatable("itemGroup.ringPower")).icon(() -> new ItemStack(TROP.ring_jiindur.get())).displayItems((enabledFlags, populator) -> {
 			for (Item item : TROP.itemList) {
 				populator.accept(item);
 			}
