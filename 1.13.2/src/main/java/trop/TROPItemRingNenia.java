@@ -3,17 +3,13 @@ package trop;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 
-public class TROPItemRingNenia extends Item {
-	public TROPItemRingNenia(Properties prop) {
-		super(prop);
-	}
+public class TROPItemRingNenia extends TROPItemRingBase {
 
 	@Override
 	public void inventoryTick(ItemStack itemstack, World world, Entity entity, int par4, boolean par5) {

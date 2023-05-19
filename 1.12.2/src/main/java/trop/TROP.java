@@ -24,9 +24,11 @@ public class TROP {
 	public static final ArrayList<Item> CONTENT = new ArrayList<>();
 
 	public static Item ringGreat;
+	
 	public static Item ringNaria;
 	public static Item ringNenia;
 	public static Item ringVilia;
+	
 	public static Item ringThror;
 	public static Item ringThulin;
 	public static Item ringKhibil;
@@ -34,6 +36,7 @@ public class TROP {
 	public static Item ringKhain;
 	public static Item ringBaraz;
 	public static Item ringBurin;
+	
 	public static Item ringMurazor;
 	public static Item ringKhommurat;
 	public static Item ringAkhorahil;
@@ -50,9 +53,11 @@ public class TROP {
 		@SubscribeEvent
 		public static void onRegistryItem(RegistryEvent.Register<Item> event) {
 			ringGreat = new TROPItemRingGreat();
+			
 			ringNaria = new TROPItemRingNaria();
 			ringNenia = new TROPItemRingNenia();
 			ringVilia = new TROPItemRingVilia();
+			
 			ringThror = new TROPItemRingDwarf();
 			ringThulin = new TROPItemRingDwarf();
 			ringKhibil = new TROPItemRingDwarf();
@@ -60,6 +65,7 @@ public class TROP {
 			ringKhain = new TROPItemRingDwarf();
 			ringBaraz = new TROPItemRingDwarf();
 			ringBurin = new TROPItemRingDwarf();
+			
 			ringMurazor = new TROPItemRingMan();
 			ringKhommurat = new TROPItemRingMan();
 			ringAkhorahil = new TROPItemRingMan();
@@ -71,9 +77,11 @@ public class TROP {
 			ringDvar = new TROPItemRingMan();
 
 			register(ringGreat, "ringGreat");
+			
 			register(ringNaria, "ringNaria");
 			register(ringNenia, "ringNenia");
 			register(ringVilia, "ringVilia");
+			
 			register(ringThror, "ringThror");
 			register(ringThulin, "ringThulin");
 			register(ringKhibil, "ringKhibil");
@@ -81,6 +89,7 @@ public class TROP {
 			register(ringKhain, "ringKhain");
 			register(ringBaraz, "ringBaraz");
 			register(ringBurin, "ringBurin");
+			
 			register(ringMurazor, "ringMurazor");
 			register(ringKhommurat, "ringKhommurat");
 			register(ringAkhorahil, "ringAkhorahil");
@@ -108,7 +117,6 @@ public class TROP {
 			String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
 			item.setUnlocalizedName(name);
 			item.setRegistryName(name);
-			item.setUnlocalizedName(name);
 			item.setMaxDamage(0);
 			item.setMaxStackSize(1);
 			item.setCreativeTab(TROPCreativeTabs.tabRing);
