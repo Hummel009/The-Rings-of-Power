@@ -1,7 +1,8 @@
 package trop;
 
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.event.*;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 
@@ -28,9 +29,13 @@ public class TROP {
 	public static Item ring_saita;
 	public static Item ring_dvar;
 
-	@Mod.EventHandler
-	public void onInit(FMLInitializationEvent event) {
-		TROPCreativeTabs.setupIcons();
+	private static void register(Item item, String name) {
+		item.setUnlocalizedName(name);
+		item.setTextureName("trop:" + name);
+		item.setCreativeTab(TROPCreativeTabs.tabRing);
+		item.setMaxDamage(0);
+		item.setMaxStackSize(1);
+		GameRegistry.registerItem(item, name);
 	}
 
 	@Mod.EventHandler
@@ -76,14 +81,5 @@ public class TROP {
 		register(ring_uvata, "ring_uvata");
 		register(ring_saita, "ring_saita");
 		register(ring_dvar, "ring_dvar");
-	}
-
-	private static void register(Item item, String name) {
-		item.setUnlocalizedName(name);
-		item.setTextureName("trop:" + name);
-		item.setCreativeTab(TROPCreativeTabs.tabRing);
-		item.setMaxDamage(0);
-		item.setMaxStackSize(1);
-		GameRegistry.registerItem(item, name);
 	}
 }
