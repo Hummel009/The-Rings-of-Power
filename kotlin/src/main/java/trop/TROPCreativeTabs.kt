@@ -15,7 +15,7 @@ object TROPCreativeTabs {
 			it.title(Component.translatable("itemGroup.ringPower")).icon {
 				ItemStack(TROP.ring_jiindur.get())
 			}.displayItems { _, populator ->
-				for (item in TROP.itemList) {
+				for (item in TROP.CONTENT) {
 					populator.accept(item)
 				}
 			}

@@ -1,17 +1,20 @@
 package trop;
 
-import java.util.*;
-
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.*;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Mod("trop")
 public class TROP {
-	public static List<Item> itemList = new ArrayList<>();
-	public static DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "trop");
+	public static final List<Item> CONTENTS = new ArrayList<>();
+	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "trop");
 	public static RegistryObject<Item> ring_great = ITEMS.register("ring_great", TROPItemRingGreat::new);
 	public static RegistryObject<Item> ring_nenia = ITEMS.register("ring_nenia", TROPItemRingNenia::new);
 	public static RegistryObject<Item> ring_naria = ITEMS.register("ring_naria", TROPItemRingNaria::new);

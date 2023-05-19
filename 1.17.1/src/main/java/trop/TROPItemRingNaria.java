@@ -1,7 +1,9 @@
 package trop;
 
-import net.minecraft.world.*;
-import net.minecraft.world.effect.*;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -11,8 +13,8 @@ public class TROPItemRingNaria extends TROPItemRingBase {
 
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int par4, boolean par5) {
-		if (entity instanceof Player) {
-			((Player) entity).addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 20));
+		if (entity instanceof Player feature) {
+			feature.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 20));
 		}
 	}
 

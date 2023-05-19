@@ -9,6 +9,6 @@ public class TROPItemRingBase extends Item {
 	}
 
 	private void initialize() {
-		TROP.itemList.add(this);
+		TROP.CONTENTS.add(this);
 	}
 }

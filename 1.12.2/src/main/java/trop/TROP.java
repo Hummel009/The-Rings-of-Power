@@ -1,7 +1,5 @@
 package trop;
 
-import java.util.ArrayList;
-
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -10,15 +8,19 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import java.util.ArrayList;
+import java.util.Objects;
+
 @Mod(modid = "trop")
 public class TROP {
+	public static final ArrayList<Item> CONTENT = new ArrayList<>();
+
 	public static Item ring_great;
 	public static Item ring_naria;
 	public static Item ring_nenia;
@@ -39,12 +41,6 @@ public class TROP {
 	public static Item ring_uvata;
 	public static Item ring_saita;
 	public static Item ring_dvar;
-	public static ArrayList<Item> itemList = new ArrayList<>();
-
-	@Mod.EventHandler
-	public void onInit(FMLInitializationEvent event) {
-		TROPCreativeTabs.setupIcons();
-	}
 
 	@ObjectHolder("trop")
 	@Mod.EventBusSubscriber
@@ -97,16 +93,16 @@ public class TROP {
 		@SubscribeEvent
 		@SideOnly(Side.CLIENT)
 		public static void onRegistryModel(ModelRegistryEvent event) {
-			for (Item item : itemList) {
+			for (Item item : CONTENT) {
 				ResourceLocation regName = item.getRegistryName();
-				ModelResourceLocation mrl = new ModelResourceLocation(regName, "inventory");
+				ModelResourceLocation mrl = new ModelResourceLocation(Objects.requireNonNull(regName), "inventory");
 				ModelBakery.registerItemVariants(item, mrl);
 				ModelLoader.setCustomModelResourceLocation(item, 0, mrl);
 			}
 		}
 
 		public static void register(Item item, String name) {
-			TROP.itemList.add(item);
+			CONTENT.add(item);
 			item.setRegistryName(name);
 			item.setUnlocalizedName(name);
 			item.setMaxDamage(0);

@@ -1,27 +1,23 @@
 {
-    "item.trop.ring_naria": "§d【精灵三戒】§f● §9水戒南雅",
-    "item.trop.ring_nenia": "§d【精灵三戒】§f● §c火戒纳雅",
-    "item.trop.ring_vilia": "§d【精灵三戒】§f● §b气戒维雅",
-
-    "item.trop.ring_thulin": "§b【矮人七戒】§f● §2图林之戒",
-    "item.trop.ring_khibil": "§b【矮人七戒】§f● Khibil's 之戒",
-    "item.trop.ring_farin": "§b【矮人七戒】§f● §7法林之戒",
-    "item.trop.ring_khain": "§b【矮人七戒】§f● §3凯恩之戒",
-    "item.trop.ring_baraz": "§b【矮人七戒】§f● §2Baraz 之戒",
-    "item.trop.ring_burin": "§b【矮人七戒】§f● §7伯林之戒",
-    "item.trop.ring_thror": "§b【矮人七戒】§f● §9索尔之戒",
-
-    "item.trop.ring_murazor": "§e【人族九戒】§f● Murazor's 之戒",
-    "item.trop.ring_khommurat": "§e【人族九戒】§f● §7Khommurat 之戒",
-    "item.trop.ring_akhorahil": "§e【人族九戒】§f● §7Akhorahil 之戒",
-    "item.trop.ring_morgomir": "§e【人族九戒】§f● §2§l安格玛巫王之戒",
-    "item.trop.ring_jiindur": "§e【人族九戒】§f● §1Ji Indur's 之戒",
-    "item.trop.ring_khamul": "§e【人族九戒】§f● §1卡姆尔之戒",
-    "item.trop.ring_uvata": "§e【人族九戒】§f● §1Uvata 之戒",
-    "item.trop.ring_saita": "§e【人族九戒】§f● §eSaita 之戒",
-    "item.trop.ring_dvar": "§e【人族九戒】§f● §eDvar 之戒",
-
-    "item.trop.ring_great": "§c【§l至尊魔戒§c】§4● §l§4御众之戒",
-
-    "itemGroup.ringPower": "魔戒众戒"
+  "item.trop.ring_naria": "§d【精灵三戒】§f● §9水戒南雅",
+  "item.trop.ring_nenia": "§d【精灵三戒】§f● §c火戒纳雅",
+  "item.trop.ring_vilia": "§d【精灵三戒】§f● §b气戒维雅",
+  "item.trop.ring_thulin": "§b【矮人七戒】§f● §2图林之戒",
+  "item.trop.ring_khibil": "§b【矮人七戒】§f● Khibil's 之戒",
+  "item.trop.ring_farin": "§b【矮人七戒】§f● §7法林之戒",
+  "item.trop.ring_khain": "§b【矮人七戒】§f● §3凯恩之戒",
+  "item.trop.ring_baraz": "§b【矮人七戒】§f● §2Baraz 之戒",
+  "item.trop.ring_burin": "§b【矮人七戒】§f● §7伯林之戒",
+  "item.trop.ring_thror": "§b【矮人七戒】§f● §9索尔之戒",
+  "item.trop.ring_murazor": "§e【人族九戒】§f● Murazor's 之戒",
+  "item.trop.ring_khommurat": "§e【人族九戒】§f● §7Khommurat 之戒",
+  "item.trop.ring_akhorahil": "§e【人族九戒】§f● §7Akhorahil 之戒",
+  "item.trop.ring_morgomir": "§e【人族九戒】§f● §2§l安格玛巫王之戒",
+  "item.trop.ring_jiindur": "§e【人族九戒】§f● §1Ji Indur's 之戒",
+  "item.trop.ring_khamul": "§e【人族九戒】§f● §1卡姆尔之戒",
+  "item.trop.ring_uvata": "§e【人族九戒】§f● §1Uvata 之戒",
+  "item.trop.ring_saita": "§e【人族九戒】§f● §eSaita 之戒",
+  "item.trop.ring_dvar": "§e【人族九戒】§f● §eDvar 之戒",
+  "item.trop.ring_great": "§c【§l至尊魔戒§c】§4● §l§4御众之戒",
+  "itemGroup.ringPower": "魔戒众戒"
 }

@@ -1,18 +1,18 @@
-modLoader="javafml" 
-loaderVersion="[3,)" 
-license="Powered by Hummel009"
+modLoader = "javafml"
+loaderVersion = "[3,)"
+license = "Powered by Hummel009"
 
 [[mods]]
-modId="trop"
-version="23.05.21"
-displayName="The Rings of Power"
-logoFile="logo.png"
-credits="Hummel009"
-authors="Hummel009"
-description='''This mod adds Rings of Power from the Lord of the Rings to Minecraft'''
+modId = "trop"
+version = "23.05.21"
+displayName = "The Rings of Power"
+logoFile = "logo.png"
+credits = "Hummel009"
+authors = "Hummel009"
+description = '''This mod adds Rings of Power from the Lord of the Rings to Minecraft'''
 [[dependencies.trop]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.14.4]"
-    ordering="NONE"
-    side="BOTH"
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.14.4]"
+ordering = "NONE"
+side = "BOTH"

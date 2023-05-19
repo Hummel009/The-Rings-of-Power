@@ -1,27 +1,23 @@
 {
-    "item.trop.ring_naria": "Anillo Narya",
-    "item.trop.ring_nenia": "Anillo Nenya",
-    "item.trop.ring_vilia": "Anillo Vilya",
-
-    "item.trop.ring_thulin": "Anillo de Thulin",
-    "item.trop.ring_khibil": "Anillo de Khibil",
-    "item.trop.ring_farin": "Anillo de Farin",
-    "item.trop.ring_khain": "Anillo de Khain",
-    "item.trop.ring_baraz": "Anillo de Baraz",
-    "item.trop.ring_burin": "Anillo de Burin",
-    "item.trop.ring_thror": "Anillo de Thror",
-
-    "item.trop.ring_murazor": "Anillo de Murazor",
-    "item.trop.ring_khommurat": "Anillo de Hoarmurath",
-    "item.trop.ring_akhorahil": "Anillo de Akhorahil",
-    "item.trop.ring_morgomir": "Anillo de Adunaphel",
-    "item.trop.ring_jiindur": "Anillo de Ji Indur",
-    "item.trop.ring_khamul": "Anillo de Khamul",
-    "item.trop.ring_uvata": "Anillo de Uvatha",
-    "item.trop.ring_saita": "Anillo de Ren",
-    "item.trop.ring_dvar": "Anillo de Dwar",
-
-    "item.trop.ring_great": "Anillo Unico",
-
-    "itemGroup.ringPower": "Anillos de Poder"
+  "item.trop.ring_naria": "Anillo Narya",
+  "item.trop.ring_nenia": "Anillo Nenya",
+  "item.trop.ring_vilia": "Anillo Vilya",
+  "item.trop.ring_thulin": "Anillo de Thulin",
+  "item.trop.ring_khibil": "Anillo de Khibil",
+  "item.trop.ring_farin": "Anillo de Farin",
+  "item.trop.ring_khain": "Anillo de Khain",
+  "item.trop.ring_baraz": "Anillo de Baraz",
+  "item.trop.ring_burin": "Anillo de Burin",
+  "item.trop.ring_thror": "Anillo de Thror",
+  "item.trop.ring_murazor": "Anillo de Murazor",
+  "item.trop.ring_khommurat": "Anillo de Hoarmurath",
+  "item.trop.ring_akhorahil": "Anillo de Akhorahil",
+  "item.trop.ring_morgomir": "Anillo de Adunaphel",
+  "item.trop.ring_jiindur": "Anillo de Ji Indur",
+  "item.trop.ring_khamul": "Anillo de Khamul",
+  "item.trop.ring_uvata": "Anillo de Uvatha",
+  "item.trop.ring_saita": "Anillo de Ren",
+  "item.trop.ring_dvar": "Anillo de Dwar",
+  "item.trop.ring_great": "Anillo Unico",
+  "itemGroup.ringPower": "Anillos de Poder"
 }

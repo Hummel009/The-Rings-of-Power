@@ -11,16 +11,16 @@ import net.minecraft.world.level.Level
 
 
 class TROPItemRingDwarf : TROPItemRingBase() {
-    override fun inventoryTick(itemstack: ItemStack, world: Level, entity: Entity, par4: Int, par5: Boolean) {
-        if (entity is Player) {
-            entity.addEffect(MobEffectInstance(MobEffects.DIG_SPEED, 20, 2))
-            entity.addEffect(MobEffectInstance(MobEffects.NIGHT_VISION, 220, 2))
-        }
-    }
+	override fun inventoryTick(itemstack: ItemStack, world: Level, entity: Entity, par4: Int, par5: Boolean) {
+		if (entity is Player) {
+			entity.addEffect(MobEffectInstance(MobEffects.DIG_SPEED, 20, 2))
+			entity.addEffect(MobEffectInstance(MobEffects.NIGHT_VISION, 220, 2))
+		}
+	}
 
-    override fun use(world: Level, entity: Player, hand: InteractionHand): InteractionResultHolder<ItemStack> {
-        entity.addEffect(MobEffectInstance(MobEffects.REGENERATION, 3600, 2))
-        entity.addEffect(MobEffectInstance(MobEffects.HEALTH_BOOST, 3800, 2))
-        return super.use(world, entity, hand)
-    }
+	override fun use(world: Level, entity: Player, hand: InteractionHand): InteractionResultHolder<ItemStack> {
+		entity.addEffect(MobEffectInstance(MobEffects.REGENERATION, 3600, 2))
+		entity.addEffect(MobEffectInstance(MobEffects.HEALTH_BOOST, 3800, 2))
+		return super.use(world, entity, hand)
+	}
 }
