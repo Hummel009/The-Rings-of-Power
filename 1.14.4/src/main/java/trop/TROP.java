@@ -1,6 +1,7 @@
 package trop;
 
 import com.google.common.base.CaseFormat;
+
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
