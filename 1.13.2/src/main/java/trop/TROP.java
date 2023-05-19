@@ -1,5 +1,6 @@
 package trop;
 
+import com.google.common.base.CaseFormat;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.Properties;
 import net.minecraftforge.common.MinecraftForge;
@@ -11,26 +12,26 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 @Mod("trop")
 public class TROP {
-	public static Item ring_great;
-	public static Item ring_nenia;
-	public static Item ring_naria;
-	public static Item ring_vilia;
-	public static Item ring_thror;
-	public static Item ring_thulin;
-	public static Item ring_khibil;
-	public static Item ring_farin;
-	public static Item ring_khain;
-	public static Item ring_baraz;
-	public static Item ring_burin;
-	public static Item ring_murazor;
-	public static Item ring_khommurat;
-	public static Item ring_akhorahil;
-	public static Item ring_morgomir;
-	public static Item ring_jiindur;
-	public static Item ring_khamul;
-	public static Item ring_uvata;
-	public static Item ring_saita;
-	public static Item ring_dvar;
+	public static Item ringGreat;
+	public static Item ringNenia;
+	public static Item ringNaria;
+	public static Item ringVilia;
+	public static Item ringThror;
+	public static Item ringThulin;
+	public static Item ringKhibil;
+	public static Item ringFarin;
+	public static Item ringKhain;
+	public static Item ringBaraz;
+	public static Item ringBurin;
+	public static Item ringMurazor;
+	public static Item ringKhommurat;
+	public static Item ringAkhorahil;
+	public static Item ringMorgomir;
+	public static Item ringJiindur;
+	public static Item ringKhamul;
+	public static Item ringUvata;
+	public static Item ringSaita;
+	public static Item ringDvar;
 
 	public TROP() {
 		MinecraftForge.EVENT_BUS.register(this);
@@ -44,51 +45,52 @@ public class TROP {
 			prop.group(TROPCreativeTabs.tabRing);
 			prop.defaultMaxDamage(0);
 			prop.maxStackSize(0);
-			ring_great = new TROPItemRingGreat(prop);
-			ring_nenia = new TROPItemRingNenia(prop);
-			ring_naria = new TROPItemRingNaria(prop);
-			ring_vilia = new TROPItemRingVilia(prop);
-			ring_thror = new TROPItemRingDwarf(prop);
-			ring_thulin = new TROPItemRingDwarf(prop);
-			ring_khibil = new TROPItemRingDwarf(prop);
-			ring_farin = new TROPItemRingDwarf(prop);
-			ring_khain = new TROPItemRingDwarf(prop);
-			ring_baraz = new TROPItemRingDwarf(prop);
-			ring_burin = new TROPItemRingDwarf(prop);
-			ring_murazor = new TROPItemRingMan(prop);
-			ring_khommurat = new TROPItemRingMan(prop);
-			ring_akhorahil = new TROPItemRingMan(prop);
-			ring_morgomir = new TROPItemRingMan(prop);
-			ring_jiindur = new TROPItemRingMan(prop);
-			ring_khamul = new TROPItemRingMan(prop);
-			ring_uvata = new TROPItemRingMan(prop);
-			ring_saita = new TROPItemRingMan(prop);
-			ring_dvar = new TROPItemRingMan(prop);
+			ringGreat = new TROPItemRingGreat(prop);
+			ringNenia = new TROPItemRingNenia(prop);
+			ringNaria = new TROPItemRingNaria(prop);
+			ringVilia = new TROPItemRingVilia(prop);
+			ringThror = new TROPItemRingDwarf(prop);
+			ringThulin = new TROPItemRingDwarf(prop);
+			ringKhibil = new TROPItemRingDwarf(prop);
+			ringFarin = new TROPItemRingDwarf(prop);
+			ringKhain = new TROPItemRingDwarf(prop);
+			ringBaraz = new TROPItemRingDwarf(prop);
+			ringBurin = new TROPItemRingDwarf(prop);
+			ringMurazor = new TROPItemRingMan(prop);
+			ringKhommurat = new TROPItemRingMan(prop);
+			ringAkhorahil = new TROPItemRingMan(prop);
+			ringMorgomir = new TROPItemRingMan(prop);
+			ringJiindur = new TROPItemRingMan(prop);
+			ringKhamul = new TROPItemRingMan(prop);
+			ringUvata = new TROPItemRingMan(prop);
+			ringSaita = new TROPItemRingMan(prop);
+			ringDvar = new TROPItemRingMan(prop);
 
-			register(ring_great, "ring_great");
-			register(ring_nenia, "ring_nenia");
-			register(ring_naria, "ring_naria");
-			register(ring_vilia, "ring_vilia");
-			register(ring_thror, "ring_thror");
-			register(ring_thulin, "ring_thulin");
-			register(ring_khibil, "ring_khibil");
-			register(ring_farin, "ring_farin");
-			register(ring_khain, "ring_khain");
-			register(ring_baraz, "ring_baraz");
-			register(ring_burin, "ring_burin");
-			register(ring_murazor, "ring_murazor");
-			register(ring_khommurat, "ring_khommurat");
-			register(ring_akhorahil, "ring_akhorahil");
-			register(ring_morgomir, "ring_morgomir");
-			register(ring_jiindur, "ring_jiindur");
-			register(ring_khamul, "ring_khamul");
-			register(ring_uvata, "ring_uvata");
-			register(ring_saita, "ring_saita");
-			register(ring_dvar, "ring_dvar");
+			register(ringGreat, "ringGreat");
+			register(ringNenia, "ringNenia");
+			register(ringNaria, "ringNaria");
+			register(ringVilia, "ringVilia");
+			register(ringThror, "ringThror");
+			register(ringThulin, "ringThulin");
+			register(ringKhibil, "ringKhibil");
+			register(ringFarin, "ringFarin");
+			register(ringKhain, "ringKhain");
+			register(ringBaraz, "ringBaraz");
+			register(ringBurin, "ringBurin");
+			register(ringMurazor, "ringMurazor");
+			register(ringKhommurat, "ringKhommurat");
+			register(ringAkhorahil, "ringAkhorahil");
+			register(ringMorgomir, "ringMorgomir");
+			register(ringJiindur, "ringJiindur");
+			register(ringKhamul, "ringKhamul");
+			register(ringUvata, "ringUvata");
+			register(ringSaita, "ringSaita");
+			register(ringDvar, "ringDvar");
 
 		}
 
-		public static void register(Item item, String name) {
+		public static void register(Item item, String field) {
+			String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
 			ForgeRegistries.ITEMS.register(item.setRegistryName(name));
 		}
 	}
