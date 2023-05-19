@@ -7,7 +7,7 @@ public class TROPCreativeTabs {
 	public static final CreativeModeTab tabRing = new CreativeModeTab("ringPower") {
 		@Override
 		public ItemStack makeIcon() {
-			return new ItemStack(TROP.ring_baraz.get());
+			return new ItemStack(TROP.RING_BARAZ.get());
 		}
 	};
 }
