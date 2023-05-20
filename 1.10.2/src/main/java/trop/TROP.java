@@ -1,27 +1,34 @@
 package trop;
 
+import java.util.ArrayList;
+import java.util.Objects;
+
 import com.google.common.base.CaseFormat;
 
-import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 @Mod(modid = "trop")
 public class TROP {
-	@SidedProxy(serverSide = "trop.TROPCommonProxy", clientSide = "trop.TROPClientProxy")
-	public static TROPCommonProxy proxy;
+	public static final ArrayList<Item> CONTENT = new ArrayList<>();
 
 	public static Item ringGreat;
-
-	public static Item ringNenia;
+	
 	public static Item ringNaria;
+	public static Item ringNenia;
 	public static Item ringVilia;
-
+	
 	public static Item ringThror;
 	public static Item ringThulin;
 	public static Item ringKhibil;
@@ -29,7 +36,7 @@ public class TROP {
 	public static Item ringKhain;
 	public static Item ringBaraz;
 	public static Item ringBurin;
-
+	
 	public static Item ringMurazor;
 	public static Item ringKhommurat;
 	public static Item ringAkhorahil;
@@ -40,100 +47,80 @@ public class TROP {
 	public static Item ringSaita;
 	public static Item ringDvar;
 
-	public static void registerRenders() {
-		registerRender(ringGreat, "ringGreat");
+	@ObjectHolder("trop")
+	@Mod.EventBusSubscriber
+	public static class RegistryEvents {
+		@SubscribeEvent
+		public static void onRegistryItem(RegistryEvent.Register<Item> event) {
+			ringGreat = new TROPItemRingGreat();
+			
+			ringNaria = new TROPItemRingNaria();
+			ringNenia = new TROPItemRingNenia();
+			ringVilia = new TROPItemRingVilia();
+			
+			ringThror = new TROPItemRingDwarf();
+			ringThulin = new TROPItemRingDwarf();
+			ringKhibil = new TROPItemRingDwarf();
+			ringFarin = new TROPItemRingDwarf();
+			ringKhain = new TROPItemRingDwarf();
+			ringBaraz = new TROPItemRingDwarf();
+			ringBurin = new TROPItemRingDwarf();
+			
+			ringMurazor = new TROPItemRingMan();
+			ringKhommurat = new TROPItemRingMan();
+			ringAkhorahil = new TROPItemRingMan();
+			ringMorgomir = new TROPItemRingMan();
+			ringJiindur = new TROPItemRingMan();
+			ringKhamul = new TROPItemRingMan();
+			ringUvata = new TROPItemRingMan();
+			ringSaita = new TROPItemRingMan();
+			ringDvar = new TROPItemRingMan();
 
-		registerRender(ringNenia, "ringNenia");
-		registerRender(ringNaria, "ringNaria");
-		registerRender(ringVilia, "ringVilia");
+			register(ringGreat, "ringGreat");
+			
+			register(ringNaria, "ringNaria");
+			register(ringNenia, "ringNenia");
+			register(ringVilia, "ringVilia");
+			
+			register(ringThror, "ringThror");
+			register(ringThulin, "ringThulin");
+			register(ringKhibil, "ringKhibil");
+			register(ringFarin, "ringFarin");
+			register(ringKhain, "ringKhain");
+			register(ringBaraz, "ringBaraz");
+			register(ringBurin, "ringBurin");
+			
+			register(ringMurazor, "ringMurazor");
+			register(ringKhommurat, "ringKhommurat");
+			register(ringAkhorahil, "ringAkhorahil");
+			register(ringMorgomir, "ringMorgomir");
+			register(ringJiindur, "ringJiindur");
+			register(ringKhamul, "ringKhamul");
+			register(ringUvata, "ringUvata");
+			register(ringSaita, "ringSaita");
+			register(ringDvar, "ringDvar");
+		}
 
-		registerRender(ringThror, "ringThror");
-		registerRender(ringThulin, "ringThulin");
-		registerRender(ringKhibil, "ringKhibil");
-		registerRender(ringFarin, "ringFarin");
-		registerRender(ringKhain, "ringKhain");
-		registerRender(ringBaraz, "ringBaraz");
-		registerRender(ringBurin, "ringBurin");
+		@SubscribeEvent
+		@SideOnly(Side.CLIENT)
+		public static void onRegistryModel(ModelRegistryEvent event) {
+			for (Item item : CONTENT) {
+				ResourceLocation regName = item.getRegistryName();
+				ModelResourceLocation mrl = new ModelResourceLocation(Objects.requireNonNull(regName), "inventory");
+				ModelBakery.registerItemVariants(item, mrl);
+				ModelLoader.setCustomModelResourceLocation(item, 0, mrl);
+			}
+		}
 
-		registerRender(ringMurazor, "ringMurazor");
-		registerRender(ringKhommurat, "ringKhommurat");
-		registerRender(ringAkhorahil, "ringAkhorahil");
-		registerRender(ringMorgomir, "ringMorgomir");
-		registerRender(ringJiindur, "ringJiindur");
-		registerRender(ringKhamul, "ringKhamul");
-		registerRender(ringUvata, "ringUvata");
-		registerRender(ringSaita, "ringSaita");
-		registerRender(ringDvar, "ringDvar");
-	}
-
-	public static void registerItem(Item item, String field) {
-		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
-		item.setUnlocalizedName(name);
-		item.setRegistryName(name);
-		item.setMaxDamage(0);
-		item.setMaxStackSize(1);
-		item.setCreativeTab(TROPCreativeTabs.tabRing);
-		ForgeRegistries.ITEMS.register(item);
-	}
-
-	public static void registerRender(Item item, String field) {
-		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation("trop:" + name, "inventory"));
-	}
-
-	@Mod.EventHandler
-	public void preInit(FMLPreInitializationEvent event) {
-		ringGreat = new TROPItemRingGreat();
-
-		ringNenia = new TROPItemRingNenia();
-		ringNaria = new TROPItemRingNaria();
-		ringVilia = new TROPItemRingVilia();
-
-		ringThror = new TROPItemRingDwarf();
-		ringThulin = new TROPItemRingDwarf();
-		ringKhibil = new TROPItemRingDwarf();
-		ringFarin = new TROPItemRingDwarf();
-		ringKhain = new TROPItemRingDwarf();
-		ringBaraz = new TROPItemRingDwarf();
-		ringBurin = new TROPItemRingDwarf();
-
-		ringMurazor = new TROPItemRingMan();
-		ringKhommurat = new TROPItemRingMan();
-		ringAkhorahil = new TROPItemRingMan();
-		ringMorgomir = new TROPItemRingMan();
-		ringJiindur = new TROPItemRingMan();
-		ringKhamul = new TROPItemRingMan();
-		ringUvata = new TROPItemRingMan();
-		ringSaita = new TROPItemRingMan();
-		ringDvar = new TROPItemRingMan();
-
-		registerItem(ringGreat, "ringGreat");
-
-		registerItem(ringNenia, "ringNenia");
-		registerItem(ringNaria, "ringNaria");
-		registerItem(ringVilia, "ringVilia");
-
-		registerItem(ringThror, "ringThror");
-		registerItem(ringThulin, "ringThulin");
-		registerItem(ringKhibil, "ringKhibil");
-		registerItem(ringFarin, "ringFarin");
-		registerItem(ringKhain, "ringKhain");
-		registerItem(ringBaraz, "ringBaraz");
-		registerItem(ringBurin, "ringBurin");
-
-		registerItem(ringMurazor, "ringMurazor");
-		registerItem(ringKhommurat, "ringKhommurat");
-		registerItem(ringAkhorahil, "ringAkhorahil");
-		registerItem(ringMorgomir, "ringMorgomir");
-		registerItem(ringJiindur, "ringJiindur");
-		registerItem(ringKhamul, "ringKhamul");
-		registerItem(ringUvata, "ringUvata");
-		registerItem(ringSaita, "ringSaita");
-		registerItem(ringDvar, "ringDvar");
-	}
-
-	@Mod.EventHandler
-	public void onInit(FMLInitializationEvent event) {
-		proxy.registerRenders();
+		public static void register(Item item, String field) {
+			CONTENT.add(item);
+			String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
+			item.setUnlocalizedName(name);
+			item.setRegistryName(name);
+			item.setMaxDamage(0);
+			item.setMaxStackSize(1);
+			item.setCreativeTab(TROPCreativeTabs.tabRing);
+			ForgeRegistries.ITEMS.register(item);
+		}
 	}
 }
