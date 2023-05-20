@@ -1,0 +1,25 @@
+item.ring_naria.name=Anillo Narya
+item.ring_nenia.name=Anillo Nenya
+item.ring_vilia.name=Anillo Vilya
+
+item.ring_thulin.name=Anillo de Thulin
+item.ring_khibil.name=Anillo de Khibil
+item.ring_farin.name=Anillo de Farin
+item.ring_khain.name=Anillo de Khain
+item.ring_baraz.name=Anillo de Baraz
+item.ring_burin.name=Anillo de Burin
+item.ring_thror.name=Anillo de Thror
+
+item.ring_murazor.name=Anillo de Murazor
+item.ring_khommurat.name=Anillo de Hoarmurath
+item.ring_akhorahil.name=Anillo de Akhorahil
+item.ring_morgomir.name=Anillo de Adunaphel
+item.ring_jiindur.name=Anillo de Ji Indur
+item.ring_khamul.name=Anillo de Khamul
+item.ring_uvata.name=Anillo de Uvatha
+item.ring_saita.name=Anillo de Ren
+item.ring_dvar.name=Anillo de Dwar
+
+item.ring_great.name=Anillo Unico
+
+itemGroup.ringPower=Anillos de Poder
