@@ -113,14 +113,14 @@ public class TROP {
 		}
 
 		public static void register(Item item, String field) {
-			CONTENT.add(item);
 			String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
-			item.setUnlocalizedName(name);
 			item.setRegistryName(name);
+			item.setUnlocalizedName(name);
 			item.setMaxDamage(0);
 			item.setMaxStackSize(1);
 			item.setCreativeTab(TROPCreativeTabs.tabRing);
 			ForgeRegistries.ITEMS.register(item);
+			CONTENT.add(item);
 		}
 	}
 }

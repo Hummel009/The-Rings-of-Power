@@ -33,16 +33,6 @@ public class TROP {
 	public static Item ringSaita;
 	public static Item ringDvar;
 
-	private static void register(Item item, String field) {
-		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
-		item.setUnlocalizedName(name);
-		item.setTextureName("trop:" + name);
-		item.setCreativeTab(TROPCreativeTabs.tabRing);
-		item.setMaxDamage(0);
-		item.setMaxStackSize(1);
-		GameRegistry.registerItem(item, name);
-	}
-
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		ringGreat = new TROPItemRingGreat();
@@ -92,5 +82,15 @@ public class TROP {
 		register(ringUvata, "ringUvata");
 		register(ringSaita, "ringSaita");
 		register(ringDvar, "ringDvar");
+	}
+
+	private static void register(Item item, String field) {
+		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
+		item.setTextureName("trop:" + name);
+		item.setUnlocalizedName(name);
+		item.setMaxDamage(0);
+		item.setMaxStackSize(1);
+		item.setCreativeTab(TROPCreativeTabs.tabRing);
+		GameRegistry.registerItem(item, name);
 	}
 }
