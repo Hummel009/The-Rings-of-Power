@@ -18,8 +18,8 @@ All the projects can be imported via Eclipse or opened via Intellij IDEA, but 1.
 
 Projects are already configured, using needed JDK version and compiler:
 
-* 1.17.1 is using JDK16
-* 1.18.2 and higher are using JDK-16
+* 1.17.1 is using JDK-16
+* 1.18.2 and higher are using JDK-17
 * All the others are using JDK-8 (JDK 1.8)
 
 Compiler versions are the same as JDK.
