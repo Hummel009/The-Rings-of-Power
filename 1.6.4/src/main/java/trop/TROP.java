@@ -8,7 +8,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 
-@Mod(modid = "trop")
+@Mod(modid = "trop", useMetadata = true)
 public class TROP {
 	public static Item ringGreat;
 
@@ -42,7 +42,7 @@ public class TROP {
 	@Mod.EventHandler
 	public void onInit(FMLInitializationEvent event) {
 		ringGreat = new TROPItemRingGreat(TROPConfig.idRingGreat - 256);
-		
+
 		ringNenia = new TROPItemRingNenia(TROPConfig.idRingNenia - 256);
 		ringNaria = new TROPItemRingNaria(TROPConfig.idRingNaria - 256);
 		ringVilia = new TROPItemRingVilia(TROPConfig.idRingVilia - 256);

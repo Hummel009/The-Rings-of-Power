@@ -11,7 +11,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.item.Item;
 
-@Mod(modid = "trop")
+@Mod(modid = "trop", useMetadata = true)
 public class TROP {
 	public static Item ringGreat;
 
@@ -45,7 +45,7 @@ public class TROP {
 	@Init
 	public void onInit(FMLInitializationEvent event) {
 		ringGreat = new TROPItemRingGreat(TROPConfig.idRingGreat - 256);
-		
+
 		ringNenia = new TROPItemRingNenia(TROPConfig.idRingNenia - 256);
 		ringNaria = new TROPItemRingNaria(TROPConfig.idRingNaria - 256);
 		ringVilia = new TROPItemRingVilia(TROPConfig.idRingVilia - 256);
@@ -68,27 +68,28 @@ public class TROP {
 		ringSaita = new TROPItemRingMan(TROPConfig.idRingSaita - 256);
 		ringDvar = new TROPItemRingMan(TROPConfig.idRingDvar - 256);
 
-		ringAkhorahil.setIconIndex(0);
-		ringBaraz.setIconIndex(1);
-		ringBurin.setIconIndex(2);
-		ringDvar.setIconIndex(3);
-		ringFarin.setIconIndex(4);
-		ringGreat.setIconIndex(5);
-		ringJiindur.setIconIndex(6);
-		ringKhain.setIconIndex(7);
-		ringKhamul.setIconIndex(8);
-		ringKhibil.setIconIndex(9);
-		ringKhommurat.setIconIndex(10);
-		ringMorgomir.setIconIndex(11);
-		ringMurazor.setIconIndex(12);
-		ringNaria.setIconIndex(13);
-		ringNenia.setIconIndex(14);
-		ringSaita.setIconIndex(15);
-		ringThror.setIconIndex(16);
-		ringThulin.setIconIndex(17);
-		ringUvata.setIconIndex(18);
-		ringVilia.setIconIndex(19);
-
+		int id = 0;
+		ringAkhorahil.setIconIndex(id++);
+		ringBaraz.setIconIndex(id++);
+		ringBurin.setIconIndex(id++);
+		ringDvar.setIconIndex(id++);
+		ringFarin.setIconIndex(id++);
+		ringGreat.setIconIndex(id++);
+		ringJiindur.setIconIndex(id++);
+		ringKhain.setIconIndex(id++);
+		ringKhamul.setIconIndex(id++);
+		ringKhibil.setIconIndex(id++);
+		ringKhommurat.setIconIndex(id++);
+		ringMorgomir.setIconIndex(id++);
+		ringMurazor.setIconIndex(id++);
+		ringNaria.setIconIndex(id++);
+		ringNenia.setIconIndex(id++);
+		ringSaita.setIconIndex(id++);
+		ringThror.setIconIndex(id++);
+		ringThulin.setIconIndex(id++);
+		ringUvata.setIconIndex(id++);
+		ringVilia.setIconIndex(id++);
+		
 		register(ringGreat, "ringGreat");
 
 		register(ringNenia, "ringNenia");
@@ -112,6 +113,13 @@ public class TROP {
 		register(ringUvata, "ringUvata");
 		register(ringSaita, "ringSaita");
 		register(ringDvar, "ringDvar");
+
+		LanguageRegistry.instance().loadLocalization("/assets/trop/lang/en_US.lang", "en_US", false);
+		LanguageRegistry.instance().loadLocalization("/assets/trop/lang/es_AR.lang", "es_AR", false);
+		LanguageRegistry.instance().loadLocalization("/assets/trop/lang/es_ES.lang", "es_ES", false);
+		LanguageRegistry.instance().loadLocalization("/assets/trop/lang/es_MX.lang", "es_MX", false);
+		LanguageRegistry.instance().loadLocalization("/assets/trop/lang/ru_RU.lang", "ru_RU", false);
+		LanguageRegistry.instance().loadLocalization("/assets/trop/lang/zh_CN.lang", "zh_CN", false);
 	}
 
 	public static void register(Item item, String field) {
@@ -121,12 +129,6 @@ public class TROP {
 		item.setMaxDamage(0);
 		item.setMaxStackSize(1);
 		item.setCreativeTab(TROPCreativeTabs.tabRing);
-		LanguageRegistry.instance().addNameForObject(item, "en_US", TROPLang.enUS.get("item." + name + ".name"));
-		LanguageRegistry.instance().addNameForObject(item, "es_AR", TROPLang.esES.get("item." + name + ".name"));
-		LanguageRegistry.instance().addNameForObject(item, "es_ES", TROPLang.esES.get("item." + name + ".name"));
-		LanguageRegistry.instance().addNameForObject(item, "es_MX", TROPLang.esES.get("item." + name + ".name"));
-		LanguageRegistry.instance().addNameForObject(item, "ru_RU", TROPLang.ruRU.get("item." + name + ".name"));
-		LanguageRegistry.instance().addNameForObject(item, "zh_CN", TROPLang.zhCN.get("item." + name + ".name"));
 		GameRegistry.registerItem(item, name);
 	}
 }
