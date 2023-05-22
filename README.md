@@ -18,11 +18,10 @@ All the projects can be imported via Eclipse or opened via Intellij IDEA, but 1.
 
 Projects are already configured, using needed JDK version and compiler:
 
-* 1.17.1 is using JDK-16
-* 1.18.2 and higher are using JDK-17
-* All the others are using JDK-8 (JDK 1.8)
-
-Compiler versions are the same as JDK.
+* 1.17.1 is using JDK-16, Compiler 16
+* 1.18.2 and higher are using JDK-17, Compiler 17
+* 1.6.4 and lower are using JDK-11, Compiler 6 (1.6)
+* All the others are using JDK-8 (JDK 1.8), Compiler 8 (1.8)
 
 If you have problems when importing projects, check your JDK's paths.
 
@@ -43,6 +42,6 @@ I have always been attracted to the idea of releasing a mod for every major vers
 
 The mod already exists on version 1.7.10 (the original and native version it was originally developed on), as well as every last release of all major versions from 1.12.2 onwards.
 
-I would really like to release retrospective updates of the mod for versions 1.6.4 and earlier. But I couldn't do anything. Forge of such ancient versions is dead.
+Great thanks to [https://github.com/CrackedPolishedBlackstoneBricksMC/voldeloom this project and his author]! He did everything to make ancient development environment working in 2023. I could create my mod for the versions 1.3.2, 1.4.7, 1.5.2 and 1.6.4 only due to his project. 
 
-If you know how to fix Forge 1.6.4 please let me know - I will be extremely grateful.
+I would really like to release retrospective updates of the mod for versions 1.2.x and earlier. But I think, it's impossible now. If you know something on this topic, please let me know - I will be extremely grateful.
