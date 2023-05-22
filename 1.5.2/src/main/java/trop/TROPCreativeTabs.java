@@ -7,15 +7,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class TROPCreativeTabs {
-	public static final CreativeTabs tabRing = new CreativeTabs("Rings of Power") {
+	public static final CreativeTabs tabRing = new CreativeTabs("ringPower") {
 		@Override
 		public Item getTabIconItem() {
 			return new ItemStack(TROP.ringBaraz).getItem();
-		}
-
-		@SideOnly(Side.CLIENT)
-		public String getTranslatedTabLabel() {
-			return "Rings of Power";
 		}
 	};
 }
