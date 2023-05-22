@@ -68,31 +68,26 @@ public class TROP {
 		ringSaita = new TROPItemRingMan(TROPConfig.idRingSaita - 256);
 		ringDvar = new TROPItemRingMan(TROPConfig.idRingDvar - 256);
 
-		int x = 0;
-		int y = 0;
-
-		ringAkhorahil.setIconCoord(x++, y);
-		ringBaraz.setIconCoord(x++, y);
-		ringBurin.setIconCoord(x++, y);
-		ringDvar.setIconCoord(x++, y);
-		ringFarin.setIconCoord(x++, y);
-		ringGreat.setIconCoord(x++, y);
-		ringJiindur.setIconCoord(x++, y);
-		ringKhain.setIconCoord(x++, y);
-		ringKhamul.setIconCoord(x++, y);
-		ringKhibil.setIconCoord(x++, y);
-		ringKhommurat.setIconCoord(x++, y);
-		ringMorgomir.setIconCoord(x++, y);
-		ringMurazor.setIconCoord(x++, y);
-		ringNaria.setIconCoord(x++, y);
-		ringNenia.setIconCoord(x++, y);
-
-		ringSaita.setIconCoord(x = 0, y++);
-
-		ringThror.setIconCoord(x++, y);
-		ringThulin.setIconCoord(x++, y);
-		ringUvata.setIconCoord(x++, y);
-		ringVilia.setIconCoord(x++, y);
+		ringAkhorahil.setIconIndex(0);
+		ringBaraz.setIconIndex(1);
+		ringBurin.setIconIndex(2);
+		ringDvar.setIconIndex(3);
+		ringFarin.setIconIndex(4);
+		ringGreat.setIconIndex(5);
+		ringJiindur.setIconIndex(6);
+		ringKhain.setIconIndex(7);
+		ringKhamul.setIconIndex(8);
+		ringKhibil.setIconIndex(9);
+		ringKhommurat.setIconIndex(10);
+		ringMorgomir.setIconIndex(11);
+		ringMurazor.setIconIndex(12);
+		ringNaria.setIconIndex(13);
+		ringNenia.setIconIndex(14);
+		ringSaita.setIconIndex(15);
+		ringThror.setIconIndex(16);
+		ringThulin.setIconIndex(17);
+		ringUvata.setIconIndex(18);
+		ringVilia.setIconIndex(19);
 
 		register(ringGreat, "ringGreat");
 
