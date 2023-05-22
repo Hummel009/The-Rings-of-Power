@@ -9,8 +9,8 @@ import net.minecraft.src.PotionEffect;
 import net.minecraft.src.World;
 
 public class TROPItemRingGreat extends Item {
-	public TROPItemRingGreat(int par1) {
-		super(par1);
+	public TROPItemRingGreat(int id) {
+		super(id);
 	}
 	
 	@Override

@@ -9,8 +9,8 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
 public class TROPItemRingNenia extends Item {
-	public TROPItemRingNenia(int par1) {
-		super(par1);
+	public TROPItemRingNenia(int id) {
+		super(id);
 	}
 
 	@Override

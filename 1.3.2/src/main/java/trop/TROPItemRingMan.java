@@ -9,8 +9,8 @@ import net.minecraft.src.PotionEffect;
 import net.minecraft.src.World;
 
 public class TROPItemRingMan extends Item {
-	public TROPItemRingMan(int par1) {
-		super(par1);
+	public TROPItemRingMan(int id) {
+		super(id);
 	}
 
 	@Override

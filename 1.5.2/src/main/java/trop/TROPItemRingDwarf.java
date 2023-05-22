@@ -9,8 +9,8 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
 public class TROPItemRingDwarf extends Item {
-	public TROPItemRingDwarf(int par1) {
-		super(par1);
+	public TROPItemRingDwarf(int id) {
+		super(id);
 	}
 
 	@Override
