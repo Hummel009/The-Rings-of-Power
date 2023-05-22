@@ -112,21 +112,20 @@ public class TROP {
 		register(ringUvata, "ringUvata");
 		register(ringSaita, "ringSaita");
 		register(ringDvar, "ringDvar");
-
-		LanguageRegistry.instance().loadLocalization("/assets/trop/lang/en_US.lang", "en_US", false);
-		LanguageRegistry.instance().loadLocalization("/assets/trop/lang/es_AR.lang", "es_AR", false);
-		LanguageRegistry.instance().loadLocalization("/assets/trop/lang/es_ES.lang", "es_ES", false);
-		LanguageRegistry.instance().loadLocalization("/assets/trop/lang/es_MX.lang", "es_MX", false);
-		LanguageRegistry.instance().loadLocalization("/assets/trop/lang/ru_RU.lang", "ru_RU", false);
-		LanguageRegistry.instance().loadLocalization("/assets/trop/lang/zh_CN.lang", "zh_CN", false);
 	}
 
 	public static void register(Item item, String field) {
 		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
-		item.setTextureFile("/assets/trop/textures/items/rings.png");
+		item.setTextureFile("/assets/trop/textures/items.png");
 		item.setItemName(name);
 		item.setMaxDamage(0);
 		item.setMaxStackSize(1);
 		item.setCreativeTab(TROPCreativeTabs.tabRing);
+		LanguageRegistry.instance().addNameForObject(item, "en_US", TROPLang.enUS.get("item." + name + ".name"));
+		LanguageRegistry.instance().addNameForObject(item, "es_AR", TROPLang.esES.get("item." + name + ".name"));
+		LanguageRegistry.instance().addNameForObject(item, "es_ES", TROPLang.esES.get("item." + name + ".name"));
+		LanguageRegistry.instance().addNameForObject(item, "es_MX", TROPLang.esES.get("item." + name + ".name"));
+		LanguageRegistry.instance().addNameForObject(item, "ru_RU", TROPLang.ruRU.get("item." + name + ".name"));
+		LanguageRegistry.instance().addNameForObject(item, "zh_CN", TROPLang.zhCN.get("item." + name + ".name"));
 	}
 }

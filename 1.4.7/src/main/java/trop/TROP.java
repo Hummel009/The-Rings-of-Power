@@ -124,7 +124,7 @@ public class TROP {
 
 	public static void register(Item item, String field) {
 		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
-		item.setTextureFile("/assets/trop/textures/items/rings.png");
+		item.setTextureFile("/assets/trop/textures/items.png");
 		item.setItemName(name);
 		item.setMaxDamage(0);
 		item.setMaxStackSize(1);
