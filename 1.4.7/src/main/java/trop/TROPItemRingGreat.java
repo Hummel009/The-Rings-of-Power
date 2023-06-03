@@ -12,7 +12,7 @@ public class TROPItemRingGreat extends Item {
 	public TROPItemRingGreat(int id) {
 		super(id);
 	}
-	
+
 	@Override
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entity) {
 		entity.addPotionEffect(new PotionEffect(Potion.regeneration.getId(), 3600, 2));

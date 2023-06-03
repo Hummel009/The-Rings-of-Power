@@ -1,16 +1,16 @@
 package trop;
 
-import java.util.logging.Level;
-
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.common.Configuration;
 
+import java.util.logging.Level;
+
 public class TROPConfig {
 	public static Configuration configuration;
-	
+
 	public static boolean loaded;
-	
+
 	public static int idRingGreat;
 
 	public static int idRingNenia;

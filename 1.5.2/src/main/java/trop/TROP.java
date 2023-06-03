@@ -1,7 +1,6 @@
 package trop;
 
 import com.google.common.base.CaseFormat;
-
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.PreInit;
@@ -36,6 +35,15 @@ public class TROP {
 	public static Item ringUvata;
 	public static Item ringSaita;
 	public static Item ringDvar;
+
+	public static void register(Item item, String field) {
+		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
+		item.setUnlocalizedName(name);
+		item.setMaxDamage(0);
+		item.setMaxStackSize(1);
+		item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
+		GameRegistry.registerItem(item, name);
+	}
 
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
@@ -98,14 +106,5 @@ public class TROP {
 		LanguageRegistry.instance().loadLocalization("/assets/trop/lang/es_MX.lang", "es_MX", false);
 		LanguageRegistry.instance().loadLocalization("/assets/trop/lang/ru_RU.lang", "ru_RU", false);
 		LanguageRegistry.instance().loadLocalization("/assets/trop/lang/zh_CN.lang", "zh_CN", false);
-	}
-
-	public static void register(Item item, String field) {
-		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
-		item.setUnlocalizedName(name);
-		item.setMaxDamage(0);
-		item.setMaxStackSize(1);
-		item.setCreativeTab(TROPCreativeTabs.tabRing);
-		GameRegistry.registerItem(item, name);
 	}
 }

@@ -13,7 +13,7 @@ object TROPCreativeTabs {
 			ResourceLocation("trop", "troptab")
 		) {
 			it.title(Component.translatable("itemGroup.ringPower")).icon {
-				ItemStack(TROP.ring_jiindur.get())
+				ItemStack(TROP.RING_BARAZ.get())
 			}.displayItems { _, populator ->
 				for (item in TROP.CONTENT) {
 					populator.accept(item)

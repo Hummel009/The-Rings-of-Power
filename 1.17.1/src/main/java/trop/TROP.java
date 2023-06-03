@@ -11,13 +11,13 @@ import net.minecraftforge.registries.ForgeRegistries;
 @Mod("trop")
 public class TROP {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "trop");
-	
+
 	public static final RegistryObject<Item> RING_GREAT = ITEMS.register("ring_great", TROPItemRingGreat::new);
-	
+
 	public static final RegistryObject<Item> RING_NENIA = ITEMS.register("ring_nenia", TROPItemRingNenia::new);
 	public static final RegistryObject<Item> RING_NARIA = ITEMS.register("ring_naria", TROPItemRingNaria::new);
 	public static final RegistryObject<Item> RING_VILIA = ITEMS.register("ring_vilia", TROPItemRingVilia::new);
-	
+
 	public static final RegistryObject<Item> RING_THROR = ITEMS.register("ring_thror", TROPItemRingDwarf::new);
 	public static final RegistryObject<Item> RING_THULIN = ITEMS.register("ring_thulin", TROPItemRingDwarf::new);
 	public static final RegistryObject<Item> RING_KHIBIL = ITEMS.register("ring_khibil", TROPItemRingDwarf::new);
@@ -25,7 +25,7 @@ public class TROP {
 	public static final RegistryObject<Item> RING_KHAIN = ITEMS.register("ring_khain", TROPItemRingDwarf::new);
 	public static final RegistryObject<Item> RING_BARAZ = ITEMS.register("ring_baraz", TROPItemRingDwarf::new);
 	public static final RegistryObject<Item> RING_BURIN = ITEMS.register("ring_burin", TROPItemRingDwarf::new);
-	
+
 	public static final RegistryObject<Item> RING_MURAZOR = ITEMS.register("ring_murazor", TROPItemRingMan::new);
 	public static final RegistryObject<Item> RING_KHOMMURAT = ITEMS.register("ring_khommurat", TROPItemRingMan::new);
 	public static final RegistryObject<Item> RING_AKHORAHIL = ITEMS.register("ring_akhorahil", TROPItemRingMan::new);

@@ -1,18 +1,12 @@
 package trop;
 
-import net.minecraft.src.Entity;
-import net.minecraft.src.EntityPlayer;
-import net.minecraft.src.Item;
-import net.minecraft.src.ItemStack;
-import net.minecraft.src.Potion;
-import net.minecraft.src.PotionEffect;
-import net.minecraft.src.World;
+import net.minecraft.src.*;
 
 public class TROPItemRingGreat extends Item {
 	public TROPItemRingGreat(int id) {
 		super(id);
 	}
-	
+
 	@Override
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entity) {
 		entity.addPotionEffect(new PotionEffect(Potion.regeneration.getId(), 3600, 2));

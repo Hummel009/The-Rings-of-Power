@@ -1,9 +1,6 @@
 package trop;
 
-import java.util.ArrayList;
-
 import com.google.common.base.CaseFormat;
-
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -11,13 +8,14 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Mod(modid = "trop")
 public class TROP {
+	public static final Set<Item> CONTENT = new HashSet<>();
 	@SidedProxy(serverSide = "trop.TROPCommonProxy", clientSide = "trop.TROPClientProxy")
 	public static TROPCommonProxy proxy;
-
-	public static final ArrayList<Item> CONTENT = new ArrayList<>();
-
 	public static Item ringGreat;
 
 	public static Item ringNenia;
@@ -41,6 +39,17 @@ public class TROP {
 	public static Item ringUvata;
 	public static Item ringSaita;
 	public static Item ringDvar;
+
+	public static void register(Item item, String field) {
+		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
+		item.setRegistryName(name);
+		item.setUnlocalizedName(name);
+		item.setMaxDamage(0);
+		item.setMaxStackSize(1);
+		item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
+		GameRegistry.registerItem(item, name);
+		CONTENT.add(item);
+	}
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
@@ -96,16 +105,5 @@ public class TROP {
 	@Mod.EventHandler
 	public void onInit(FMLInitializationEvent event) {
 		proxy.registerRenders();
-	}
-
-	public static void register(Item item, String field) {
-		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
-		item.setRegistryName(name);
-		item.setUnlocalizedName(name);
-		item.setMaxDamage(0);
-		item.setMaxStackSize(1);
-		item.setCreativeTab(TROPCreativeTabs.tabRing);
-		GameRegistry.registerItem(item, name);
-		CONTENT.add(item);
 	}
 }

@@ -1,12 +1,6 @@
 package trop;
 
-import net.minecraft.src.Entity;
-import net.minecraft.src.EntityPlayer;
-import net.minecraft.src.Item;
-import net.minecraft.src.ItemStack;
-import net.minecraft.src.Potion;
-import net.minecraft.src.PotionEffect;
-import net.minecraft.src.World;
+import net.minecraft.src.*;
 
 public class TROPItemRingMan extends Item {
 	public TROPItemRingMan(int id) {

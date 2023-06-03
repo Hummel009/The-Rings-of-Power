@@ -23,27 +23,27 @@ class TROP {
 	}
 
 	companion object {
-		var CONTENT = ArrayList<Item>()
-		val ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "trop")
-		val ring_great = ITEMS.register("ring_great") { TROPItemRingGreat() }
-		val ring_nenia = ITEMS.register("ring_nenia") { TROPItemRingNenia() }
-		val ring_naria = ITEMS.register("ring_naria") { TROPItemRingNaria() }
-		val ring_vilia = ITEMS.register("ring_vilia") { TROPItemRingVilia() }
-		val ring_thror = ITEMS.register("ring_thror") { TROPItemRingDwarf() }
-		val ring_thulin = ITEMS.register("ring_thulin") { TROPItemRingDwarf() }
-		val ring_khibil = ITEMS.register("ring_khibil") { TROPItemRingDwarf() }
-		val ring_farin = ITEMS.register("ring_farin") { TROPItemRingDwarf() }
-		val ring_khain = ITEMS.register("ring_khain") { TROPItemRingDwarf() }
-		val ring_baraz = ITEMS.register("ring_baraz") { TROPItemRingDwarf() }
-		val ring_burin = ITEMS.register("ring_burin") { TROPItemRingDwarf() }
-		val ring_murazor = ITEMS.register("ring_murazor") { TROPItemRingMan() }
-		val ring_khommurat = ITEMS.register("ring_khommurat") { TROPItemRingMan() }
-		val ring_akhorahil = ITEMS.register("ring_akhorahil") { TROPItemRingMan() }
-		val ring_morgomir = ITEMS.register("ring_morgomir") { TROPItemRingMan() }
-		val ring_jiindur = ITEMS.register("ring_jiindur") { TROPItemRingMan() }
-		val ring_khamul = ITEMS.register("ring_khamul") { TROPItemRingMan() }
-		val ring_uvata = ITEMS.register("ring_uvata") { TROPItemRingMan() }
-		val ring_saita = ITEMS.register("ring_saita") { TROPItemRingMan() }
-		val ring_dvar = ITEMS.register("ring_dvar") { TROPItemRingMan() }
+		var CONTENT: Set<Item> = HashSet()
+		val ITEMS: DeferredRegister<Item> = DeferredRegister.create(ForgeRegistries.ITEMS, "trop")
+		val RING_GREAT = ITEMS.register("ring_great") { TROPItemRingGreat() }
+		val RING_NENIA = ITEMS.register("ring_nenia") { TROPItemRingNenia() }
+		val RING_NARIA = ITEMS.register("ring_naria") { TROPItemRingNaria() }
+		val RING_VILIA = ITEMS.register("ring_vilia") { TROPItemRingVilia() }
+		val RING_THROR = ITEMS.register("ring_thror") { TROPItemRingDwarf() }
+		val RING_THULIN = ITEMS.register("ring_thulin") { TROPItemRingDwarf() }
+		val RING_KHIBIL = ITEMS.register("ring_khibil") { TROPItemRingDwarf() }
+		val RING_FARIN = ITEMS.register("ring_farin") { TROPItemRingDwarf() }
+		val RING_KHAIN = ITEMS.register("ring_khain") { TROPItemRingDwarf() }
+		val RING_BARAZ = ITEMS.register("ring_baraz") { TROPItemRingDwarf() }
+		val RING_BURIN = ITEMS.register("ring_burin") { TROPItemRingDwarf() }
+		val RING_MURAZOR = ITEMS.register("ring_murazor") { TROPItemRingMan() }
+		val RING_KHOMMURAT = ITEMS.register("ring_khommurat") { TROPItemRingMan() }
+		val RING_AKHORAHIL = ITEMS.register("ring_akhorahil") { TROPItemRingMan() }
+		val RING_MORGOMIR = ITEMS.register("ring_morgomir") { TROPItemRingMan() }
+		val RING_JIINDUR = ITEMS.register("ring_jiindur") { TROPItemRingMan() }
+		val RING_KHAMUL = ITEMS.register("ring_khamul") { TROPItemRingMan() }
+		val RING_UVATA = ITEMS.register("ring_uvata") { TROPItemRingMan() }
+		val RING_SAITA = ITEMS.register("ring_saita") { TROPItemRingMan() }
+		val RING_DVAR = ITEMS.register("ring_dvar") { TROPItemRingMan() }
 	}
 }

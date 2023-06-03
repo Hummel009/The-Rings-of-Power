@@ -1,10 +1,6 @@
 package trop;
 
-import java.util.ArrayList;
-import java.util.Objects;
-
 import com.google.common.base.CaseFormat;
-
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -19,16 +15,20 @@ import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
+
 @Mod(modid = "trop")
 public class TROP {
-	public static final ArrayList<Item> CONTENT = new ArrayList<>();
+	public static final Set<Item> CONTENT = new HashSet<>();
 
 	public static Item ringGreat;
-	
+
 	public static Item ringNaria;
 	public static Item ringNenia;
 	public static Item ringVilia;
-	
+
 	public static Item ringThror;
 	public static Item ringThulin;
 	public static Item ringKhibil;
@@ -36,7 +36,7 @@ public class TROP {
 	public static Item ringKhain;
 	public static Item ringBaraz;
 	public static Item ringBurin;
-	
+
 	public static Item ringMurazor;
 	public static Item ringKhommurat;
 	public static Item ringAkhorahil;
@@ -53,11 +53,11 @@ public class TROP {
 		@SubscribeEvent
 		public static void onRegistryItem(RegistryEvent.Register<Item> event) {
 			ringGreat = new TROPItemRingGreat();
-			
+
 			ringNaria = new TROPItemRingNaria();
 			ringNenia = new TROPItemRingNenia();
 			ringVilia = new TROPItemRingVilia();
-			
+
 			ringThror = new TROPItemRingDwarf();
 			ringThulin = new TROPItemRingDwarf();
 			ringKhibil = new TROPItemRingDwarf();
@@ -65,7 +65,7 @@ public class TROP {
 			ringKhain = new TROPItemRingDwarf();
 			ringBaraz = new TROPItemRingDwarf();
 			ringBurin = new TROPItemRingDwarf();
-			
+
 			ringMurazor = new TROPItemRingMan();
 			ringKhommurat = new TROPItemRingMan();
 			ringAkhorahil = new TROPItemRingMan();
@@ -77,11 +77,11 @@ public class TROP {
 			ringDvar = new TROPItemRingMan();
 
 			register(ringGreat, "ringGreat");
-			
+
 			register(ringNaria, "ringNaria");
 			register(ringNenia, "ringNenia");
 			register(ringVilia, "ringVilia");
-			
+
 			register(ringThror, "ringThror");
 			register(ringThulin, "ringThulin");
 			register(ringKhibil, "ringKhibil");
@@ -89,7 +89,7 @@ public class TROP {
 			register(ringKhain, "ringKhain");
 			register(ringBaraz, "ringBaraz");
 			register(ringBurin, "ringBurin");
-			
+
 			register(ringMurazor, "ringMurazor");
 			register(ringKhommurat, "ringKhommurat");
 			register(ringAkhorahil, "ringAkhorahil");
@@ -118,7 +118,7 @@ public class TROP {
 			item.setUnlocalizedName(name);
 			item.setMaxDamage(0);
 			item.setMaxStackSize(1);
-			item.setCreativeTab(TROPCreativeTabs.tabRing);
+			item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
 			ForgeRegistries.ITEMS.register(item);
 			CONTENT.add(item);
 		}
