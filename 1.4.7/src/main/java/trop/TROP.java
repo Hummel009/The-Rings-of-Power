@@ -8,6 +8,8 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import cpw.mods.fml.relauncher.ReflectionHelper;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
 @Mod(modid = "trop", useMetadata = true)
@@ -36,13 +38,53 @@ public class TROP {
 	public static Item ringSaita;
 	public static Item ringDvar;
 
+	public static void setIconIndex(Item item, int value) {
+		try {
+			ReflectionHelper.setPrivateValue(Item.class, item, value, "cl");
+		} catch (Exception e) {
+			item.setIconIndex(value);
+		}
+	}
+
+	public static void setItemName(Item item, String value) {
+		try {
+			ReflectionHelper.setPrivateValue(Item.class, item, "item." + value, "cp");
+		} catch (Exception e) {
+			item.setItemName(value);
+		}
+	}
+
+	public static void setMaxDamage(Item item, int value) {
+		try {
+			ReflectionHelper.setPrivateValue(Item.class, item, 0, "b");
+		} catch (Exception e) {
+			item.setMaxDamage(0);
+		}
+	}
+
+	public static void setMaxStackSize(Item item, int value) {
+		try {
+			ReflectionHelper.setPrivateValue(Item.class, item, 1, "ck");
+		} catch (Exception e) {
+			item.setMaxStackSize(1);
+		}
+	}
+
+	public static void setCreativeTab(Item item, CreativeTabs value) {
+		try {
+			ReflectionHelper.setPrivateValue(Item.class, item, TROPCreativeTabs.TAB_RINGS, "a");
+		} catch (Exception e) {
+			item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
+		}
+	}
+
 	public static void register(Item item, String field) {
 		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
 		item.setTextureFile("/assets/trop/textures/items.png");
-		item.setItemName(name);
-		item.setMaxDamage(0);
-		item.setMaxStackSize(1);
-		item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
+		setItemName(item, name);
+		setMaxDamage(item, 0);
+		setMaxStackSize(item, 1);
+		setCreativeTab(item, TROPCreativeTabs.TAB_RINGS);
 		GameRegistry.registerItem(item, name);
 	}
 
@@ -78,26 +120,26 @@ public class TROP {
 		ringDvar = new TROPItemRingMan(TROPConfig.idRingDvar - 256);
 
 		int id = 0;
-		ringAkhorahil.setIconIndex(id++);
-		ringBaraz.setIconIndex(id++);
-		ringBurin.setIconIndex(id++);
-		ringDvar.setIconIndex(id++);
-		ringFarin.setIconIndex(id++);
-		ringGreat.setIconIndex(id++);
-		ringJiindur.setIconIndex(id++);
-		ringKhain.setIconIndex(id++);
-		ringKhamul.setIconIndex(id++);
-		ringKhibil.setIconIndex(id++);
-		ringKhommurat.setIconIndex(id++);
-		ringMorgomir.setIconIndex(id++);
-		ringMurazor.setIconIndex(id++);
-		ringNaria.setIconIndex(id++);
-		ringNenia.setIconIndex(id++);
-		ringSaita.setIconIndex(id++);
-		ringThror.setIconIndex(id++);
-		ringThulin.setIconIndex(id++);
-		ringUvata.setIconIndex(id++);
-		ringVilia.setIconIndex(id++);
+		setIconIndex(ringAkhorahil, id++);
+		setIconIndex(ringBaraz, id++);
+		setIconIndex(ringBurin, id++);
+		setIconIndex(ringDvar, id++);
+		setIconIndex(ringFarin, id++);
+		setIconIndex(ringGreat, id++);
+		setIconIndex(ringJiindur, id++);
+		setIconIndex(ringKhain, id++);
+		setIconIndex(ringKhamul, id++);
+		setIconIndex(ringKhibil, id++);
+		setIconIndex(ringKhommurat, id++);
+		setIconIndex(ringMorgomir, id++);
+		setIconIndex(ringMurazor, id++);
+		setIconIndex(ringNaria, id++);
+		setIconIndex(ringNenia, id++);
+		setIconIndex(ringSaita, id++);
+		setIconIndex(ringThror, id++);
+		setIconIndex(ringThulin, id++);
+		setIconIndex(ringUvata, id++);
+		setIconIndex(ringVilia, id++);
 
 		register(ringGreat, "ringGreat");
 
