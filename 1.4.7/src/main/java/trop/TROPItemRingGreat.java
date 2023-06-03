@@ -7,6 +7,8 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
+import static trop.TROPReflectionHelper.addPotionEffect;
+
 public class TROPItemRingGreat extends TROPItemRingBase {
 	public TROPItemRingGreat(int id) {
 		super(id);

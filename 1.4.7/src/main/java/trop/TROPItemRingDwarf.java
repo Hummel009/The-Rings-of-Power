@@ -7,6 +7,8 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
+import static trop.TROPReflectionHelper.addPotionEffect;
+
 public class TROPItemRingDwarf extends TROPItemRingBase {
 	public TROPItemRingDwarf(int id) {
 		super(id);
