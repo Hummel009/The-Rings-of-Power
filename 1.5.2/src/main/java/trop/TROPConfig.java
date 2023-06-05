@@ -38,26 +38,26 @@ public class TROPConfig {
 	private static void setDefaultValues() {
 		try {
 			configuration.load();
-			idRingGreat = configuration.get("item", "Ring Great", 772).getInt(772);
-			idRingNenia = configuration.get("item", "Ring Nenia", 773).getInt(773);
-			idRingNaria = configuration.get("item", "Ring Naria", 774).getInt(774);
-			idRingVilia = configuration.get("item", "Ring Vilia", 775).getInt(775);
-			idRingThror = configuration.get("item", "Ring Thror", 776).getInt(776);
-			idRingThulin = configuration.get("item", "Ring Thulin", 777).getInt(777);
-			idRingKhibil = configuration.get("item", "Ring Khibil", 778).getInt(778);
-			idRingFarin = configuration.get("item", "Ring Farin", 779).getInt(779);
-			idRingKhain = configuration.get("item", "Ring Khain", 780).getInt(780);
-			idRingBaraz = configuration.get("item", "Ring Baraz", 781).getInt(781);
-			idRingBurin = configuration.get("item", "Ring Burin", 782).getInt(782);
-			idRingMurazor = configuration.get("item", "Ring Murazor", 783).getInt(783);
-			idRingKhommurat = configuration.get("item", "Ring Khommurat", 784).getInt(784);
-			idRingAkhorahil = configuration.get("item", "Ring Akhorahil", 785).getInt(785);
-			idRingMorgomir = configuration.get("item", "Ring Morgomir", 786).getInt(786);
-			idRingJiindur = configuration.get("item", "Ring Jiindur", 787).getInt(787);
-			idRingKhamul = configuration.get("item", "Ring Khamul", 788).getInt(788);
-			idRingUvata = configuration.get("item", "Ring Uvata", 789).getInt(789);
-			idRingSaita = configuration.get("item", "Ring Saita", 790).getInt(790);
-			idRingDvar = configuration.get("item", "Ring Dvar", 791).getInt(791);
+			idRingGreat = configuration.get("item", "Ring Great", 890).getInt(890);
+			idRingNenia = configuration.get("item", "Ring Nenia", 891).getInt(891);
+			idRingNaria = configuration.get("item", "Ring Naria", 892).getInt(892);
+			idRingVilia = configuration.get("item", "Ring Vilia", 893).getInt(893);
+			idRingThror = configuration.get("item", "Ring Thror", 894).getInt(894);
+			idRingThulin = configuration.get("item", "Ring Thulin", 895).getInt(895);
+			idRingKhibil = configuration.get("item", "Ring Khibil", 896).getInt(896);
+			idRingFarin = configuration.get("item", "Ring Farin", 897).getInt(897);
+			idRingKhain = configuration.get("item", "Ring Khain", 898).getInt(898);
+			idRingBaraz = configuration.get("item", "Ring Baraz", 899).getInt(899);
+			idRingBurin = configuration.get("item", "Ring Burin", 900).getInt(900);
+			idRingMurazor = configuration.get("item", "Ring Murazor", 901).getInt(901);
+			idRingKhommurat = configuration.get("item", "Ring Khommurat", 902).getInt(902);
+			idRingAkhorahil = configuration.get("item", "Ring Akhorahil", 903).getInt(903);
+			idRingMorgomir = configuration.get("item", "Ring Morgomir", 904).getInt(904);
+			idRingJiindur = configuration.get("item", "Ring Jiindur", 905).getInt(905);
+			idRingKhamul = configuration.get("item", "Ring Khamul", 906).getInt(906);
+			idRingUvata = configuration.get("item", "Ring Uvata", 907).getInt(907);
+			idRingSaita = configuration.get("item", "Ring Saita", 908).getInt(908);
+			idRingDvar = configuration.get("item", "Ring Dvar", 909).getInt(909);
 		} catch (Exception e) {
 			FMLLog.log(Level.SEVERE, e, "TROP has a problem loading it's configuration");
 		} finally {
