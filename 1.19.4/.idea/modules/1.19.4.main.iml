@@ -4,14 +4,18 @@
     <facet type="minecraft" name="Minecraft">
       <configuration>
         <autoDetectTypes>
-          <platformType>MCP</platformType>
-          <platformType>MIXIN</platformType>
           <platformType>FORGE</platformType>
+          <platformType>MIXIN</platformType>
+          <platformType>MCP</platformType>
         </autoDetectTypes>
       </configuration>
     </facet>
   </component>
   <component name="McpModuleSettings">
-    <option name="srgType" value="SRG" />
+    <option name="mappingFile" value="D:\Eclipse\Minecraft\The-Rings-of-Power\1.19.4\build\createMcpToSrg\output.tsrg" />
+    <option name="mcpVersion" value="official_1.19.4" />
+    <option name="minecraftVersion" value="1.19.4" />
+    <option name="platformVersion" value="45.0.64" />
+    <option name="srgType" value="TSRG" />
   </component>
 </module>

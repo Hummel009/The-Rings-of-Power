@@ -11,6 +11,10 @@
     </facet>
   </component>
   <component name="McpModuleSettings">
-    <option name="srgType" value="SRG" />
+    <option name="mappingFile" value="D:\Eclipse\Minecraft\The-Rings-of-Power\1.14.4\build\createMcpToSrg\output.tsrg" />
+    <option name="mcpVersion" value="snapshot_20190719-1.14.3" />
+    <option name="minecraftVersion" value="1.14.4" />
+    <option name="platformVersion" value="28.2.26" />
+    <option name="srgType" value="TSRG" />
   </component>
 </module>

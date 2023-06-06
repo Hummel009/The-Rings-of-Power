@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="runClient" type="Application" factoryName="Application" singleton="false">
+  <configuration default="false" name="runClient 1.12.2" type="Application" factoryName="Application" singleton="false">
     <envs>
       <env name="MCP_TO_SRG" value="$PROJECT_DIR$/../1.12.2\build\createSrgToMcp\output.srg" />
       <env name="MOD_CLASSES" value="$PROJECT_DIR$/../1.12.2\build\resources\main;$PROJECT_DIR$/../1.12.2\build\classes\java\main" />

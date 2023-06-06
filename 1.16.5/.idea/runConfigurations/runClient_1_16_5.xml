@@ -1,0 +1,24 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="runClient 1.16.5" type="Application" factoryName="Application" singleton="false">
+    <envs>
+      <env name="MOD_CLASSES" value="examplemod%%$PROJECT_DIR$/../1.16.5\build\resources\main;examplemod%%$PROJECT_DIR$/../1.16.5\build\classes\java\main" />
+      <env name="MCP_MAPPINGS" value="official_1.16.5" />
+      <env name="MCP_VERSION" value="20210115.111550" />
+      <env name="FORGE_VERSION" value="36.2.39" />
+      <env name="assetIndex" value="1.16" />
+      <env name="assetDirectory" value="C:\Users\Hummel009\.gradle\caches\forge_gradle\assets" />
+      <env name="nativesDirectory" value="$PROJECT_DIR$/../1.16.5\build\natives" />
+      <env name="FORGE_GROUP" value="net.minecraftforge" />
+      <env name="target" value="fmluserdevclient" />
+      <env name="MC_VERSION" value="1.16.5" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="net.minecraftforge.userdev.LaunchTesting" />
+    <module name="1.16.5.main" />
+    <option name="VM_PARAMETERS" value="-Dforge.logging.console.level=debug -Dforge.logging.markers=REGISTRIES -XX:+IgnoreUnrecognizedVMOptions --add-exports=java.base/sun.security.util=ALL-UNNAMED --add-exports=jdk.naming.dns/com.sun.jndi.dns=java.naming --add-opens=java.base/java.util.jar=ALL-UNNAMED -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump &quot;-Dos.name=Windows 10&quot; -Dos.version=10.0" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/run" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+      <option name="Gradle.BeforeRunTask" enabled="true" tasks=":prepareRunClient" externalProjectPath="$PROJECT_DIR$" />
+    </method>
+  </configuration>
+</component>

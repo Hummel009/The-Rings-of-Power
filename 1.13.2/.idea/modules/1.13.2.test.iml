@@ -5,17 +5,12 @@
       <configuration>
         <autoDetectTypes>
           <platformType>FORGE</platformType>
-          <platformType>MIXIN</platformType>
           <platformType>MCP</platformType>
         </autoDetectTypes>
       </configuration>
     </facet>
   </component>
   <component name="McpModuleSettings">
-    <option name="mappingFile" value="D:\Eclipse\Minecraft\The-Rings-of-Power\1.17.1\build\createMcpToSrg\output.tsrg" />
-    <option name="mcpVersion" value="official_1.17.1" />
-    <option name="minecraftVersion" value="1.17.1" />
-    <option name="platformVersion" value="37.1.1" />
-    <option name="srgType" value="TSRG" />
+    <option name="srgType" value="SRG" />
   </component>
 </module>
