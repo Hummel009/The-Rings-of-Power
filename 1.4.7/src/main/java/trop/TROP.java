@@ -10,7 +10,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.item.Item;
 
-import static trop.TROPReflectionHelper.*;
+import static trop.TROPObfuscationHelper.*;
 
 @Mod(modid = "trop", useMetadata = true)
 public class TROP {
@@ -79,27 +79,26 @@ public class TROP {
 		ringSaita = new TROPItemRingMan(TROPConfig.idRingSaita - 256);
 		ringDvar = new TROPItemRingMan(TROPConfig.idRingDvar - 256);
 
-		int id = 0;
-		setIconIndex(ringAkhorahil, id++);
-		setIconIndex(ringBaraz, id++);
-		setIconIndex(ringBurin, id++);
-		setIconIndex(ringDvar, id++);
-		setIconIndex(ringFarin, id++);
-		setIconIndex(ringGreat, id++);
-		setIconIndex(ringJiindur, id++);
-		setIconIndex(ringKhain, id++);
-		setIconIndex(ringKhamul, id++);
-		setIconIndex(ringKhibil, id++);
-		setIconIndex(ringKhommurat, id++);
-		setIconIndex(ringMorgomir, id++);
-		setIconIndex(ringMurazor, id++);
-		setIconIndex(ringNaria, id++);
-		setIconIndex(ringNenia, id++);
-		setIconIndex(ringSaita, id++);
-		setIconIndex(ringThror, id++);
-		setIconIndex(ringThulin, id++);
-		setIconIndex(ringUvata, id++);
-		setIconIndex(ringVilia, id++);
+		setIconIndex(ringAkhorahil, 0);
+		setIconIndex(ringBaraz, 1);
+		setIconIndex(ringBurin, 2);
+		setIconIndex(ringDvar, 3);
+		setIconIndex(ringFarin, 4);
+		setIconIndex(ringGreat, 5);
+		setIconIndex(ringJiindur, 6);
+		setIconIndex(ringKhain, 7);
+		setIconIndex(ringKhamul, 8);
+		setIconIndex(ringKhibil, 9);
+		setIconIndex(ringKhommurat, 10);
+		setIconIndex(ringMorgomir, 11);
+		setIconIndex(ringMurazor, 12);
+		setIconIndex(ringNaria, 13);
+		setIconIndex(ringNenia, 14);
+		setIconIndex(ringSaita, 15);
+		setIconIndex(ringThror, 16);
+		setIconIndex(ringThulin, 17);
+		setIconIndex(ringUvata, 18);
+		setIconIndex(ringVilia, 19);
 
 		register(ringGreat, "ringGreat");
 

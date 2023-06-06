@@ -7,7 +7,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
-import static trop.TROPReflectionHelper.addPotionEffect;
+import static trop.TROPObfuscationHelper.addPotionEffect;
 
 public class TROPItemRingNaria extends TROPItemRingBase {
 	public TROPItemRingNaria(int id) {
