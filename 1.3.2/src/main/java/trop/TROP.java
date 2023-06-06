@@ -9,8 +9,6 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.src.Item;
 
-import static trop.TROPReflectionHelper.*;
-
 @Mod(modid = "trop", useMetadata = true)
 public class TROP {
 	public static Item ringGreat;
@@ -40,10 +38,10 @@ public class TROP {
 	public static void register(Item item, String field) {
 		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
 		item.setTextureFile("/assets/trop/textures/items.png");
-		setItemName(item, name);
-		setMaxDamage(item, 0);
-		setMaxStackSize(item, 1);
-		setCreativeTab(item, TROPCreativeTabs.TAB_RINGS);
+		TROPObfuscationHelper.setItemName(item, name);
+		TROPObfuscationHelper.setMaxDamage(item, 0);
+		TROPObfuscationHelper.setMaxStackSize(item, 1);
+		TROPObfuscationHelper.setCreativeTab(item, TROPCreativeTabs.TAB_RINGS);
 		LanguageRegistry.instance().addNameForObject(item, "en_US", TROPLang.enUS.get("item." + name + ".name"));
 		LanguageRegistry.instance().addNameForObject(item, "es_AR", TROPLang.esES.get("item." + name + ".name"));
 		LanguageRegistry.instance().addNameForObject(item, "es_ES", TROPLang.esES.get("item." + name + ".name"));
@@ -83,27 +81,26 @@ public class TROP {
 		ringSaita = new TROPItemRingMan(TROPConfig.idRingSaita - 256);
 		ringDvar = new TROPItemRingMan(TROPConfig.idRingDvar - 256);
 
-		int id = 0;
-		setIconIndex(ringAkhorahil, id++);
-		setIconIndex(ringBaraz, id++);
-		setIconIndex(ringBurin, id++);
-		setIconIndex(ringDvar, id++);
-		setIconIndex(ringFarin, id++);
-		setIconIndex(ringGreat, id++);
-		setIconIndex(ringJiindur, id++);
-		setIconIndex(ringKhain, id++);
-		setIconIndex(ringKhamul, id++);
-		setIconIndex(ringKhibil, id++);
-		setIconIndex(ringKhommurat, id++);
-		setIconIndex(ringMorgomir, id++);
-		setIconIndex(ringMurazor, id++);
-		setIconIndex(ringNaria, id++);
-		setIconIndex(ringNenia, id++);
-		setIconIndex(ringSaita, id++);
-		setIconIndex(ringThror, id++);
-		setIconIndex(ringThulin, id++);
-		setIconIndex(ringUvata, id++);
-		setIconIndex(ringVilia, id++);
+		TROPObfuscationHelper.setIconIndex(ringAkhorahil, 0);
+		TROPObfuscationHelper.setIconIndex(ringBaraz, 1);
+		TROPObfuscationHelper.setIconIndex(ringBurin, 2);
+		TROPObfuscationHelper.setIconIndex(ringDvar, 3);
+		TROPObfuscationHelper.setIconIndex(ringFarin, 4);
+		TROPObfuscationHelper.setIconIndex(ringGreat, 5);
+		TROPObfuscationHelper.setIconIndex(ringJiindur, 6);
+		TROPObfuscationHelper.setIconIndex(ringKhain, 7);
+		TROPObfuscationHelper.setIconIndex(ringKhamul, 8);
+		TROPObfuscationHelper.setIconIndex(ringKhibil, 9);
+		TROPObfuscationHelper.setIconIndex(ringKhommurat, 10);
+		TROPObfuscationHelper.setIconIndex(ringMorgomir, 11);
+		TROPObfuscationHelper.setIconIndex(ringMurazor, 12);
+		TROPObfuscationHelper.setIconIndex(ringNaria, 13);
+		TROPObfuscationHelper.setIconIndex(ringNenia, 14);
+		TROPObfuscationHelper.setIconIndex(ringSaita, 15);
+		TROPObfuscationHelper.setIconIndex(ringThror, 16);
+		TROPObfuscationHelper.setIconIndex(ringThulin, 17);
+		TROPObfuscationHelper.setIconIndex(ringUvata, 18);
+		TROPObfuscationHelper.setIconIndex(ringVilia, 19);
 
 		register(ringGreat, "ringGreat");
 

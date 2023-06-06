@@ -6,7 +6,7 @@ import net.minecraft.src.EntityLiving;
 import net.minecraft.src.Item;
 import net.minecraft.src.PotionEffect;
 
-public class TROPReflectionHelper {
+public class TROPObfuscationHelper {
 	public static void setIconIndex(Item item, int value) {
 		try {
 			ReflectionHelper.setPrivateValue(Item.class, item, value, "bV");
