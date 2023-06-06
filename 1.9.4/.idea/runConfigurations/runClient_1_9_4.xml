@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="runClient" type="Application" factoryName="Application">
+  <configuration default="false" name="runClient 1.9.4" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="GradleStart" />
     <module name="1.9.4" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/run" />
