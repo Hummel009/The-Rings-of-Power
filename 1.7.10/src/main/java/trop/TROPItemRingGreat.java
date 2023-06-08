@@ -1,12 +1,18 @@
 package trop;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
+
+import java.util.List;
 
 public class TROPItemRingGreat extends Item {
 	@Override
@@ -20,6 +26,18 @@ public class TROPItemRingGreat extends Item {
 	public void onUpdate(ItemStack itemstack, World world, Entity entity, int par4, boolean par5) {
 		if (entity instanceof EntityPlayer) {
 			((EntityPlayer) entity).addPotionEffect(new PotionEffect(Potion.invisibility.getId(), 20, 2));
+		}
+	}
+
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack itemstack, EntityPlayer entityplayer, List<String> info, boolean sus) {
+		for (Potion p : new Potion[]{Potion.invisibility}) {
+			PotionEffect potioneffect = new PotionEffect(new PotionEffect(p.getId(), 20, 1));
+			String s1 = StatCollector.translateToLocal(potioneffect.getEffectName()).trim();
+			if (potioneffect.getAmplifier() > 0) {
+				s1 = s1 + " " + StatCollector.translateToLocal("potion.potency." + potioneffect.getAmplifier()).trim();
+			}
+			info.add(EnumChatFormatting.GRAY + s1);
 		}
 	}
 }
