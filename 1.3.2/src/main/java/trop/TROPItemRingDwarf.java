@@ -1,8 +1,18 @@
 package trop;
 
-import net.minecraft.src.*;
-
 import static trop.TROPObfuscationHelper.addPotionEffect;
+
+import java.util.List;
+
+import cpw.mods.fml.common.Side;
+import cpw.mods.fml.common.asm.SideOnly;
+import net.minecraft.src.Entity;
+import net.minecraft.src.EntityPlayer;
+import net.minecraft.src.ItemStack;
+import net.minecraft.src.Potion;
+import net.minecraft.src.PotionEffect;
+import net.minecraft.src.StatCollector;
+import net.minecraft.src.World;
 
 public class TROPItemRingDwarf extends TROPItemRingBase {
 	public TROPItemRingDwarf(int id) {
@@ -20,6 +30,16 @@ public class TROPItemRingDwarf extends TROPItemRingBase {
 		if (entity instanceof EntityPlayer) {
 			addPotionEffect((EntityPlayer) entity, new PotionEffect(Potion.digSpeed.getId(), 20, 1));
 			addPotionEffect((EntityPlayer) entity, new PotionEffect(Potion.resistance.getId(), 20, 1));
+		}
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack itemstack, List info) {
+		for (Potion p : new Potion[]{Potion.digSpeed, Potion.resistance}) {
+			PotionEffect potioneffect = new PotionEffect(new PotionEffect(p.getId(), 20, 1));
+			String s1 = StatCollector.translateToLocal(potioneffect.getEffectName()).trim();
+			info.add(s1);
 		}
 	}
 }

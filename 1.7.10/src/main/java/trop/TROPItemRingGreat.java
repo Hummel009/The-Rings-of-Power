@@ -1,5 +1,7 @@
 package trop;
 
+import java.util.List;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.Entity;
@@ -11,8 +13,6 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
-
-import java.util.List;
 
 public class TROPItemRingGreat extends Item {
 	@Override
@@ -29,14 +29,12 @@ public class TROPItemRingGreat extends Item {
 		}
 	}
 
+	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemstack, EntityPlayer entityplayer, List<String> info, boolean sus) {
 		for (Potion p : new Potion[]{Potion.invisibility}) {
 			PotionEffect potioneffect = new PotionEffect(new PotionEffect(p.getId(), 20, 1));
 			String s1 = StatCollector.translateToLocal(potioneffect.getEffectName()).trim();
-			if (potioneffect.getAmplifier() > 0) {
-				s1 = s1 + " " + StatCollector.translateToLocal("potion.potency." + potioneffect.getAmplifier()).trim();
-			}
 			info.add(EnumChatFormatting.GRAY + s1);
 		}
 	}
