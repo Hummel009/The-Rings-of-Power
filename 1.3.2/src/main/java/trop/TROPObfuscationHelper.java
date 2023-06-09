@@ -1,12 +1,25 @@
 package trop;
 
 import cpw.mods.fml.relauncher.ReflectionHelper;
-import net.minecraft.src.CreativeTabs;
-import net.minecraft.src.EntityLiving;
-import net.minecraft.src.Item;
-import net.minecraft.src.PotionEffect;
+import net.minecraft.src.*;
 
 public class TROPObfuscationHelper {
+	public static void addPotionEffect(EntityLiving entity, PotionEffect effect) {
+		try {
+			ReflectionHelper.findMethod(EntityLiving.class, null, new String[] { "d" }, PotionEffect.class).invoke(entity, effect);
+		} catch (Exception e) {
+			entity.addPotionEffect(effect);
+		}
+	}
+
+	public static void setCreativeTab(Item item, CreativeTabs value) {
+		try {
+			ReflectionHelper.setPrivateValue(Item.class, item, TROPCreativeTabs.TAB_RINGS, "a");
+		} catch (Exception e) {
+			item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
+		}
+	}
+
 	public static void setIconIndex(Item item, int value) {
 		try {
 			ReflectionHelper.setPrivateValue(Item.class, item, value, "bV");
@@ -36,22 +49,6 @@ public class TROPObfuscationHelper {
 			ReflectionHelper.setPrivateValue(Item.class, item, 1, "bU");
 		} catch (Exception e) {
 			item.setMaxStackSize(1);
-		}
-	}
-
-	public static void setCreativeTab(Item item, CreativeTabs value) {
-		try {
-			ReflectionHelper.setPrivateValue(Item.class, item, TROPCreativeTabs.TAB_RINGS, "a");
-		} catch (Exception e) {
-			item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
-		}
-	}
-
-	public static void addPotionEffect(EntityLiving entity, PotionEffect effect) {
-		try {
-			ReflectionHelper.findMethod(EntityLiving.class, null, new String[]{"d"}, PotionEffect.class).invoke(entity, effect);
-		} catch (Exception e) {
-			entity.addPotionEffect(effect);
 		}
 	}
 }

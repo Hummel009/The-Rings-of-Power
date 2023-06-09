@@ -1,16 +1,28 @@
 package trop;
 
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
+import java.util.List;
+
 import org.jetbrains.annotations.NotNull;
 
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.*;
+import net.minecraft.world.*;
+import net.minecraft.world.effect.*;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.*;
+import net.minecraft.world.level.Level;
+import net.minecraftforge.api.distmarker.*;
+
 public class TROPItemRingGreat extends TROPItemRingBase {
+	@Override
+	@OnlyIn(Dist.CLIENT)
+	public void appendHoverText(ItemStack stack, Level world, List<Component> info, TooltipFlag flag) {
+		for (MobEffect effect: new MobEffect[] { MobEffects.INVISIBILITY }) {
+			MobEffectInstance potioneffect = new MobEffectInstance(effect, 20, 1);
+			info.add(new TranslatableComponent(potioneffect.getDescriptionId()).withStyle(ChatFormatting.DARK_GREEN));
+		}
+	}
 
 	@Override
 	public void inventoryTick(@NotNull ItemStack itemstack, @NotNull Level world, @NotNull Entity entity, int par4, boolean par5) {

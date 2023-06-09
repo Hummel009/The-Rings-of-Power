@@ -1,8 +1,8 @@
 package trop;
 
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
+
+import net.minecraft.world.item.*;
 
 public class TROPCreativeTabs {
 	public static final CreativeModeTab TAB_RINGS = new CreativeModeTab("ringPower") {

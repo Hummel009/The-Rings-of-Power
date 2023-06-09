@@ -1,8 +1,10 @@
 package trop;
 
+import java.util.*;
+
 import com.google.common.base.CaseFormat;
-import net.minecraft.client.renderer.block.model.ModelBakery;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+
+import net.minecraft.client.renderer.block.model.*;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -12,12 +14,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import net.minecraftforge.fml.relauncher.*;
 
 @Mod(modid = "trop")
 public class TROP {
@@ -25,9 +22,9 @@ public class TROP {
 
 	public static Item ringGreat;
 
-	public static Item ringNaria;
-	public static Item ringNenia;
-	public static Item ringVilia;
+	public static Item ringNarya;
+	public static Item ringNenya;
+	public static Item ringVilya;
 
 	public static Item ringThror;
 	public static Item ringThulin;
@@ -38,14 +35,14 @@ public class TROP {
 	public static Item ringBurin;
 
 	public static Item ringMurazor;
-	public static Item ringKhommurat;
+	public static Item ringHoarmurath;
 	public static Item ringAkhorahil;
-	public static Item ringMorgomir;
+	public static Item ringAdunaphel;
 	public static Item ringJiindur;
 	public static Item ringKhamul;
-	public static Item ringUvata;
-	public static Item ringSaita;
-	public static Item ringDvar;
+	public static Item ringUvatha;
+	public static Item ringRen;
+	public static Item ringDwar;
 
 	@ObjectHolder("trop")
 	@Mod.EventBusSubscriber
@@ -54,9 +51,9 @@ public class TROP {
 		public static void onRegistryItem(RegistryEvent.Register<Item> event) {
 			ringGreat = new TROPItemRingGreat();
 
-			ringNaria = new TROPItemRingNaria();
-			ringNenia = new TROPItemRingNenia();
-			ringVilia = new TROPItemRingVilia();
+			ringNarya = new TROPItemRingNarya();
+			ringNenya = new TROPItemRingNenya();
+			ringVilya = new TROPItemRingVilya();
 
 			ringThror = new TROPItemRingDwarf();
 			ringThulin = new TROPItemRingDwarf();
@@ -67,20 +64,20 @@ public class TROP {
 			ringBurin = new TROPItemRingDwarf();
 
 			ringMurazor = new TROPItemRingMan();
-			ringKhommurat = new TROPItemRingMan();
+			ringHoarmurath = new TROPItemRingMan();
 			ringAkhorahil = new TROPItemRingMan();
-			ringMorgomir = new TROPItemRingMan();
+			ringAdunaphel = new TROPItemRingMan();
 			ringJiindur = new TROPItemRingMan();
 			ringKhamul = new TROPItemRingMan();
-			ringUvata = new TROPItemRingMan();
-			ringSaita = new TROPItemRingMan();
-			ringDvar = new TROPItemRingMan();
+			ringUvatha = new TROPItemRingMan();
+			ringRen = new TROPItemRingMan();
+			ringDwar = new TROPItemRingMan();
 
 			register(ringGreat, "ringGreat");
 
-			register(ringNaria, "ringNaria");
-			register(ringNenia, "ringNenia");
-			register(ringVilia, "ringVilia");
+			register(ringNarya, "ringNarya");
+			register(ringNenya, "ringNenya");
+			register(ringVilya, "ringVilya");
 
 			register(ringThror, "ringThror");
 			register(ringThulin, "ringThulin");
@@ -91,14 +88,14 @@ public class TROP {
 			register(ringBurin, "ringBurin");
 
 			register(ringMurazor, "ringMurazor");
-			register(ringKhommurat, "ringKhommurat");
+			register(ringHoarmurath, "ringHoarmurath");
 			register(ringAkhorahil, "ringAkhorahil");
-			register(ringMorgomir, "ringMorgomir");
+			register(ringAdunaphel, "ringAdunaphel");
 			register(ringJiindur, "ringJiindur");
 			register(ringKhamul, "ringKhamul");
-			register(ringUvata, "ringUvata");
-			register(ringSaita, "ringSaita");
-			register(ringDvar, "ringDvar");
+			register(ringUvatha, "ringUvatha");
+			register(ringRen, "ringRen");
+			register(ringDwar, "ringDwar");
 		}
 
 		@SubscribeEvent

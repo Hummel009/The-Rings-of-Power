@@ -11,9 +11,9 @@ import net.minecraft.item.Item;
 public class TROP {
 	public static Item ringGreat;
 
-	public static Item ringNenia;
-	public static Item ringNaria;
-	public static Item ringVilia;
+	public static Item ringNenya;
+	public static Item ringNarya;
+	public static Item ringVilya;
 
 	public static Item ringThror;
 	public static Item ringThulin;
@@ -24,32 +24,22 @@ public class TROP {
 	public static Item ringBurin;
 
 	public static Item ringMurazor;
-	public static Item ringKhommurat;
+	public static Item ringHoarmurath;
 	public static Item ringAkhorahil;
-	public static Item ringMorgomir;
+	public static Item ringAdunaphel;
 	public static Item ringJiindur;
 	public static Item ringKhamul;
-	public static Item ringUvata;
-	public static Item ringSaita;
-	public static Item ringDvar;
-
-	private static void register(Item item, String field) {
-		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
-		item.setTextureName("trop:" + name);
-		item.setUnlocalizedName(name);
-		item.setMaxDamage(0);
-		item.setMaxStackSize(1);
-		item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
-		GameRegistry.registerItem(item, name);
-	}
+	public static Item ringUvatha;
+	public static Item ringRen;
+	public static Item ringDwar;
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		ringGreat = new TROPItemRingGreat();
 
-		ringNenia = new TROPItemRingNenia();
-		ringNaria = new TROPItemRingNaria();
-		ringVilia = new TROPItemRingVilia();
+		ringNenya = new TROPItemRingNenya();
+		ringNarya = new TROPItemRingNarya();
+		ringVilya = new TROPItemRingVilya();
 
 		ringThror = new TROPItemRingDwarf();
 		ringThulin = new TROPItemRingDwarf();
@@ -60,20 +50,20 @@ public class TROP {
 		ringBurin = new TROPItemRingDwarf();
 
 		ringMurazor = new TROPItemRingMan();
-		ringKhommurat = new TROPItemRingMan();
+		ringHoarmurath = new TROPItemRingMan();
 		ringAkhorahil = new TROPItemRingMan();
-		ringMorgomir = new TROPItemRingMan();
+		ringAdunaphel = new TROPItemRingMan();
 		ringJiindur = new TROPItemRingMan();
 		ringKhamul = new TROPItemRingMan();
-		ringUvata = new TROPItemRingMan();
-		ringSaita = new TROPItemRingMan();
-		ringDvar = new TROPItemRingMan();
+		ringUvatha = new TROPItemRingMan();
+		ringRen = new TROPItemRingMan();
+		ringDwar = new TROPItemRingMan();
 
 		register(ringGreat, "ringGreat");
 
-		register(ringNenia, "ringNenia");
-		register(ringNaria, "ringNaria");
-		register(ringVilia, "ringVilia");
+		register(ringNenya, "ringNenya");
+		register(ringNarya, "ringNarya");
+		register(ringVilya, "ringVilya");
 
 		register(ringThror, "ringThror");
 		register(ringThulin, "ringThulin");
@@ -84,13 +74,23 @@ public class TROP {
 		register(ringBurin, "ringBurin");
 
 		register(ringMurazor, "ringMurazor");
-		register(ringKhommurat, "ringKhommurat");
+		register(ringHoarmurath, "ringHoarmurath");
 		register(ringAkhorahil, "ringAkhorahil");
-		register(ringMorgomir, "ringMorgomir");
+		register(ringAdunaphel, "ringAdunaphel");
 		register(ringJiindur, "ringJiindur");
 		register(ringKhamul, "ringKhamul");
-		register(ringUvata, "ringUvata");
-		register(ringSaita, "ringSaita");
-		register(ringDvar, "ringDvar");
+		register(ringUvatha, "ringUvatha");
+		register(ringRen, "ringRen");
+		register(ringDwar, "ringDwar");
+	}
+
+	private static void register(Item item, String field) {
+		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
+		item.setTextureName("trop:" + name);
+		item.setUnlocalizedName(name);
+		item.setMaxDamage(0);
+		item.setMaxStackSize(1);
+		item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
+		GameRegistry.registerItem(item, name);
 	}
 }

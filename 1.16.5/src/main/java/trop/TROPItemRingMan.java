@@ -1,22 +1,32 @@
 package trop;
 
+import java.util.List;
+
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Effects;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
+import net.minecraft.potion.*;
+import net.minecraft.util.*;
+import net.minecraft.util.text.*;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.*;
 
 public class TROPItemRingMan extends TROPItemRingBase {
+	@Override
+	@OnlyIn(Dist.CLIENT)
+	public void appendHoverText(ItemStack stack, World world, List<ITextComponent> info, ITooltipFlag flag) {
+		for (Effect effect: new Effect[] { Effects.DAMAGE_BOOST, Effects.NIGHT_VISION }) {
+			EffectInstance potioneffect = new EffectInstance(effect, 20, 1);
+			info.add(new TranslationTextComponent(potioneffect.getDescriptionId()).withStyle(TextFormatting.DARK_GREEN));
+		}
+	}
 
 	@Override
 	public void inventoryTick(ItemStack itemstack, World world, Entity entity, int par4, boolean par5) {
 		if (entity instanceof PlayerEntity) {
 			((PlayerEntity) entity).addEffect(new EffectInstance(Effects.DAMAGE_BOOST, 20, 1));
 			((PlayerEntity) entity).addEffect(new EffectInstance(Effects.NIGHT_VISION, 220));
-			((PlayerEntity) entity).addEffect(new EffectInstance(Effects.DAMAGE_RESISTANCE, 20, 1));
 		}
 	}
 

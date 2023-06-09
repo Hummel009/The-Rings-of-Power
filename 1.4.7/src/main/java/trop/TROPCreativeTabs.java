@@ -5,10 +5,7 @@ import net.minecraft.item.Item;
 
 public class TROPCreativeTabs {
 	public static final CreativeTabs TAB_RINGS = new CreativeTabs("ringPower") {
-		public Item d() {
-			return getTabIconItem();
-		}
-
+		@Override
 		public Item getTabIconItem() {
 			return TROP.ringBaraz;
 		}

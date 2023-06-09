@@ -1,15 +1,13 @@
 package trop;
 
-import com.google.common.base.CaseFormat;
-import net.minecraft.item.Item;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import java.util.*;
 
-import java.util.HashSet;
-import java.util.Set;
+import com.google.common.base.CaseFormat;
+
+import net.minecraft.item.Item;
+import net.minecraftforge.fml.common.*;
+import net.minecraftforge.fml.common.event.*;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 @Mod(modid = "trop")
 public class TROP {
@@ -18,9 +16,9 @@ public class TROP {
 	public static TROPCommonProxy proxy;
 	public static Item ringGreat;
 
-	public static Item ringNenia;
-	public static Item ringNaria;
-	public static Item ringVilia;
+	public static Item ringNenya;
+	public static Item ringNarya;
+	public static Item ringVilya;
 
 	public static Item ringThror;
 	public static Item ringThulin;
@@ -31,33 +29,27 @@ public class TROP {
 	public static Item ringBurin;
 
 	public static Item ringMurazor;
-	public static Item ringKhommurat;
+	public static Item ringHoarmurath;
 	public static Item ringAkhorahil;
-	public static Item ringMorgomir;
+	public static Item ringAdunaphel;
 	public static Item ringJiindur;
 	public static Item ringKhamul;
-	public static Item ringUvata;
-	public static Item ringSaita;
-	public static Item ringDvar;
+	public static Item ringUvatha;
+	public static Item ringRen;
+	public static Item ringDwar;
 
-	public static void register(Item item, String field) {
-		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
-		item.setRegistryName(name);
-		item.setUnlocalizedName(name);
-		item.setMaxDamage(0);
-		item.setMaxStackSize(1);
-		item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
-		ForgeRegistries.ITEMS.register(item);
-		CONTENT.add(item);
+	@Mod.EventHandler
+	public void onInit(FMLInitializationEvent event) {
+		proxy.registerRenders();
 	}
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		ringGreat = new TROPItemRingGreat();
 
-		ringNenia = new TROPItemRingNenia();
-		ringNaria = new TROPItemRingNaria();
-		ringVilia = new TROPItemRingVilia();
+		ringNenya = new TROPItemRingNenya();
+		ringNarya = new TROPItemRingNarya();
+		ringVilya = new TROPItemRingVilya();
 
 		ringThror = new TROPItemRingDwarf();
 		ringThulin = new TROPItemRingDwarf();
@@ -68,20 +60,20 @@ public class TROP {
 		ringBurin = new TROPItemRingDwarf();
 
 		ringMurazor = new TROPItemRingMan();
-		ringKhommurat = new TROPItemRingMan();
+		ringHoarmurath = new TROPItemRingMan();
 		ringAkhorahil = new TROPItemRingMan();
-		ringMorgomir = new TROPItemRingMan();
+		ringAdunaphel = new TROPItemRingMan();
 		ringJiindur = new TROPItemRingMan();
 		ringKhamul = new TROPItemRingMan();
-		ringUvata = new TROPItemRingMan();
-		ringSaita = new TROPItemRingMan();
-		ringDvar = new TROPItemRingMan();
+		ringUvatha = new TROPItemRingMan();
+		ringRen = new TROPItemRingMan();
+		ringDwar = new TROPItemRingMan();
 
 		register(ringGreat, "ringGreat");
 
-		register(ringNenia, "ringNenia");
-		register(ringNaria, "ringNaria");
-		register(ringVilia, "ringVilia");
+		register(ringNenya, "ringNenya");
+		register(ringNarya, "ringNarya");
+		register(ringVilya, "ringVilya");
 
 		register(ringThror, "ringThror");
 		register(ringThulin, "ringThulin");
@@ -92,18 +84,24 @@ public class TROP {
 		register(ringBurin, "ringBurin");
 
 		register(ringMurazor, "ringMurazor");
-		register(ringKhommurat, "ringKhommurat");
+		register(ringHoarmurath, "ringHoarmurath");
 		register(ringAkhorahil, "ringAkhorahil");
-		register(ringMorgomir, "ringMorgomir");
+		register(ringAdunaphel, "ringAdunaphel");
 		register(ringJiindur, "ringJiindur");
 		register(ringKhamul, "ringKhamul");
-		register(ringUvata, "ringUvata");
-		register(ringSaita, "ringSaita");
-		register(ringDvar, "ringDvar");
+		register(ringUvatha, "ringUvatha");
+		register(ringRen, "ringRen");
+		register(ringDwar, "ringDwar");
 	}
 
-	@Mod.EventHandler
-	public void onInit(FMLInitializationEvent event) {
-		proxy.registerRenders();
+	public static void register(Item item, String field) {
+		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
+		item.setRegistryName(name);
+		item.setUnlocalizedName(name);
+		item.setMaxDamage(0);
+		item.setMaxStackSize(1);
+		item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
+		ForgeRegistries.ITEMS.register(item);
+		CONTENT.add(item);
 	}
 }

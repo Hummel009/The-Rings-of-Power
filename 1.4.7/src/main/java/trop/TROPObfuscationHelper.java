@@ -7,6 +7,22 @@ import net.minecraft.item.Item;
 import net.minecraft.potion.PotionEffect;
 
 public class TROPObfuscationHelper {
+	public static void addPotionEffect(EntityLiving entity, PotionEffect effect) {
+		try {
+			ReflectionHelper.findMethod(EntityLiving.class, null, new String[] { "b" }, PotionEffect.class).invoke(entity, effect);
+		} catch (Exception e) {
+			entity.addPotionEffect(effect);
+		}
+	}
+
+	public static void setCreativeTab(Item item, CreativeTabs value) {
+		try {
+			ReflectionHelper.setPrivateValue(Item.class, item, TROPCreativeTabs.TAB_RINGS, "a");
+		} catch (Exception e) {
+			item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
+		}
+	}
+
 	public static void setIconIndex(Item item, int value) {
 		try {
 			ReflectionHelper.setPrivateValue(Item.class, item, value, "cl");
@@ -36,22 +52,6 @@ public class TROPObfuscationHelper {
 			ReflectionHelper.setPrivateValue(Item.class, item, 1, "ck");
 		} catch (Exception e) {
 			item.setMaxStackSize(1);
-		}
-	}
-
-	public static void setCreativeTab(Item item, CreativeTabs value) {
-		try {
-			ReflectionHelper.setPrivateValue(Item.class, item, TROPCreativeTabs.TAB_RINGS, "a");
-		} catch (Exception e) {
-			item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
-		}
-	}
-
-	public static void addPotionEffect(EntityLiving entity, PotionEffect effect) {
-		try {
-			ReflectionHelper.findMethod(EntityLiving.class, null, new String[]{"b"}, PotionEffect.class).invoke(entity, effect);
-		} catch (Exception e) {
-			entity.addPotionEffect(effect);
 		}
 	}
 }
