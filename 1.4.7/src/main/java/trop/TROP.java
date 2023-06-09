@@ -1,14 +1,16 @@
 package trop;
 
-import static trop.TROPObfuscationHelper.*;
-
 import com.google.common.base.CaseFormat;
-
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.*;
-import cpw.mods.fml.common.event.*;
-import cpw.mods.fml.common.registry.*;
+import cpw.mods.fml.common.Mod.Init;
+import cpw.mods.fml.common.Mod.PreInit;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.item.Item;
+
+import static trop.TROPObfuscationHelper.*;
 
 @Mod(modid = "trop", useMetadata = true)
 public class TROP {
@@ -35,6 +37,16 @@ public class TROP {
 	public static Item ringUvatha;
 	public static Item ringRen;
 	public static Item ringDwar;
+
+	public static void register(Item item, String field) {
+		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
+		item.setTextureFile("/assets/trop/textures/items.png");
+		setItemName(item, name);
+		setMaxDamage(item, 0);
+		setMaxStackSize(item, 1);
+		setCreativeTab(item, TROPCreativeTabs.TAB_RINGS);
+		GameRegistry.registerItem(item, name);
+	}
 
 	@Init
 	public void onInit(FMLInitializationEvent event) {
@@ -118,15 +130,5 @@ public class TROP {
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
 		TROPConfig.preInit(event);
-	}
-
-	public static void register(Item item, String field) {
-		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
-		item.setTextureFile("/assets/trop/textures/items.png");
-		setItemName(item, name);
-		setMaxDamage(item, 0);
-		setMaxStackSize(item, 1);
-		setCreativeTab(item, TROPCreativeTabs.TAB_RINGS);
-		GameRegistry.registerItem(item, name);
 	}
 }

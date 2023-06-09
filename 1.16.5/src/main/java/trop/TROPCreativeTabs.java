@@ -1,6 +1,7 @@
 package trop;
 
-import net.minecraft.item.*;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 
 public class TROPCreativeTabs {
 	public static final ItemGroup TAB_RINGS = new ItemGroup("ringPower") {

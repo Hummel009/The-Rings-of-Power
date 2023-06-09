@@ -1,7 +1,6 @@
 package trop;
 
 import com.google.common.base.CaseFormat;
-
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -32,6 +31,16 @@ public class TROP {
 	public static Item ringUvatha;
 	public static Item ringRen;
 	public static Item ringDwar;
+
+	private static void register(Item item, String field) {
+		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
+		item.setTextureName("trop:" + name);
+		item.setUnlocalizedName(name);
+		item.setMaxDamage(0);
+		item.setMaxStackSize(1);
+		item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
+		GameRegistry.registerItem(item, name);
+	}
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
@@ -82,15 +91,5 @@ public class TROP {
 		register(ringUvatha, "ringUvatha");
 		register(ringRen, "ringRen");
 		register(ringDwar, "ringDwar");
-	}
-
-	private static void register(Item item, String field) {
-		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
-		item.setTextureName("trop:" + name);
-		item.setUnlocalizedName(name);
-		item.setMaxDamage(0);
-		item.setMaxStackSize(1);
-		item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
-		GameRegistry.registerItem(item, name);
 	}
 }

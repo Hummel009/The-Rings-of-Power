@@ -1,7 +1,8 @@
 package trop;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
 public class TROPCreativeTabs {
 	public static final CreativeTabs TAB_RINGS = new CreativeTabs("ringPower") {

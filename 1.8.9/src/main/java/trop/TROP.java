@@ -1,13 +1,15 @@
 package trop;
 
-import java.util.*;
-
 import com.google.common.base.CaseFormat;
-
 import net.minecraft.item.Item;
-import net.minecraftforge.fml.common.*;
-import net.minecraftforge.fml.common.event.*;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Mod(modid = "trop")
 public class TROP {
@@ -37,6 +39,17 @@ public class TROP {
 	public static Item ringUvatha;
 	public static Item ringRen;
 	public static Item ringDwar;
+
+	public static void register(Item item, String field) {
+		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
+		item.setRegistryName(name);
+		item.setUnlocalizedName(name);
+		item.setMaxDamage(0);
+		item.setMaxStackSize(1);
+		item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
+		GameRegistry.registerItem(item, name);
+		CONTENT.add(item);
+	}
 
 	@Mod.EventHandler
 	public void onInit(FMLInitializationEvent event) {
@@ -92,16 +105,5 @@ public class TROP {
 		register(ringUvatha, "ringUvatha");
 		register(ringRen, "ringRen");
 		register(ringDwar, "ringDwar");
-	}
-
-	public static void register(Item item, String field) {
-		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
-		item.setRegistryName(name);
-		item.setUnlocalizedName(name);
-		item.setMaxDamage(0);
-		item.setMaxStackSize(1);
-		item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
-		GameRegistry.registerItem(item, name);
-		CONTENT.add(item);
 	}
 }

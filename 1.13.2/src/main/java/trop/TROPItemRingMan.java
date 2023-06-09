@@ -1,30 +1,35 @@
 package trop;
 
-import java.util.List;
-
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.*;
-import net.minecraft.util.*;
-import net.minecraft.util.text.*;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.*;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+
+import javax.annotation.Nullable;
+import java.util.List;
 
 public class TROPItemRingMan extends TROPItemRingBase {
 	@Override
 	@OnlyIn(Dist.CLIENT)
-	public void addInformation(ItemStack stack, World world, List<ITextComponent> info, ITooltipFlag flag) {
-		for (Potion effect: new Potion[] { MobEffects.STRENGTH, MobEffects.NIGHT_VISION }) {
-			PotionEffect potioneffect = new PotionEffect(new PotionEffect(effect, 20, 1));
-			info.add(new TextComponentTranslation(potioneffect.getEffectName()).applyTextStyle(TextFormatting.DARK_GREEN));
+	public void addInformation(ItemStack itemStack, @Nullable World world, List<ITextComponent> list, ITooltipFlag tooltipFlag) {
+		for (Potion potion : new Potion[]{MobEffects.STRENGTH, MobEffects.NIGHT_VISION}) {
+			list.add(new TextComponentTranslation(potion.getName()).applyTextStyle(TextFormatting.DARK_GREEN));
 		}
 	}
 
 	@Override
-	public void inventoryTick(ItemStack itemstack, World world, Entity entity, int par4, boolean par5) {
+	public void inventoryTick(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
 		if (entity instanceof EntityPlayer) {
 			((EntityPlayer) entity).addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 20, 1));
 			((EntityPlayer) entity).addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 220));
@@ -32,9 +37,9 @@ public class TROPItemRingMan extends TROPItemRingBase {
 	}
 
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer entity, EnumHand hand) {
-		entity.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 3600, 2));
-		entity.addPotionEffect(new PotionEffect(MobEffects.HEALTH_BOOST, 3800, 2));
-		return super.onItemRightClick(world, entity, hand);
+	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer entityPlayer, EnumHand hand) {
+		entityPlayer.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 3600, 2));
+		entityPlayer.addPotionEffect(new PotionEffect(MobEffects.HEALTH_BOOST, 3800, 2));
+		return super.onItemRightClick(world, entityPlayer, hand);
 	}
 }

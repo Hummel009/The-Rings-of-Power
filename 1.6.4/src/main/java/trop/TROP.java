@@ -1,9 +1,9 @@
 package trop;
 
 import com.google.common.base.CaseFormat;
-
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.event.*;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 
@@ -32,6 +32,16 @@ public class TROP {
 	public static Item ringUvatha;
 	public static Item ringRen;
 	public static Item ringDwar;
+
+	public static void register(Item item, String field) {
+		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
+		item.setTextureName("trop:" + name);
+		item.setUnlocalizedName(name);
+		item.setMaxDamage(0);
+		item.setMaxStackSize(1);
+		item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
+		GameRegistry.registerItem(item, name);
+	}
 
 	@Mod.EventHandler
 	public void onInit(FMLInitializationEvent event) {
@@ -87,15 +97,5 @@ public class TROP {
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		TROPConfig.preInit(event);
-	}
-
-	public static void register(Item item, String field) {
-		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
-		item.setTextureName("trop:" + name);
-		item.setUnlocalizedName(name);
-		item.setMaxDamage(0);
-		item.setMaxStackSize(1);
-		item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
-		GameRegistry.registerItem(item, name);
 	}
 }

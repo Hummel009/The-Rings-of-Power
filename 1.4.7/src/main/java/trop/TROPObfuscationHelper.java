@@ -7,15 +7,15 @@ import net.minecraft.item.Item;
 import net.minecraft.potion.PotionEffect;
 
 public class TROPObfuscationHelper {
-	public static void addPotionEffect(EntityLiving entity, PotionEffect effect) {
+	public static void addPotionEffect(EntityLiving entityLiving, PotionEffect potionEffect) {
 		try {
-			ReflectionHelper.findMethod(EntityLiving.class, null, new String[] { "b" }, PotionEffect.class).invoke(entity, effect);
+			ReflectionHelper.findMethod(EntityLiving.class, null, new String[]{"b"}, PotionEffect.class).invoke(entityLiving, potionEffect);
 		} catch (Exception e) {
-			entity.addPotionEffect(effect);
+			entityLiving.addPotionEffect(potionEffect);
 		}
 	}
 
-	public static void setCreativeTab(Item item, CreativeTabs value) {
+	public static void setCreativeTab(Item item, CreativeTabs creativeTabs) {
 		try {
 			ReflectionHelper.setPrivateValue(Item.class, item, TROPCreativeTabs.TAB_RINGS, "a");
 		} catch (Exception e) {
@@ -23,23 +23,23 @@ public class TROPObfuscationHelper {
 		}
 	}
 
-	public static void setIconIndex(Item item, int value) {
+	public static void setIconIndex(Item item, int i) {
 		try {
-			ReflectionHelper.setPrivateValue(Item.class, item, value, "cl");
+			ReflectionHelper.setPrivateValue(Item.class, item, i, "cl");
 		} catch (Exception e) {
-			item.setIconIndex(value);
+			item.setIconIndex(i);
 		}
 	}
 
-	public static void setItemName(Item item, String value) {
+	public static void setItemName(Item item, String s) {
 		try {
-			ReflectionHelper.setPrivateValue(Item.class, item, "item." + value, "cp");
+			ReflectionHelper.setPrivateValue(Item.class, item, "item." + s, "cp");
 		} catch (Exception e) {
-			item.setItemName(value);
+			item.setItemName(s);
 		}
 	}
 
-	public static void setMaxDamage(Item item, int value) {
+	public static void setMaxDamage(Item item, int i) {
 		try {
 			ReflectionHelper.setPrivateValue(Item.class, item, 0, "b");
 		} catch (Exception e) {
@@ -47,7 +47,7 @@ public class TROPObfuscationHelper {
 		}
 	}
 
-	public static void setMaxStackSize(Item item, int value) {
+	public static void setMaxStackSize(Item item, int i) {
 		try {
 			ReflectionHelper.setPrivateValue(Item.class, item, 1, "ck");
 		} catch (Exception e) {

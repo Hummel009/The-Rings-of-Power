@@ -1,6 +1,7 @@
 package trop;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TROPLang {
 	public static Map<String, String> enUS = new HashMap<String, String>();

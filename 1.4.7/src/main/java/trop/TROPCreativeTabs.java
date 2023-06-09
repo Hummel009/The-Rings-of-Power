@@ -9,5 +9,9 @@ public class TROPCreativeTabs {
 		public Item getTabIconItem() {
 			return TROP.ringBaraz;
 		}
+
+		public Item d() {
+			return getTabIconItem();
+		}
 	};
 }
