@@ -5,10 +5,14 @@ import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLMissingMappingsEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 @Mod(modid = "trop")
@@ -105,5 +109,28 @@ public class TROP {
 		register(ringUvatha, "ringUvatha");
 		register(ringRen, "ringRen");
 		register(ringDwar, "ringDwar");
+	}
+
+	@Mod.EventHandler
+	public void onMissingMappings(FMLMissingMappingsEvent event) {
+		Map<String, Item> renamed = new HashMap<>();
+		renamed.put("dvar", ringDwar);
+		renamed.put("saita", ringRen);
+		renamed.put("uvata", ringUvatha);
+		renamed.put("nenia", ringNenya);
+		renamed.put("naria", ringNarya);
+		renamed.put("vilia", ringVilya);
+		renamed.put("morgomir", ringAdunaphel);
+		renamed.put("khommurat", ringHoarmurath);
+		for (FMLMissingMappingsEvent.MissingMapping mapping : event.get()) {
+			if (mapping.type == GameRegistry.Type.ITEM) {
+				for (Map.Entry<String, Item> entry : renamed.entrySet()) {
+					if (mapping.name.contains(entry.getKey())) {
+						mapping.remap(entry.getValue());
+						break;
+					}
+				}
+			}
+		}
 	}
 }

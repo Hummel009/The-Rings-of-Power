@@ -2,9 +2,13 @@ package trop;
 
 import com.google.common.base.CaseFormat;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.event.FMLMissingMappingsEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Mod(modid = "trop")
 public class TROP {
@@ -91,5 +95,28 @@ public class TROP {
 		register(ringUvatha, "ringUvatha");
 		register(ringRen, "ringRen");
 		register(ringDwar, "ringDwar");
+	}
+
+	@Mod.EventHandler
+	public void onMissingMappings(FMLMissingMappingsEvent event) {
+		Map<String, Item> renamed = new HashMap<>();
+		renamed.put("dvar", ringDwar);
+		renamed.put("saita", ringRen);
+		renamed.put("uvata", ringUvatha);
+		renamed.put("nenia", ringNenya);
+		renamed.put("naria", ringNarya);
+		renamed.put("vilia", ringVilya);
+		renamed.put("morgomir", ringAdunaphel);
+		renamed.put("khommurat", ringHoarmurath);
+		for (FMLMissingMappingsEvent.MissingMapping mapping : event.get()) {
+			if (mapping.type == GameRegistry.Type.ITEM) {
+				for (Map.Entry<String, Item> entry : renamed.entrySet()) {
+					if (mapping.name.contains(entry.getKey())) {
+						mapping.remap(entry.getValue());
+						break;
+					}
+				}
+			}
+		}
 	}
 }

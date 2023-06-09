@@ -2,18 +2,23 @@ package trop;
 
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.MissingMappingsEvent;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Mod("trop")
 public class TROP {
-	public static final Set<Item> CONTENT = new HashSet<>();
+	public static final List<Item> CONTENT = new ArrayList<>();
 
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "trop");
 
@@ -42,8 +47,35 @@ public class TROP {
 	public static final RegistryObject<Item> RING_DWAR = ITEMS.register("ring_dwar", TROPItemRingMan::new);
 
 	public TROP() {
+		IEventBus fmlBus = FMLJavaModLoadingContext.get().getModEventBus();
+		IEventBus forgeBus = MinecraftForge.EVENT_BUS;
+		fmlBus.register(this);
+		forgeBus.register(this);
 		ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(TROPCreativeTabs::addCreativeTab);
+	}
+
+	@Mod.EventBusSubscriber
+	public static class MissingMappingsDetector {
+		@SubscribeEvent
+		public static void onMissingMappings(MissingMappingsEvent event) {
+			Map<String, Item> renamed = new HashMap<>();
+			renamed.put("dvar", RING_DWAR.get());
+			renamed.put("saita", RING_REN.get());
+			renamed.put("uvata", RING_UVATHA.get());
+			renamed.put("nenia", RING_NENYA.get());
+			renamed.put("naria", RING_NARYA.get());
+			renamed.put("vilia", RING_VILYA.get());
+			renamed.put("morgomir", RING_ADUNAPHEL.get());
+			renamed.put("khommurat", RING_HOARMURATH.get());
+			for (MissingMappingsEvent.Mapping<Item> mapping : event.getAllMappings(ForgeRegistries.Keys.ITEMS)) {
+				for (Map.Entry<String, Item> entry : renamed.entrySet()) {
+					if (mapping.getKey().getPath().contains(entry.getKey())) {
+						mapping.remap(entry.getValue());
+						break;
+					}
+				}
+			}
+		}
 	}
 }

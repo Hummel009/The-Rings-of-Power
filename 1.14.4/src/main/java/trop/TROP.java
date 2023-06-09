@@ -4,10 +4,15 @@ import com.google.common.base.CaseFormat;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Mod("trop")
 public class TROP {
@@ -36,7 +41,10 @@ public class TROP {
 	public static Item ringDwar;
 
 	public TROP() {
-		MinecraftForge.EVENT_BUS.register(this);
+		IEventBus fmlBus = FMLJavaModLoadingContext.get().getModEventBus();
+		IEventBus forgeBus = MinecraftForge.EVENT_BUS;
+		fmlBus.register(this);
+		forgeBus.register(this);
 	}
 
 	@EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -96,6 +104,30 @@ public class TROP {
 			String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
 			item.setRegistryName(name);
 			ForgeRegistries.ITEMS.register(item);
+		}
+	}
+
+	@Mod.EventBusSubscriber
+	public static class MissingMappingsDetector {
+		@SubscribeEvent
+		public static void onMissingMappings(RegistryEvent.MissingMappings<Item> event) {
+			Map<String, Item> renamed = new HashMap<>();
+			renamed.put("dvar", ringDwar);
+			renamed.put("saita", ringRen);
+			renamed.put("uvata", ringUvatha);
+			renamed.put("nenia", ringNenya);
+			renamed.put("naria", ringNarya);
+			renamed.put("vilia", ringVilya);
+			renamed.put("morgomir", ringAdunaphel);
+			renamed.put("khommurat", ringHoarmurath);
+			for (RegistryEvent.MissingMappings.Mapping<Item> mapping : event.getAllMappings()) {
+				for (Map.Entry<String, Item> entry : renamed.entrySet()) {
+					if (mapping.key.getPath().contains(entry.getKey())) {
+						mapping.remap(entry.getValue());
+						break;
+					}
+				}
+			}
 		}
 	}
 }

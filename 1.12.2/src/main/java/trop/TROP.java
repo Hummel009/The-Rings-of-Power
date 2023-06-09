@@ -15,9 +15,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 @Mod(modid = "trop")
 public class TROP {
@@ -121,6 +119,30 @@ public class TROP {
 			item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
 			ForgeRegistries.ITEMS.register(item);
 			CONTENT.add(item);
+		}
+	}
+
+	@Mod.EventBusSubscriber
+	public static class MissingMappingsDetector {
+		@SubscribeEvent
+		public static void onMissingMappings(RegistryEvent.MissingMappings<Item> event) {
+			Map<String, Item> renamed = new HashMap<>();
+			renamed.put("dvar", ringDwar);
+			renamed.put("saita", ringRen);
+			renamed.put("uvata", ringUvatha);
+			renamed.put("nenia", ringNenya);
+			renamed.put("naria", ringNarya);
+			renamed.put("vilia", ringVilya);
+			renamed.put("morgomir", ringAdunaphel);
+			renamed.put("khommurat", ringHoarmurath);
+			for (RegistryEvent.MissingMappings.Mapping<Item> mapping : event.getAllMappings()) {
+				for (Map.Entry<String, Item> entry : renamed.entrySet()) {
+					if (mapping.key.getResourcePath().contains(entry.getKey())) {
+						mapping.remap(entry.getValue());
+						break;
+					}
+				}
+			}
 		}
 	}
 }
