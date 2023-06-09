@@ -1,0 +1,25 @@
+item.ring_narya.name=§dПерстень Нар'я§r
+item.ring_nenya.name=§dПерстень Нен'я§r
+item.ring_vilya.name=§dПерстень Віл'я§r
+
+item.ring_thulin.name=§bПерстень Туліна§r
+item.ring_khibil.name=§bПерстень Кібіла§r
+item.ring_farin.name=§bПерстень Фаріна§r
+item.ring_khain.name=§bПерстень Кхаїна§r
+item.ring_baraz.name=§bПерстень Бараза§r
+item.ring_burin.name=§bПерстень Буріна§r
+item.ring_thror.name=§bПерстень Трора§r
+
+item.ring_murazor.name=§cПерстень Короля-Чародія§r
+item.ring_hoarmurath.name=§cПерстень Гоммурата§r
+item.ring_akhorahil.name=§cПерстень Ахорагіля§r
+item.ring_adunaphel.name=§cПерстень Адунафель§r
+item.ring_jiindur.name=§cПерстень Джі Індура§r
+item.ring_khamul.name=§cПерстень Кхамула§r
+item.ring_uvatha.name=§cПерстень Увати§r
+item.ring_ren.name=§cПерстень Рена§r
+item.ring_dwar.name=§cПерстень Двара§r
+
+item.ring_great.name=§6Перстень Всевладдя§r
+
+itemGroup.ringPower=Персні влади

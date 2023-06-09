@@ -1,25 +1,25 @@
-item.ring_narya.name=§dКольцо Нарья
-item.ring_nenya.name=§dКольцо Нэнья
-item.ring_vilya.name=§dКольцо Вилья
+item.ring_narya.name=§dКольцо Нарья§r
+item.ring_nenya.name=§dКольцо Нэнья§r
+item.ring_vilya.name=§dКольцо Вилья§r
 
-item.ring_thulin.name=§bКольцо Тулина
-item.ring_khibil.name=§bКольцо Кибила
-item.ring_farin.name=§bКольцо Фарина
-item.ring_khain.name=§bКольцо Кхаина
-item.ring_baraz.name=§bКольцо Бараза
-item.ring_burin.name=§bКольцо Бурина
-item.ring_thror.name=§bКольцо Трора
+item.ring_thulin.name=§bКольцо Тулина§r
+item.ring_khibil.name=§bКольцо Кибила§r
+item.ring_farin.name=§bКольцо Фарина§r
+item.ring_khain.name=§bКольцо Кхаина§r
+item.ring_baraz.name=§bКольцо Бараза§r
+item.ring_burin.name=§bКольцо Бурина§r
+item.ring_thror.name=§bКольцо Трора§r
 
-item.ring_murazor.name=§cКольцо Короля-Чародея
-item.ring_hoarmurath.name=§cКольцо Хоммурата
-item.ring_akhorahil.name=§cКольцо Ахорахиля
-item.ring_adunaphel.name=§cКольцо Адунафель
-item.ring_jiindur.name=§cКольцо Джи Индура
-item.ring_khamul.name=§cКольцо Кхамула
-item.ring_uvatha.name=§cКольцо Уваты
-item.ring_ren.name=§cКольцо Рена
-item.ring_dwar.name=§cКольцо Двара 
+item.ring_murazor.name=§cКольцо Короля-Чародея§r
+item.ring_hoarmurath.name=§cКольцо Хоммурата§r
+item.ring_akhorahil.name=§cКольцо Ахорахиля§r
+item.ring_adunaphel.name=§cКольцо Адунафель§r
+item.ring_jiindur.name=§cКольцо Джи Индура§r
+item.ring_khamul.name=§cКольцо Кхамула§r
+item.ring_uvatha.name=§cКольцо Уваты§r
+item.ring_ren.name=§cКольцо Рена§r
+item.ring_dwar.name=§cКольцо Двара§r
 
-item.ring_great.name=§6Кольцо Всевластия
+item.ring_great.name=§6Кольцо Всевластия§r
 
-itemGroup.ringPower=Кольца Власти
+itemGroup.ringPower=Кольца власти

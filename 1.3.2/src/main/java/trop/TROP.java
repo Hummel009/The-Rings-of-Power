@@ -50,6 +50,7 @@ public class TROP {
 		LanguageRegistry.instance().addNameForObject(item, "es_MX", TROPLang.esES.get("item." + name + ".name"));
 		LanguageRegistry.instance().addNameForObject(item, "ru_RU", TROPLang.ruRU.get("item." + name + ".name"));
 		LanguageRegistry.instance().addNameForObject(item, "zh_CN", TROPLang.zhCN.get("item." + name + ".name"));
+		LanguageRegistry.instance().addNameForObject(item, "uk_UA", TROPLang.ukUA.get("item." + name + ".name"));
 	}
 
 	@Init
