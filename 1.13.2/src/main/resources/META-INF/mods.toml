@@ -5,7 +5,7 @@ license = "Powered by Hummel009"
 logoFile = "logo.png"
 [[mods]]
 modId = "trop"
-version = "23.06.07"
+version = "23.06.10"
 displayName = "The Rings of Power"
 credits = "Hummel009"
 authors = "Hummel009"
