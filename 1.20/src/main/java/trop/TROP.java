@@ -51,7 +51,11 @@ public class TROP {
 	public static final RegistryObject<Item> RING_REN = ITEMS.register("ring_ren", TROPItemRingMan::new);
 	public static final RegistryObject<Item> RING_DWAR = ITEMS.register("ring_dwar", TROPItemRingMan::new);
 
-	public static final RegistryObject<CreativeModeTab> TAB_RINGS = CREATIVE_TABS.register("example", () -> CreativeModeTab.builder().title(Component.translatable("itemGroup.ringPower")).icon(() -> new ItemStack(RING_BARAZ.get())).build());
+	public static final RegistryObject<CreativeModeTab> TAB_RINGS = CREATIVE_TABS.register("troptab", () -> CreativeModeTab.builder().title(Component.translatable("itemGroup.ringPower")).icon(() -> new ItemStack(RING_BARAZ.get())).displayItems((enabledFlags, populator) -> {
+		for (Item item : CONTENT) {
+			populator.accept(item);
+		}
+	}).build());
 
 	public TROP() {
 		IEventBus fmlBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -59,7 +63,7 @@ public class TROP {
 		fmlBus.register(this);
 		forgeBus.register(this);
 		ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		FMLJavaModLoadingContext.get().getModEventBus().addListener(TROPCreativeTabs::addCreativeTab);
+		CREATIVE_TABS.register(FMLJavaModLoadingContext.get().getModEventBus());
 	}
 
 	@Mod.EventBusSubscriber

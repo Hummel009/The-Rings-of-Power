@@ -13,6 +13,6 @@ description = '''This mod adds Rings of Power from the Lord of the Rings to Mine
 [[dependencies.trop]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.19.4]"
+versionRange = "[1.20]"
 ordering = "NONE"
 side = "BOTH"
