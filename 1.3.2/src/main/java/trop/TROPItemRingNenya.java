@@ -6,9 +6,7 @@ import net.minecraft.src.*;
 
 import java.util.List;
 
-import static trop.TROPObfuscationHelper.addPotionEffect;
-
-public class TROPItemRingNenya extends TROPItemRingBase {
+public class TROPItemRingNenya extends Item {
 	public TROPItemRingNenya(int id) {
 		super(id);
 	}
@@ -23,14 +21,14 @@ public class TROPItemRingNenya extends TROPItemRingBase {
 
 	@Override
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer) {
-		addPotionEffect(entityPlayer, new PotionEffect(Potion.regeneration.getId(), 3600, 2));
+		entityPlayer.addPotionEffect(new PotionEffect(Potion.regeneration.getId(), 3600, 2));
 		return super.onItemRightClick(itemStack, world, entityPlayer);
 	}
 
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
 		if (entity instanceof EntityPlayer) {
-			addPotionEffect((EntityPlayer) entity, new PotionEffect(Potion.waterBreathing.getId(), 20, 0));
+			((EntityPlayer) entity).addPotionEffect(new PotionEffect(Potion.waterBreathing.getId(), 20, 0));
 		}
 	}
 }

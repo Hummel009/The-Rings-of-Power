@@ -11,10 +11,6 @@ public class TROPCreativeTabs {
 			return TROP.ringBaraz;
 		}
 
-		public Item d() {
-			return getTabIconItem();
-		}
-
 		@SideOnly(Side.CLIENT)
 		@Override
 		public String getTranslatedTabLabel() {
