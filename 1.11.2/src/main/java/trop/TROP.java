@@ -21,6 +21,8 @@ import java.util.*;
 
 @Mod(modid = "trop")
 public class TROP {
+	public static final String DISABLE_CURSEFORGE_DUPLICATE_NOTICE = "130110062023";
+	
 	public static final Set<Item> CONTENT = new HashSet<>();
 
 	public static Item ringGreat;
