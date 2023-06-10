@@ -16,7 +16,7 @@ import java.util.Map;
 
 @Mod("trop")
 public class TROP {
-	public static final String DISABLE_CURSEFORGE_DUPLICATE_NOTICE = "130110062023";
+	public static final String DISABLE_CURSEFORGE_DUPLICATE_NOTICE = "132510062023";
 	
 	public static Item ringGreat;
 
