@@ -27,7 +27,7 @@ public class TROPLang {
 		enUS.put("item.ring_adunaphel.name", "\u00A7cAd\u00FBnaphel's Ring");
 		enUS.put("item.ring_jiindur.name", "\u00A7cJ\u00ED Ind\u00FBr's Ring");
 		enUS.put("item.ring_khamul.name", "\u00A7cKham\u00FBl's Ring");
-		enUS.put("item.ring_uvatha.name", "\u00A7cUvatha's Ring");
+		enUS.put("item.ring_uvatha.name", "\u00A7c\u00DBvatha's Ring");
 		enUS.put("item.ring_ren.name", "\u00A7cRen's Ring");
 		enUS.put("item.ring_dwar.name", "\u00A7cDwar's Ring");
 		enUS.put("item.ring_great.name", "\u00A76The One Ring");
@@ -96,7 +96,7 @@ public class TROPLang {
 		esES.put("item.ring_adunaphel.name", "\u00A7cAnillo de Ad\u00FBnaphel");
 		esES.put("item.ring_jiindur.name", "\u00A7cAnillo de J\u00ED Ind\u00FBr");
 		esES.put("item.ring_khamul.name", "\u00A7cAnillo de Kham\u00FBl");
-		esES.put("item.ring_uvatha.name", "\u00A7cAnillo de Uvatha");
+		esES.put("item.ring_uvatha.name", "\u00A7cAnillo de \u00DBvatha");
 		esES.put("item.ring_ren.name", "\u00A7cAnillo de Ren");
 		esES.put("item.ring_dwar.name", "\u00A7cAnillo de Dwar");
 		esES.put("item.ring_great.name", "\u00A76Anillo Unico");
