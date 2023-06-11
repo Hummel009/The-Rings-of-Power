@@ -21,15 +21,15 @@ public class TROPLang {
 		enUS.put("item.ring_baraz.name", "\u00A7bBaraz's Ring");
 		enUS.put("item.ring_burin.name", "\u00A7bBurin's Ring");
 		enUS.put("item.ring_thror.name", "\u00A7bThror's Ring");
-		enUS.put("item.ring_murazor.name", "\u00A7cMurazor's Ring");
+		enUS.put("item.ring_murazor.name", "\u00A7cM\u00FBraz\u00F4r's Ring");
 		enUS.put("item.ring_hoarmurath.name", "\u00A7cH\u00F4arm\u00FBrath's Ring");
 		enUS.put("item.ring_akhorahil.name", "\u00A7cAkh\u00F4rahil's Ring");
 		enUS.put("item.ring_adunaphel.name", "\u00A7cAd\u00FBnaphel's Ring");
 		enUS.put("item.ring_jiindur.name", "\u00A7cJ\u00ED Ind\u00FBr's Ring");
 		enUS.put("item.ring_khamul.name", "\u00A7cKham\u00FBl's Ring");
 		enUS.put("item.ring_uvatha.name", "\u00A7c\u00DBvatha's Ring");
-		enUS.put("item.ring_ren.name", "\u00A7cRen's Ring");
-		enUS.put("item.ring_dwar.name", "\u00A7cDwar's Ring");
+		enUS.put("item.ring_ren.name", "\u00A7cR\u00EAn's Ring");
+		enUS.put("item.ring_dwar.name", "\u00A7cDw\u00E2r's Ring");
 		enUS.put("item.ring_great.name", "\u00A76The One Ring");
 	}
 
@@ -90,15 +90,15 @@ public class TROPLang {
 		esES.put("item.ring_baraz.name", "\u00A7bAnillo de Baraz");
 		esES.put("item.ring_burin.name", "\u00A7bAnillo de Burin");
 		esES.put("item.ring_thror.name", "\u00A7bAnillo de Thror");
-		esES.put("item.ring_murazor.name", "\u00A7cAnillo de Murazor");
+		esES.put("item.ring_murazor.name", "\u00A7cAnillo de M\u00FBraz\u00F4r");
 		esES.put("item.ring_hoarmurath.name", "\u00A7cAnillo de H\u00F4arm\u00FBrath");
 		esES.put("item.ring_akhorahil.name", "\u00A7cAnillo de Akh\u00F4rahil");
 		esES.put("item.ring_adunaphel.name", "\u00A7cAnillo de Ad\u00FBnaphel");
 		esES.put("item.ring_jiindur.name", "\u00A7cAnillo de J\u00ED Ind\u00FBr");
 		esES.put("item.ring_khamul.name", "\u00A7cAnillo de Kham\u00FBl");
 		esES.put("item.ring_uvatha.name", "\u00A7cAnillo de \u00DBvatha");
-		esES.put("item.ring_ren.name", "\u00A7cAnillo de Ren");
-		esES.put("item.ring_dwar.name", "\u00A7cAnillo de Dwar");
+		esES.put("item.ring_ren.name", "\u00A7cAnillo de R\u00EAn");
+		esES.put("item.ring_dwar.name", "\u00A7cAnillo de Dw\u00E2r");
 		esES.put("item.ring_great.name", "\u00A76Anillo Unico");
 	}
 
