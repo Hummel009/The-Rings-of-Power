@@ -13,7 +13,7 @@ import java.util.Map;
 @Mod(modid = "trop")
 public class TROP {
 	public static final String DISABLE_CURSEFORGE_DUPLICATE_NOTICE = "133710062023";
-	
+
 	public static Item ringGreat;
 
 	public static Item ringNenya;
@@ -46,6 +46,29 @@ public class TROP {
 		item.setMaxStackSize(1);
 		item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
 		GameRegistry.registerItem(item, name);
+	}
+
+	@Mod.EventHandler
+	public void onMissingMappings(FMLMissingMappingsEvent event) {
+		Map<String, Item> renamed = new HashMap<>();
+		renamed.put("dvar", ringDwar);
+		renamed.put("saita", ringRen);
+		renamed.put("uvata", ringUvatha);
+		renamed.put("nenia", ringNenya);
+		renamed.put("naria", ringNarya);
+		renamed.put("vilia", ringVilya);
+		renamed.put("morgomir", ringAdunaphel);
+		renamed.put("khommurat", ringHoarmurath);
+		for (FMLMissingMappingsEvent.MissingMapping mapping : event.get()) {
+			if (mapping.type == GameRegistry.Type.ITEM) {
+				for (Map.Entry<String, Item> entry : renamed.entrySet()) {
+					if (mapping.name.contains(entry.getKey())) {
+						mapping.remap(entry.getValue());
+						break;
+					}
+				}
+			}
+		}
 	}
 
 	@Mod.EventHandler
@@ -97,28 +120,5 @@ public class TROP {
 		register(ringUvatha, "ringUvatha");
 		register(ringRen, "ringRen");
 		register(ringDwar, "ringDwar");
-	}
-
-	@Mod.EventHandler
-	public void onMissingMappings(FMLMissingMappingsEvent event) {
-		Map<String, Item> renamed = new HashMap<>();
-		renamed.put("dvar", ringDwar);
-		renamed.put("saita", ringRen);
-		renamed.put("uvata", ringUvatha);
-		renamed.put("nenia", ringNenya);
-		renamed.put("naria", ringNarya);
-		renamed.put("vilia", ringVilya);
-		renamed.put("morgomir", ringAdunaphel);
-		renamed.put("khommurat", ringHoarmurath);
-		for (FMLMissingMappingsEvent.MissingMapping mapping : event.get()) {
-			if (mapping.type == GameRegistry.Type.ITEM) {
-				for (Map.Entry<String, Item> entry : renamed.entrySet()) {
-					if (mapping.name.contains(entry.getKey())) {
-						mapping.remap(entry.getValue());
-						break;
-					}
-				}
-			}
-		}
 	}
 }

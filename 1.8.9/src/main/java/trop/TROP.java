@@ -17,7 +17,7 @@ import java.util.Set;
 @Mod(modid = "trop")
 public class TROP {
 	public static final String DISABLE_CURSEFORGE_DUPLICATE_NOTICE = "133710062023";
-	
+
 	public static final Set<Item> CONTENT = new HashSet<>();
 	@SidedProxy(serverSide = "trop.TROPCommonProxy", clientSide = "trop.TROPClientProxy")
 	public static TROPCommonProxy proxy;
@@ -59,6 +59,29 @@ public class TROP {
 	@Mod.EventHandler
 	public void onInit(FMLInitializationEvent event) {
 		proxy.registerRenders();
+	}
+
+	@Mod.EventHandler
+	public void onMissingMappings(FMLMissingMappingsEvent event) {
+		Map<String, Item> renamed = new HashMap<>();
+		renamed.put("dvar", ringDwar);
+		renamed.put("saita", ringRen);
+		renamed.put("uvata", ringUvatha);
+		renamed.put("nenia", ringNenya);
+		renamed.put("naria", ringNarya);
+		renamed.put("vilia", ringVilya);
+		renamed.put("morgomir", ringAdunaphel);
+		renamed.put("khommurat", ringHoarmurath);
+		for (FMLMissingMappingsEvent.MissingMapping mapping : event.get()) {
+			if (mapping.type == GameRegistry.Type.ITEM) {
+				for (Map.Entry<String, Item> entry : renamed.entrySet()) {
+					if (mapping.name.contains(entry.getKey())) {
+						mapping.remap(entry.getValue());
+						break;
+					}
+				}
+			}
+		}
 	}
 
 	@Mod.EventHandler
@@ -110,28 +133,5 @@ public class TROP {
 		register(ringUvatha, "ringUvatha");
 		register(ringRen, "ringRen");
 		register(ringDwar, "ringDwar");
-	}
-
-	@Mod.EventHandler
-	public void onMissingMappings(FMLMissingMappingsEvent event) {
-		Map<String, Item> renamed = new HashMap<>();
-		renamed.put("dvar", ringDwar);
-		renamed.put("saita", ringRen);
-		renamed.put("uvata", ringUvatha);
-		renamed.put("nenia", ringNenya);
-		renamed.put("naria", ringNarya);
-		renamed.put("vilia", ringVilya);
-		renamed.put("morgomir", ringAdunaphel);
-		renamed.put("khommurat", ringHoarmurath);
-		for (FMLMissingMappingsEvent.MissingMapping mapping : event.get()) {
-			if (mapping.type == GameRegistry.Type.ITEM) {
-				for (Map.Entry<String, Item> entry : renamed.entrySet()) {
-					if (mapping.name.contains(entry.getKey())) {
-						mapping.remap(entry.getValue());
-						break;
-					}
-				}
-			}
-		}
 	}
 }

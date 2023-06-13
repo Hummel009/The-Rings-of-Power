@@ -20,7 +20,7 @@ import java.util.*;
 @Mod(modid = "trop")
 public class TROP {
 	public static final String DISABLE_CURSEFORGE_DUPLICATE_NOTICE = "133710062023";
-	
+
 	public static final Set<Item> CONTENT = new HashSet<>();
 
 	public static Item ringGreat;
@@ -46,6 +46,30 @@ public class TROP {
 	public static Item ringUvatha;
 	public static Item ringRen;
 	public static Item ringDwar;
+
+	@Mod.EventBusSubscriber
+	public static class MissingMappingsDetector {
+		@SubscribeEvent
+		public static void onMissingMappings(RegistryEvent.MissingMappings<Item> event) {
+			Map<String, Item> renamed = new HashMap<>();
+			renamed.put("dvar", ringDwar);
+			renamed.put("saita", ringRen);
+			renamed.put("uvata", ringUvatha);
+			renamed.put("nenia", ringNenya);
+			renamed.put("naria", ringNarya);
+			renamed.put("vilia", ringVilya);
+			renamed.put("morgomir", ringAdunaphel);
+			renamed.put("khommurat", ringHoarmurath);
+			for (RegistryEvent.MissingMappings.Mapping<Item> mapping : event.getAllMappings()) {
+				for (Map.Entry<String, Item> entry : renamed.entrySet()) {
+					if (mapping.key.getResourcePath().contains(entry.getKey())) {
+						mapping.remap(entry.getValue());
+						break;
+					}
+				}
+			}
+		}
+	}
 
 	@ObjectHolder("trop")
 	@Mod.EventBusSubscriber
@@ -121,30 +145,6 @@ public class TROP {
 			item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
 			ForgeRegistries.ITEMS.register(item);
 			CONTENT.add(item);
-		}
-	}
-
-	@Mod.EventBusSubscriber
-	public static class MissingMappingsDetector {
-		@SubscribeEvent
-		public static void onMissingMappings(RegistryEvent.MissingMappings<Item> event) {
-			Map<String, Item> renamed = new HashMap<>();
-			renamed.put("dvar", ringDwar);
-			renamed.put("saita", ringRen);
-			renamed.put("uvata", ringUvatha);
-			renamed.put("nenia", ringNenya);
-			renamed.put("naria", ringNarya);
-			renamed.put("vilia", ringVilya);
-			renamed.put("morgomir", ringAdunaphel);
-			renamed.put("khommurat", ringHoarmurath);
-			for (RegistryEvent.MissingMappings.Mapping<Item> mapping : event.getAllMappings()) {
-				for (Map.Entry<String, Item> entry : renamed.entrySet()) {
-					if (mapping.key.getResourcePath().contains(entry.getKey())) {
-						mapping.remap(entry.getValue());
-						break;
-					}
-				}
-			}
 		}
 	}
 }
