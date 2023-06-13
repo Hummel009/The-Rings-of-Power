@@ -9,7 +9,7 @@ import net.minecraft.item.Item;
 
 @Mod(modid = "trop", useMetadata = true)
 public class TROP {
-	public static final String DISABLE_CURSEFORGE_DUPLICATE_NOTICE = "133710062023";
+	public static final String DISABLE_CURSEFORGE_DUPLICATE_NOTICE = "213313062023";
 
 	public static Item ringGreat;
 
