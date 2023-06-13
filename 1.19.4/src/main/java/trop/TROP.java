@@ -61,19 +61,19 @@ public class TROP {
 	public static class MissingMappingsDetector {
 		@SubscribeEvent
 		public static void onMissingMappings(MissingMappingsEvent event) {
-			Map<String, Item> renamed = new HashMap<>();
-			renamed.put("dvar", RING_DWAR.get());
-			renamed.put("saita", RING_REN.get());
-			renamed.put("uvata", RING_UVATHA.get());
-			renamed.put("nenia", RING_NENYA.get());
-			renamed.put("naria", RING_NARYA.get());
-			renamed.put("vilia", RING_VILYA.get());
-			renamed.put("morgomir", RING_ADUNAPHEL.get());
-			renamed.put("khommurat", RING_HOARMURATH.get());
+			Map<String, RegistryObject<Item>> renamed = new HashMap<>();
+			renamed.put("dvar", RING_DWAR);
+			renamed.put("saita", RING_REN);
+			renamed.put("uvata", RING_UVATHA);
+			renamed.put("nenia", RING_NENYA);
+			renamed.put("naria", RING_NARYA);
+			renamed.put("vilia", RING_VILYA);
+			renamed.put("morgomir", RING_ADUNAPHEL);
+			renamed.put("khommurat", RING_HOARMURATH);
 			for (MissingMappingsEvent.Mapping<Item> mapping : event.getAllMappings(ForgeRegistries.Keys.ITEMS)) {
-				for (Map.Entry<String, Item> entry : renamed.entrySet()) {
+				for (Map.Entry<String, RegistryObject<Item>> entry : renamed.entrySet()) {
 					if (mapping.getKey().getPath().contains(entry.getKey())) {
-						mapping.remap(entry.getValue());
+						mapping.remap(entry.getValue().get());
 						break;
 					}
 				}
