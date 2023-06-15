@@ -10,7 +10,7 @@ import net.minecraft.item.Item;
 import java.util.HashMap;
 import java.util.Map;
 
-@Mod(modid = "trop")
+@Mod(modid = "trop", useMetadata = true)
 public class TROP {
 	public static final String DISABLE_CURSEFORGE_DUPLICATE_NOTICE = "213313062023";
 
@@ -38,7 +38,7 @@ public class TROP {
 	public static Item ringRen;
 	public static Item ringDwar;
 
-	private static void register(Item item, String field) {
+	public static void register(Item item, String field) {
 		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
 		item.setTextureName("trop:" + name);
 		item.setUnlocalizedName(name);
