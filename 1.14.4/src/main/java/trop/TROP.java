@@ -2,13 +2,9 @@ package trop;
 
 import com.google.common.base.CaseFormat;
 import net.minecraft.item.Item;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.HashMap;
@@ -42,13 +38,6 @@ public class TROP {
 	public static Item ringRen;
 	public static Item ringDwar;
 
-	public TROP() {
-		IEventBus fmlBus = FMLJavaModLoadingContext.get().getModEventBus();
-		IEventBus forgeBus = MinecraftForge.EVENT_BUS;
-		fmlBus.register(this);
-		forgeBus.register(this);
-	}
-
 	@Mod.EventBusSubscriber
 	public static class MissingMappingsDetector {
 		@SubscribeEvent
@@ -73,10 +62,10 @@ public class TROP {
 		}
 	}
 
-	@EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 	public static class RegistryEvents {
 		@SubscribeEvent
-		public static void onItemsRegistry(RegistryEvent.Register<Item> event) {
+		public static void onItemRegistry(RegistryEvent.Register<Item> event) {
 			ringGreat = new TROPItemRingGreat();
 
 			ringNarya = new TROPItemRingNarya();

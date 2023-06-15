@@ -5,7 +5,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -60,11 +59,8 @@ public class TROP {
 
 	public TROP() {
 		IEventBus fmlBus = FMLJavaModLoadingContext.get().getModEventBus();
-		IEventBus forgeBus = MinecraftForge.EVENT_BUS;
-		fmlBus.register(this);
-		forgeBus.register(this);
-		ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		CREATIVE_TABS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		ITEMS.register(fmlBus);
+		CREATIVE_TABS.register(fmlBus);
 	}
 
 	@Mod.EventBusSubscriber

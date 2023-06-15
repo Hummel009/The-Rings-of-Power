@@ -20,8 +20,10 @@ public class TROP {
 	public static final String DISABLE_CURSEFORGE_DUPLICATE_NOTICE = "213313062023";
 
 	public static final Set<Item> CONTENT = new HashSet<>();
+
 	@SidedProxy(serverSide = "trop.TROPCommonProxy", clientSide = "trop.TROPClientProxy")
 	public static TROPCommonProxy proxy;
+
 	public static Item ringGreat;
 
 	public static Item ringNenya;
@@ -59,7 +61,7 @@ public class TROP {
 
 	@Mod.EventHandler
 	public void onInit(FMLInitializationEvent event) {
-		proxy.registerRenders();
+		proxy.onInit();
 	}
 
 	@Mod.EventHandler

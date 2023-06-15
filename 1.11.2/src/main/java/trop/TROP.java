@@ -1,7 +1,6 @@
 package trop;
 
 import com.google.common.base.CaseFormat;
-import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
@@ -17,7 +16,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 @Mod(modid = "trop")
 public class TROP {
@@ -76,7 +78,7 @@ public class TROP {
 	@Mod.EventBusSubscriber
 	public static class RegistryEvents {
 		@SubscribeEvent
-		public static void onRegistryItem(RegistryEvent.Register<Item> event) {
+		public static void onItemRegistry(RegistryEvent.Register<Item> event) {
 			ringGreat = new TROPItemRingGreat();
 
 			ringNarya = new TROPItemRingNarya();
@@ -128,11 +130,10 @@ public class TROP {
 
 		@SubscribeEvent
 		@SideOnly(Side.CLIENT)
-		public static void onRegistryModel(ModelRegistryEvent event) {
+		public static void onModelRegistry(ModelRegistryEvent event) {
 			for (Item item : CONTENT) {
 				ResourceLocation regName = item.getRegistryName();
-				ModelResourceLocation mrl = new ModelResourceLocation(Objects.requireNonNull(regName), "inventory");
-				ModelBakery.registerItemVariants(item, mrl);
+				ModelResourceLocation mrl = new ModelResourceLocation(regName, "inventory");
 				ModelLoader.setCustomModelResourceLocation(item, 0, mrl);
 			}
 		}

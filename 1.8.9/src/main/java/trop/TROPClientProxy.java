@@ -7,12 +7,13 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class TROPClientProxy extends TROPCommonProxy {
-
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerRenders() {
+	public void onInit() {
 		for (Item item : TROP.CONTENT) {
-			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation("trop:" + item.getUnlocalizedName().substring(5), "inventory"));
+			String regName = item.getUnlocalizedName().substring(5);
+			ModelResourceLocation mrl = new ModelResourceLocation("trop:" + regName, "inventory");
+			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, mrl);
 		}
 	}
 }

@@ -1,9 +1,7 @@
 package trop;
 
 import net.minecraft.world.item.Item;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -45,10 +43,6 @@ public class TROP {
 	public static final RegistryObject<Item> RING_DWAR = ITEMS.register("ring_dwar", TROPItemRingMan::new);
 
 	public TROP() {
-		IEventBus fmlBus = FMLJavaModLoadingContext.get().getModEventBus();
-		IEventBus forgeBus = MinecraftForge.EVENT_BUS;
-		fmlBus.register(this);
-		forgeBus.register(this);
 		ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 	}
 
