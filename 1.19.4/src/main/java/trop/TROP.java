@@ -1,6 +1,7 @@
 package trop;
 
 import net.minecraft.world.item.Item;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -47,8 +48,9 @@ public class TROP {
 	public static final RegistryObject<Item> RING_DWAR = ITEMS.register("ring_dwar", TROPItemRingMan::new);
 
 	public TROP() {
-		ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		FMLJavaModLoadingContext.get().getModEventBus().addListener(TROPCreativeTabs::addCreativeTab);
+		IEventBus fmlBus = FMLJavaModLoadingContext.get().getModEventBus();
+		ITEMS.register(fmlBus);
+		fmlBus.addListener(TROPCreativeTabs::addCreativeTab);
 	}
 
 	@Mod.EventBusSubscriber
