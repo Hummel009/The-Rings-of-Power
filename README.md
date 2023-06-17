@@ -2,16 +2,6 @@ Hello everybody!
 
 I am the developer of different mods for Minecraft, including this one, and I have posted the latest source code here. I hope, that somebody can find this useful as a basis for your own mods.
 
-<h2> Disclaimer </h2>
-
-These sources are not perfect. They contain a lot of repetitive code, so you might see it and think "WTF, Hummel is a crappy coder".
-
-I aimed to create as simple mods as possible with very simple and easy to modify code. 
-In general, I succeeded - some of my friends, who are not programmers and do not know Java, are quietly modifying this code for their needs.
-
-In addition, I try to observe the similarity of the codes in the folders so that the "evolution" in the code is visible in each new version of minecraft. 
-To make it clear what was replaced by what, and so on.
-
 <h2> Important info </h2>
 
 All the projects can be imported via Eclipse or opened via Intellij IDEA, but 1.12.2 source can't be launched directly from Intellij IDEA. So I recommend to use Eclipse.
