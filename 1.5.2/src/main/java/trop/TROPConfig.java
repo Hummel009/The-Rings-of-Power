@@ -42,7 +42,7 @@ public class TROPConfig {
 		}
 	}
 
-	private static void setDefaultValues() {
+	public static void setDefaultValues() {
 		try {
 			configuration.load();
 			idRingGreat = configuration.get("item", "Ring Great", 890).getInt(890);
