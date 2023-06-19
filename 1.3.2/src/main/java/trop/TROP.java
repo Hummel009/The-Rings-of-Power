@@ -37,20 +37,20 @@ public class TROP {
 	public static Item ringRen;
 	public static Item ringDwar;
 
-	public static void register(Item item, String field) {
-		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
+	public static void register(Item item, String name) {
+		String itemName = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, name);
 		item.setTextureFile("/assets/trop/textures/items.png");
-		item.setItemName(name);
+		item.setItemName(itemName);
 		item.setMaxDamage(0);
 		item.setMaxStackSize(1);
 		item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
-		LanguageRegistry.instance().addNameForObject(item, "en_US", TROPLang.enUS.get("item." + name + ".name"));
-		LanguageRegistry.instance().addNameForObject(item, "es_AR", TROPLang.esES.get("item." + name + ".name"));
-		LanguageRegistry.instance().addNameForObject(item, "es_ES", TROPLang.esES.get("item." + name + ".name"));
-		LanguageRegistry.instance().addNameForObject(item, "es_MX", TROPLang.esES.get("item." + name + ".name"));
-		LanguageRegistry.instance().addNameForObject(item, "ru_RU", TROPLang.ruRU.get("item." + name + ".name"));
-		LanguageRegistry.instance().addNameForObject(item, "zh_CN", TROPLang.zhCN.get("item." + name + ".name"));
-		LanguageRegistry.instance().addNameForObject(item, "uk_UA", TROPLang.ukUA.get("item." + name + ".name"));
+		LanguageRegistry.instance().addNameForObject(item, "en_US", TROPLang.enUS.get("item." + itemName + ".name"));
+		LanguageRegistry.instance().addNameForObject(item, "es_AR", TROPLang.esES.get("item." + itemName + ".name"));
+		LanguageRegistry.instance().addNameForObject(item, "es_ES", TROPLang.esES.get("item." + itemName + ".name"));
+		LanguageRegistry.instance().addNameForObject(item, "es_MX", TROPLang.esES.get("item." + itemName + ".name"));
+		LanguageRegistry.instance().addNameForObject(item, "ru_RU", TROPLang.ruRU.get("item." + itemName + ".name"));
+		LanguageRegistry.instance().addNameForObject(item, "zh_CN", TROPLang.zhCN.get("item." + itemName + ".name"));
+		LanguageRegistry.instance().addNameForObject(item, "uk_UA", TROPLang.ukUA.get("item." + itemName + ".name"));
 	}
 
 	@Init

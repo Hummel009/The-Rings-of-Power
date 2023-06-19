@@ -38,14 +38,14 @@ public class TROP {
 	public static Item ringRen;
 	public static Item ringDwar;
 
-	public static void register(Item item, String field) {
-		String name = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field);
+	public static void register(Item item, String name) {
+		String itemName = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, name);
 		item.setTextureFile("/assets/trop/textures/items.png");
-		item.setItemName(name);
+		item.setItemName(itemName);
 		item.setMaxDamage(0);
 		item.setMaxStackSize(1);
 		item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
-		GameRegistry.registerItem(item, name);
+		GameRegistry.registerItem(item, itemName);
 	}
 
 	@Init

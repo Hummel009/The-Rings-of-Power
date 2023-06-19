@@ -11,8 +11,8 @@ public class TROPClientProxy extends TROPCommonProxy {
 	@SideOnly(Side.CLIENT)
 	public void onInit() {
 		for (Item item : TROP.CONTENT) {
-			String regName = item.getUnlocalizedName().substring(5);
-			ModelResourceLocation mrl = new ModelResourceLocation("trop:" + regName, "inventory");
+			String itemName = item.getUnlocalizedName().substring(5);
+			ModelResourceLocation mrl = new ModelResourceLocation("trop:" + itemName, "inventory");
 			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, mrl);
 		}
 	}
