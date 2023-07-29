@@ -1,0 +1,23 @@
+{
+  "item.trop.ring_narya": "§dПерстень Нар'я§r",
+  "item.trop.ring_nenya": "§dПерстень Ненья§r",
+  "item.trop.ring_vilya": "§dПерстень Вілья§r",
+  "item.trop.ring_thulin": "§bПерстень Туліна§r",
+  "item.trop.ring_khibil": "§bПерстень Кібіла§r",
+  "item.trop.ring_farin": "§bПерстень Фаріна§r",
+  "item.trop.ring_khain": "§bПерстень Кхаїна§r",
+  "item.trop.ring_baraz": "§bПерстень Бараза§r",
+  "item.trop.ring_burin": "§bПерстень Буріна§r",
+  "item.trop.ring_thror": "§bПерстень Трора§r",
+  "item.trop.ring_murazor": "§cПерстень Короля-Чародія§r",
+  "item.trop.ring_hoarmurath": "§cПерстень Гоммурата§r",
+  "item.trop.ring_akhorahil": "§cПерстень Ахорагіля§r",
+  "item.trop.ring_adunaphel": "§cПерстень Адунафель§r",
+  "item.trop.ring_jiindur": "§cПерстень Джі Індура§r",
+  "item.trop.ring_khamul": "§cПерстень Кхамула§r",
+  "item.trop.ring_uvatha": "§cПерстень Увати§r",
+  "item.trop.ring_ren": "§cПерстень Рена§r",
+  "item.trop.ring_dwar": "§cПерстень Двара§r",
+  "item.trop.ring_great": "§6Перстень Всевладдя§r",
+  "itemGroup.ringPower": "Персні влади"
+}

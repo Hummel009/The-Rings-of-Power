@@ -1,0 +1,23 @@
+{
+  "item.trop.ring_narya": "§d水戒南雅§r",
+  "item.trop.ring_nenya": "§d火戒纳雅§r",
+  "item.trop.ring_vilya": "§d气戒维雅§r",
+  "item.trop.ring_thulin": "§b图林之戒§r",
+  "item.trop.ring_khibil": "§b祁比勒之戒§r",
+  "item.trop.ring_farin": "§b法林之戒§r",
+  "item.trop.ring_khain": "§b凯恩之戒§r",
+  "item.trop.ring_baraz": "§b巴拉兹之戒§r",
+  "item.trop.ring_burin": "§b伯林之戒§r",
+  "item.trop.ring_thror": "§b索尔之戒§r",
+  "item.trop.ring_murazor": "§c穆拉佐之戒§r",
+  "item.trop.ring_hoarmurath": "§c霍尔姆拉斯之戒§r",
+  "item.trop.ring_akhorahil": "§c阿克霍拉希尔之戒§r",
+  "item.trop.ring_adunaphel": "§c阿顿纳菲尔之戒§r",
+  "item.trop.ring_jiindur": "§c吉·阴杜之戒§r",
+  "item.trop.ring_khamul": "§c卡姆尔之戒§r",
+  "item.trop.ring_uvatha": "§c乌瓦萨 之戒§r",
+  "item.trop.ring_ren": "§c邪恶者之戒§r",
+  "item.trop.ring_dwar": "§c瓦乌的 之戒§r",
+  "item.trop.ring_great": "§6御众之戒§r",
+  "itemGroup.ringPower": "魔戒众戒"
+}

@@ -1,0 +1,39 @@
+buildscript {
+	repositories {
+		jcenter()
+		maven {
+			name = 'forge'
+			url = 'http://files.minecraftforge.net/maven'
+		}
+	}
+	dependencies {
+		classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
+	}
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+version = '1.0'
+group = 'com.yourname.modid'
+archivesBaseName = 'modid'
+
+minecraft {
+	version = '1.8.9-11.15.1.2318-1.8.9'
+	runDir = 'run'
+	mappings = 'stable_20'
+	srcCompat = JavaVersion.VERSION_1_8
+	targetCompat = JavaVersion.VERSION_1_8
+}
+
+processResources {
+	inputs.property 'version', project.version
+	inputs.property 'mcversion', project.minecraft.version
+
+	from(sourceSets.main.resources.srcDirs) {
+		include 'mcmod.info'
+		expand 'version': project.version, 'mcversion': project.minecraft.version
+	}
+
+	from(sourceSets.main.resources.srcDirs) {
+		exclude 'mcmod.info'
+	}
+}

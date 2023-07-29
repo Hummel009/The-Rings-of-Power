@@ -1,0 +1,23 @@
+{
+  "item.trop.ring_narya": "§dКольцо Нарья§r",
+  "item.trop.ring_nenya": "§dКольцо Нэнья§r",
+  "item.trop.ring_vilya": "§dКольцо Вилья§r",
+  "item.trop.ring_thulin": "§bКольцо Тулина§r",
+  "item.trop.ring_khibil": "§bКольцо Кибила§r",
+  "item.trop.ring_farin": "§bКольцо Фарина§r",
+  "item.trop.ring_khain": "§bКольцо Кхаина§r",
+  "item.trop.ring_baraz": "§bКольцо Бараза§r",
+  "item.trop.ring_burin": "§bКольцо Бурина§r",
+  "item.trop.ring_thror": "§bКольцо Трора§r",
+  "item.trop.ring_murazor": "§cКольцо Короля-Чародея§r",
+  "item.trop.ring_hoarmurath": "§cКольцо Хоммурата§r",
+  "item.trop.ring_akhorahil": "§cКольцо Ахорахиля§r",
+  "item.trop.ring_adunaphel": "§cКольцо Адунафель§r",
+  "item.trop.ring_jiindur": "§cКольцо Джи Индура§r",
+  "item.trop.ring_khamul": "§cКольцо Кхамула§r",
+  "item.trop.ring_uvatha": "§cКольцо Уваты§r",
+  "item.trop.ring_ren": "§cКольцо Рена§r",
+  "item.trop.ring_dwar": "§cКольцо Двара§r",
+  "item.trop.ring_great": "§6Кольцо Всевластия§r",
+  "itemGroup.ringPower": "Кольца власти"
+}
