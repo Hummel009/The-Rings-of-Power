@@ -18,8 +18,8 @@ java {
 }
 
 compileJava {
-	sourceCompatibility = "6"
-	targetCompatibility = "1.6"
+	sourceCompatibility = "8"
+	targetCompatibility = "1.8"
 }
 
 final String minecraftVersion = '1.7.10'

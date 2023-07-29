@@ -50,7 +50,7 @@ public class TROP {
 
 	@Mod.EventHandler
 	public void onMissingMappings(FMLMissingMappingsEvent event) {
-		Map<String, Item> renamed = new HashMap<String, Item>();
+		Map<String, Item> renamed = new HashMap<>();
 		renamed.put("dvar", ringDwar);
 		renamed.put("saita", ringRen);
 		renamed.put("uvata", ringUvatha);
