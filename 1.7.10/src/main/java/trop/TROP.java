@@ -42,7 +42,7 @@ public class TROP {
 		String itemName = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, name);
 		item.setTextureName("trop:" + itemName);
 		item.setUnlocalizedName(itemName);
-		item.setMaxDamage(0);
+		item.setMaxDurability(0);
 		item.setMaxStackSize(1);
 		item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
 		GameRegistry.registerItem(item, itemName);
@@ -50,7 +50,7 @@ public class TROP {
 
 	@Mod.EventHandler
 	public void onMissingMappings(FMLMissingMappingsEvent event) {
-		Map<String, Item> renamed = new HashMap<>();
+		Map<String, Item> renamed = new HashMap<String, Item>();
 		renamed.put("dvar", ringDwar);
 		renamed.put("saita", ringRen);
 		renamed.put("uvata", ringUvatha);

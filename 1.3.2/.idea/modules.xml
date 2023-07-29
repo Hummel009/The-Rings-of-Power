@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/1.3.2.main.iml" filepath="$PROJECT_DIR$/.idea/modules/1.3.2.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/1.3.2.test.iml" filepath="$PROJECT_DIR$/.idea/modules/1.3.2.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/The-Rings-of-Power.1.3.2.main.iml" filepath="$PROJECT_DIR$/.idea/modules/The-Rings-of-Power.1.3.2.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/The-Rings-of-Power.1.3.2.test.iml" filepath="$PROJECT_DIR$/.idea/modules/The-Rings-of-Power.1.3.2.test.iml" />
     </modules>
   </component>
 </project>
