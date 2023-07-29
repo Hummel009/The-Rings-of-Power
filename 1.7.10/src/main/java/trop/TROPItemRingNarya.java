@@ -26,7 +26,7 @@ public class TROPItemRingNarya extends Item {
 	@Override
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer) {
 		entityPlayer.addPotionEffect(new PotionEffect(Potion.regeneration.getId(), 3600, 2));
-		entityPlayer.addPotionEffect(new PotionEffect(Potion.healthBoost.getId(), 3800, 2));
+		entityPlayer.addPotionEffect(new PotionEffect(Potion.field_76434_w.getId(), 3800, 2));
 		return super.onItemRightClick(itemStack, world, entityPlayer);
 	}
 

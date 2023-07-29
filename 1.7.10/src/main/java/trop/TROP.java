@@ -42,7 +42,7 @@ public class TROP {
 		String itemName = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, name);
 		item.setTextureName("trop:" + itemName);
 		item.setUnlocalizedName(itemName);
-		item.setMaxDurability(0);
+		item.setMaxDamage(0);
 		item.setMaxStackSize(1);
 		item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
 		GameRegistry.registerItem(item, itemName);
