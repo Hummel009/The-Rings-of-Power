@@ -33,7 +33,7 @@ public class TROPItemRingVilya extends Item {
 
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
-		if (entity instanceof EntityPlayer) {
+		if (entity instanceof EntityLivingBase) {
 			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 20, 1));
 			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(Potion.jump.getId(), 20, 1));
 		}

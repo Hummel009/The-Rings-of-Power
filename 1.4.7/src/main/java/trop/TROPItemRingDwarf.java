@@ -35,7 +35,7 @@ public class TROPItemRingDwarf extends Item {
 
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
-		if (entity instanceof EntityPlayer) {
+		if (entity instanceof EntityLivingBase) {
 			((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.digSpeed.getId(), 20, 1));
 			((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.resistance.getId(), 20, 1));
 		}
