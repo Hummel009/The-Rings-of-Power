@@ -31,7 +31,7 @@ public class TROPItemRingDwarf extends TROPItemRingBase {
 
 	@Override
 	public void inventoryTick(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
-		if (entity instanceof PlayerEntity) {
+		if (entity instanceof LivingEntity) {
 			((LivingEntity) entity).addEffect(new EffectInstance(Effects.DIG_SPEED, 20, 1));
 			((LivingEntity) entity).addEffect(new EffectInstance(Effects.DAMAGE_RESISTANCE, 20, 1));
 		}

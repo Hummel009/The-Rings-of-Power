@@ -31,7 +31,7 @@ public class TROPItemRingGreat extends TROPItemRingBase {
 
 	@Override
 	public void inventoryTick(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
-		if (entity instanceof PlayerEntity) {
+		if (entity instanceof LivingEntity) {
 			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.INVISIBILITY, 20));
 		}
 	}
