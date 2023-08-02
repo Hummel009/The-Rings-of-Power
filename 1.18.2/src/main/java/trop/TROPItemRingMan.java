@@ -9,6 +9,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -16,13 +17,12 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
 public class TROPItemRingMan extends TROPItemRingBase {
 	@Override
 	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+	public void appendHoverText(ItemStack itemStack, Level level, List<Component> list, TooltipFlag tooltipFlag) {
 		for (MobEffect mobEffect : new MobEffect[]{MobEffects.DAMAGE_BOOST, MobEffects.NIGHT_VISION}) {
 			list.add(new TranslatableComponent(mobEffect.getDescriptionId()).withStyle(ChatFormatting.DARK_GREEN));
 		}
@@ -30,9 +30,9 @@ public class TROPItemRingMan extends TROPItemRingBase {
 
 	@Override
 	public void inventoryTick(ItemStack itemStack, Level level, Entity entity, int i, boolean b) {
-		if (entity instanceof Player player) {
-			player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20, 1));
-			player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 220));
+		if (entity instanceof LivingEntity livingEntity) {
+			livingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20, 1));
+			livingEntity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 220));
 		}
 	}
 
