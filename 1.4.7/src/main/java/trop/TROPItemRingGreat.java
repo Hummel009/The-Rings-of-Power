@@ -35,7 +35,7 @@ public class TROPItemRingGreat extends Item {
 
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
-		if (entity instanceof EntityLivingBase) {
+		if (entity instanceof EntityLiving) {
 			((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.invisibility.getId(), 20, 2));
 		}
 	}
