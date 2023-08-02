@@ -1,6 +1,7 @@
 package trop;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -33,7 +34,7 @@ public class TROPItemRingNarya extends Item {
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
 		if (entity instanceof EntityPlayer) {
-			((EntityPlayer) entity).addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 20));
+			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 20));
 		}
 	}
 }

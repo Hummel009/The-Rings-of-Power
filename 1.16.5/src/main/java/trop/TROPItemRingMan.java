@@ -2,6 +2,7 @@ package trop;
 
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Effect;
@@ -31,8 +32,8 @@ public class TROPItemRingMan extends TROPItemRingBase {
 	@Override
 	public void inventoryTick(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
 		if (entity instanceof PlayerEntity) {
-			((PlayerEntity) entity).addEffect(new EffectInstance(Effects.DAMAGE_BOOST, 20, 1));
-			((PlayerEntity) entity).addEffect(new EffectInstance(Effects.NIGHT_VISION, 220));
+			((LivingEntity) entity).addEffect(new EffectInstance(Effects.DAMAGE_BOOST, 20, 1));
+			((LivingEntity) entity).addEffect(new EffectInstance(Effects.NIGHT_VISION, 220));
 		}
 	}
 

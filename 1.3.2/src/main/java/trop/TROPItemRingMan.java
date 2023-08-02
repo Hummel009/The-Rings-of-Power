@@ -28,7 +28,7 @@ public class TROPItemRingMan extends Item {
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
 		if (entity instanceof EntityPlayer) {
-			((EntityPlayer) entity).addPotionEffect(new PotionEffect(Potion.damageBoost.getId(), 20, 1));
+			((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.damageBoost.getId(), 20, 1));
 		}
 	}
 }
