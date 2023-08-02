@@ -2,12 +2,14 @@ buildscript {
 	repositories {
 		mavenCentral()
 		maven {
-			name = 'github'
-			url = 'https://github.com/juanmuscaria/maven/raw/master'
+			name = 'forge'
+			url = 'https://maven.minecraftforge.net/'
 		}
 	}
 	dependencies {
-		classpath 'net.minecraftforge.gradle:ForgeGradle:[1.2-1.4.6-SNAPSHOT,)'
+		classpath('com.anatawa12.forge:ForgeGradle:1.2-1.1.+') {
+			changing = true
+		}
 	}
 }
 
@@ -17,24 +19,10 @@ version = '1.0'
 group = 'com.yourname.modid'
 archivesBaseName = 'modid'
 
+targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_1_8
+
 minecraft {
 	version = '1.7.10-10.13.4.1614-1.7.10'
 	runDir = 'run'
-	srcCompat = JavaVersion.VERSION_1_8
-	targetCompat = JavaVersion.VERSION_1_8
-}
-
-processResources {
-	inputs.property 'version', project.version
-	inputs.property 'mcversion', project.minecraft.version
-
-	from(sourceSets.main.resources.srcDirs) {
-		include 'mcmod.info'
-
-		expand 'version': project.version, 'mcversion': project.minecraft.version
-	}
-
-	from(sourceSets.main.resources.srcDirs) {
-		exclude 'mcmod.info'
-	}
 }
