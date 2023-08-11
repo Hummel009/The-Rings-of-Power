@@ -17,13 +17,12 @@ import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
 public class TROPItemRingDwarf extends TROPItemRingBase {
 	@Override
 	@OnlyIn(Dist.CLIENT)
-	public void addInformation(ItemStack itemStack, @Nullable World world, List<ITextComponent> list, ITooltipFlag tooltipFlag) {
+	public void addInformation(ItemStack itemStack, World world, List<ITextComponent> list, ITooltipFlag tooltipFlag) {
 		for (Effect effect : new Effect[]{Effects.MINING_FATIGUE, Effects.RESISTANCE}) {
 			list.add(new TranslationTextComponent(effect.getName()).applyTextStyle(TextFormatting.DARK_GREEN));
 		}

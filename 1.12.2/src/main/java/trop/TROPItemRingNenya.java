@@ -17,13 +17,12 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
 public class TROPItemRingNenya extends Item {
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack itemStack, @Nullable World world, List<String> list, ITooltipFlag tooltipFlag) {
+	public void addInformation(ItemStack itemStack, World world, List<String> list, ITooltipFlag tooltipFlag) {
 		for (Potion potion : new Potion[]{MobEffects.WATER_BREATHING}) {
 			list.add(ChatFormatting.DARK_GREEN + I18n.translateToLocal(potion.getName()).trim());
 		}
