@@ -17,14 +17,6 @@ compileJava.options.release.set(6)
 final String minecraftVersion = '1.4.7'
 final String forgeVersion = '1.4.7-6.6.2.534'
 
-volde {
-	runs {
-		client {
-			programArg 'quaternary'
-		}
-	}
-}
-
 dependencies {
 	minecraft "com.mojang:minecraft:${minecraftVersion}"
 	forge "net.minecraftforge:forge:${forgeVersion}:universal@zip"
