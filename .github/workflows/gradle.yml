@@ -95,10 +95,6 @@ jobs:
       run: ./gradlew.bat build
         
     - name: Build with Gradle
-      working-directory: ./1.14.4
-      run: ./gradlew.bat build
-        
-    - name: Build with Gradle
       working-directory: ./1.15.2
       run: ./gradlew.bat build
         
