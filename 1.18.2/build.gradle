@@ -1,11 +1,22 @@
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
+buildscript {
+	repositories {
+		maven { url = 'https://maven.minecraftforge.net' }
+		mavenCentral()
+	}
+	dependencies {
+		classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '[6.0,6.2)', changing: true
+	}
+}
+
 plugins {
 	id 'eclipse'
 	id 'maven-publish'
-	id 'net.minecraftforge.gradle' version '[6.0,6.2)'
 }
+
+apply plugin: 'net.minecraftforge.gradle'
 
 final def currentDate = LocalDate.now()
 version = 'v' + currentDate.format(DateTimeFormatter.ofPattern('yy.MM.dd'))
