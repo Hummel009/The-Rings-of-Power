@@ -1,3 +1,6 @@
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
 buildscript {
 	repositories {
 		jcenter()
@@ -7,30 +10,25 @@ buildscript {
 		classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
 	}
 }
+
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-version = '1.0'
+final def currentDate = LocalDate.now()
+version = 'v' + currentDate.format(DateTimeFormatter.ofPattern('yy.MM.dd'))
 group = 'com.yourname.modid'
-archivesBaseName = 'modid'
+archivesBaseName = 'The Rings of Power'
+
+targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_1_8
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(8)
+	}
+}
 
 minecraft {
 	version = '1.10.2-12.18.3.2511'
 	runDir = 'run'
 	mappings = 'snapshot_20161111'
-	srcCompat = JavaVersion.VERSION_1_8
-	targetCompat = JavaVersion.VERSION_1_8
-}
-
-processResources {
-	inputs.property 'version', project.version
-	inputs.property 'mcversion', project.minecraft.version
-
-	from(sourceSets.main.resources.srcDirs) {
-		include 'mcmod.info'
-		expand 'version': project.version, 'mcversion': project.minecraft.version
-	}
-
-	from(sourceSets.main.resources.srcDirs) {
-		exclude 'mcmod.info'
-	}
 }
