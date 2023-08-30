@@ -1,3 +1,6 @@
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
 buildscript {
 	repositories {
 		maven { url = 'https://maven.minecraftforge.net' }
@@ -7,13 +10,21 @@ buildscript {
 		classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '[6.0,6.2)', changing: true
 	}
 }
+
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.0'
+final def currentDate = LocalDate.now()
+version = 'v' + currentDate.format(DateTimeFormatter.ofPattern('yy.MM.dd'))
 group = 'com.yourname.modid'
-archivesBaseName = 'modid'
+archivesBaseName = 'The Rings of Power'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(8)
+	}
+}
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 
@@ -30,17 +41,6 @@ minecraft {
 				}
 			}
 		}
-
-		server {
-			workingDirectory project.file('run')
-			property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-			property 'forge.logging.console.level', 'debug'
-			mods {
-				examplemod {
-					source sourceSets.main
-				}
-			}
-		}
 	}
 }
 
@@ -48,32 +48,8 @@ dependencies {
 	minecraft 'net.minecraftforge:forge:1.13.2-25.0.223'
 }
 
-jar {
-	manifest {
-		attributes(["Specification-Title"     : 'examplemod',
-		            "Specification-Vendor"    : 'examplemodsareus',
-		            "Specification-Version"   : '1',
-		            "Implementation-Title"    : project.name,
-		            "Implementation-Version"  : "${version}",
-		            "Implementation-Vendor"   : 'examplemodsareus',
-		            "Implementation-Timestamp": new Date().format('yyyy-MM-dd\'T\'HH:mm:ssZ')])
-	}
-}
-
 final def reobfFile = file("$buildDir/reobfJar/output.jar")
 final def reobfArtifact = artifacts.add('default', reobfFile) {
 	type 'jar'
 	builtBy 'reobfJar'
-}
-publishing {
-	publications {
-		mavenJava(MavenPublication) {
-			artifact reobfArtifact
-		}
-	}
-	repositories {
-		maven {
-			url "file:///${project.projectDir}/mcmodsrepo"
-		}
-	}
 }
