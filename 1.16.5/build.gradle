@@ -1,3 +1,6 @@
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
 buildscript {
 	repositories {
 		maven { url = 'https://maven.minecraftforge.net' }
@@ -7,17 +10,22 @@ buildscript {
 		classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '[6.0,6.2)', changing: true
 	}
 }
+
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.0'
+final def currentDate = LocalDate.now()
+version = 'v' + currentDate.format(DateTimeFormatter.ofPattern('yy.MM.dd'))
 group = 'com.yourname.modid'
-archivesBaseName = 'modid'
+archivesBaseName = 'The Rings of Power'
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(8)
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(8)
+	}
+}
 
-println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
 	mappings channel: 'official', version: '1.16.5'
 	runs {
@@ -31,62 +39,11 @@ minecraft {
 				}
 			}
 		}
-
-		server {
-			workingDirectory project.file('run')
-			property 'forge.logging.markers', 'REGISTRIES'
-			property 'forge.logging.console.level', 'debug'
-			mods {
-				examplemod {
-					source sourceSets.main
-				}
-			}
-		}
-
-		data {
-			workingDirectory project.file('run')
-			property 'forge.logging.markers', 'REGISTRIES'
-			property 'forge.logging.console.level', 'debug'
-			args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
-
-			mods {
-				examplemod {
-					source sourceSets.main
-				}
-			}
-		}
 	}
 }
-
-sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
 	minecraft 'net.minecraftforge:forge:1.16.5-36.2.39'
 }
 
-jar {
-	manifest {
-		attributes(["Specification-Title"     : 'examplemod',
-		            "Specification-Vendor"    : 'examplemodsareus',
-		            "Specification-Version"   : '1',
-		            "Implementation-Title"    : project.name,
-		            "Implementation-Version"  : "${version}",
-		            "Implementation-Vendor"   : 'examplemodsareus',
-		            "Implementation-Timestamp": new Date().format('yyyy-MM-dd\'T\'HH:mm:ssZ')])
-	}
-}
-
 jar.finalizedBy('reobfJar')
-
-publishing {
-	publications {
-		mavenJava(MavenPublication) {
-			artifact jar
-		}
-	}
-	repositories {
-		maven {
-			url "file:///${project.projectDir}/mcmodsrepo"
-		}
-	}
-}
