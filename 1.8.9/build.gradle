@@ -24,12 +24,6 @@ archivesBaseName = 'The Rings of Power'
 targetCompatibility = JavaVersion.VERSION_1_8
 sourceCompatibility = JavaVersion.VERSION_1_8
 
-java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(8)
-	}
-}
-
 minecraft {
 	version = '1.8.9-11.15.1.2318-1.8.9'
 	runDir = 'run'
