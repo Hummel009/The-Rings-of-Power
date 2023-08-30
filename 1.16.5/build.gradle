@@ -20,6 +20,9 @@ version = 'v' + currentDate.format(DateTimeFormatter.ofPattern('yy.MM.dd'))
 group = 'com.yourname.modid'
 archivesBaseName = 'The Rings of Power'
 
+targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_1_8
+
 java {
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(8)
