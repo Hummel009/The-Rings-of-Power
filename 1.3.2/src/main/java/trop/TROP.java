@@ -44,13 +44,6 @@ public class TROP {
 		item.setMaxDamage(0);
 		item.setMaxStackSize(1);
 		item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
-		LanguageRegistry.instance().addNameForObject(item, "en_US", TROPLang.enUS.get("item." + itemName + ".name"));
-		LanguageRegistry.instance().addNameForObject(item, "es_AR", TROPLang.esES.get("item." + itemName + ".name"));
-		LanguageRegistry.instance().addNameForObject(item, "es_ES", TROPLang.esES.get("item." + itemName + ".name"));
-		LanguageRegistry.instance().addNameForObject(item, "es_MX", TROPLang.esES.get("item." + itemName + ".name"));
-		LanguageRegistry.instance().addNameForObject(item, "ru_RU", TROPLang.ruRU.get("item." + itemName + ".name"));
-		LanguageRegistry.instance().addNameForObject(item, "zh_CN", TROPLang.zhCN.get("item." + itemName + ".name"));
-		LanguageRegistry.instance().addNameForObject(item, "uk_UA", TROPLang.ukUA.get("item." + itemName + ".name"));
 	}
 
 	@Init
@@ -124,6 +117,14 @@ public class TROP {
 		register(ringUvatha, "ringUvatha");
 		register(ringRen, "ringRen");
 		register(ringDwar, "ringDwar");
+
+		TROPLang.loadLocalization(LanguageRegistry.instance(), "/assets/trop/lang/en_US.lang", "en_US");
+		TROPLang.loadLocalization(LanguageRegistry.instance(), "/assets/trop/lang/es_AR.lang", "es_AR");
+		TROPLang.loadLocalization(LanguageRegistry.instance(), "/assets/trop/lang/es_ES.lang", "es_ES");
+		TROPLang.loadLocalization(LanguageRegistry.instance(), "/assets/trop/lang/es_MX.lang", "es_MX");
+		TROPLang.loadLocalization(LanguageRegistry.instance(), "/assets/trop/lang/ru_RU.lang", "ru_RU");
+		TROPLang.loadLocalization(LanguageRegistry.instance(), "/assets/trop/lang/uk_UA.lang", "uk_UA");
+		TROPLang.loadLocalization(LanguageRegistry.instance(), "/assets/trop/lang/zh_CN.lang", "zh_CN");
 	}
 
 	@PreInit

@@ -1,7 +1,7 @@
 {
-  "parent": "item/generated",
-  "textures": {
-	"layer0": "trop:item/ring_nenya"
-  }
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "trop:item/ring_nenya"
+	}
 }
 
