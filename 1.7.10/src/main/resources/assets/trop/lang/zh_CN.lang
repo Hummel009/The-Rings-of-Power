@@ -1,14 +1,14 @@
-item.ring_narya.name=§d水戒南雅§r
+item.ring_narya.name=§d水戒能雅§r
 item.ring_nenya.name=§d火戒纳雅§r
 item.ring_vilya.name=§d气戒维雅§r
 
-item.ring_thulin.name=§b图林之戒§r
-item.ring_khibil.name=§b祁比勒之戒§r
+item.ring_thulin.name=§b须林之戒§r
+item.ring_khibil.name=§b祁比尔之戒§r
 item.ring_farin.name=§b法林之戒§r
 item.ring_khain.name=§b凯恩之戒§r
 item.ring_baraz.name=§b巴拉兹之戒§r
 item.ring_burin.name=§b伯林之戒§r
-item.ring_thror.name=§b索尔之戒§r
+item.ring_thror.name=§b瑟罗尔之戒§r
 
 item.ring_murazor.name=§c巫王-阿尔·穆拉佐尔之戒§r
 item.ring_hoarmurath.name=§c第六戒灵-霍阿穆拉斯之戒§r
@@ -20,6 +20,6 @@ item.ring_uvatha.name=§c第九戒灵-乌瓦萨·阿切夫之戒§r
 item.ring_ren.name=§c第八戒灵-任·伊雷之戒§r
 item.ring_dwar.name=§c第三戒灵-丹德拉·德瓦尔之戒§r
 
-item.ring_great.name=§6御众之戒§r
+item.ring_great.name=§6至尊魔戒§r
 
 itemGroup.ringPower=魔戒众戒
