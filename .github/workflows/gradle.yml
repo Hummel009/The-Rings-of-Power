@@ -332,7 +332,7 @@ jobs:
         with:
           name: compiled-artifact-1-19-4
           path: ./1.19.4/build/libs/*.jar
-  build1_20_1:
+  build1_20_2:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@main
@@ -345,9 +345,9 @@ jobs:
         uses: gradle/gradle-build-action@main
         with:
           arguments: build
-          build-root-directory: ./1.20.1
+          build-root-directory: ./1.20.2
       - name: Upload Artifact
         uses: actions/upload-artifact@main
         with:
-          name: compiled-artifact-1-20-1
-          path: ./1.20.1/build/libs/*.jar
+          name: compiled-artifact-1-20-2
+          path: ./1.20.2/build/libs/*.jar
