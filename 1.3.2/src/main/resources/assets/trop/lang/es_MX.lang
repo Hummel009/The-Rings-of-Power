@@ -1,25 +1,25 @@
-item.ring_narya.name=§dAnillo Narya§r
-item.ring_nenya.name=§dAnillo Nenya§r
-item.ring_vilya.name=§dAnillo Vilya§r
+item.ring_narya.name=§dAnillo Narya
+item.ring_nenya.name=§dAnillo Nenya
+item.ring_vilya.name=§dAnillo Vilya
 
-item.ring_thulin.name=§bAnillo de Thulin§r
-item.ring_khibil.name=§bAnillo de Khibil§r
-item.ring_farin.name=§bAnillo de Farin§r
-item.ring_khain.name=§bAnillo de Khain§r
-item.ring_baraz.name=§bAnillo de Baraz§r
-item.ring_burin.name=§bAnillo de Burin§r
-item.ring_thror.name=§bAnillo de Thror§r
+item.ring_thulin.name=§bAnillo de Thulin
+item.ring_khibil.name=§bAnillo de Khibil
+item.ring_farin.name=§bAnillo de Farin
+item.ring_khain.name=§bAnillo de Khain
+item.ring_baraz.name=§bAnillo de Baraz
+item.ring_burin.name=§bAnillo de Burin
+item.ring_thror.name=§bAnillo de Thror
 
-item.ring_murazor.name=§cAnillo de Mûrazôr§r
-item.ring_hoarmurath.name=§cAnillo de Hôarmûrath§r
-item.ring_akhorahil.name=§cAnillo de Akhôrahil§r
-item.ring_adunaphel.name=§cAnillo de Adûnaphel§r
-item.ring_jiindur.name=§cAnillo de Jí Indûr§r
-item.ring_khamul.name=§cAnillo de Khamûl§r
-item.ring_uvatha.name=§cAnillo de Ûvatha§r
-item.ring_ren.name=§cAnillo de Rên§r
-item.ring_dwar.name=§cAnillo de Dwâr§r
+item.ring_murazor.name=§cAnillo de Mûrazôr
+item.ring_hoarmurath.name=§cAnillo de Hôarmûrath
+item.ring_akhorahil.name=§cAnillo de Akhôrahil
+item.ring_adunaphel.name=§cAnillo de Adûnaphel
+item.ring_jiindur.name=§cAnillo de Jí Indûr
+item.ring_khamul.name=§cAnillo de Khamûl
+item.ring_uvatha.name=§cAnillo de Ûvatha
+item.ring_ren.name=§cAnillo de Rên
+item.ring_dwar.name=§cAnillo de Dwâr
 
-item.ring_great.name=§6Anillo Unico§r
+item.ring_great.name=§6Anillo Unico
 
 itemGroup.ringPower=Anillos de Poder

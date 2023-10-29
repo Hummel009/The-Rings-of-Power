@@ -122,6 +122,8 @@ public class TROP {
 		TROPLang.loadLocalization(LanguageRegistry.instance(), "/assets/trop/lang/es_AR.lang", "es_AR");
 		TROPLang.loadLocalization(LanguageRegistry.instance(), "/assets/trop/lang/es_ES.lang", "es_ES");
 		TROPLang.loadLocalization(LanguageRegistry.instance(), "/assets/trop/lang/es_MX.lang", "es_MX");
+		TROPLang.loadLocalization(LanguageRegistry.instance(), "/assets/trop/lang/es_UY.lang", "es_UY");
+		TROPLang.loadLocalization(LanguageRegistry.instance(), "/assets/trop/lang/es_VE.lang", "es_VE");
 		TROPLang.loadLocalization(LanguageRegistry.instance(), "/assets/trop/lang/ru_RU.lang", "ru_RU");
 		TROPLang.loadLocalization(LanguageRegistry.instance(), "/assets/trop/lang/uk_UA.lang", "uk_UA");
 		TROPLang.loadLocalization(LanguageRegistry.instance(), "/assets/trop/lang/zh_CN.lang", "zh_CN");
