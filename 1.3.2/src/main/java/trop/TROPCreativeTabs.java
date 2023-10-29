@@ -7,7 +7,7 @@ public class TROPCreativeTabs {
 	public static final CreativeTabs TAB_RINGS = new CreativeTabs("ringPower") {
 		@Override
 		public Item getTabIconItem() {
-			return TROP.ringBaraz;
+			return TROP.ringNarya;
 		}
 	};
 }
