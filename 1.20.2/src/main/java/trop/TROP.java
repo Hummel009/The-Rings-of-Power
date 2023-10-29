@@ -40,11 +40,6 @@ public class TROP {
 	public static final RegistryObject<Item> RING_FARIN = ITEMS.register("ring_farin", TROPItemRingDwarf::new);
 	public static final RegistryObject<Item> RING_KHAIN = ITEMS.register("ring_khain", TROPItemRingDwarf::new);
 	public static final RegistryObject<Item> RING_BARAZ = ITEMS.register("ring_baraz", TROPItemRingDwarf::new);
-	public static final RegistryObject<CreativeModeTab> TAB_RINGS = CREATIVE_TABS.register("troptab", () -> CreativeModeTab.builder().title(Component.translatable("itemGroup.ringPower")).icon(() -> new ItemStack(RING_BARAZ.get())).displayItems((enabledFlags, populator) -> {
-		for (Item item : CONTENT) {
-			populator.accept(item);
-		}
-	}).build());
 	public static final RegistryObject<Item> RING_BURIN = ITEMS.register("ring_burin", TROPItemRingDwarf::new);
 	public static final RegistryObject<Item> RING_MURAZOR = ITEMS.register("ring_murazor", TROPItemRingMan::new);
 	public static final RegistryObject<Item> RING_HOARMURATH = ITEMS.register("ring_hoarmurath", TROPItemRingMan::new);
@@ -55,6 +50,12 @@ public class TROP {
 	public static final RegistryObject<Item> RING_UVATHA = ITEMS.register("ring_uvatha", TROPItemRingMan::new);
 	public static final RegistryObject<Item> RING_REN = ITEMS.register("ring_ren", TROPItemRingMan::new);
 	public static final RegistryObject<Item> RING_DWAR = ITEMS.register("ring_dwar", TROPItemRingMan::new);
+
+	public static final RegistryObject<CreativeModeTab> TAB_RINGS = CREATIVE_TABS.register("troptab", () -> CreativeModeTab.builder().title(Component.translatable("itemGroup.ringPower")).icon(() -> new ItemStack(RING_BARAZ.get())).displayItems((enabledFlags, populator) -> {
+		for (Item item : CONTENT) {
+			populator.accept(item);
+		}
+	}).build());
 
 	public TROP() {
 		IEventBus fmlBus = FMLJavaModLoadingContext.get().getModEventBus();

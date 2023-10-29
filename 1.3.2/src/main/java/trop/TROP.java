@@ -73,18 +73,18 @@ public class TROP {
 		ringDwar = new TROPItemRingMan(TROPConfig.idRingDwar - 256);
 
 		int id = 0;
+		ringAdunaphel.setIconIndex(id++);
 		ringAkhorahil.setIconIndex(id++);
 		ringBaraz.setIconIndex(id++);
 		ringBurin.setIconIndex(id++);
 		ringDwar.setIconIndex(id++);
 		ringFarin.setIconIndex(id++);
 		ringGreat.setIconIndex(id++);
+		ringHoarmurath.setIconIndex(id++);
 		ringJiindur.setIconIndex(id++);
 		ringKhain.setIconIndex(id++);
 		ringKhamul.setIconIndex(id++);
 		ringKhibil.setIconIndex(id++);
-		ringHoarmurath.setIconIndex(id++);
-		ringAdunaphel.setIconIndex(id++);
 		ringMurazor.setIconIndex(id++);
 		ringNarya.setIconIndex(id++);
 		ringNenya.setIconIndex(id++);
