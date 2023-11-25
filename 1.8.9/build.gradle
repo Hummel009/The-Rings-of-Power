@@ -19,7 +19,7 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 final def currentDate = LocalDate.now()
 version = 'v' + currentDate.format(DateTimeFormatter.ofPattern('yy.MM.dd'))
 group = 'com.yourname.modid'
-archivesBaseName = 'The Rings of Power'
+archivesBaseName = '1.8.9'
 
 targetCompatibility = JavaVersion.VERSION_1_8
 sourceCompatibility = JavaVersion.VERSION_1_8
