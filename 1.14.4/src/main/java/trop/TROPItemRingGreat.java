@@ -22,23 +22,23 @@ import java.util.List;
 public class TROPItemRingGreat extends TROPItemRingBase {
 	@Override
 	@OnlyIn(Dist.CLIENT)
-	public void addInformation(ItemStack itemStack, World world, List<ITextComponent> list, ITooltipFlag tooltipFlag) {
+	public void appendHoverText(ItemStack itemStack, World world, List<ITextComponent> list, ITooltipFlag tooltipFlag) {
 		for (Effect effect : new Effect[]{Effects.INVISIBILITY}) {
-			list.add(new TranslationTextComponent(effect.getName()).applyTextStyle(TextFormatting.DARK_GREEN));
+			list.add(new TranslationTextComponent(effect.getDescriptionId()).withStyle(TextFormatting.DARK_GREEN));
 		}
 	}
 
 	@Override
 	public void inventoryTick(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
 		if (entity instanceof LivingEntity) {
-			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.INVISIBILITY, 20));
+			((LivingEntity) entity).addEffect(new EffectInstance(Effects.INVISIBILITY, 20));
 		}
 	}
 
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity playerEntity, Hand hand) {
-		playerEntity.addPotionEffect(new EffectInstance(Effects.REGENERATION, 3600, 2));
-		playerEntity.addPotionEffect(new EffectInstance(Effects.HEALTH_BOOST, 3800, 2));
-		return super.onItemRightClick(world, playerEntity, hand);
+	public ActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand) {
+		playerEntity.addEffect(new EffectInstance(Effects.REGENERATION, 3600, 2));
+		playerEntity.addEffect(new EffectInstance(Effects.HEALTH_BOOST, 3800, 2));
+		return super.use(world, playerEntity, hand);
 	}
 }

@@ -22,24 +22,24 @@ import java.util.List;
 public class TROPItemRingDwarf extends TROPItemRingBase {
 	@Override
 	@OnlyIn(Dist.CLIENT)
-	public void addInformation(ItemStack itemStack, World world, List<ITextComponent> list, ITooltipFlag tooltipFlag) {
-		for (Effect effect : new Effect[]{Effects.MINING_FATIGUE, Effects.RESISTANCE}) {
-			list.add(new TranslationTextComponent(effect.getName()).applyTextStyle(TextFormatting.DARK_GREEN));
+	public void appendHoverText(ItemStack itemStack, World world, List<ITextComponent> list, ITooltipFlag tooltipFlag) {
+		for (Effect effect : new Effect[]{Effects.DIG_SPEED, Effects.DAMAGE_RESISTANCE}) {
+			list.add(new TranslationTextComponent(effect.getDescriptionId()).withStyle(TextFormatting.DARK_GREEN));
 		}
 	}
 
 	@Override
 	public void inventoryTick(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
 		if (entity instanceof LivingEntity) {
-			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.MINING_FATIGUE, 20, 1));
-			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.RESISTANCE, 20, 1));
+			((LivingEntity) entity).addEffect(new EffectInstance(Effects.DIG_SPEED, 20, 1));
+			((LivingEntity) entity).addEffect(new EffectInstance(Effects.DAMAGE_RESISTANCE, 20, 1));
 		}
 	}
 
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity playerEntity, Hand hand) {
-		playerEntity.addPotionEffect(new EffectInstance(Effects.REGENERATION, 3600, 2));
-		playerEntity.addPotionEffect(new EffectInstance(Effects.HEALTH_BOOST, 3800, 2));
-		return super.onItemRightClick(world, playerEntity, hand);
+	public ActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand) {
+		playerEntity.addEffect(new EffectInstance(Effects.REGENERATION, 3600, 2));
+		playerEntity.addEffect(new EffectInstance(Effects.HEALTH_BOOST, 3800, 2));
+		return super.use(world, playerEntity, hand);
 	}
 }

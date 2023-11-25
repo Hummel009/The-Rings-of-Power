@@ -64,7 +64,7 @@ public class TROP {
 			renamed.put("khommurat", ringHoarmurath);
 			for (RegistryEvent.MissingMappings.Mapping<Item> mapping : event.getAllMappings()) {
 				for (Map.Entry<String, Item> entry : renamed.entrySet()) {
-					if (mapping.key.getResourcePath().contains(entry.getKey())) {
+					if (mapping.key.getPath().contains(entry.getKey())) {
 						mapping.remap(entry.getValue());
 						break;
 					}
@@ -140,7 +140,7 @@ public class TROP {
 		public static void register(Item item, String name) {
 			String itemName = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, name);
 			item.setRegistryName(itemName);
-			item.setUnlocalizedName(itemName);
+			item.setTranslationKey(itemName);
 			item.setMaxDamage(0);
 			item.setMaxStackSize(1);
 			item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
