@@ -22,7 +22,7 @@ public class TROPItemRingVilya extends TROPItemRingBase {
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void appendHoverText(ItemStack itemStack, Level level, List<Component> list, TooltipFlag tooltipFlag) {
-		for (MobEffect mobEffect : new MobEffect[]{MobEffects.MOVEMENT_SPEED, MobEffects.JUMP}) {
+		for (var mobEffect : new MobEffect[]{MobEffects.MOVEMENT_SPEED, MobEffects.JUMP}) {
 			list.add(Component.translatable(mobEffect.getDescriptionId()).withStyle(ChatFormatting.DARK_GREEN));
 		}
 	}

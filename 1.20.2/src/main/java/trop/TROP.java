@@ -52,13 +52,13 @@ public class TROP {
 	public static final RegistryObject<Item> RING_DWAR = ITEMS.register("ring_dwar", TROPItemRingMan::new);
 
 	public static final RegistryObject<CreativeModeTab> TAB_RINGS = CREATIVE_TABS.register("troptab", () -> CreativeModeTab.builder().title(Component.translatable("itemGroup.ringPower")).icon(() -> new ItemStack(RING_NARYA.get())).displayItems((enabledFlags, populator) -> {
-		for (Item item : CONTENT) {
+		for (var item : CONTENT) {
 			populator.accept(item);
 		}
 	}).build());
 
 	public TROP() {
-		IEventBus fmlBus = FMLJavaModLoadingContext.get().getModEventBus();
+		var fmlBus = FMLJavaModLoadingContext.get().getModEventBus();
 		ITEMS.register(fmlBus);
 		CREATIVE_TABS.register(fmlBus);
 	}
@@ -76,8 +76,8 @@ public class TROP {
 			renamed.put("vilia", RING_VILYA);
 			renamed.put("morgomir", RING_ADUNAPHEL);
 			renamed.put("khommurat", RING_HOARMURATH);
-			for (MissingMappingsEvent.Mapping<Item> mapping : event.getAllMappings(ForgeRegistries.Keys.ITEMS)) {
-				for (Map.Entry<String, RegistryObject<Item>> entry : renamed.entrySet()) {
+			for (var mapping : event.getAllMappings(ForgeRegistries.Keys.ITEMS)) {
+				for (var entry : renamed.entrySet()) {
 					if (mapping.getKey().getPath().contains(entry.getKey())) {
 						mapping.remap(entry.getValue().get());
 						break;

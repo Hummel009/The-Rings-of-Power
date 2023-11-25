@@ -59,8 +59,8 @@ public class TROP {
 			renamed.put("vilia", RING_VILYA);
 			renamed.put("morgomir", RING_ADUNAPHEL);
 			renamed.put("khommurat", RING_HOARMURATH);
-			for (RegistryEvent.MissingMappings.Mapping<Item> mapping : event.getAllMappings()) {
-				for (Map.Entry<String, RegistryObject<Item>> entry : renamed.entrySet()) {
+			for (var mapping : event.getAllMappings()) {
+				for (var entry : renamed.entrySet()) {
 					if (mapping.key.getPath().contains(entry.getKey())) {
 						mapping.remap(entry.getValue().get());
 						break;

@@ -23,7 +23,7 @@ public class TROPItemRingNarya extends TROPItemRingBase {
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void appendHoverText(ItemStack itemStack, Level level, List<Component> list, TooltipFlag tooltipFlag) {
-		for (MobEffect mobEffect : new MobEffect[]{MobEffects.FIRE_RESISTANCE}) {
+		for (var mobEffect : new MobEffect[]{MobEffects.FIRE_RESISTANCE}) {
 			list.add(new TranslatableComponent(mobEffect.getDescriptionId()).withStyle(ChatFormatting.DARK_GREEN));
 		}
 	}

@@ -22,7 +22,7 @@ public class TROPItemRingDwarf extends TROPItemRingBase {
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void appendHoverText(ItemStack itemStack, Level level, List<Component> list, TooltipFlag tooltipFlag) {
-		for (MobEffect mobEffect : new MobEffect[]{MobEffects.DIG_SPEED, MobEffects.DAMAGE_RESISTANCE}) {
+		for (var mobEffect : new MobEffect[]{MobEffects.DIG_SPEED, MobEffects.DAMAGE_RESISTANCE}) {
 			list.add(Component.translatable(mobEffect.getDescriptionId()).withStyle(ChatFormatting.DARK_GREEN));
 		}
 	}

@@ -22,7 +22,7 @@ public class TROPItemRingNenya extends TROPItemRingBase {
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void appendHoverText(ItemStack itemStack, Level level, List<Component> list, TooltipFlag tooltipFlag) {
-		for (MobEffect mobEffect : new MobEffect[]{MobEffects.WATER_BREATHING}) {
+		for (var mobEffect : new MobEffect[]{MobEffects.WATER_BREATHING}) {
 			list.add(Component.translatable(mobEffect.getDescriptionId()).withStyle(ChatFormatting.DARK_GREEN));
 		}
 	}
