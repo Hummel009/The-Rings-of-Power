@@ -24,7 +24,7 @@ jobs:
           arguments: build
           build-root-directory: ./1.3.2
       - name: Upload Artifact
-        uses: actions/upload-artifact@3.1.3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: compiled-artifact
           path: ./1.3.2/build/libs/*.jar
@@ -43,7 +43,7 @@ jobs:
           arguments: build
           build-root-directory: ./1.4.7
       - name: Upload Artifact
-        uses: actions/upload-artifact@3.1.3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: compiled-artifact
           path: ./1.4.7/build/libs/*.jar
@@ -62,7 +62,7 @@ jobs:
           arguments: build
           build-root-directory: ./1.5.2
       - name: Upload Artifact
-        uses: actions/upload-artifact@3.1.3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: compiled-artifact
           path: ./1.5.2/build/libs/*.jar
@@ -81,7 +81,7 @@ jobs:
           arguments: build
           build-root-directory: ./1.6.4
       - name: Upload Artifact
-        uses: actions/upload-artifact@3.1.3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: compiled-artifact
           path: ./1.6.4/build/libs/*.jar
@@ -100,7 +100,7 @@ jobs:
           arguments: build
           build-root-directory: ./1.7.10
       - name: Upload Artifact
-        uses: actions/upload-artifact@3.1.3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: compiled-artifact
           path: ./1.7.10/build/libs/*.jar
@@ -119,7 +119,7 @@ jobs:
           arguments: build
           build-root-directory: ./1.8.9
       - name: Upload Artifact
-        uses: actions/upload-artifact@3.1.3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: compiled-artifact
           path: ./1.8.9/build/libs/*.jar
@@ -138,7 +138,7 @@ jobs:
           arguments: build
           build-root-directory: ./1.9.4
       - name: Upload Artifact
-        uses: actions/upload-artifact@3.1.3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: compiled-artifact
           path: ./1.9.4/build/libs/*.jar
@@ -157,7 +157,7 @@ jobs:
           arguments: build
           build-root-directory: ./1.10.2
       - name: Upload Artifact
-        uses: actions/upload-artifact@3.1.3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: compiled-artifact
           path: ./1.10.2/build/libs/*.jar
@@ -176,7 +176,7 @@ jobs:
           arguments: build
           build-root-directory: ./1.11.2
       - name: Upload Artifact
-        uses: actions/upload-artifact@3.1.3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: compiled-artifact
           path: ./1.11.2/build/libs/*.jar
@@ -195,7 +195,7 @@ jobs:
           arguments: build
           build-root-directory: ./1.12.2
       - name: Upload Artifact
-        uses: actions/upload-artifact@3.1.3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: compiled-artifact
           path: ./1.12.2/build/libs/*.jar
@@ -214,7 +214,7 @@ jobs:
           arguments: build
           build-root-directory: ./1.13.2
       - name: Upload Artifact
-        uses: actions/upload-artifact@3.1.3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: compiled-artifact
           path: ./1.13.2/build/libs/*.jar
@@ -233,7 +233,7 @@ jobs:
           arguments: build
           build-root-directory: ./1.14.4
       - name: Upload Artifact
-        uses: actions/upload-artifact@3.1.3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: compiled-artifact
           path: ./1.14.4/build/libs/*.jar
@@ -252,7 +252,7 @@ jobs:
           arguments: build
           build-root-directory: ./1.15.2
       - name: Upload Artifact
-        uses: actions/upload-artifact@3.1.3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: compiled-artifact
           path: ./1.15.2/build/libs/*.jar
@@ -271,7 +271,7 @@ jobs:
           arguments: build
           build-root-directory: ./1.16.5
       - name: Upload Artifact
-        uses: actions/upload-artifact@3.1.3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: compiled-artifact
           path: ./1.16.5/build/libs/*.jar
@@ -290,7 +290,7 @@ jobs:
           arguments: build
           build-root-directory: ./1.17.1
       - name: Upload Artifact
-        uses: actions/upload-artifact@3.1.3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: compiled-artifact
           path: ./1.17.1/build/libs/*.jar
@@ -309,7 +309,7 @@ jobs:
           arguments: build
           build-root-directory: ./1.18.2
       - name: Upload Artifact
-        uses: actions/upload-artifact@3.1.3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: compiled-artifact
           path: ./1.18.2/build/libs/*.jar
@@ -328,7 +328,7 @@ jobs:
           arguments: build
           build-root-directory: ./1.19.4
       - name: Upload Artifact
-        uses: actions/upload-artifact@3.1.3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: compiled-artifact
           path: ./1.19.4/build/libs/*.jar
@@ -347,7 +347,7 @@ jobs:
           arguments: build
           build-root-directory: ./1.20.2
       - name: Upload Artifact
-        uses: actions/upload-artifact@3.1.3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: compiled-artifact
           path: ./1.20.2/build/libs/*.jar
