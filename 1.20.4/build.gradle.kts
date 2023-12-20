@@ -9,7 +9,7 @@ group = "hummel"
 version = "v" + LocalDate.now().format(DateTimeFormatter.ofPattern("yy.MM.dd"))
 
 dependencies {
-	minecraft("net.minecraftforge:forge:1.20.2-48.0.30")
+	minecraft("net.minecraftforge:forge:1.20.4-49.0.10")
 }
 
 java {
@@ -19,7 +19,7 @@ java {
 }
 
 minecraft {
-	mappings("official", "1.20.2")
+	mappings("official", "1.20.4")
 	runs {
 		create("client") {
 			workingDirectory(project.file("run"))
