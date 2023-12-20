@@ -22,6 +22,7 @@ import java.util.List;
 public class TROPItemRingNenya extends Item {
 	@Override
 	@SideOnly(Side.CLIENT)
+	@SuppressWarnings("deprecation")
 	public void addInformation(ItemStack itemStack, World world, List<String> list, ITooltipFlag tooltipFlag) {
 		for (Potion potion : new Potion[]{MobEffects.WATER_BREATHING}) {
 			list.add(ChatFormatting.DARK_GREEN + I18n.translateToLocal(potion.getName()).trim());

@@ -19,9 +19,9 @@ public class TROPLang {
 
 	public static void loadLocalization(LanguageRegistry registry, URL langFile, String langName) {
 		InputStream inputStream = null;
-		Properties properties = new Properties();
 		try {
 			inputStream = langFile.openStream();
+			Properties properties = new Properties();
 			properties.load(new InputStreamReader(inputStream, Charsets.UTF_8));
 			registry.addStringLocalization(properties, langName);
 		} catch (IOException e) {

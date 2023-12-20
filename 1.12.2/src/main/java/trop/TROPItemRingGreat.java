@@ -22,6 +22,7 @@ import java.util.List;
 public class TROPItemRingGreat extends Item {
 	@Override
 	@SideOnly(Side.CLIENT)
+	@SuppressWarnings("deprecation")
 	public void addInformation(ItemStack itemStack, World world, List<String> list, ITooltipFlag tooltipFlag) {
 		for (Potion potion : new Potion[]{MobEffects.INVISIBILITY}) {
 			list.add(ChatFormatting.DARK_GREEN + I18n.translateToLocal(potion.getName()).trim());

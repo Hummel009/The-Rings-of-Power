@@ -18,6 +18,7 @@ import java.util.List;
 public class TROPItemRingDwarf extends Item {
 	@Override
 	@SideOnly(Side.CLIENT)
+	@SuppressWarnings("rawtypes")
 	public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean b) {
 		for (Potion potion : new Potion[]{Potion.digSpeed, Potion.resistance}) {
 			list.add(EnumChatFormatting.DARK_GREEN + StatCollector.translateToLocal(potion.getName()).trim());

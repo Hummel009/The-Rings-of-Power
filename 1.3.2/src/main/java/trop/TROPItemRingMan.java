@@ -15,7 +15,7 @@ public class TROPItemRingMan extends Item {
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, List list) {
 		for (Potion potion : new Potion[]{Potion.damageBoost}) {
-			list.add("\u00A72" + StatCollector.translateToLocal(potion.getName()).trim());
+			list.add("§2" + StatCollector.translateToLocal(potion.getName()).trim());
 		}
 	}
 

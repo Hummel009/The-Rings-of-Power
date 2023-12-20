@@ -18,6 +18,7 @@ import java.util.List;
 public class TROPItemRingVilya extends Item {
 	@Override
 	@SideOnly(Side.CLIENT)
+	@SuppressWarnings("rawtypes")
 	public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean b) {
 		for (Potion potion : new Potion[]{Potion.moveSpeed, Potion.jump}) {
 			list.add(EnumChatFormatting.DARK_GREEN + StatCollector.translateToLocal(potion.getName()).trim());

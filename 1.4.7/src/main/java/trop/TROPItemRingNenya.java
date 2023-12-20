@@ -23,7 +23,7 @@ public class TROPItemRingNenya extends Item {
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean b) {
 		for (Potion potion : new Potion[]{Potion.waterBreathing}) {
-			list.add("\u00A72" + StatCollector.translateToLocal(potion.getName()).trim());
+			list.add("§2" + StatCollector.translateToLocal(potion.getName()).trim());
 		}
 	}
 

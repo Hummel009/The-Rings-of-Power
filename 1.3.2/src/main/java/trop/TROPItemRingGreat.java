@@ -15,7 +15,7 @@ public class TROPItemRingGreat extends Item {
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, List list) {
 		for (Potion potion : new Potion[]{Potion.regeneration}) {
-			list.add("\u00A72" + StatCollector.translateToLocal(potion.getName()).trim());
+			list.add("§2" + StatCollector.translateToLocal(potion.getName()).trim());
 		}
 	}
 
