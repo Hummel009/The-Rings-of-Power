@@ -28,6 +28,7 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@main
         with:
+          name: compiled-artifact
           path: ./${{ matrix.version }}/build/libs/*.jar
           merge-multiple: true
   build_legacy:
@@ -50,6 +51,7 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@main
         with:
+          name: compiled-artifact
           path: ./${{ matrix.version }}/build/libs/*.jar
           merge-multiple: true
   collect_artifact:
