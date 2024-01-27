@@ -22,11 +22,11 @@ jobs:
           java-version: '21'
           distribution: temurin
       - name: Build with Gradle
-        uses: gradle/gradle-build-action@v3.1.3
+        uses: gradle/gradle-build-action@main
         with:
           arguments: :${{matrix.version}}:build
       - name: Upload Artifact
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: compiled-artifact
           path: ./${{ matrix.version }}/build/libs/*.jar
@@ -43,12 +43,12 @@ jobs:
           java-version: '8'
           distribution: temurin
       - name: Build with Gradle
-        uses: gradle/gradle-build-action@v3.1.3
+        uses: gradle/gradle-build-action@main
         with:
           build-root-directory: ./${{matrix.version}}
           arguments: build
       - name: Upload Artifact
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: compiled-artifact
           path: ./${{ matrix.version }}/build/libs/*.jar
