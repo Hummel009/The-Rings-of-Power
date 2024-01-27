@@ -25,7 +25,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v3.1.3
         with:
-          name: compiled-artifact-modern
+          name: compiled-artifact
           path: |
             ./1.3.2/build/libs/*.jar
             ./1.4.7/build/libs/*.jar
