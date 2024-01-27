@@ -28,9 +28,8 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@main
         with:
-          name: compiled-artifact
+          name: compiled-artifact-modern
           path: ./${{ matrix.version }}/build/libs/*.jar
-          merge-multiple: true
   build_legacy:
     runs-on: windows-latest
     strategy:
@@ -51,6 +50,5 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@main
         with:
-          name: compiled-artifact
+          name: compiled-artifact-legacy
           path: ./${{ matrix.version }}/build/libs/*.jar
-          merge-multiple: true
