@@ -22,7 +22,7 @@ jobs:
           java-version: '21'
           distribution: temurin
       - name: Build with Gradle
-        uses: gradle/gradle-build-action@main
+        uses: gradle/gradle-build-action@v3.1.3
         with:
           arguments: :${{matrix.version}}:build
       - name: Upload Artifact
@@ -43,7 +43,7 @@ jobs:
           java-version: '8'
           distribution: temurin
       - name: Build with Gradle
-        uses: gradle/gradle-build-action@main
+        uses: gradle/gradle-build-action@v3.1.3
         with:
           build-root-directory: ./${{matrix.version}}
           arguments: build
