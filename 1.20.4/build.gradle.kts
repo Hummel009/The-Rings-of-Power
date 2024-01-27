@@ -36,3 +36,10 @@ tasks {
 		options.encoding = "UTF-8"
 	}
 }
+
+//Temporary fix for the problem in ForgeGradle
+sourceSets.forEach {
+	val dir = layout.buildDirectory.dir("sourcesSets/$it.name")
+	it.output.setResourcesDir(dir)
+	it.java.destinationDirectory = dir
+}
