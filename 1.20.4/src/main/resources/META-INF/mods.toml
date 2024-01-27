@@ -1,15 +1,22 @@
 modLoader = "javafml"
-loaderVersion = "[3,)"
+loaderVersion = "[0,)"
 license = "Powered by Hummel009"
+logoFile = "logo.png"
 
 [[mods]]
 modId = "trop"
 version = "23.12.29"
 displayName = "The Rings of Power"
-logoFile = "logo.png"
-credits = "Hummel009"
 authors = "Hummel009"
 description = '''This mod adds Rings of Power from the Lord of the Rings to Minecraft'''
+
+[[dependencies.trop]]
+modId = "forge"
+mandatory = true
+versionRange = "[0,)"
+ordering = "NONE"
+side = "BOTH"
+
 [[dependencies.trop]]
 modId = "minecraft"
 mandatory = true
