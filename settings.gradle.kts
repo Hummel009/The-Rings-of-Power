@@ -18,6 +18,9 @@ pluginManagement {
 		maven {
 			url = uri("https://repo.sleeping.town")
 		}
+		maven {
+			url = uri("https://maven.neoforged.net/releases")
+		}
 		gradlePluginPortal()
 		mavenCentral()
 		mavenLocal()
@@ -29,7 +32,7 @@ dependencyResolutionManagement {
 }
 
 plugins {
-	id("org.gradle.toolchains.foojay-resolver-convention") version "0.4.0"
+	id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
 }
 
 include(":1.3.2")
@@ -46,3 +49,4 @@ include(":1.17.1")
 include(":1.18.2")
 include(":1.19.4")
 include(":1.20.4")
+include(":1.20.4-neo")

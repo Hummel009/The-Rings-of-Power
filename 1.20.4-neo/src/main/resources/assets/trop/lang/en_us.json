@@ -1,0 +1,23 @@
+{
+	"item.trop.ring_narya": "§dRing Narya§r",
+	"item.trop.ring_nenya": "§dRing Nenya§r",
+	"item.trop.ring_vilya": "§dRing Vilya§r",
+	"item.trop.ring_thulin": "§bThulin's Ring§r",
+	"item.trop.ring_khibil": "§bKhibil's Ring§r",
+	"item.trop.ring_farin": "§bFarin's Ring§r",
+	"item.trop.ring_khain": "§bKhain's Ring§r",
+	"item.trop.ring_baraz": "§bBaraz's Ring§r",
+	"item.trop.ring_burin": "§bBurin's Ring§r",
+	"item.trop.ring_thror": "§bThror's Ring§r",
+	"item.trop.ring_murazor": "§cMurazor's Ring§r",
+	"item.trop.ring_hoarmurath": "§cHoarmurath's Ring§r",
+	"item.trop.ring_akhorahil": "§cAkhorahil's Ring§r",
+	"item.trop.ring_adunaphel": "§cAdunaphel's Ring§r",
+	"item.trop.ring_jiindur": "§cJi Indur's Ring§r",
+	"item.trop.ring_khamul": "§cKhamul's Ring§r",
+	"item.trop.ring_uvatha": "§cUvatha's Ring§r",
+	"item.trop.ring_ren": "§cRen's Ring§r",
+	"item.trop.ring_dwar": "§cDwar's Ring§r",
+	"item.trop.ring_great": "§6The One Ring§r",
+	"itemGroup.ringPower": "Rings of Power"
+}
