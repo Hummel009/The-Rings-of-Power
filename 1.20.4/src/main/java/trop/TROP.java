@@ -24,8 +24,8 @@ public class TROP {
 
 	public static final Collection<Item> CONTENT = new ArrayList<>();
 
-	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "trop");
-	public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, "trop");
+	private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "trop");
+	private static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, "trop");
 
 	public static final RegistryObject<Item> RING_GREAT = ITEMS.register("ring_great", TROPItemRingGreat::new);
 
@@ -64,6 +64,9 @@ public class TROP {
 
 	@Mod.EventBusSubscriber
 	public static class MissingMappingsDetector {
+		private MissingMappingsDetector() {
+		}
+
 		@SubscribeEvent
 		public static void onMissingMappings(MissingMappingsEvent event) {
 			Map<String, RegistryObject<Item>> renamed = new HashMap<>();

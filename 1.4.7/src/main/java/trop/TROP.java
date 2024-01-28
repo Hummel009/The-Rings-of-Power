@@ -2,14 +2,13 @@ package trop;
 
 import com.google.common.base.CaseFormat;
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.Init;
-import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.item.Item;
 
+@SuppressWarnings({"WeakerAccess", "PublicField"})
 @Mod(modid = "trop", useMetadata = true)
 public class TROP {
 	public static final String DISABLE_CURSEFORGE_DUPLICATE_NOTICE = "101229102023";
@@ -38,17 +37,14 @@ public class TROP {
 	public static Item ringRen;
 	public static Item ringDwar;
 
-	public static void register(Item item, String name) {
+	private static void register(Item item, String name) {
 		String itemName = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, name);
 		item.setTextureFile("/assets/trop/textures/items.png");
 		item.setItemName(itemName);
-		item.setMaxDamage(0);
-		item.setMaxStackSize(1);
-		item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
 		GameRegistry.registerItem(item, itemName);
 	}
 
-	@Init
+	@Mod.Init
 	public void onInit(FMLInitializationEvent event) {
 		ringGreat = new TROPItemRingGreat(TROPConfig.idRingGreat - 256);
 
@@ -131,7 +127,7 @@ public class TROP {
 		LanguageRegistry.instance().loadLocalization("/assets/trop/lang/zh_CN.lang", "zh_CN", false);
 	}
 
-	@PreInit
+	@Mod.PreInit
 	public void preInit(FMLPreInitializationEvent event) {
 		TROPConfig.preInit(event);
 	}

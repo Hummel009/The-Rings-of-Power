@@ -10,4 +10,7 @@ public class TROPCreativeTabs {
 			return TROP.ringNarya;
 		}
 	};
+
+	private TROPCreativeTabs() {
+	}
 }

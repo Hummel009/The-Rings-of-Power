@@ -10,4 +10,7 @@ public class TROPCreativeTabs {
 			return new ItemStack(TROP.ringNarya);
 		}
 	};
+
+	private TROPCreativeTabs() {
+	}
 }

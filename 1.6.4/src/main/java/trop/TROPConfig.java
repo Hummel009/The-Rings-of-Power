@@ -6,10 +6,11 @@ import net.minecraftforge.common.Configuration;
 
 import java.util.logging.Level;
 
+@SuppressWarnings("PublicField")
 public class TROPConfig {
-	public static Configuration configuration;
+	private static Configuration configuration;
 
-	public static boolean loaded;
+	private static boolean loaded;
 
 	public static int idRingGreat;
 
@@ -35,6 +36,9 @@ public class TROPConfig {
 	public static int idRingRen;
 	public static int idRingDwar;
 
+	private TROPConfig() {
+	}
+
 	public static void preInit(FMLPreInitializationEvent event) {
 		if (!loaded) {
 			configuration = new Configuration(event.getSuggestedConfigurationFile());
@@ -42,7 +46,7 @@ public class TROPConfig {
 		}
 	}
 
-	public static void setDefaultValues() {
+	private static void setDefaultValues() {
 		try {
 			configuration.load();
 			idRingGreat = configuration.get("item", "Ring Great", 890).getInt(890);

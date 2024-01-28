@@ -6,7 +6,7 @@ import net.minecraft.src.*;
 
 import java.util.List;
 
-public class TROPItemRingNarya extends Item {
+public class TROPItemRingNarya extends TROPItemRingBase {
 	public TROPItemRingNarya(int id) {
 		super(id);
 	}

@@ -10,7 +10,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
-import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -19,6 +19,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings({"WeakerAccess", "PublicField", "UtilityClassWithoutPrivateConstructor"})
 @Mod(modid = "trop", useMetadata = true)
 public class TROP {
 	public static final String DISABLE_CURSEFORGE_DUPLICATE_NOTICE = "101229102023";
@@ -51,6 +52,9 @@ public class TROP {
 
 	@Mod.EventBusSubscriber
 	public static class MissingMappingsDetector {
+		private MissingMappingsDetector() {
+		}
+
 		@SubscribeEvent
 		public static void onMissingMappings(RegistryEvent.MissingMappings<Item> event) {
 			Map<String, Item> renamed = new HashMap<>();
@@ -73,9 +77,12 @@ public class TROP {
 		}
 	}
 
-	@ObjectHolder("trop")
+	@GameRegistry.ObjectHolder("trop")
 	@Mod.EventBusSubscriber
 	public static class RegistryEvents {
+		private RegistryEvents() {
+		}
+
 		@SubscribeEvent
 		public static void onItemRegistry(RegistryEvent.Register<Item> event) {
 			ringGreat = new TROPItemRingGreat();
@@ -137,13 +144,10 @@ public class TROP {
 			}
 		}
 
-		public static void register(Item item, String name) {
+		private static void register(Item item, String name) {
 			String itemName = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, name);
 			item.setRegistryName(itemName);
 			item.setTranslationKey(itemName);
-			item.setMaxDamage(0);
-			item.setMaxStackSize(1);
-			item.setCreativeTab(TROPCreativeTabs.TAB_RINGS);
 			ForgeRegistries.ITEMS.register(item);
 			CONTENT.add(item);
 		}

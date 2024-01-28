@@ -10,4 +10,7 @@ public class TROPCreativeTabs {
 			return new ItemStack(TROP.RING_NARYA.get());
 		}
 	};
+
+	private TROPCreativeTabs() {
+	}
 }
