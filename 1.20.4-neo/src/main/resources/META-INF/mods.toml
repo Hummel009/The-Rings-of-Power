@@ -11,15 +11,15 @@ authors = "Hummel009"
 description = '''This mod adds Rings of Power from the Lord of the Rings to Minecraft'''
 
 [[dependencies.trop]]
-modId = "forge"
-mandatory = true
+modId = "neoforge"
+type = "required"
 versionRange = "[0,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.trop]]
 modId = "minecraft"
-mandatory = true
+type = "required"
 versionRange = "[1.20.1,1.20.4]"
 ordering = "NONE"
 side = "BOTH"
