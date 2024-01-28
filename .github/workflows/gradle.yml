@@ -51,7 +51,7 @@ jobs:
         uses: actions/upload-artifact@v3.1.3
         with:
           name: compiled-artifact
-          path: ./${{matrix.version}}/build/libs/*.jar
+          path: ./archive1/${{matrix.version}}/build/libs/*.jar
   build_archive2:
     runs-on: windows-latest
     strategy:
@@ -73,4 +73,4 @@ jobs:
         uses: actions/upload-artifact@v3.1.3
         with:
           name: compiled-artifact
-          path: ./${{matrix.version}}/build/libs/*.jar
+          path: ./archive2/${{matrix.version}}/build/libs/*.jar
