@@ -1,18 +1,22 @@
 pluginManagement {
 	repositories {
-		maven {
-			url = uri("https://maven.minecraftforge.net/")
-		}
-		maven {
-			url = uri("https://maven.neoforged.net/releases")
-		}
+		maven("https://maven.minecraftforge.net")
+		maven("https://maven.neoforged.net/releases")
 		mavenLocal()
+		mavenCentral()
 		gradlePluginPortal()
 	}
 }
 
 dependencyResolutionManagement {
 	repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
+	repositories {
+		maven("https://maven.minecraftforge.net")
+		maven("https://maven.neoforged.net/releases")
+		mavenLocal()
+		mavenCentral()
+		gradlePluginPortal()
+	}
 }
 
 plugins {

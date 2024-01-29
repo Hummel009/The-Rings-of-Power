@@ -9,23 +9,34 @@ pluginManagement {
 				includeGroup("com.gtnewhorizons.retrofuturagradle")
 			}
 		}
-		maven {
-			url = uri("https://maven.minecraftforge.net/")
-		}
-		maven {
-			url = uri("https://maven.fabricmc.net")
-		}
-		maven {
-			url = uri("https://repo.sleeping.town")
-		}
-		gradlePluginPortal()
-		mavenCentral()
+		maven("https://maven.minecraftforge.net/")
+		maven("https://maven.fabricmc.net")
+		maven("https://repo.sleeping.town")
 		mavenLocal()
+		mavenCentral()
+		gradlePluginPortal()
 	}
 }
 
 dependencyResolutionManagement {
 	repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
+	repositories {
+		maven {
+			name = "GTNH Maven"
+			url = uri("http://jenkins.usrv.eu:8081/nexus/content/groups/public/")
+			isAllowInsecureProtocol = true
+			mavenContent {
+				includeGroup("com.gtnewhorizons")
+				includeGroup("com.gtnewhorizons.retrofuturagradle")
+			}
+		}
+		maven("https://maven.minecraftforge.net/")
+		maven("https://maven.fabricmc.net")
+		maven("https://repo.sleeping.town")
+		mavenLocal()
+		mavenCentral()
+		gradlePluginPortal()
+	}
 }
 
 plugins {
