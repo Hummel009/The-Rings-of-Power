@@ -1,43 +1,50 @@
 package trop;
 
-import com.google.common.base.CaseFormat;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.HashMap;
 import java.util.Map;
 
-@SuppressWarnings({"WeakerAccess", "PublicField", "UtilityClassWithoutPrivateConstructor"})
 @Mod("trop")
 public class TROP {
 	public static final String DISABLE_CURSEFORGE_DUPLICATE_NOTICE = "101229102023";
 
-	public static Item ringGreat;
+	private static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, "trop");
 
-	public static Item ringNarya;
-	public static Item ringNenya;
-	public static Item ringVilya;
+	public static final RegistryObject<Item> RING_GREAT = ITEMS.register("ring_great", TROPItemRingGreat::new);
 
-	public static Item ringThror;
-	public static Item ringThulin;
-	public static Item ringKhibil;
-	public static Item ringFarin;
-	public static Item ringKhain;
-	public static Item ringBaraz;
-	public static Item ringBurin;
+	public static final RegistryObject<Item> RING_NENYA = ITEMS.register("ring_nenya", TROPItemRingNenya::new);
+	public static final RegistryObject<Item> RING_NARYA = ITEMS.register("ring_narya", TROPItemRingNarya::new);
+	public static final RegistryObject<Item> RING_VILYA = ITEMS.register("ring_vilya", TROPItemRingVilya::new);
 
-	public static Item ringMurazor;
-	public static Item ringHoarmurath;
-	public static Item ringAkhorahil;
-	public static Item ringAdunaphel;
-	public static Item ringJiindur;
-	public static Item ringKhamul;
-	public static Item ringUvatha;
-	public static Item ringRen;
-	public static Item ringDwar;
+	public static final RegistryObject<Item> RING_THROR = ITEMS.register("ring_thror", TROPItemRingDwarf::new);
+	public static final RegistryObject<Item> RING_THULIN = ITEMS.register("ring_thulin", TROPItemRingDwarf::new);
+	public static final RegistryObject<Item> RING_KHIBIL = ITEMS.register("ring_khibil", TROPItemRingDwarf::new);
+	public static final RegistryObject<Item> RING_FARIN = ITEMS.register("ring_farin", TROPItemRingDwarf::new);
+	public static final RegistryObject<Item> RING_KHAIN = ITEMS.register("ring_khain", TROPItemRingDwarf::new);
+	public static final RegistryObject<Item> RING_BARAZ = ITEMS.register("ring_baraz", TROPItemRingDwarf::new);
+	public static final RegistryObject<Item> RING_BURIN = ITEMS.register("ring_burin", TROPItemRingDwarf::new);
+
+	public static final RegistryObject<Item> RING_MURAZOR = ITEMS.register("ring_murazor", TROPItemRingMan::new);
+	public static final RegistryObject<Item> RING_HOARMURATH = ITEMS.register("ring_hoarmurath", TROPItemRingMan::new);
+	public static final RegistryObject<Item> RING_AKHORAHIL = ITEMS.register("ring_akhorahil", TROPItemRingMan::new);
+	public static final RegistryObject<Item> RING_ADUNAPHEL = ITEMS.register("ring_adunaphel", TROPItemRingMan::new);
+	public static final RegistryObject<Item> RING_JIINDUR = ITEMS.register("ring_jiindur", TROPItemRingMan::new);
+	public static final RegistryObject<Item> RING_KHAMUL = ITEMS.register("ring_khamul", TROPItemRingMan::new);
+	public static final RegistryObject<Item> RING_UVATHA = ITEMS.register("ring_uvatha", TROPItemRingMan::new);
+	public static final RegistryObject<Item> RING_REN = ITEMS.register("ring_ren", TROPItemRingMan::new);
+	public static final RegistryObject<Item> RING_DWAR = ITEMS.register("ring_dwar", TROPItemRingMan::new);
+
+	public TROP() {
+		ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+	}
 
 	@Mod.EventBusSubscriber
 	public static class MissingMappingsDetector {
@@ -46,86 +53,23 @@ public class TROP {
 
 		@SubscribeEvent
 		public static void onMissingMappings(RegistryEvent.MissingMappings<Item> event) {
-			Map<String, Item> renamed = new HashMap<>();
-			renamed.put("dvar", ringDwar);
-			renamed.put("saita", ringRen);
-			renamed.put("uvata", ringUvatha);
-			renamed.put("nenia", ringNenya);
-			renamed.put("naria", ringNarya);
-			renamed.put("vilia", ringVilya);
-			renamed.put("morgomir", ringAdunaphel);
-			renamed.put("khommurat", ringHoarmurath);
+			Map<String, RegistryObject<Item>> renamed = new HashMap<>();
+			renamed.put("dvar", RING_DWAR);
+			renamed.put("saita", RING_REN);
+			renamed.put("uvata", RING_UVATHA);
+			renamed.put("nenia", RING_NENYA);
+			renamed.put("naria", RING_NARYA);
+			renamed.put("vilia", RING_VILYA);
+			renamed.put("morgomir", RING_ADUNAPHEL);
+			renamed.put("khommurat", RING_HOARMURATH);
 			for (RegistryEvent.MissingMappings.Mapping<Item> mapping : event.getAllMappings()) {
-				for (Map.Entry<String, Item> entry : renamed.entrySet()) {
+				for (Map.Entry<String, RegistryObject<Item>> entry : renamed.entrySet()) {
 					if (mapping.key.getPath().contains(entry.getKey())) {
-						mapping.remap(entry.getValue());
+						mapping.remap(entry.getValue().get());
 						break;
 					}
 				}
 			}
-		}
-	}
-
-	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-	public static class RegistryEvents {
-		private RegistryEvents() {
-		}
-
-		@SubscribeEvent
-		public static void onItemRegistry(RegistryEvent.Register<Item> event) {
-			ringGreat = new TROPItemRingGreat();
-
-			ringNarya = new TROPItemRingNarya();
-			ringNenya = new TROPItemRingNenya();
-			ringVilya = new TROPItemRingVilya();
-
-			ringThror = new TROPItemRingDwarf();
-			ringThulin = new TROPItemRingDwarf();
-			ringKhibil = new TROPItemRingDwarf();
-			ringFarin = new TROPItemRingDwarf();
-			ringKhain = new TROPItemRingDwarf();
-			ringBaraz = new TROPItemRingDwarf();
-			ringBurin = new TROPItemRingDwarf();
-
-			ringMurazor = new TROPItemRingMan();
-			ringHoarmurath = new TROPItemRingMan();
-			ringAkhorahil = new TROPItemRingMan();
-			ringAdunaphel = new TROPItemRingMan();
-			ringJiindur = new TROPItemRingMan();
-			ringKhamul = new TROPItemRingMan();
-			ringUvatha = new TROPItemRingMan();
-			ringRen = new TROPItemRingMan();
-			ringDwar = new TROPItemRingMan();
-
-			register(ringGreat, "ringGreat");
-
-			register(ringNarya, "ringNarya");
-			register(ringNenya, "ringNenya");
-			register(ringVilya, "ringVilya");
-
-			register(ringThror, "ringThror");
-			register(ringThulin, "ringThulin");
-			register(ringKhibil, "ringKhibil");
-			register(ringFarin, "ringFarin");
-			register(ringKhain, "ringKhain");
-			register(ringBaraz, "ringBaraz");
-			register(ringBurin, "ringBurin");
-
-			register(ringMurazor, "ringMurazor");
-			register(ringHoarmurath, "ringHoarmurath");
-			register(ringAkhorahil, "ringAkhorahil");
-			register(ringAdunaphel, "ringAdunaphel");
-			register(ringJiindur, "ringJiindur");
-			register(ringKhamul, "ringKhamul");
-			register(ringUvatha, "ringUvatha");
-			register(ringRen, "ringRen");
-			register(ringDwar, "ringDwar");
-		}
-
-		private static void register(Item item, String name) {
-			String itemName = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, name);
-			item.setRegistryName(itemName);
-			ForgeRegistries.ITEMS.register(item);
 		}
 	}
 }
