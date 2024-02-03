@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Mod("trop")
+@SuppressWarnings("WeakerAccess")
 public class TROP {
 	public static final String DISABLE_CURSEFORGE_DUPLICATE_NOTICE = "131829122023";
 

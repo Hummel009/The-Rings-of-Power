@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Mod("trop")
+@SuppressWarnings("WeakerAccess")
 public class TROP {
 	public static final String DISABLE_CURSEFORGE_DUPLICATE_NOTICE = "101229102023";
 
@@ -48,6 +49,9 @@ public class TROP {
 
 	@Mod.EventBusSubscriber
 	public static class MissingMappingsDetector {
+		private MissingMappingsDetector() {
+		}
+
 		@SubscribeEvent
 		public static void onMissingMappings(RegistryEvent.MissingMappings<Item> event) {
 			Map<String, RegistryObject<Item>> renamed = new HashMap<>();
