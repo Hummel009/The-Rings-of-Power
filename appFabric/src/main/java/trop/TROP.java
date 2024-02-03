@@ -42,7 +42,7 @@ public class TROP implements ModInitializer {
 	public static final Item RING_REN = new TROPItemRingMan();
 	public static final Item RING_DWAR = new TROPItemRingMan();
 
-	private static final ItemGroup ITEM_GROUP = FabricItemGroup.builder().icon(() -> new ItemStack(RING_NARYA)).displayName(Text.translatable("itemGroup.ringPower")).entries((context, entries) -> {
+	private static final ItemGroup TAB_RINGS = FabricItemGroup.builder().icon(() -> new ItemStack(RING_NARYA)).displayName(Text.translatable("itemGroup.ringPower")).entries((context, entries) -> {
 		for (var item : CONTENT) {
 			entries.add(item);
 		}
@@ -73,7 +73,7 @@ public class TROP implements ModInitializer {
 		register(RING_REN, "ring_ren");
 		register(RING_DWAR, "ring_dwar");
 
-		Registry.register(Registries.ITEM_GROUP, new Identifier("trop", "troptab"), ITEM_GROUP);
+		Registry.register(Registries.ITEM_GROUP, new Identifier("trop", "troptab"), TAB_RINGS);
 	}
 
 	private static void register(Item item, String name) {
