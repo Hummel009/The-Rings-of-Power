@@ -7,11 +7,12 @@
 	"authors": [
 		"Hummel009!"
 	],
-	"icon": "logo.png",
 	"contact": {
 		"homepage": "https://github.com/Hummel009",
 		"sources": "https://github.com/Hummel009"
 	},
+	"license": "GPL-3.0",
+	"icon": "icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
@@ -21,7 +22,7 @@
 	"depends": {
 		"fabricloader": ">=0.15.6",
 		"minecraft": "~1.17.1",
-		"java": ">=16",
-		"fabric-api": "*"
+		"java": ">=17",
+		"fabric": "*"
 	}
 }
