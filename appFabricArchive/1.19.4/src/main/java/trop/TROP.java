@@ -42,7 +42,7 @@ public class TROP implements ModInitializer {
 	public static final Item RING_REN = new TROPItemRingMan();
 	public static final Item RING_DWAR = new TROPItemRingMan();
 
-	private static final ItemGroup ITEM_GROUP = FabricItemGroup.builder(new Identifier("trop", "troptab")).icon(() -> new ItemStack(RING_NARYA)).displayName(Text.translatable("itemGroup.ringPower")).entries((context, entries) -> {
+	private static final ItemGroup TAB_RINGS = FabricItemGroup.builder(new Identifier("trop", "troptab")).icon(() -> new ItemStack(RING_NARYA)).displayName(Text.translatable("itemGroup.ringPower")).entries((context, entries) -> {
 		for (var item : CONTENT) {
 			entries.add(item);
 		}
