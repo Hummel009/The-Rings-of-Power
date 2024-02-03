@@ -138,8 +138,8 @@ public class TROP {
 		@SideOnly(Side.CLIENT)
 		public static void onModelRegistry(ModelRegistryEvent event) {
 			for (Item item : CONTENT) {
-				ResourceLocation itemName = item.getRegistryName();
-				ModelResourceLocation mrl = new ModelResourceLocation(itemName, "inventory");
+				ResourceLocation regName = item.getRegistryName();
+				ModelResourceLocation mrl = new ModelResourceLocation(regName, "inventory");
 				ModelLoader.setCustomModelResourceLocation(item, 0, mrl);
 			}
 		}
