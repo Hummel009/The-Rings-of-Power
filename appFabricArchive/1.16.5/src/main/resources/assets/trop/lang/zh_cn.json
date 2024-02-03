@@ -1,0 +1,23 @@
+{
+	"item.trop.ring_narya": "§d水戒能雅§r",
+	"item.trop.ring_nenya": "§d火戒纳雅§r",
+	"item.trop.ring_vilya": "§d气戒维雅§r",
+	"item.trop.ring_thulin": "§b须林之戒§r",
+	"item.trop.ring_khibil": "§b祁比尔之戒§r",
+	"item.trop.ring_farin": "§b法林之戒§r",
+	"item.trop.ring_khain": "§b凯恩之戒§r",
+	"item.trop.ring_baraz": "§b巴拉兹之戒§r",
+	"item.trop.ring_burin": "§b伯林之戒§r",
+	"item.trop.ring_thror": "§b瑟罗尔之戒§r",
+	"item.trop.ring_murazor": "§c巫王-阿尔·穆拉佐尔之戒§r",
+	"item.trop.ring_hoarmurath": "§c第六戒灵-霍阿穆拉斯之戒§r",
+	"item.trop.ring_akhorahil": "§c第五戒灵-可拉希尔之戒§r",
+	"item.trop.ring_adunaphel": "§c第七戒灵-阿杜纳贝特之戒§r",
+	"item.trop.ring_jiindur": "§c第四戒灵-吉·因杜尔之戒§r",
+	"item.trop.ring_khamul": "§c第二戒灵-可哈穆尔之戒§r",
+	"item.trop.ring_uvatha": "§c第九戒灵-乌瓦萨·阿切夫之戒§r",
+	"item.trop.ring_ren": "§c第八戒灵-任·伊雷之戒§r",
+	"item.trop.ring_dwar": "§c第三戒灵-丹德拉·德瓦尔之戒§r",
+	"item.trop.ring_great": "§6至尊魔戒§r",
+	"itemGroup.trop.troptab": "魔戒众戒"
+}
