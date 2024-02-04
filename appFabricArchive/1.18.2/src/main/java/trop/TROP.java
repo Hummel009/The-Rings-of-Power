@@ -2,11 +2,11 @@ package trop;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -40,11 +40,15 @@ public class TROP implements ModInitializer {
 	public static final Item RING_REN = new TROPItemRingMan();
 	public static final Item RING_DWAR = new TROPItemRingMan();
 
-	public static final ItemGroup TAB_RINGS = FabricItemGroupBuilder.create(new Identifier("trop", "troptab")).icon(() -> new ItemStack(RING_NARYA)).appendItems(stacks -> {
+	public static final CreativeModeTab TAB_RINGS = FabricItemGroupBuilder.create(new ResourceLocation("trop", "troptab")).icon(() -> new ItemStack(RING_NARYA)).appendItems(stacks -> {
 		for (var item : CONTENT) {
 			stacks.add(new ItemStack(item));
 		}
 	}).build();
+
+	private static void register(Item item, String name) {
+		Registry.register(Registry.ITEM, new ResourceLocation("trop", name), item);
+	}
 
 	@Override
 	public void onInitialize() {
@@ -70,9 +74,5 @@ public class TROP implements ModInitializer {
 		register(RING_UVATHA, "ring_uvatha");
 		register(RING_REN, "ring_ren");
 		register(RING_DWAR, "ring_dwar");
-	}
-
-	private static void register(Item item, String name) {
-		Registry.register(Registry.ITEM, new Identifier("trop", name), item);
 	}
 }

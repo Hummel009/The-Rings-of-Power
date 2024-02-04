@@ -10,7 +10,7 @@ version = "v" + LocalDate.now().format(DateTimeFormatter.ofPattern("yy.MM.dd"))
 
 dependencies {
 	minecraft("com.mojang:minecraft:1.18.2")
-	mappings("net.fabricmc:yarn:1.18.2+build.4")
+	mappings(loom.officialMojangMappings())
 	modImplementation("net.fabricmc:fabric-loader:0.15.6")
 	modImplementation("net.fabricmc.fabric-api:fabric-api:0.77.0+1.18.2")
 }

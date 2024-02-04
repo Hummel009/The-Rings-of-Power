@@ -1,42 +1,42 @@
 package trop;
 
-import net.minecraft.client.item.TooltipContext;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
-import net.minecraft.world.World;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 
 import java.util.List;
 
 public class TROPItemRingVilya extends TROPItemRingBase {
 	@Override
-	public void appendTooltip(ItemStack itemStack, World world, List<Text> list, TooltipContext tooltipContext) {
-		for (var statusEffect : new StatusEffect[]{StatusEffects.SPEED, StatusEffects.JUMP_BOOST}) {
-			list.add(new TranslatableText(statusEffect.getTranslationKey()).formatted(Formatting.DARK_GREEN));
+	public void appendHoverText(ItemStack itemStack, Level level, List<Component> list, TooltipFlag tooltipFlag) {
+		for (var mobEffect : new MobEffect[]{MobEffects.MOVEMENT_SPEED, MobEffects.JUMP}) {
+			list.add(new TranslatableComponent(mobEffect.getDescriptionId()).withStyle(ChatFormatting.DARK_GREEN));
 		}
 	}
 
 	@Override
-	public void inventoryTick(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
+	public void inventoryTick(ItemStack itemStack, Level level, Entity entity, int i, boolean b) {
 		if (entity instanceof LivingEntity livingEntity) {
-			livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 20, 1));
-			livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 20, 1));
+			livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20, 1));
+			livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP, 20, 1));
 		}
 	}
 
 	@Override
-	public TypedActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand) {
-		playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 3600, 2));
-		playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, 3800, 2));
-		return super.use(world, playerEntity, hand);
+	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
+		player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 3600, 2));
+		player.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 3800, 2));
+		return super.use(level, player, interactionHand);
 	}
 }
