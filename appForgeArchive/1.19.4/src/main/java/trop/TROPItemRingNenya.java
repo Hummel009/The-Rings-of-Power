@@ -13,14 +13,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.List;
 
 public class TROPItemRingNenya extends TROPItemRingBase {
 	@Override
-	@OnlyIn(Dist.CLIENT)
 	public void appendHoverText(ItemStack itemStack, Level level, List<Component> list, TooltipFlag tooltipFlag) {
 		for (var mobEffect : new MobEffect[]{MobEffects.WATER_BREATHING}) {
 			list.add(Component.translatable(mobEffect.getDescriptionId()).withStyle(ChatFormatting.DARK_GREEN));

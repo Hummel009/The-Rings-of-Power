@@ -1,5 +1,7 @@
 package trop;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -19,6 +21,7 @@ import java.util.List;
 
 public class TROPItemRingNarya extends TROPItemRingBase {
 	@Override
+	@Environment(EnvType.CLIENT)
 	public void appendHoverText(ItemStack itemStack, Level level, List<Component> list, TooltipFlag tooltipFlag) {
 		for (MobEffect mobEffect : new MobEffect[]{MobEffects.FIRE_RESISTANCE}) {
 			list.add(new TranslatableComponent(mobEffect.getDescriptionId()).withStyle(ChatFormatting.DARK_GREEN));
