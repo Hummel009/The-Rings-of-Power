@@ -2,13 +2,13 @@ package trop;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -42,9 +42,9 @@ public class TROP implements ModInitializer {
 	public static final Item RING_REN = new TROPItemRingMan();
 	public static final Item RING_DWAR = new TROPItemRingMan();
 
-	private static final ItemGroup TAB_RINGS = FabricItemGroup.builder().icon(() -> new ItemStack(RING_NARYA)).displayName(Text.translatable("itemGroup.ringPower")).entries((context, entries) -> {
+	private static final CreativeModeTab TAB_RINGS = FabricItemGroup.builder().icon(() -> new ItemStack(RING_NARYA)).title(Component.translatable("itemGroup.ringPower")).displayItems((context, entries) -> {
 		for (var item : CONTENT) {
-			entries.add(item);
+			entries.accept(item);
 		}
 	}).build();
 
@@ -73,10 +73,10 @@ public class TROP implements ModInitializer {
 		register(RING_REN, "ring_ren");
 		register(RING_DWAR, "ring_dwar");
 
-		Registry.register(Registries.ITEM_GROUP, new Identifier("trop", "troptab"), TAB_RINGS);
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation("trop", "troptab"), TAB_RINGS);
 	}
 
 	private static void register(Item item, String name) {
-		Registry.register(Registries.ITEM, new Identifier("trop", name), item);
+		Registry.register(BuiltInRegistries.ITEM, new ResourceLocation("trop", name), item);
 	}
 }
