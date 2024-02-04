@@ -48,6 +48,10 @@ public class TROP implements ModInitializer {
 		}
 	}).build();
 
+	private static void register(Item item, String name) {
+		Registry.register(BuiltInRegistries.ITEM, new ResourceLocation("trop", name), item);
+	}
+
 	@Override
 	public void onInitialize() {
 		register(RING_GREAT, "ring_great");
@@ -74,9 +78,5 @@ public class TROP implements ModInitializer {
 		register(RING_DWAR, "ring_dwar");
 
 		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation("trop", "troptab"), TAB_RINGS);
-	}
-
-	private static void register(Item item, String name) {
-		Registry.register(BuiltInRegistries.ITEM, new ResourceLocation("trop", name), item);
 	}
 }
