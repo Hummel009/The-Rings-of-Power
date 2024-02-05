@@ -51,7 +51,7 @@ public class TROP {
 	public static final RegistryObject<Item> RING_REN = ITEMS.register("ring_ren", TROPItemRingMan::new);
 	public static final RegistryObject<Item> RING_DWAR = ITEMS.register("ring_dwar", TROPItemRingMan::new);
 
-	public static final RegistryObject<CreativeModeTab> TAB_RINGS = CREATIVE_TABS.register("troptab", () -> CreativeModeTab.builder().title(Component.translatable("itemGroup.ringPower")).icon(() -> new ItemStack(RING_NARYA.get())).displayItems((enabledFlags, populator) -> {
+	public static final RegistryObject<CreativeModeTab> TAB_RINGS = CREATIVE_TABS.register("rings", () -> CreativeModeTab.builder().title(Component.translatable("itemGroup.trop.rings")).icon(() -> new ItemStack(RING_NARYA.get())).displayItems((enabledFlags, populator) -> {
 		for (var item : CONTENT) {
 			populator.accept(item);
 		}

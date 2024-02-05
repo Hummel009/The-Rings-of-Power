@@ -40,9 +40,9 @@ public class TROP implements ModInitializer {
 	public static final Item RING_REN = new TROPItemRingMan();
 	public static final Item RING_DWAR = new TROPItemRingMan();
 
-	public static final CreativeModeTab TAB_RINGS = FabricItemGroupBuilder.create(new ResourceLocation("trop", "rings")).icon(() -> new ItemStack(RING_NARYA)).appendItems(entries -> {
+	public static final CreativeModeTab TAB_RINGS = FabricItemGroupBuilder.create(new ResourceLocation("trop", "rings")).icon(() -> new ItemStack(RING_NARYA)).appendItems(populator -> {
 		for (Item item : CONTENT) {
-			entries.add(new ItemStack(item));
+			populator.add(new ItemStack(item));
 		}
 	}).build();
 
