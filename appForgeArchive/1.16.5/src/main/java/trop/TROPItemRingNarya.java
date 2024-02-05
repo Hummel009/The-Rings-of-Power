@@ -38,7 +38,7 @@ public class TROPItemRingNarya extends TROPItemRingBase {
 	@Override
 	public ActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand) {
 		playerEntity.addEffect(new EffectInstance(Effects.REGENERATION, 3600, 2));
-		playerEntity.addEffect(new EffectInstance(Effects.HEALTH_BOOST, 3800, 2));
+		playerEntity.addEffect(new EffectInstance(Effects.HEALTH_BOOST, 3600, 2));
 		return super.use(world, playerEntity, hand);
 	}
 }

@@ -38,7 +38,7 @@ public class TROPItemRingGreat extends TROPItemRingBase {
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
 		player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 3600, 2));
-		player.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 3800, 2));
+		player.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 3600, 2));
 		return super.use(level, player, interactionHand);
 	}
 }

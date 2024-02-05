@@ -38,7 +38,7 @@ public class TROPItemRingNarya extends TROPItemRingBase {
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer entityPlayer, EnumHand hand) {
 		entityPlayer.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 3600, 2));
-		entityPlayer.addPotionEffect(new PotionEffect(MobEffects.HEALTH_BOOST, 3800, 2));
+		entityPlayer.addPotionEffect(new PotionEffect(MobEffects.HEALTH_BOOST, 3600, 2));
 		return super.onItemRightClick(world, entityPlayer, hand);
 	}
 }
