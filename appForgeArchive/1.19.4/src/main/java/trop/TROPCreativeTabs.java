@@ -12,7 +12,7 @@ public class TROPCreativeTabs {
 
 	@SubscribeEvent
 	public static void addCreativeTab(CreativeModeTabEvent.Register event) {
-		event.registerCreativeModeTab(new ResourceLocation("trop", "troptab"), builder -> builder.title(Component.translatable("itemGroup.ringPower")).icon(() -> new ItemStack(TROP.RING_NARYA.get())).displayItems((enabledFlags, populator) -> {
+		event.registerCreativeModeTab(new ResourceLocation("trop", "rings"), builder -> builder.title(Component.translatable("itemGroup.trop.rings")).icon(() -> new ItemStack(TROP.RING_NARYA.get())).displayItems((enabledFlags, populator) -> {
 			for (var item : TROP.CONTENT) {
 				populator.accept(item);
 			}
