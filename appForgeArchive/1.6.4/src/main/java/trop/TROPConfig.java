@@ -50,8 +50,8 @@ public class TROPConfig {
 		try {
 			configuration.load();
 			idRingGreat = configuration.get("item", "Ring Great", 890).getInt(890);
-			idRingNenya = configuration.get("item", "Ring Nenya", 891).getInt(891);
-			idRingNarya = configuration.get("item", "Ring Narya", 892).getInt(892);
+			idRingNarya = configuration.get("item", "Ring Narya", 891).getInt(891);
+			idRingNenya = configuration.get("item", "Ring Nenya", 892).getInt(892);
 			idRingVilya = configuration.get("item", "Ring Vilya", 893).getInt(893);
 			idRingThror = configuration.get("item", "Ring Thror", 894).getInt(894);
 			idRingThulin = configuration.get("item", "Ring Thulin", 895).getInt(895);

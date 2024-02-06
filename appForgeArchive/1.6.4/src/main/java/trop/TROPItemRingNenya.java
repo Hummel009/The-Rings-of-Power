@@ -30,6 +30,7 @@ public class TROPItemRingNenya extends TROPItemRingBase {
 	@Override
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer) {
 		entityPlayer.addPotionEffect(new PotionEffect(Potion.regeneration.getId(), 3600, 2));
+		entityPlayer.addPotionEffect(new PotionEffect(Potion.field_76434_w.getId(), 3600, 2));
 		return super.onItemRightClick(itemStack, world, entityPlayer);
 	}
 
