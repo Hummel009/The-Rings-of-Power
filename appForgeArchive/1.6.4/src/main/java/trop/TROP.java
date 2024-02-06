@@ -38,8 +38,8 @@ public class TROP {
 
 	private static void register(Item item, String name) {
 		String itemName = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, name);
-		item.setTextureName("trop:" + itemName);
 		item.setUnlocalizedName(itemName);
+		item.setTextureName("trop:" + itemName);
 		GameRegistry.registerItem(item, itemName);
 	}
 

@@ -50,8 +50,8 @@ public class TROP {
 
 	private static void register(Item item, String name) {
 		String itemName = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, name);
-		item.setRegistryName(itemName);
 		item.setUnlocalizedName(itemName);
+		item.setRegistryName(itemName);
 		GameRegistry.registerItem(item, itemName);
 		CONTENT.add(item);
 	}
