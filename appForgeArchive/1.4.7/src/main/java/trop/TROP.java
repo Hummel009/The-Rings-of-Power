@@ -15,8 +15,8 @@ public class TROP {
 
 	public static Item ringGreat;
 
-	public static Item ringNenya;
 	public static Item ringNarya;
+	public static Item ringNenya;
 	public static Item ringVilya;
 
 	public static Item ringThror;
@@ -48,8 +48,8 @@ public class TROP {
 	public void onInit(FMLInitializationEvent event) {
 		ringGreat = new TROPItemRingGreat(TROPConfig.idRingGreat - 256);
 
-		ringNenya = new TROPItemRingNenya(TROPConfig.idRingNenya - 256);
 		ringNarya = new TROPItemRingNarya(TROPConfig.idRingNarya - 256);
+		ringNenya = new TROPItemRingNenya(TROPConfig.idRingNenya - 256);
 		ringVilya = new TROPItemRingVilya(TROPConfig.idRingVilya - 256);
 
 		ringThror = new TROPItemRingDwarf(TROPConfig.idRingThror - 256);
@@ -94,8 +94,8 @@ public class TROP {
 
 		register(ringGreat, "ringGreat");
 
-		register(ringNenya, "ringNenya");
 		register(ringNarya, "ringNarya");
+		register(ringNenya, "ringNenya");
 		register(ringVilya, "ringVilya");
 
 		register(ringThror, "ringThror");

@@ -5,7 +5,6 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
@@ -14,7 +13,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class TROPItemRingGreat extends Item {
+public class TROPItemRingGreat extends TROPItemRingBase {
 	public TROPItemRingGreat(int id) {
 		super(id);
 	}
