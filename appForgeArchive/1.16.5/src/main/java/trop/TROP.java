@@ -2,6 +2,7 @@ package trop;
 
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
@@ -15,7 +16,7 @@ import java.util.Map;
 @Mod("trop")
 @SuppressWarnings("WeakerAccess")
 public class TROP {
-	public static final String DISABLE_CURSEFORGE_DUPLICATE_NOTICE = "101229102023";
+	public static final String DISABLE_CURSEFORGE_DUPLICATE_NOTICE = "131829122023";
 
 	private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "trop");
 
@@ -44,7 +45,8 @@ public class TROP {
 	public static final RegistryObject<Item> RING_DWAR = ITEMS.register("ring_dwar", TROPItemRingMan::new);
 
 	public TROP() {
-		ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		IEventBus fmlBus = FMLJavaModLoadingContext.get().getModEventBus();
+		ITEMS.register(fmlBus);
 	}
 
 	@Mod.EventBusSubscriber
