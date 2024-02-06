@@ -13,7 +13,7 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        version: [ 'appForge', 'appFabric' ]
+        version: [ 'appForge', 'appFabric', 'appNeoForge' ]
     steps:
       - uses: actions/checkout@main
       - name: Set up JDK 21

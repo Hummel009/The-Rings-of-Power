@@ -5,6 +5,7 @@ pluginManagement {
 			url = uri("https://maven.fabricmc.net/")
 		}
 		maven("https://maven.minecraftforge.net")
+		maven("https://maven.neoforged.net/releases")
 		mavenLocal()
 		mavenCentral()
 		gradlePluginPortal()
@@ -19,6 +20,7 @@ dependencyResolutionManagement {
 			url = uri("https://maven.fabricmc.net/")
 		}
 		maven("https://maven.minecraftforge.net")
+		maven("https://maven.neoforged.net/releases")
 		mavenLocal()
 		mavenCentral()
 		gradlePluginPortal()
@@ -31,3 +33,4 @@ plugins {
 
 include(":appFabric")
 include(":appForge")
+include(":appNeoForge")
