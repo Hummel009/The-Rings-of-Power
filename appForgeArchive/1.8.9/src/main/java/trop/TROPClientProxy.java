@@ -1,6 +1,7 @@
 package trop;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.relauncher.Side;
@@ -11,8 +12,9 @@ public class TROPClientProxy extends TROPCommonProxy {
 	@SideOnly(Side.CLIENT)
 	public void onInit() {
 		for (Item item : TROP.CONTENT) {
-			String itemName = item.getUnlocalizedName().substring(5);
-			ModelResourceLocation modelResourceLocation = new ModelResourceLocation("trop:" + itemName, "inventory");
+			String registryName = item.getRegistryName();
+			ModelResourceLocation modelResourceLocation = new ModelResourceLocation(registryName, "inventory");
+			ModelBakery.registerItemVariants(item, modelResourceLocation);
 			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, modelResourceLocation);
 		}
 	}
