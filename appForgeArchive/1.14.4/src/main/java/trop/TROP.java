@@ -45,8 +45,8 @@ public class TROP {
 	public static final RegistryObject<Item> RING_DWAR = ITEMS.register("ring_dwar", TROPItemRingMan::new);
 
 	public TROP() {
-		IEventBus fmlBus = FMLJavaModLoadingContext.get().getModEventBus();
-		ITEMS.register(fmlBus);
+		IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+		ITEMS.register(eventBus);
 	}
 
 	@Mod.EventBusSubscriber

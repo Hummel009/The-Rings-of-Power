@@ -53,8 +53,8 @@ public class TROP {
 		}
 	}).build());
 
-	public TROP(IEventBus fmlBus) {
-		ITEMS.register(fmlBus);
-		CREATIVE_TABS.register(fmlBus);
+	public TROP(IEventBus eventBus) {
+		ITEMS.register(eventBus);
+		CREATIVE_TABS.register(eventBus);
 	}
 }

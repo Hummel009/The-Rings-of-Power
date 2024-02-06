@@ -58,9 +58,9 @@ public class TROP {
 	}).build());
 
 	public TROP() {
-		var fmlBus = FMLJavaModLoadingContext.get().getModEventBus();
-		ITEMS.register(fmlBus);
-		CREATIVE_TABS.register(fmlBus);
+		var eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+		ITEMS.register(eventBus);
+		CREATIVE_TABS.register(eventBus);
 	}
 
 	@Mod.EventBusSubscriber
