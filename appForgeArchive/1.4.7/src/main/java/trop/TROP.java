@@ -39,7 +39,7 @@ public class TROP {
 
 	private static void register(Item item, String name) {
 		String itemName = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, name);
-		item.setTextureFile("/assets/trop/textures/items.png");
+		item.setTextureFile("/assets/trop/textures/items/sprite.png");
 		item.setItemName(itemName);
 		GameRegistry.registerItem(item, itemName);
 	}
