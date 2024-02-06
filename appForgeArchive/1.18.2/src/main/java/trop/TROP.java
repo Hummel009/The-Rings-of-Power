@@ -15,7 +15,7 @@ import java.util.Map;
 @Mod("trop")
 @SuppressWarnings("WeakerAccess")
 public class TROP {
-	public static final String DISABLE_CURSEFORGE_DUPLICATE_NOTICE = "101229102023";
+	public static final String DISABLE_CURSEFORGE_DUPLICATE_NOTICE = "131829122023";
 
 	private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "trop");
 
@@ -44,7 +44,8 @@ public class TROP {
 	public static final RegistryObject<Item> RING_DWAR = ITEMS.register("ring_dwar", TROPItemRingMan::new);
 
 	public TROP() {
-		ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		var fmlBus = FMLJavaModLoadingContext.get().getModEventBus();
+		ITEMS.register(fmlBus);
 	}
 
 	@Mod.EventBusSubscriber

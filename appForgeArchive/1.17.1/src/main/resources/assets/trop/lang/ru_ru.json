@@ -19,5 +19,5 @@
 	"item.trop.ring_ren": "§cКольцо Рена§r",
 	"item.trop.ring_dwar": "§cКольцо Двара§r",
 	"item.trop.ring_great": "§6Кольцо Всевластия§r",
-	"itemGroup.ringPower": "Кольца власти"
+	"itemGroup.trop.rings": "Кольца власти"
 }

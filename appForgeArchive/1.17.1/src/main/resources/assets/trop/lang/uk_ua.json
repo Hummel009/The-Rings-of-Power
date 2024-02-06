@@ -19,5 +19,5 @@
 	"item.trop.ring_ren": "§cПерстень Рена§r",
 	"item.trop.ring_dwar": "§cПерстень Двара§r",
 	"item.trop.ring_great": "§6Перстень Всевладдя§r",
-	"itemGroup.ringPower": "Персні влади"
+	"itemGroup.trop.rings": "Персні влади"
 }
