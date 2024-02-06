@@ -24,11 +24,4 @@ public class TROPItemRingGreat extends TROPItemRingBase {
 		entityPlayer.addPotionEffect(new PotionEffect(Potion.regeneration.getId(), 3600, 2));
 		return super.onItemRightClick(itemStack, world, entityPlayer);
 	}
-
-	@Override
-	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
-		if (entity instanceof EntityLiving) {
-			((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.regeneration.getId(), 20, 2));
-		}
-	}
 }
