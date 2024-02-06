@@ -21,8 +21,8 @@ public class TROP implements ModInitializer {
 
 	public static final Item RING_GREAT = new TROPItemRingGreat();
 
-	public static final Item RING_NENYA = new TROPItemRingNenya();
 	public static final Item RING_NARYA = new TROPItemRingNarya();
+	public static final Item RING_NENYA = new TROPItemRingNenya();
 	public static final Item RING_VILYA = new TROPItemRingVilya();
 
 	public static final Item RING_THROR = new TROPItemRingDwarf();
@@ -56,8 +56,8 @@ public class TROP implements ModInitializer {
 	public void onInitialize() {
 		register(RING_GREAT, "ring_great");
 
-		register(RING_NENYA, "ring_nenya");
 		register(RING_NARYA, "ring_narya");
+		register(RING_NENYA, "ring_nenya");
 		register(RING_VILYA, "ring_vilya");
 
 		register(RING_THROR, "ring_thror");
