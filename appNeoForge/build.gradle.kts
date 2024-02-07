@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "hummel"
-version = "v" + LocalDate.now().format(DateTimeFormatter.ofPattern("yy.MM.dd"))
+version = LocalDate.now().format(DateTimeFormatter.ofPattern("yy.MM.dd"))
 
 dependencies {
 	implementation("net.neoforged:neoforge:20.4.80-beta")

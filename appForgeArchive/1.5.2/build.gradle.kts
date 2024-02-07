@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "hummel"
-version = "v" + LocalDate.now().format(DateTimeFormatter.ofPattern("yy.MM.dd"))
+version = LocalDate.now().format(DateTimeFormatter.ofPattern("yy.MM.dd"))
 
 val minecraftVersion: String = "1.5.2"
 val forgeVersion: String = "1.5.2-7.8.1.738"

@@ -17,7 +17,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 
 final def currentDate = LocalDate.now()
-version = 'v' + currentDate.format(DateTimeFormatter.ofPattern('yy.MM.dd'))
+version = currentDate.format(DateTimeFormatter.ofPattern('yy.MM.dd'))
 group = 'com.yourname.modid'
 archivesBaseName = '1.8.9'
 

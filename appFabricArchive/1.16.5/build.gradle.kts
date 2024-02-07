@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "hummel"
-version = "v" + LocalDate.now().format(DateTimeFormatter.ofPattern("yy.MM.dd"))
+version = LocalDate.now().format(DateTimeFormatter.ofPattern("yy.MM.dd"))
 
 dependencies {
 	minecraft("com.mojang:minecraft:1.16.5")
