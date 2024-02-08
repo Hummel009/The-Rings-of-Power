@@ -92,5 +92,6 @@ public class Items {
 	private static void register(Item item, String name) {
 		var itemName = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, name);
 		ForgeRegistries.ITEMS.register(itemName, item);
+		CONTENT.add(item);
 	}
 }
