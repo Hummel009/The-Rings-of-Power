@@ -22,14 +22,14 @@ public class Main {
 	private static CommonProxy proxy;
 
 	@Mod.EventHandler
-	public void onInit(FMLInitializationEvent event) {
-		proxy.onInit();
-	}
-
-	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		CreativeTabs.preInit();
 		Items.preInit();
+	}
+
+	@Mod.EventHandler
+	public void onInit(FMLInitializationEvent event) {
+		proxy.onInit();
 	}
 
 	@Mod.EventHandler

@@ -11,15 +11,15 @@ import trop.init.Langs;
 public class Main {
 	public static final String DISABLE_CURSEFORGE_DUPLICATE_NOTICE = "131829122023";
 
+	@Mod.PreInit
+	public void preInit(FMLPreInitializationEvent event) {
+		Config.preInit(event);
+	}
+
 	@Mod.Init
 	public void onInit(FMLInitializationEvent event) {
 		CreativeTabs.onInit();
 		Items.onInit();
 		Langs.onInit();
-	}
-
-	@Mod.PreInit
-	public void preInit(FMLPreInitializationEvent event) {
-		Config.preInit(event);
 	}
 }

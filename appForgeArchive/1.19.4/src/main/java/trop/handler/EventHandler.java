@@ -16,12 +16,12 @@ import java.util.Map;
 
 public class EventHandler {
 	@SubscribeEvent
-	public void onRegisterEvent(RegisterEvent event) {
+	public void onItemRegistry(RegisterEvent event) {
 		Items.register();
 	}
 
 	@SubscribeEvent
-	public void onMissingMappingsEvent(MissingMappingsEvent event) {
+	public void onMissingMappings(MissingMappingsEvent event) {
 		Map<String, Item> renamed = new HashMap<>();
 		renamed.put("dvar", Items.ringDwar);
 		renamed.put("saita", Items.ringRen);
@@ -42,7 +42,7 @@ public class EventHandler {
 	}
 
 	@SubscribeEvent
-	public void onCreativeModeTabEvent(CreativeModeTabEvent.Register event) {
+	public void onCreativeModeTabRegistry(CreativeModeTabEvent.Register event) {
 		event.registerCreativeModeTab(new ResourceLocation("trop", "rings"), builder -> builder.title(Component.translatable("itemGroup.trop.rings")).icon(() -> new ItemStack(Items.ringNarya)).displayItems((enabledFlags, populator) -> {
 			for (var item : Items.CONTENT) {
 				populator.accept(item);

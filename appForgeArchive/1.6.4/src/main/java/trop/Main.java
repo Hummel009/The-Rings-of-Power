@@ -11,13 +11,13 @@ public class Main {
 	public static final String DISABLE_CURSEFORGE_DUPLICATE_NOTICE = "131829122023";
 
 	@Mod.EventHandler
-	public void onInit(FMLInitializationEvent event) {
-		CreativeTabs.onInit();
-		Items.onInit();
+	public void preInit(FMLPreInitializationEvent event) {
+		Config.preInit(event);
 	}
 
 	@Mod.EventHandler
-	public void preInit(FMLPreInitializationEvent event) {
-		Config.preInit(event);
+	public void onInit(FMLInitializationEvent event) {
+		CreativeTabs.onInit();
+		Items.onInit();
 	}
 }

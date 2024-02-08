@@ -22,6 +22,16 @@ public class EventHandler {
 	}
 
 	@SubscribeEvent
+	public void onModelRegistry(ModelRegistryEvent event) {
+		for (Item item : Items.CONTENT) {
+			ResourceLocation registryName = item.getRegistryName();
+			ModelResourceLocation modelResourceLocation = new ModelResourceLocation(registryName, "inventory");
+			ModelBakery.registerItemVariants(item, modelResourceLocation);
+			ModelLoader.setCustomModelResourceLocation(item, 0, modelResourceLocation);
+		}
+	}
+
+	@SubscribeEvent
 	public void onMissingMappings(RegistryEvent.MissingMappings<Item> event) {
 		Map<String, Item> renamed = new HashMap<>();
 		renamed.put("dvar", Items.ringDwar);
@@ -39,16 +49,6 @@ public class EventHandler {
 					break;
 				}
 			}
-		}
-	}
-
-	@SubscribeEvent
-	public void onModelRegistry(ModelRegistryEvent event) {
-		for (Item item : Items.CONTENT) {
-			ResourceLocation registryName = item.getRegistryName();
-			ModelResourceLocation modelResourceLocation = new ModelResourceLocation(registryName, "inventory");
-			ModelBakery.registerItemVariants(item, modelResourceLocation);
-			ModelLoader.setCustomModelResourceLocation(item, 0, modelResourceLocation);
 		}
 	}
 }
