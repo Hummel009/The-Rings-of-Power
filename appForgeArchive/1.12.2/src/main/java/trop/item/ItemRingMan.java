@@ -1,4 +1,4 @@
-package trop;
+package trop.item;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
 import net.minecraft.client.util.ITooltipFlag;
@@ -18,7 +18,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
-public class TROPItemRingMan extends TROPItemRingBase {
+public class ItemRingMan extends ItemRingBase {
 	@Override
 	@SideOnly(Side.CLIENT)
 	@SuppressWarnings("deprecation")

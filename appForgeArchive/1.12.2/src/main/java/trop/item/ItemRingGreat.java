@@ -1,4 +1,4 @@
-package trop;
+package trop.item;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
 import net.minecraft.client.util.ITooltipFlag;
@@ -18,12 +18,12 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
-public class TROPItemRingNarya extends TROPItemRingBase {
+public class ItemRingGreat extends ItemRingBase {
 	@Override
 	@SideOnly(Side.CLIENT)
 	@SuppressWarnings("deprecation")
 	public void addInformation(ItemStack itemStack, World world, List<String> list, ITooltipFlag tooltipFlag) {
-		for (Potion potion : new Potion[]{MobEffects.FIRE_RESISTANCE}) {
+		for (Potion potion : new Potion[]{MobEffects.INVISIBILITY}) {
 			list.add(ChatFormatting.DARK_GREEN + I18n.translateToLocal(potion.getName()).trim());
 		}
 	}
@@ -38,7 +38,7 @@ public class TROPItemRingNarya extends TROPItemRingBase {
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
 		if (entity instanceof EntityLivingBase) {
-			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 20));
+			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 20, 2));
 		}
 	}
 }
