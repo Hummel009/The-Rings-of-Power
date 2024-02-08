@@ -1,4 +1,4 @@
-package trop;
+package trop.item;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
 import net.minecraft.entity.Entity;
@@ -12,17 +12,14 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
-public class TROPItemRingNenya extends TROPItemRingBase {
+public class ItemRingGreat extends ItemRingBase {
 	@Override
-	@SideOnly(Side.CLIENT)
 	@SuppressWarnings("deprecation")
-	public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List<String> list, boolean b) {
-		for (Potion potion : new Potion[]{MobEffects.WATER_BREATHING}) {
+	public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List<String> list, boolean advanced) {
+		for (Potion potion : new Potion[]{MobEffects.INVISIBILITY}) {
 			list.add(ChatFormatting.DARK_GREEN + I18n.translateToLocal(potion.getName()).trim());
 		}
 	}
@@ -37,7 +34,7 @@ public class TROPItemRingNenya extends TROPItemRingBase {
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
 		if (entity instanceof EntityLivingBase) {
-			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 20));
+			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 20, 2));
 		}
 	}
 }

@@ -1,18 +1,16 @@
-package trop;
+package trop.proxy;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import trop.init.Items;
 
-public class TROPClientProxy extends TROPCommonProxy {
+public class ClientProxy implements CommonProxy {
 	@Override
-	@SideOnly(Side.CLIENT)
 	public void onInit() {
-		for (Item item : TROP.CONTENT) {
+		for (Item item : Items.CONTENT) {
 			ResourceLocation registryName = item.getRegistryName();
 			ModelResourceLocation modelResourceLocation = new ModelResourceLocation(registryName, "inventory");
 			ModelBakery.registerItemVariants(item, modelResourceLocation);

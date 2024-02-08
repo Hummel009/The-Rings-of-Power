@@ -1,4 +1,4 @@
-package trop;
+package trop.item;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -9,16 +9,13 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
-public class TROPItemRingDwarf extends TROPItemRingBase {
+public class ItemRingNenya extends ItemRingBase {
 	@Override
-	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List<String> list, boolean b) {
-		for (Potion potion : new Potion[]{Potion.digSpeed, Potion.resistance}) {
+		for (Potion potion : new Potion[]{Potion.waterBreathing}) {
 			list.add(EnumChatFormatting.DARK_GREEN + StatCollector.translateToLocal(potion.getName()).trim());
 		}
 	}
@@ -33,8 +30,7 @@ public class TROPItemRingDwarf extends TROPItemRingBase {
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
 		if (entity instanceof EntityLivingBase) {
-			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(Potion.digSpeed.getId(), 20, 1));
-			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(Potion.resistance.getId(), 20, 1));
+			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(Potion.waterBreathing.getId(), 20));
 		}
 	}
 }
