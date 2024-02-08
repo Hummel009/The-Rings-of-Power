@@ -1,4 +1,4 @@
-package trop;
+package trop.item;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -14,15 +14,15 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class TROPItemRingGreat extends TROPItemRingBase {
-	public TROPItemRingGreat(int id) {
+public class ItemRingVilya extends ItemRingBase {
+	public ItemRingVilya(int id) {
 		super(id);
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean b) {
-		for (Potion potion : new Potion[]{Potion.invisibility}) {
+		for (Potion potion : new Potion[]{Potion.moveSpeed, Potion.jump}) {
 			list.add(EnumChatFormatting.DARK_GREEN + StatCollector.translateToLocal(potion.getName()).trim());
 		}
 	}
@@ -37,7 +37,8 @@ public class TROPItemRingGreat extends TROPItemRingBase {
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
 		if (entity instanceof EntityLivingBase) {
-			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(Potion.invisibility.getId(), 20, 2));
+			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 20, 1));
+			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(Potion.jump.getId(), 20, 1));
 		}
 	}
 }

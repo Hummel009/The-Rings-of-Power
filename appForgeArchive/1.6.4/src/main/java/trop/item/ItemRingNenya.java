@@ -1,4 +1,4 @@
-package trop;
+package trop.item;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -14,8 +14,8 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class TROPItemRingNenya extends TROPItemRingBase {
-	public TROPItemRingNenya(int id) {
+public class ItemRingNenya extends ItemRingBase {
+	public ItemRingNenya(int id) {
 		super(id);
 	}
 
