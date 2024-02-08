@@ -1,4 +1,4 @@
-package trop;
+package trop.item;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -17,7 +17,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class TROPItemRingDwarf extends TROPItemRingBase {
+public class ItemRingDwarf extends ItemRing {
 	@Override
 	public void appendHoverText(ItemStack itemStack, Level level, List<Component> list, TooltipFlag tooltipFlag) {
 		for (var mobEffect : new MobEffect[]{MobEffects.DIG_SPEED, MobEffects.DAMAGE_RESISTANCE}) {

@@ -1,7 +1,8 @@
-package trop;
+package trop.item;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffect;
@@ -16,19 +17,19 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class TROPItemRingMan extends TROPItemRingBase {
+public class ItemRingVilya extends ItemRing {
 	@Override
 	public void appendHoverText(ItemStack itemStack, Level level, List<Component> list, TooltipFlag tooltipFlag) {
-		for (var mobEffect : new MobEffect[]{MobEffects.DAMAGE_BOOST, MobEffects.NIGHT_VISION}) {
-			list.add(Component.translatable(mobEffect.getDescriptionId()).withStyle(ChatFormatting.DARK_GREEN));
+		for (var mobEffect : new MobEffect[]{MobEffects.MOVEMENT_SPEED, MobEffects.JUMP}) {
+			list.add(new TranslatableComponent(mobEffect.getDescriptionId()).withStyle(ChatFormatting.DARK_GREEN));
 		}
 	}
 
 	@Override
 	public void inventoryTick(ItemStack itemStack, Level level, Entity entity, int i, boolean b) {
 		if (entity instanceof LivingEntity livingEntity) {
-			livingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20, 1));
-			livingEntity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 220));
+			livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20, 1));
+			livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP, 20, 1));
 		}
 	}
 

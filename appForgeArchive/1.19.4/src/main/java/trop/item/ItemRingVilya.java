@@ -1,8 +1,7 @@
-package trop;
+package trop.item;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffect;
@@ -17,11 +16,11 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class TROPItemRingVilya extends TROPItemRingBase {
+public class ItemRingVilya extends ItemRing {
 	@Override
 	public void appendHoverText(ItemStack itemStack, Level level, List<Component> list, TooltipFlag tooltipFlag) {
 		for (var mobEffect : new MobEffect[]{MobEffects.MOVEMENT_SPEED, MobEffects.JUMP}) {
-			list.add(new TranslatableComponent(mobEffect.getDescriptionId()).withStyle(ChatFormatting.DARK_GREEN));
+			list.add(Component.translatable(mobEffect.getDescriptionId()).withStyle(ChatFormatting.DARK_GREEN));
 		}
 	}
 
