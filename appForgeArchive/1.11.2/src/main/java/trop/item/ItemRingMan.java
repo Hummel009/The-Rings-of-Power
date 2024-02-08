@@ -1,4 +1,4 @@
-package trop;
+package trop.item;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
 import net.minecraft.entity.Entity;
@@ -17,12 +17,12 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
-public class TROPItemRingVilya extends TROPItemRingBase {
+public class ItemRingMan extends ItemRingBase {
 	@Override
 	@SideOnly(Side.CLIENT)
 	@SuppressWarnings("deprecation")
-	public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List<String> list, boolean b) {
-		for (Potion potion : new Potion[]{MobEffects.SPEED, MobEffects.JUMP_BOOST}) {
+	public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List<String> list, boolean advanced) {
+		for (Potion potion : new Potion[]{MobEffects.STRENGTH, MobEffects.NIGHT_VISION}) {
 			list.add(ChatFormatting.DARK_GREEN + I18n.translateToLocal(potion.getName()).trim());
 		}
 	}
@@ -37,8 +37,8 @@ public class TROPItemRingVilya extends TROPItemRingBase {
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
 		if (entity instanceof EntityLivingBase) {
-			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.SPEED, 20, 1));
-			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.JUMP_BOOST, 20, 1));
+			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 20, 1));
+			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 220));
 		}
 	}
 }
