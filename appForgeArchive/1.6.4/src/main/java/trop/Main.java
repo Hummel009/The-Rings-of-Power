@@ -3,6 +3,7 @@ package trop;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import trop.init.CreativeTabs;
 import trop.init.Items;
 
 @Mod(modid = "trop", useMetadata = true)
@@ -11,6 +12,7 @@ public class Main {
 
 	@Mod.EventHandler
 	public void onInit(FMLInitializationEvent event) {
+		CreativeTabs.onInit();
 		Items.onInit();
 	}
 

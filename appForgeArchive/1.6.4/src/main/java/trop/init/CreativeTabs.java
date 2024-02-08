@@ -9,7 +9,7 @@ public class CreativeTabs {
 	private CreativeTabs() {
 	}
 
-	public static void preInit() {
+	public static void onInit() {
 		tabRings = new net.minecraft.creativetab.CreativeTabs("trop.rings") {
 			@Override
 			public Item getTabIconItem() {
