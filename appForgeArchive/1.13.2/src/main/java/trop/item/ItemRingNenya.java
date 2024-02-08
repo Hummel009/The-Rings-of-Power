@@ -1,4 +1,4 @@
-package trop;
+package trop.item;
 
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
@@ -19,11 +19,11 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.List;
 
-public class TROPItemRingDwarf extends TROPItemRingBase {
+public class ItemRingNenya extends ItemRingBase {
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void addInformation(ItemStack itemStack, World world, List<ITextComponent> list, ITooltipFlag tooltipFlag) {
-		for (Potion potion : new Potion[]{MobEffects.RESISTANCE, MobEffects.MINING_FATIGUE}) {
+		for (Potion potion : new Potion[]{MobEffects.WATER_BREATHING}) {
 			list.add(new TextComponentTranslation(potion.getName()).applyTextStyle(TextFormatting.DARK_GREEN));
 		}
 	}
@@ -31,8 +31,7 @@ public class TROPItemRingDwarf extends TROPItemRingBase {
 	@Override
 	public void inventoryTick(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
 		if (entity instanceof EntityLivingBase) {
-			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 20, 1));
-			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.MINING_FATIGUE, 20, 1));
+			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 20));
 		}
 	}
 

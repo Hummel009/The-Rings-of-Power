@@ -5,7 +5,7 @@ plugins {
 	id("fabric-loom") version "1.5-SNAPSHOT"
 }
 
-group = "hummel"
+group = "com.github.hummel"
 version = LocalDate.now().format(DateTimeFormatter.ofPattern("yy.MM.dd"))
 
 dependencies {

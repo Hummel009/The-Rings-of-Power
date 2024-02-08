@@ -5,7 +5,7 @@ plugins {
 	id("net.minecraftforge.gradle") version "[6.0.16,6.2)"
 }
 
-group = "hummel"
+group = "com.github.hummel"
 version = LocalDate.now().format(DateTimeFormatter.ofPattern("yy.MM.dd"))
 
 dependencies {

@@ -5,7 +5,7 @@ plugins {
 	id("net.neoforged.gradle.userdev") version "7.0.80"
 }
 
-group = "hummel"
+group = "com.github.hummel"
 version = LocalDate.now().format(DateTimeFormatter.ofPattern("yy.MM.dd"))
 
 dependencies {

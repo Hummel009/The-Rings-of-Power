@@ -5,7 +5,7 @@ plugins {
 	id("agency.highlysuspect.voldeloom")
 }
 
-group = "hummel"
+group = "com.github.hummel"
 version = LocalDate.now().format(DateTimeFormatter.ofPattern("yy.MM.dd"))
 
 val minecraftVersion: String = "1.4.7"

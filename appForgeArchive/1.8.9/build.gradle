@@ -18,7 +18,7 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 
 final def currentDate = LocalDate.now()
 version = currentDate.format(DateTimeFormatter.ofPattern('yy.MM.dd'))
-group = 'com.yourname.modid'
+group = 'com.github.hummel'
 archivesBaseName = '1.8.9'
 
 targetCompatibility = JavaVersion.VERSION_1_8
