@@ -15,7 +15,7 @@ import java.util.List;
 public class ItemRingVilya extends ItemRingBase {
 	@Override
 	@SuppressWarnings("rawtypes")
-	public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean b) {
+	public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean advanced) {
 		for (Potion potion : new Potion[]{Potion.moveSpeed, Potion.jump}) {
 			list.add(EnumChatFormatting.DARK_GREEN + StatCollector.translateToLocal(potion.getName()).trim());
 		}
@@ -29,7 +29,7 @@ public class ItemRingVilya extends ItemRingBase {
 	}
 
 	@Override
-	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
+	public void onUpdate(ItemStack itemStack, World world, Entity entity, int slot, boolean selected) {
 		if (entity instanceof EntityLivingBase) {
 			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 20, 1));
 			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(Potion.jump.getId(), 20, 1));
