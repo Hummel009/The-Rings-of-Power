@@ -14,7 +14,7 @@ import java.util.List;
 
 public class ItemRingMan extends ItemRingBase {
 	@Override
-	public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List<String> list, boolean b) {
+	public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List<String> list, boolean advanced) {
 		for (Potion potion : new Potion[]{Potion.damageBoost, Potion.nightVision}) {
 			list.add(EnumChatFormatting.DARK_GREEN + StatCollector.translateToLocal(potion.getName()).trim());
 		}
@@ -28,7 +28,7 @@ public class ItemRingMan extends ItemRingBase {
 	}
 
 	@Override
-	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
+	public void onUpdate(ItemStack itemStack, World world, Entity entity, int slot, boolean selected) {
 		if (entity instanceof EntityLivingBase) {
 			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(Potion.damageBoost.getId(), 20, 1));
 			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(Potion.nightVision.getId(), 220));
