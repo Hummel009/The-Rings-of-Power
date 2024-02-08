@@ -1,7 +1,5 @@
-package trop;
+package trop.item;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -14,12 +12,11 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class TROPItemRingDwarf extends TROPItemRingBase {
+public class ItemRingMan extends ItemRingBase {
 	@Override
-	@SideOnly(Side.CLIENT)
 	@SuppressWarnings("rawtypes")
 	public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean b) {
-		for (Potion potion : new Potion[]{Potion.digSpeed, Potion.resistance}) {
+		for (Potion potion : new Potion[]{Potion.damageBoost, Potion.nightVision}) {
 			list.add(EnumChatFormatting.DARK_GREEN + StatCollector.translateToLocal(potion.getName()).trim());
 		}
 	}
@@ -34,8 +31,8 @@ public class TROPItemRingDwarf extends TROPItemRingBase {
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
 		if (entity instanceof EntityLivingBase) {
-			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(Potion.digSpeed.getId(), 20, 1));
-			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(Potion.resistance.getId(), 20, 1));
+			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(Potion.damageBoost.getId(), 20, 1));
+			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(Potion.nightVision.getId(), 220));
 		}
 	}
 }

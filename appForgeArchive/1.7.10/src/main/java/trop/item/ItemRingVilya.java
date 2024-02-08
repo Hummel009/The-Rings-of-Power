@@ -1,7 +1,5 @@
-package trop;
+package trop.item;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -14,9 +12,8 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class TROPItemRingVilya extends TROPItemRingBase {
+public class ItemRingVilya extends ItemRingBase {
 	@Override
-	@SideOnly(Side.CLIENT)
 	@SuppressWarnings("rawtypes")
 	public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean b) {
 		for (Potion potion : new Potion[]{Potion.moveSpeed, Potion.jump}) {

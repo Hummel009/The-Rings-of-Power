@@ -1,7 +1,5 @@
-package trop;
+package trop.item;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -14,12 +12,11 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class TROPItemRingMan extends TROPItemRingBase {
+public class ItemRingGreat extends ItemRingBase {
 	@Override
-	@SideOnly(Side.CLIENT)
 	@SuppressWarnings("rawtypes")
 	public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean b) {
-		for (Potion potion : new Potion[]{Potion.damageBoost, Potion.nightVision}) {
+		for (Potion potion : new Potion[]{Potion.invisibility}) {
 			list.add(EnumChatFormatting.DARK_GREEN + StatCollector.translateToLocal(potion.getName()).trim());
 		}
 	}
@@ -34,8 +31,7 @@ public class TROPItemRingMan extends TROPItemRingBase {
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
 		if (entity instanceof EntityLivingBase) {
-			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(Potion.damageBoost.getId(), 20, 1));
-			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(Potion.nightVision.getId(), 220));
+			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(Potion.invisibility.getId(), 20, 2));
 		}
 	}
 }
