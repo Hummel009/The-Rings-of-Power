@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class ItemRingNarya extends ItemRingBase {
+public class ItemRingNarya extends ItemRing {
 	@Override
 	public void addInformation(ItemStack itemStack, World world, List<ITextComponent> list, ITooltipFlag tooltipFlag) {
 		for (Potion potion : new Potion[]{MobEffects.FIRE_RESISTANCE}) {

@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class ItemRingGreat extends ItemRingBase {
+public class ItemRingGreat extends ItemRing {
 	@Override
 	@SuppressWarnings("deprecation")
 	public void addInformation(ItemStack itemStack, World world, List<String> list, ITooltipFlag tooltipFlag) {

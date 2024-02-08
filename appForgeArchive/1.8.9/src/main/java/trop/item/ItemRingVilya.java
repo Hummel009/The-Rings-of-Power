@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class ItemRingVilya extends ItemRingBase {
+public class ItemRingVilya extends ItemRing {
 	@Override
 	public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List<String> list, boolean advanced) {
 		for (Potion potion : new Potion[]{Potion.moveSpeed, Potion.jump}) {

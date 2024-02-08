@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class ItemRingVilya extends ItemRingBase {
+public class ItemRingVilya extends ItemRing {
 	public ItemRingVilya(int id) {
 		super(id);
 	}

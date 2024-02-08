@@ -4,7 +4,7 @@ import net.minecraft.src.*;
 
 import java.util.List;
 
-public class ItemRingGreat extends ItemRingBase {
+public class ItemRingGreat extends ItemRing {
 	public ItemRingGreat(int id) {
 		super(id);
 	}

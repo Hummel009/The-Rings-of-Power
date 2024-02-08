@@ -4,7 +4,7 @@ import net.minecraft.src.*;
 
 import java.util.List;
 
-public class ItemRingMan extends ItemRingBase {
+public class ItemRingMan extends ItemRing {
 	public ItemRingMan(int id) {
 		super(id);
 	}

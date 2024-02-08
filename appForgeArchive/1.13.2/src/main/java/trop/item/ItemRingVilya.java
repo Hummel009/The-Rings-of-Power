@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class ItemRingVilya extends ItemRingBase {
+public class ItemRingVilya extends ItemRing {
 	@Override
 	public void addInformation(ItemStack itemStack, World world, List<ITextComponent> list, ITooltipFlag tooltipFlag) {
 		for (Potion potion : new Potion[]{MobEffects.SPEED, MobEffects.JUMP_BOOST}) {

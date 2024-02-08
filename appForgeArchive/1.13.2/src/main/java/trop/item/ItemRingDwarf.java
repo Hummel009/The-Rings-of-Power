@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class ItemRingDwarf extends ItemRingBase {
+public class ItemRingDwarf extends ItemRing {
 	@Override
 	public void addInformation(ItemStack itemStack, World world, List<ITextComponent> list, ITooltipFlag tooltipFlag) {
 		for (Potion potion : new Potion[]{MobEffects.RESISTANCE, MobEffects.MINING_FATIGUE}) {

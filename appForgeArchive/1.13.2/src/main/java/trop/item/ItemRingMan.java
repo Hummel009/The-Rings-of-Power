@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class ItemRingMan extends ItemRingBase {
+public class ItemRingMan extends ItemRing {
 	@Override
 	public void addInformation(ItemStack itemStack, World world, List<ITextComponent> list, ITooltipFlag tooltipFlag) {
 		for (Potion potion : new Potion[]{MobEffects.STRENGTH, MobEffects.NIGHT_VISION}) {

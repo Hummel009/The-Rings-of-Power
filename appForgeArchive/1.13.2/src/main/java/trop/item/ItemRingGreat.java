@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class ItemRingGreat extends ItemRingBase {
+public class ItemRingGreat extends ItemRing {
 	@Override
 	public void addInformation(ItemStack itemStack, World world, List<ITextComponent> list, ITooltipFlag tooltipFlag) {
 		for (Potion potion : new Potion[]{MobEffects.INVISIBILITY}) {

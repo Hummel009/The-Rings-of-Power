@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class ItemRingNarya extends ItemRingBase {
+public class ItemRingNarya extends ItemRing {
 	@Override
 	@SuppressWarnings("rawtypes")
 	public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean advanced) {
