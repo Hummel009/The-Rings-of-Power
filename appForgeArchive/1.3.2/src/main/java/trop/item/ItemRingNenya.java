@@ -25,7 +25,7 @@ public class ItemRingNenya extends ItemRingBase {
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean selected) {
 		if (entity instanceof EntityLiving) {
-			((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.waterBreathing.getId(), 20));
+			((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.waterBreathing.getId(), 20, 0));
 		}
 	}
 }

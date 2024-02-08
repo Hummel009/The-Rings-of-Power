@@ -11,7 +11,7 @@ public class ItemRingGreat extends ItemRingBase {
 
 	@Override
 	public void addInformation(ItemStack itemStack, List list) {
-		for (Potion potion : new Potion[]{Potion.invisibility}) {
+		for (Potion potion : new Potion[]{Potion.regeneration}) {
 			list.add("§2" + StatCollector.translateToLocal(potion.getName()).trim());
 		}
 	}

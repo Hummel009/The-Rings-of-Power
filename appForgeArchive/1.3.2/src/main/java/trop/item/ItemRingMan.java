@@ -11,7 +11,7 @@ public class ItemRingMan extends ItemRingBase {
 
 	@Override
 	public void addInformation(ItemStack itemStack, List list) {
-		for (Potion potion : new Potion[]{Potion.damageBoost, Potion.nightVision}) {
+		for (Potion potion : new Potion[]{Potion.damageBoost}) {
 			list.add("§2" + StatCollector.translateToLocal(potion.getName()).trim());
 		}
 	}
