@@ -33,7 +33,7 @@ public class ItemRingMan extends ItemRingBase {
 	}
 
 	@Override
-	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean selected) {
+	public void onUpdate(ItemStack itemStack, World world, Entity entity, int slot, boolean selected) {
 		if (entity instanceof EntityLiving) {
 			((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.damageBoost.getId(), 20, 1));
 			((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.nightVision.getId(), 220));

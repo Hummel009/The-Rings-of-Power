@@ -33,7 +33,7 @@ public class ItemRingDwarf extends ItemRingBase {
 	}
 
 	@Override
-	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean selected) {
+	public void onUpdate(ItemStack itemStack, World world, Entity entity, int slot, boolean selected) {
 		if (entity instanceof EntityLiving) {
 			((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.digSpeed.getId(), 20, 1));
 			((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.resistance.getId(), 20, 1));

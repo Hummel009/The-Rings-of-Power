@@ -23,7 +23,7 @@ public class ItemRingVilya extends ItemRingBase {
 	}
 
 	@Override
-	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean selected) {
+	public void onUpdate(ItemStack itemStack, World world, Entity entity, int slot, boolean selected) {
 		if (entity instanceof EntityLiving) {
 			((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 20, 1));
 			((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.jump.getId(), 20, 1));

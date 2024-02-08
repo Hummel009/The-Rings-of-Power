@@ -18,7 +18,7 @@ public class ItemRingNarya extends ItemRingBase {
 	}
 
 	@Override
-	public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean b) {
+	public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean advanced) {
 		for (Potion potion : new Potion[]{Potion.fireResistance}) {
 			list.add(EnumChatFormatting.DARK_GREEN + StatCollector.translateToLocal(potion.getName()).trim());
 		}
@@ -31,7 +31,7 @@ public class ItemRingNarya extends ItemRingBase {
 	}
 
 	@Override
-	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
+	public void onUpdate(ItemStack itemStack, World world, Entity entity, int slot, boolean selected) {
 		if (entity instanceof EntityLiving) {
 			((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 20));
 		}
