@@ -1,7 +1,5 @@
-package trop;
+package trop.item;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
@@ -14,13 +12,12 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class TROPItemRingNarya extends TROPItemRingBase {
-	public TROPItemRingNarya(int id) {
+public class ItemRingNarya extends ItemRingBase {
+	public ItemRingNarya(int id) {
 		super(id);
 	}
 
 	@Override
-	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean b) {
 		for (Potion potion : new Potion[]{Potion.fireResistance}) {
 			list.add(EnumChatFormatting.DARK_GREEN + StatCollector.translateToLocal(potion.getName()).trim());

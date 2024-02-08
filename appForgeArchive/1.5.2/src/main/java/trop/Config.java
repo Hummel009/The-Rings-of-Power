@@ -7,7 +7,7 @@ import net.minecraftforge.common.Configuration;
 import java.util.logging.Level;
 
 @SuppressWarnings("PublicField")
-public class TROPConfig {
+public class Config {
 	private static Configuration configuration;
 
 	private static boolean loaded;
@@ -36,7 +36,7 @@ public class TROPConfig {
 	public static int idRingRen;
 	public static int idRingDwar;
 
-	private TROPConfig() {
+	private Config() {
 	}
 
 	public static void preInit(FMLPreInitializationEvent event) {
