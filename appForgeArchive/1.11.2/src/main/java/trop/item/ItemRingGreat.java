@@ -32,7 +32,7 @@ public class ItemRingGreat extends ItemRingBase {
 	}
 
 	@Override
-	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
+	public void onUpdate(ItemStack itemStack, World world, Entity entity, int slot, boolean selected) {
 		if (entity instanceof EntityLivingBase) {
 			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 20, 2));
 		}
