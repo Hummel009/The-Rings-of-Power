@@ -1,20 +1,17 @@
-package trop;
+package trop.item;
 
-import cpw.mods.fml.common.Side;
-import cpw.mods.fml.common.asm.SideOnly;
 import net.minecraft.src.*;
 
 import java.util.List;
 
-public class TROPItemRingNenya extends TROPItemRingBase {
-	public TROPItemRingNenya(int id) {
+public class ItemRingMan extends ItemRingBase {
+	public ItemRingMan(int id) {
 		super(id);
 	}
 
 	@Override
-	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, List list) {
-		for (Potion potion : new Potion[]{Potion.waterBreathing}) {
+		for (Potion potion : new Potion[]{Potion.damageBoost, Potion.nightVision}) {
 			list.add("§2" + StatCollector.translateToLocal(potion.getName()).trim());
 		}
 	}
@@ -26,9 +23,9 @@ public class TROPItemRingNenya extends TROPItemRingBase {
 	}
 
 	@Override
-	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
+	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean selected) {
 		if (entity instanceof EntityLiving) {
-			((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.waterBreathing.getId(), 20, 0));
+			((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.damageBoost.getId(), 20, 1));
 		}
 	}
 }

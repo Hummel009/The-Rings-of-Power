@@ -1,8 +1,7 @@
 package trop.init;
 
 import com.google.common.base.CaseFormat;
-import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.item.Item;
+import net.minecraft.src.Item;
 import trop.Config;
 import trop.item.*;
 
@@ -111,6 +110,5 @@ public class Items {
 		String itemName = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, name);
 		item.setTextureFile("/assets/trop/textures/items/sprite.png");
 		item.setItemName(itemName);
-		GameRegistry.registerItem(item, itemName);
 	}
 }

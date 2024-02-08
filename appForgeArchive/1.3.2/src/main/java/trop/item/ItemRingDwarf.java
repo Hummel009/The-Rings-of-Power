@@ -1,20 +1,17 @@
-package trop;
+package trop.item;
 
-import cpw.mods.fml.common.Side;
-import cpw.mods.fml.common.asm.SideOnly;
 import net.minecraft.src.*;
 
 import java.util.List;
 
-public class TROPItemRingVilya extends TROPItemRingBase {
-	public TROPItemRingVilya(int id) {
+public class ItemRingDwarf extends ItemRingBase {
+	public ItemRingDwarf(int id) {
 		super(id);
 	}
 
 	@Override
-	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, List list) {
-		for (Potion potion : new Potion[]{Potion.moveSpeed, Potion.jump}) {
+		for (Potion potion : new Potion[]{Potion.digSpeed, Potion.resistance}) {
 			list.add("§2" + StatCollector.translateToLocal(potion.getName()).trim());
 		}
 	}
@@ -26,10 +23,10 @@ public class TROPItemRingVilya extends TROPItemRingBase {
 	}
 
 	@Override
-	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
+	public void onUpdate(ItemStack itemStack, World world, Entity entity, int i, boolean selected) {
 		if (entity instanceof EntityLiving) {
-			((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 20, 1));
-			((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.jump.getId(), 20, 1));
+			((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.digSpeed.getId(), 20, 1));
+			((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.resistance.getId(), 20, 1));
 		}
 	}
 }

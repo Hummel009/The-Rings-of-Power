@@ -1,4 +1,4 @@
-package trop;
+package trop.util;
 
 import com.google.common.base.Charsets;
 import cpw.mods.fml.common.registry.LanguageRegistry;
@@ -9,8 +9,8 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.Properties;
 
-public class TROPLang {
-	private TROPLang() {
+public class UnicodeHelper {
+	private UnicodeHelper() {
 	}
 
 	public static void loadLocalization(LanguageRegistry registry, String langFile, String langName) {
