@@ -1,17 +1,12 @@
 package trop;
 
 import net.minecraft.item.Item;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @Mod("trop")
 @SuppressWarnings("WeakerAccess")
@@ -47,32 +42,5 @@ public class TROP {
 	public TROP() {
 		IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		ITEMS.register(eventBus);
-	}
-
-	@Mod.EventBusSubscriber
-	public static class MissingMappingsDetector {
-		private MissingMappingsDetector() {
-		}
-
-		@SubscribeEvent
-		public static void onMissingMappings(RegistryEvent.MissingMappings<Item> event) {
-			Map<String, RegistryObject<Item>> renamed = new HashMap<>();
-			renamed.put("dvar", RING_DWAR);
-			renamed.put("saita", RING_REN);
-			renamed.put("uvata", RING_UVATHA);
-			renamed.put("nenia", RING_NENYA);
-			renamed.put("naria", RING_NARYA);
-			renamed.put("vilia", RING_VILYA);
-			renamed.put("morgomir", RING_ADUNAPHEL);
-			renamed.put("khommurat", RING_HOARMURATH);
-			for (RegistryEvent.MissingMappings.Mapping<Item> mapping : event.getAllMappings()) {
-				for (Map.Entry<String, RegistryObject<Item>> entry : renamed.entrySet()) {
-					if (mapping.key.getPath().contains(entry.getKey())) {
-						mapping.remap(entry.getValue().get());
-						break;
-					}
-				}
-			}
-		}
 	}
 }
