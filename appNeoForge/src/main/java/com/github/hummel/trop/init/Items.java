@@ -6,7 +6,6 @@ import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import trop.item.*;
 
 import java.util.ArrayList;
 import java.util.Collection;

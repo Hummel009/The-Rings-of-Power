@@ -1,9 +1,9 @@
 package com.github.hummel.trop;
 
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.common.Mod;
 import com.github.hummel.trop.init.CreativeTabs;
 import com.github.hummel.trop.init.Items;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.common.Mod;
 
 @Mod("trop")
 public class Main {
