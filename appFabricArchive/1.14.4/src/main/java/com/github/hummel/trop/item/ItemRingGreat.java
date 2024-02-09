@@ -26,7 +26,7 @@ public class ItemRingGreat extends ItemRing {
 	}
 
 	@Override
-	public void inventoryTick(ItemStack itemStack, Level level, Entity entity, int slot, boolean advanced) {
+	public void inventoryTick(ItemStack itemStack, Level level, Entity entity, int slot, boolean selected) {
 		if (entity instanceof LivingEntity) {
 			((LivingEntity) entity).addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 20));
 		}
