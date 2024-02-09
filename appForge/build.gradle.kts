@@ -22,8 +22,10 @@ minecraft {
 	mappings("official", "1.20.4")
 	runs {
 		create("client") {
-			workingDirectory(project.file("run"))
-			property("forge.logging.markers", "REGISTRIES")
+			workingDirectory(project.file("runs/client"))
+		}
+		create("server") {
+			workingDirectory(project.file("runs/server"))
 		}
 	}
 }

@@ -22,7 +22,9 @@ minecraft {
 	runs {
 		create("client") {
 			modSource(project.sourceSets.main.get())
-			systemProperty("forge.logging.markers", "REGISTRIES")
+		}
+		create("server") {
+			modSource(project.sourceSets.main.get())
 		}
 	}
 }
