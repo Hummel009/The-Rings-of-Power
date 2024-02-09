@@ -1,4 +1,4 @@
-package trop;
+package trop.item;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -16,7 +16,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class TROPItemRingDwarf extends TROPItemRingBase {
+public class ItemRingDwarf extends ItemRing {
 	@Override
 	public void appendHoverText(ItemStack itemStack, Level level, List<Component> list, TooltipFlag tooltipFlag) {
 		for (var mobEffect : new MobEffect[]{MobEffects.DIG_SPEED, MobEffects.DAMAGE_RESISTANCE}) {
@@ -25,7 +25,7 @@ public class TROPItemRingDwarf extends TROPItemRingBase {
 	}
 
 	@Override
-	public void inventoryTick(ItemStack itemStack, Level level, Entity entity, int i, boolean b) {
+	public void inventoryTick(ItemStack itemStack, Level level, Entity entity, int slot, boolean selected) {
 		if (entity instanceof LivingEntity livingEntity) {
 			livingEntity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 20, 1));
 			livingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 20, 1));
