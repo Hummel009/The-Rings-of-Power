@@ -1,5 +1,7 @@
 package com.github.hummel.trop;
 
+import com.github.hummel.trop.init.Items;
+import com.github.hummel.trop.proxy.CommonProxy;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -7,8 +9,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLMissingMappingsEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import com.github.hummel.trop.init.Items;
-import com.github.hummel.trop.proxy.CommonProxy;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,10 +1,10 @@
 package com.github.hummel.trop.proxy;
 
+import com.github.hummel.trop.init.Items;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import com.github.hummel.trop.init.Items;
 
 public class ClientProxy implements CommonProxy {
 	@Override

@@ -1,9 +1,9 @@
 package com.github.hummel.trop;
 
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import com.github.hummel.trop.init.Items;
 import com.github.hummel.trop.init.Langs;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = "trop", useMetadata = true)
 public class Main {

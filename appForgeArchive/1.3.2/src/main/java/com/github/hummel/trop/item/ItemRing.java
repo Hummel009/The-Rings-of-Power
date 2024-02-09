@@ -1,7 +1,7 @@
 package com.github.hummel.trop.item;
 
-import net.minecraft.src.Item;
 import com.github.hummel.trop.init.CreativeTabs;
+import net.minecraft.src.Item;
 
 public class ItemRing extends Item {
 	public ItemRing(int id) {
