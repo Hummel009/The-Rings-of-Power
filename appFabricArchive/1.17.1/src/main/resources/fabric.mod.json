@@ -16,7 +16,7 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"trop.TROP"
+			"trop.Main"
 		]
 	},
 	"depends": {
