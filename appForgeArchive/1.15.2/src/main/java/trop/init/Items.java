@@ -1,92 +1,43 @@
 package trop.init;
 
-import com.google.common.base.CaseFormat;
 import net.minecraft.item.Item;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import trop.item.*;
 
-@SuppressWarnings({"WeakerAccess", "PublicField"})
+@SuppressWarnings("WeakerAccess")
 public class Items {
-	public static Item ringGreat;
+	private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "trop");
 
-	public static Item ringNarya;
-	public static Item ringNenya;
-	public static Item ringVilya;
+	public static final RegistryObject<Item> RING_GREAT = ITEMS.register("ring_great", ItemRingGreat::new);
 
-	public static Item ringThror;
-	public static Item ringThulin;
-	public static Item ringKhibil;
-	public static Item ringFarin;
-	public static Item ringKhain;
-	public static Item ringBaraz;
-	public static Item ringBurin;
+	public static final RegistryObject<Item> RING_NARYA = ITEMS.register("ring_narya", ItemRingNarya::new);
+	public static final RegistryObject<Item> RING_NENYA = ITEMS.register("ring_nenya", ItemRingNenya::new);
+	public static final RegistryObject<Item> RING_VILYA = ITEMS.register("ring_vilya", ItemRingVilya::new);
 
-	public static Item ringMurazor;
-	public static Item ringHoarmurath;
-	public static Item ringAkhorahil;
-	public static Item ringAdunaphel;
-	public static Item ringJiindur;
-	public static Item ringKhamul;
-	public static Item ringUvatha;
-	public static Item ringRen;
-	public static Item ringDwar;
+	public static final RegistryObject<Item> RING_THROR = ITEMS.register("ring_thror", ItemRingDwarf::new);
+	public static final RegistryObject<Item> RING_THULIN = ITEMS.register("ring_thulin", ItemRingDwarf::new);
+	public static final RegistryObject<Item> RING_KHIBIL = ITEMS.register("ring_khibil", ItemRingDwarf::new);
+	public static final RegistryObject<Item> RING_FARIN = ITEMS.register("ring_farin", ItemRingDwarf::new);
+	public static final RegistryObject<Item> RING_KHAIN = ITEMS.register("ring_khain", ItemRingDwarf::new);
+	public static final RegistryObject<Item> RING_BARAZ = ITEMS.register("ring_baraz", ItemRingDwarf::new);
+	public static final RegistryObject<Item> RING_BURIN = ITEMS.register("ring_burin", ItemRingDwarf::new);
+	public static final RegistryObject<Item> RING_MURAZOR = ITEMS.register("ring_murazor", ItemRingMan::new);
+	public static final RegistryObject<Item> RING_HOARMURATH = ITEMS.register("ring_hoarmurath", ItemRingMan::new);
+	public static final RegistryObject<Item> RING_AKHORAHIL = ITEMS.register("ring_akhorahil", ItemRingMan::new);
+	public static final RegistryObject<Item> RING_ADUNAPHEL = ITEMS.register("ring_adunaphel", ItemRingMan::new);
+	public static final RegistryObject<Item> RING_JIINDUR = ITEMS.register("ring_jiindur", ItemRingMan::new);
+	public static final RegistryObject<Item> RING_KHAMUL = ITEMS.register("ring_khamul", ItemRingMan::new);
+	public static final RegistryObject<Item> RING_UVATHA = ITEMS.register("ring_uvatha", ItemRingMan::new);
+	public static final RegistryObject<Item> RING_REN = ITEMS.register("ring_ren", ItemRingMan::new);
+	public static final RegistryObject<Item> RING_DWAR = ITEMS.register("ring_dwar", ItemRingMan::new);
 
 	private Items() {
 	}
 
-	public static void register() {
-		ringGreat = new ItemRingGreat();
-
-		ringNarya = new ItemRingNarya();
-		ringNenya = new ItemRingNenya();
-		ringVilya = new ItemRingVilya();
-
-		ringThror = new ItemRingDwarf();
-		ringThulin = new ItemRingDwarf();
-		ringKhibil = new ItemRingDwarf();
-		ringFarin = new ItemRingDwarf();
-		ringKhain = new ItemRingDwarf();
-		ringBaraz = new ItemRingDwarf();
-		ringBurin = new ItemRingDwarf();
-
-		ringMurazor = new ItemRingMan();
-		ringHoarmurath = new ItemRingMan();
-		ringAkhorahil = new ItemRingMan();
-		ringAdunaphel = new ItemRingMan();
-		ringJiindur = new ItemRingMan();
-		ringKhamul = new ItemRingMan();
-		ringUvatha = new ItemRingMan();
-		ringRen = new ItemRingMan();
-		ringDwar = new ItemRingMan();
-
-		register(ringGreat, "ringGreat");
-
-		register(ringNarya, "ringNarya");
-		register(ringNenya, "ringNenya");
-		register(ringVilya, "ringVilya");
-
-		register(ringThror, "ringThror");
-		register(ringThulin, "ringThulin");
-		register(ringKhibil, "ringKhibil");
-		register(ringFarin, "ringFarin");
-		register(ringKhain, "ringKhain");
-		register(ringBaraz, "ringBaraz");
-		register(ringBurin, "ringBurin");
-
-		register(ringMurazor, "ringMurazor");
-		register(ringHoarmurath, "ringHoarmurath");
-		register(ringAkhorahil, "ringAkhorahil");
-		register(ringAdunaphel, "ringAdunaphel");
-		register(ringJiindur, "ringJiindur");
-		register(ringKhamul, "ringKhamul");
-		register(ringUvatha, "ringUvatha");
-		register(ringRen, "ringRen");
-		register(ringDwar, "ringDwar");
-	}
-
-	private static void register(Item item, String name) {
-		String itemName = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, name);
-		item.setRegistryName(itemName);
-		ForgeRegistries.ITEMS.register(item);
+	public static void register(IEventBus modEventBus) {
+		ITEMS.register(modEventBus);
 	}
 }

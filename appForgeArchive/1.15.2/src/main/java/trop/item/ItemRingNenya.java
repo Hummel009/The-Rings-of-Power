@@ -29,7 +29,7 @@ public class ItemRingNenya extends ItemRing {
 	}
 
 	@Override
-	public void inventoryTick(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
+	public void inventoryTick(ItemStack itemStack, World world, Entity entity, int slot, boolean selected) {
 		if (entity instanceof LivingEntity) {
 			((LivingEntity) entity).addEffect(new EffectInstance(Effects.WATER_BREATHING, 20));
 		}
