@@ -8,7 +8,7 @@ import trop.init.Items;
 import java.util.HashMap;
 import java.util.Map;
 
-public class EventHandler {
+public class ModEventHandler {
 	@SubscribeEvent
 	public void onItemRegistry(RegistryEvent.Register<Item> event) {
 		Items.register();
