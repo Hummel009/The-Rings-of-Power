@@ -29,7 +29,7 @@ public class ItemRingDwarf extends ItemRing {
 	}
 
 	@Override
-	public void inventoryTick(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
+	public void inventoryTick(ItemStack itemStack, World world, Entity entity, int slot, boolean selected) {
 		if (entity instanceof LivingEntity) {
 			((LivingEntity) entity).addEffect(new EffectInstance(Effects.DIG_SPEED, 20, 1));
 			((LivingEntity) entity).addEffect(new EffectInstance(Effects.DAMAGE_RESISTANCE, 20, 1));

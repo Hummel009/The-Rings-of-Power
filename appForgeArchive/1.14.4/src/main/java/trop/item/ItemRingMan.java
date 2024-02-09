@@ -29,7 +29,7 @@ public class ItemRingMan extends ItemRing {
 	}
 
 	@Override
-	public void inventoryTick(ItemStack itemStack, World world, Entity entity, int i, boolean b) {
+	public void inventoryTick(ItemStack itemStack, World world, Entity entity, int slot, boolean selected) {
 		if (entity instanceof LivingEntity) {
 			((LivingEntity) entity).addEffect(new EffectInstance(Effects.DAMAGE_BOOST, 20, 1));
 			((LivingEntity) entity).addEffect(new EffectInstance(Effects.NIGHT_VISION, 220));
