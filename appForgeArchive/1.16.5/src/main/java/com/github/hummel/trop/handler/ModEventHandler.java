@@ -1,0 +1,33 @@
+package com.github.hummel.trop.handler;
+
+import net.minecraft.item.Item;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.RegistryObject;
+import com.github.hummel.trop.init.Items;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class ModEventHandler {
+	@SubscribeEvent
+	public void onMissingMappings(RegistryEvent.MissingMappings<Item> event) {
+		Map<String, RegistryObject<Item>> renamed = new HashMap<>();
+		renamed.put("dvar", Items.RING_DWAR);
+		renamed.put("saita", Items.RING_REN);
+		renamed.put("uvata", Items.RING_UVATHA);
+		renamed.put("nenia", Items.RING_NENYA);
+		renamed.put("naria", Items.RING_NARYA);
+		renamed.put("vilia", Items.RING_VILYA);
+		renamed.put("morgomir", Items.RING_ADUNAPHEL);
+		renamed.put("khommurat", Items.RING_HOARMURATH);
+		for (RegistryEvent.MissingMappings.Mapping<Item> mapping : event.getAllMappings()) {
+			for (Map.Entry<String, RegistryObject<Item>> entry : renamed.entrySet()) {
+				if (mapping.key.getPath().contains(entry.getKey())) {
+					mapping.remap(entry.getValue().get());
+					break;
+				}
+			}
+		}
+	}
+}
