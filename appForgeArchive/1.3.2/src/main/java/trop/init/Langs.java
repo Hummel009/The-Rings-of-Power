@@ -7,7 +7,7 @@ public class Langs {
 	private Langs() {
 	}
 
-	public static void onInit() {
+	public static void preInit() {
 		LanguageRegistry instance = LanguageRegistry.instance();
 
 		UnicodeHelper.loadLocalization(instance, "/assets/trop/lang/en_US.lang", "en_US");

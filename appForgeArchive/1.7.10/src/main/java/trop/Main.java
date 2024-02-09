@@ -5,7 +5,6 @@ import cpw.mods.fml.common.event.FMLMissingMappingsEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
-import trop.init.CreativeTabs;
 import trop.init.Items;
 
 import java.util.HashMap;
@@ -17,7 +16,6 @@ public class Main {
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		CreativeTabs.preInit();
 		Items.preInit();
 	}
 

@@ -8,7 +8,6 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import trop.init.CreativeTabs;
 import trop.init.Items;
 
 import java.util.HashMap;
@@ -17,7 +16,6 @@ import java.util.Map;
 public class EventHandler {
 	@SubscribeEvent
 	public void onItemRegistry(RegistryEvent.Register<Item> event) {
-		CreativeTabs.register();
 		Items.register();
 	}
 

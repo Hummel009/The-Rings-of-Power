@@ -2,19 +2,14 @@ package trop.init;
 
 import net.minecraft.item.ItemStack;
 
-@SuppressWarnings({"WeakerAccess", "PublicField"})
 public class CreativeTabs {
-	public static net.minecraft.creativetab.CreativeTabs tabRings;
+	public static final net.minecraft.creativetab.CreativeTabs TAB_RINGS = new net.minecraft.creativetab.CreativeTabs("trop.rings") {
+		@Override
+		public ItemStack createIcon() {
+			return new ItemStack(Items.ringNarya);
+		}
+	};
 
 	private CreativeTabs() {
-	}
-
-	public static void register() {
-		tabRings = new net.minecraft.creativetab.CreativeTabs("trop.rings") {
-			@Override
-			public ItemStack createIcon() {
-				return new ItemStack(Items.ringNarya);
-			}
-		};
 	}
 }

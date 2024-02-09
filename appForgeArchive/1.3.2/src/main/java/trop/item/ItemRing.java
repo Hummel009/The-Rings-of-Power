@@ -8,6 +8,6 @@ public class ItemRing extends Item {
 		super(id);
 		setMaxDamage(0);
 		setMaxStackSize(1);
-		setCreativeTab(CreativeTabs.tabRings);
+		setCreativeTab(CreativeTabs.TAB_RINGS);
 	}
 }

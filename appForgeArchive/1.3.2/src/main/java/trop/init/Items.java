@@ -34,7 +34,7 @@ public class Items {
 	private Items() {
 	}
 
-	public static void onInit() {
+	public static void preInit() {
 		ringGreat = new ItemRingGreat(Config.idRingGreat - 256);
 
 		ringNarya = new ItemRingNarya(Config.idRingNarya - 256);

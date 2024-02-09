@@ -7,7 +7,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLMissingMappingsEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import trop.init.CreativeTabs;
 import trop.init.Items;
 import trop.proxy.CommonProxy;
 
@@ -23,7 +22,6 @@ public class Main {
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		CreativeTabs.preInit();
 		Items.preInit();
 	}
 

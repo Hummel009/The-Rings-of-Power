@@ -3,7 +3,6 @@ package trop.handler;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import trop.init.CreativeTabs;
 import trop.init.Items;
 
 import java.util.HashMap;
@@ -12,7 +11,6 @@ import java.util.Map;
 public class EventHandler {
 	@SubscribeEvent
 	public void onItemRegistry(RegistryEvent.Register<Item> event) {
-		CreativeTabs.register();
 		Items.register();
 	}
 
