@@ -26,7 +26,7 @@ public class ItemRingNenya extends ItemRing {
 	}
 
 	@Override
-	public void inventoryTick(ItemStack itemStack, Level level, Entity entity, int i, boolean b) {
+	public void inventoryTick(ItemStack itemStack, Level level, Entity entity, int slot, boolean selected) {
 		if (entity instanceof LivingEntity livingEntity) {
 			livingEntity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 20));
 		}

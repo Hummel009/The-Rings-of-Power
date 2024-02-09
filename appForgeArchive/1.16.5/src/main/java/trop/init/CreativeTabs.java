@@ -7,7 +7,7 @@ public class CreativeTabs {
 	public static final ItemGroup TAB_RINGS = new ItemGroup("trop.rings") {
 		@Override
 		public ItemStack makeIcon() {
-			return new ItemStack(Items.ringNarya);
+			return new ItemStack(Items.RING_NARYA.get());
 		}
 	};
 
