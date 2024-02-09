@@ -5,13 +5,8 @@ import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import trop.item.*;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 @SuppressWarnings({"WeakerAccess", "PublicField"})
 public class Items {
-	public static final Collection<Item> CONTENT = new ArrayList<>();
-
 	public static Item ringGreat;
 
 	public static Item ringNarya;
@@ -91,9 +86,7 @@ public class Items {
 
 	private static void register(Item item, String name) {
 		String itemName = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, name);
-		item.setTranslationKey(itemName);
 		item.setRegistryName(itemName);
 		ForgeRegistries.ITEMS.register(item);
-		CONTENT.add(item);
 	}
 }
