@@ -1,7 +1,6 @@
 package trop.init;
 
 import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import trop.item.*;
@@ -65,6 +64,6 @@ public class Items {
 	}
 
 	private static void register(Item item, String name) {
-		Registry.register(BuiltInRegistries.ITEM, new ResourceLocation("trop", name), item);
+		Registry.register(Registry.ITEM, new ResourceLocation("trop", name), item);
 	}
 }

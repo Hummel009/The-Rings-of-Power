@@ -11,7 +11,6 @@ import java.util.Collection;
 
 @SuppressWarnings("WeakerAccess")
 public class Items {
-
 	public static final Collection<Item> CONTENT = new ArrayList<>();
 
 	public static final Item RING_GREAT = new ItemRingGreat();
