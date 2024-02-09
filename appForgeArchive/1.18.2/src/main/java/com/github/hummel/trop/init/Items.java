@@ -1,5 +1,6 @@
 package com.github.hummel.trop.init;
 
+import com.github.hummel.trop.item.*;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
