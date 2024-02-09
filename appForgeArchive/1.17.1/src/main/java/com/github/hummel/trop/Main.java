@@ -1,9 +1,9 @@
 package com.github.hummel.trop;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import com.github.hummel.trop.handler.ModEventHandler;
 import com.github.hummel.trop.init.Items;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod("trop")
 public class Main {

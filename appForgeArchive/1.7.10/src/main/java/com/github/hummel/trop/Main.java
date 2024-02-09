@@ -1,11 +1,11 @@
 package com.github.hummel.trop;
 
+import com.github.hummel.trop.init.Items;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLMissingMappingsEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
-import com.github.hummel.trop.init.Items;
 
 import java.util.HashMap;
 import java.util.Map;

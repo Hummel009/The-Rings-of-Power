@@ -1,10 +1,10 @@
 package com.github.hummel.trop;
 
 import com.github.hummel.trop.handler.ModEventHandler;
+import com.github.hummel.trop.init.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import com.github.hummel.trop.init.Items;
 
 @Mod("trop")
 public class Main {
