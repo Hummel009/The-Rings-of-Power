@@ -26,7 +26,7 @@ public class ItemRingVilya extends ItemRing {
 	}
 
 	@Override
-	public void inventoryTick(ItemStack itemStack, Level level, Entity entity, int i, boolean b) {
+	public void inventoryTick(ItemStack itemStack, Level level, Entity entity, int slot, boolean advanced) {
 		if (entity instanceof LivingEntity) {
 			((LivingEntity) entity).addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20, 1));
 			((LivingEntity) entity).addEffect(new MobEffectInstance(MobEffects.JUMP, 20, 1));
