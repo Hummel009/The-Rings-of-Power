@@ -1,5 +1,6 @@
 package com.github.hummel.trop.init;
 
+import com.github.hummel.trop.item.*;
 import com.google.common.base.CaseFormat;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
