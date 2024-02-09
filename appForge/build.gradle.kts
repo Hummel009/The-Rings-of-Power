@@ -22,10 +22,7 @@ minecraft {
 	mappings("official", "1.20.4")
 	runs {
 		create("client") {
-			workingDirectory(project.file("runs/client"))
-		}
-		create("server") {
-			workingDirectory(project.file("runs/server"))
+			workingDirectory(project.file("client"))
 		}
 	}
 }
