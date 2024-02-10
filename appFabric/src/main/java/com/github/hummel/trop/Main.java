@@ -1,6 +1,6 @@
 package com.github.hummel.trop;
 
-import com.github.hummel.trop.init.CreativeTabs;
+import com.github.hummel.trop.init.ItemGroups;
 import com.github.hummel.trop.init.Items;
 import net.fabricmc.api.ModInitializer;
 
@@ -10,6 +10,6 @@ public class Main implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		Items.register();
-		CreativeTabs.register();
+		ItemGroups.register();
 	}
 }

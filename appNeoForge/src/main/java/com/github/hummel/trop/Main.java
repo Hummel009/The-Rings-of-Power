@@ -1,6 +1,6 @@
 package com.github.hummel.trop;
 
-import com.github.hummel.trop.init.CreativeTabs;
+import com.github.hummel.trop.init.ItemGroups;
 import com.github.hummel.trop.init.Items;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
@@ -11,6 +11,6 @@ public class Main {
 
 	public Main(IEventBus modEventBus) {
 		Items.register(modEventBus);
-		CreativeTabs.register(modEventBus);
+		ItemGroups.register(modEventBus);
 	}
 }

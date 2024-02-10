@@ -1,7 +1,7 @@
 package com.github.hummel.trop;
 
 import com.github.hummel.trop.handler.ForgeEventHandler;
-import com.github.hummel.trop.init.CreativeTabs;
+import com.github.hummel.trop.init.ItemGroups;
 import com.github.hummel.trop.init.Items;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -19,6 +19,6 @@ public class Main {
 		forgeEventBus.register(forgeEventHandler);
 
 		Items.register(modEventBus);
-		CreativeTabs.register(modEventBus);
+		ItemGroups.register(modEventBus);
 	}
 }

@@ -1,6 +1,6 @@
 package com.github.hummel.trop.item;
 
-import com.github.hummel.trop.init.CreativeTabs;
+import com.github.hummel.trop.init.ItemGroups;
 import net.minecraft.item.Item;
 
 public class ItemRing extends Item {
@@ -8,6 +8,6 @@ public class ItemRing extends Item {
 		super(id);
 		setMaxDamage(0);
 		setMaxStackSize(1);
-		setCreativeTab(CreativeTabs.TAB_RINGS);
+		setCreativeTab(ItemGroups.TAB_RINGS);
 	}
 }

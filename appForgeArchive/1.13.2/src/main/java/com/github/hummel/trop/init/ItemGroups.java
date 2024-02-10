@@ -3,14 +3,14 @@ package com.github.hummel.trop.init;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
-public class CreativeTabs {
+public class ItemGroups {
 	public static final ItemGroup TAB_RINGS = new ItemGroup("trop.rings") {
 		@Override
-		public ItemStack makeIcon() {
-			return new ItemStack(Items.RING_NARYA.get());
+		public ItemStack createIcon() {
+			return new ItemStack(Items.ringNarya);
 		}
 	};
 
-	private CreativeTabs() {
+	private ItemGroups() {
 	}
 }

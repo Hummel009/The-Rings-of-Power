@@ -9,14 +9,14 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
 @SuppressWarnings("WeakerAccess")
-public class CreativeTabs {
+public class ItemGroups {
 	public static final CreativeModeTab TAB_RINGS = FabricItemGroup.builder().icon(() -> new ItemStack(Items.RING_NARYA)).title(Component.translatable("itemGroup.trop.rings")).displayItems((context, populator) -> {
 		for (var item : Items.CONTENT) {
 			populator.accept(item);
 		}
 	}).build();
 
-	private CreativeTabs() {
+	private ItemGroups() {
 	}
 
 	public static void register() {

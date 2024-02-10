@@ -3,7 +3,7 @@ package com.github.hummel.trop.init;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
-public class CreativeTabs {
+public class ItemGroups {
 	public static final CreativeModeTab TAB_RINGS = new CreativeModeTab("trop.rings") {
 		@Override
 		public ItemStack makeIcon() {
@@ -11,6 +11,6 @@ public class CreativeTabs {
 		}
 	};
 
-	private CreativeTabs() {
+	private ItemGroups() {
 	}
 }
