@@ -16,7 +16,7 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"trop.Main"
+			"com.github.hummel.trop.Main"
 		]
 	},
 	"depends": {
