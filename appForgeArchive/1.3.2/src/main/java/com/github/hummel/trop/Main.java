@@ -12,6 +12,7 @@ public class Main {
 	@Mod.PreInit
 	public void preInit(FMLPreInitializationEvent event) {
 		Config.preInit(event);
+
 		Items.preInit();
 		Langs.preInit();
 	}

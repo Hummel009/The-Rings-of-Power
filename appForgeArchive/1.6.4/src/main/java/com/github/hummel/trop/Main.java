@@ -11,6 +11,7 @@ public class Main {
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		Config.preInit(event);
+
 		Items.preInit();
 	}
 }
