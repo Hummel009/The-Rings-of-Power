@@ -13,12 +13,12 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings({"PublicField", "WeakerAccess"})
 @Mod(modid = "trop", useMetadata = true)
 public class Main {
 	public static final String DISABLE_CURSEFORGE_DUPLICATE_NOTICE = "131829122023";
 
-	@SuppressWarnings({"PublicField", "WeakerAccess"})
-	@SidedProxy(clientSide = "trop.proxy.ClientProxy", serverSide = "trop.proxy.ServerProxy")
+	@SidedProxy(clientSide = "com.github.hummel.trop.proxy.ClientProxy", serverSide = "com.github.hummel.trop.proxy.ServerProxy")
 	public static CommonProxy proxy;
 
 	@Mod.EventHandler
