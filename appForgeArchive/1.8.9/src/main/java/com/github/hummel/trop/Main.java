@@ -17,8 +17,9 @@ import java.util.Map;
 public class Main {
 	public static final String DISABLE_CURSEFORGE_DUPLICATE_NOTICE = "131829122023";
 
+	@SuppressWarnings({"PublicField", "WeakerAccess"})
 	@SidedProxy(clientSide = "trop.proxy.ClientProxy", serverSide = "trop.proxy.ServerProxy")
-	private static CommonProxy proxy;
+	public static CommonProxy proxy;
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
