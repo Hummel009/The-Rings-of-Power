@@ -23,6 +23,9 @@ minecraft {
 		create("client") {
 			modSource(project.sourceSets.main.get())
 		}
+		create("server") {
+			modSource(project.sourceSets.main.get())
+		}
 	}
 }
 
