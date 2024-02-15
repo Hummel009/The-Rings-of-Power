@@ -16,4 +16,7 @@ public class ItemGroups {
 
 	private ItemGroups() {
 	}
+
+	public static void forceClassLoad() {
+	}
 }
