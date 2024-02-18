@@ -22,10 +22,10 @@ minecraft {
 	mappings("snapshot", "20180921-1.13")
 	runs {
 		create("client") {
-			workingDirectory(project.file("run"))
+			workingDirectory(project.file("runs/client"))
 		}
 		create("server") {
-			workingDirectory(project.file("run"))
+			workingDirectory(project.file("runs/server"))
 		}
 	}
 }
