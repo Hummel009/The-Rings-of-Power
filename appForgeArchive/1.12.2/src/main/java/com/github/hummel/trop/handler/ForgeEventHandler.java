@@ -4,7 +4,6 @@ import com.github.hummel.trop.init.Items;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
@@ -46,7 +45,7 @@ public class ForgeEventHandler {
 	@SideOnly(Side.CLIENT)
 	public void onModelRegistry(ModelRegistryEvent event) {
 		for (Item item : Items.CONTENT) {
-			ResourceLocation registryName = item.getRegistryName();
+			String registryName = item.getRegistryName().toString();
 			ModelResourceLocation modelResourceLocation = new ModelResourceLocation(registryName, "inventory");
 			ModelBakery.registerItemVariants(item, modelResourceLocation);
 			ModelLoader.setCustomModelResourceLocation(item, 0, modelResourceLocation);
