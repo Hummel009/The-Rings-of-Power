@@ -1,6 +1,6 @@
 modLoader = "javafml"
 loaderVersion = "[0,)"
-license = "Powered by Hummel009"
+license = "GPL-3.0-or-later"
 logoFile = "logo.png"
 
 [[mods]]

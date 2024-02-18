@@ -11,7 +11,7 @@
 		"homepage": "https://github.com/Hummel009",
 		"sources": "https://github.com/Hummel009"
 	},
-	"license": "GPL-3.0",
+	"license": "GPL-3.0-or-later",
 	"icon": "icon.png",
 	"environment": "*",
 	"entrypoints": {
