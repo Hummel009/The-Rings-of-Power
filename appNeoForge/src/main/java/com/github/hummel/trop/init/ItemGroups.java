@@ -10,11 +10,11 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 @SuppressWarnings("WeakerAccess")
 public class ItemGroups {
-	private static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(BuiltInRegistries.CREATIVE_MODE_TAB, "trop");
+	public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(BuiltInRegistries.CREATIVE_MODE_TAB, "trop");
 
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> TAB_RINGS = CREATIVE_TABS.register("rings", () -> CreativeModeTab.builder().title(Component.translatable("itemGroup.trop.rings")).icon(() -> new ItemStack(Items.RING_NARYA.get())).displayItems((enabledFlags, populator) -> {
-		for (var item : Items.CONTENT) {
-			populator.accept(item);
+		for (var item : Items.REGISTRY.getEntries()) {
+			populator.accept(item.get());
 		}
 	}).build());
 

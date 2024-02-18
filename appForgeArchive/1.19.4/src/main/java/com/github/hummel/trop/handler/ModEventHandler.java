@@ -11,8 +11,8 @@ public class ModEventHandler {
 	@SubscribeEvent
 	public void onCreativeModeTabRegistry(CreativeModeTabEvent.Register event) {
 		event.registerCreativeModeTab(new ResourceLocation("trop", "rings"), builder -> builder.title(Component.translatable("itemGroup.trop.rings")).icon(() -> new ItemStack(Items.RING_NARYA.get())).displayItems((enabledFlags, populator) -> {
-			for (var item : Items.CONTENT) {
-				populator.accept(item);
+			for (var item : Items.REGISTRY.getEntries()) {
+				populator.accept(item.get());
 			}
 		}));
 	}

@@ -1,6 +1,5 @@
 package com.github.hummel.trop.item;
 
-import com.github.hummel.trop.init.Items;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
@@ -21,7 +20,6 @@ import java.util.List;
 public class ItemRing extends Item {
 	public ItemRing() {
 		super(new Properties().durability(0));
-		Items.CONTENT.add(this);
 	}
 
 	public List<MobEffectInstance> getMobEffectInstances() {

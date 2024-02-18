@@ -1,6 +1,6 @@
 package com.github.hummel.trop.item;
 
-import com.github.hummel.trop.init.Items;
+import com.github.hummel.trop.init.ItemGroups;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -21,8 +21,7 @@ import java.util.List;
 
 public class ItemRing extends Item {
 	public ItemRing() {
-		super(new Properties().durability(0));
-		Items.CONTENT.add(this);
+		super(new Properties().durability(0).tab(ItemGroups.TAB_RINGS));
 	}
 
 	public List<MobEffectInstance> getMobEffectInstances() {
