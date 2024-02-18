@@ -7,8 +7,13 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 @SuppressWarnings("WeakerAccess")
 public class Items {
+	public static final Collection<Item> CONTENT = new ArrayList<>();
+
 	private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "trop");
 
 	public static final RegistryObject<Item> RING_GREAT = ITEMS.register("ring_great", ItemRingGreat::new);
