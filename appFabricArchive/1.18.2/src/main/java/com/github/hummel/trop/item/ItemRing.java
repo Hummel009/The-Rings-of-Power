@@ -24,24 +24,24 @@ public class ItemRing extends Item {
 		super(new Properties().durability(0).tab(ItemGroups.TAB_RINGS));
 	}
 
-	public List<MobEffectInstance> getUniqueEffects() {
+	public List<MobEffectInstance> getMobEffectInstances() {
 		return new ArrayList<>();
 	}
 
 	@Override
 	public void appendHoverText(ItemStack itemStack, Level level, List<Component> list, TooltipFlag tooltipFlag) {
-		var uniqueEffects = getUniqueEffects();
-		for (var uniqueEffect : uniqueEffects) {
-			list.add(new TranslatableComponent(uniqueEffect.getEffect().getDescriptionId()).withStyle(ChatFormatting.DARK_GREEN));
+		var mobEffectInstances = getMobEffectInstances();
+		for (var mobEffectInstance : mobEffectInstances) {
+			list.add(new TranslatableComponent(mobEffectInstance.getEffect().getDescriptionId()).withStyle(ChatFormatting.DARK_GREEN));
 		}
 	}
 
 	@Override
 	public void inventoryTick(ItemStack itemStack, Level level, Entity entity, int slot, boolean selected) {
-		var uniqueEffects = getUniqueEffects();
+		var mobEffectInstances = getMobEffectInstances();
 		if (entity instanceof LivingEntity livingEntity) {
-			for (var uniqueEffect : uniqueEffects) {
-				livingEntity.addEffect(uniqueEffect);
+			for (var mobEffectInstance : mobEffectInstances) {
+				livingEntity.addEffect(mobEffectInstance);
 			}
 		}
 	}

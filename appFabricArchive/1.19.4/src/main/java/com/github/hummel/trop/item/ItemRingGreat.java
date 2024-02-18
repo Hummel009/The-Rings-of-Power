@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ItemRingGreat extends ItemRing {
 	@Override
-	public List<MobEffectInstance> getUniqueEffects() {
+	public List<MobEffectInstance> getMobEffectInstances() {
 		List<MobEffectInstance> uniqueEffects = new ArrayList<>();
 		uniqueEffects.add(new MobEffectInstance(MobEffects.INVISIBILITY, 20));
 		return uniqueEffects;

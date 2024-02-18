@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ItemRingNenya extends ItemRing {
 	@Override
-	public List<MobEffectInstance> getUniqueEffects() {
+	public List<MobEffectInstance> getMobEffectInstances() {
 		List<MobEffectInstance> uniqueEffects = new ArrayList<>();
 		uniqueEffects.add(new MobEffectInstance(MobEffects.WATER_BREATHING, 20));
 		return uniqueEffects;

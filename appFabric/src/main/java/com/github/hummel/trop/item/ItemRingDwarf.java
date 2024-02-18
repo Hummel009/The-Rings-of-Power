@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ItemRingDwarf extends ItemRing {
 	@Override
-	public List<MobEffectInstance> getUniqueEffects() {
+	public List<MobEffectInstance> getMobEffectInstances() {
 		List<MobEffectInstance> uniqueEffects = new ArrayList<>();
 		uniqueEffects.add(new MobEffectInstance(MobEffects.DIG_SPEED, 20, 1));
 		uniqueEffects.add(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 20, 1));
