@@ -34,6 +34,7 @@ public class UnicodeHelper {
 					inputStream.close();
 				}
 			} catch (IOException e) {
+				e.printStackTrace();
 			}
 		}
 	}
