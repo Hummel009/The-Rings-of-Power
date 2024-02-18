@@ -1,7 +1,9 @@
 package com.github.hummel.trop.item;
 
-import net.minecraft.src.*;
+import net.minecraft.src.Potion;
+import net.minecraft.src.PotionEffect;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ItemRingDwarf extends ItemRing {
@@ -10,23 +12,10 @@ public class ItemRingDwarf extends ItemRing {
 	}
 
 	@Override
-	public void addInformation(ItemStack itemStack, List list) {
-		for (Potion potion : new Potion[]{Potion.digSpeed, Potion.resistance}) {
-			list.add("§2" + StatCollector.translateToLocal(potion.getName()).trim());
-		}
-	}
-
-	@Override
-	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer) {
-		entityPlayer.addPotionEffect(new PotionEffect(Potion.regeneration.getId(), 3600, 2));
-		return super.onItemRightClick(itemStack, world, entityPlayer);
-	}
-
-	@Override
-	public void onUpdate(ItemStack itemStack, World world, Entity entity, int slot, boolean selected) {
-		if (entity instanceof EntityLiving) {
-			((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.digSpeed.getId(), 20, 1));
-			((EntityLiving) entity).addPotionEffect(new PotionEffect(Potion.resistance.getId(), 20, 1));
-		}
+	public List<PotionEffect> getPotionEffects() {
+		List<PotionEffect> potionEffects = new ArrayList<PotionEffect>();
+		potionEffects.add(new PotionEffect(Potion.moveSpeed.getId(), 20, 1));
+		potionEffects.add(new PotionEffect(Potion.resistance.getId(), 20, 1));
+		return potionEffects;
 	}
 }
