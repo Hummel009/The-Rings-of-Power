@@ -9,8 +9,8 @@ import java.util.List;
 public class ItemRingNarya extends ItemRing {
 	@Override
 	public List<MobEffectInstance> getMobEffectInstances() {
-		List<MobEffectInstance> uniqueEffects = new ArrayList<>();
-		uniqueEffects.add(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 20));
-		return uniqueEffects;
+		List<MobEffectInstance> mobEffectInstances = new ArrayList<>();
+		mobEffectInstances.add(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 20));
+		return mobEffectInstances;
 	}
 }

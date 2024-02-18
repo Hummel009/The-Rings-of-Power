@@ -9,8 +9,8 @@ import java.util.List;
 public class ItemRingNenya extends ItemRing {
 	@Override
 	public List<EffectInstance> getEffectInstances() {
-		List<EffectInstance> uniqueEffects = new ArrayList<>();
-		uniqueEffects.add(new EffectInstance(Effects.WATER_BREATHING, 20));
-		return uniqueEffects;
+		List<EffectInstance> effectInstances = new ArrayList<>();
+		effectInstances.add(new EffectInstance(Effects.WATER_BREATHING, 20));
+		return effectInstances;
 	}
 }
