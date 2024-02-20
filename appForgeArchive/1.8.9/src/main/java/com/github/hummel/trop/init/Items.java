@@ -94,6 +94,5 @@ public class Items {
 		item.setUnlocalizedName(itemName);
 		item.setRegistryName(itemName);
 		GameRegistry.registerItem(item, itemName);
-		CONTENT.add(item);
 	}
 }

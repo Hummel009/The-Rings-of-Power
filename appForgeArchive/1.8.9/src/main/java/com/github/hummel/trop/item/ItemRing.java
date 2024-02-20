@@ -1,6 +1,7 @@
 package com.github.hummel.trop.item;
 
 import com.github.hummel.trop.init.ItemGroups;
+import com.github.hummel.trop.init.Items;
 import com.mojang.realmsclient.gui.ChatFormatting;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -20,6 +21,7 @@ public class ItemRing extends Item {
 		setMaxDamage(0);
 		setMaxStackSize(1);
 		setCreativeTab(ItemGroups.TAB_RINGS);
+		Items.CONTENT.add(this);
 	}
 
 	public List<PotionEffect> getPotionEffects() {
