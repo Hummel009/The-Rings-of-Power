@@ -94,6 +94,5 @@ public class Items {
 		item.setTranslationKey(itemName);
 		item.setRegistryName(itemName);
 		ForgeRegistries.ITEMS.register(item);
-		CONTENT.add(item);
 	}
 }
