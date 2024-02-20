@@ -93,7 +93,7 @@ public class Items {
 		String itemName = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, name);
 		item.setUnlocalizedName(itemName);
 		item.setRegistryName(itemName);
-		GameRegistry.registerItem(item, itemName);
+		GameRegistry.registerItem(item);
 		CONTENT.add(item);
 	}
 }
