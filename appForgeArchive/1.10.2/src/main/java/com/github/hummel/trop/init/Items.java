@@ -94,6 +94,5 @@ public class Items {
 		item.setUnlocalizedName(itemName);
 		item.setRegistryName(itemName);
 		ForgeRegistries.ITEMS.register(item);
-		CONTENT.add(item);
 	}
 }
