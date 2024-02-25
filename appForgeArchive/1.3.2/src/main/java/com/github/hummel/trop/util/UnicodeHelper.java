@@ -28,6 +28,7 @@ public class UnicodeHelper {
 			properties.load(new InputStreamReader(inputStream, Charsets.UTF_8));
 			registry.addStringLocalization(properties, langName);
 		} catch (IOException e) {
+			e.printStackTrace();
 		} finally {
 			try {
 				if (inputStream != null) {
