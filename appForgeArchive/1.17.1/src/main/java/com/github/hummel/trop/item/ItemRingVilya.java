@@ -9,7 +9,7 @@ import java.util.List;
 public class ItemRingVilya extends ItemRing {
 	@Override
 	public List<MobEffectInstance> getMobEffectInstances() {
-		List<MobEffectInstance> mobEffectInstances = new ArrayList<>();
+		var mobEffectInstances = new ArrayList<MobEffectInstance>();
 		mobEffectInstances.add(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20, 1));
 		mobEffectInstances.add(new MobEffectInstance(MobEffects.JUMP, 20, 1));
 		return mobEffectInstances;
