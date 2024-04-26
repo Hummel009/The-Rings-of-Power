@@ -9,7 +9,7 @@ group = "com.github.hummel"
 version = LocalDate.now().format(DateTimeFormatter.ofPattern("yy.MM.dd"))
 
 dependencies {
-	minecraft("net.minecraftforge:forge:1.19.4-45.2.8")
+	minecraft("net.minecraftforge:forge:1.19.4-45.2.15")
 }
 
 java {

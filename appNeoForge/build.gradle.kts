@@ -2,19 +2,19 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 plugins {
-	id("net.neoforged.gradle.userdev") version "7.0.80"
+	id("net.neoforged.gradle.userdev") version "7.0.105"
 }
 
 group = "com.github.hummel"
 version = LocalDate.now().format(DateTimeFormatter.ofPattern("yy.MM.dd"))
 
 dependencies {
-	implementation("net.neoforged:neoforge:20.4.173")
+	implementation("net.neoforged:neoforge:20.5.5-beta")
 }
 
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
+		languageVersion = JavaLanguageVersion.of(21)
 	}
 }
 
