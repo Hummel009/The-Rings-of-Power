@@ -15,15 +15,15 @@ import net.minecraft.world.World;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ItemRing extends Item {
-	public ItemRing(int id) {
+public abstract class ItemRing extends Item {
+	protected ItemRing(int id) {
 		super(id);
 		setMaxDamage(0);
 		setMaxStackSize(1);
 		setCreativeTab(ItemGroups.TAB_RINGS);
 	}
 
-	public List<PotionEffect> getPotionEffects() {
+	protected List<PotionEffect> getPotionEffects() {
 		return new ArrayList<PotionEffect>();
 	}
 

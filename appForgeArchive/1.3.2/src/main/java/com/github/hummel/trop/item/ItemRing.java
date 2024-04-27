@@ -14,17 +14,17 @@ import net.minecraft.src.World;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ItemRing extends Item {
+public abstract class ItemRing extends Item {
 	private static final String DARK_GREEN = "§2";
 
-	public ItemRing(int id) {
+	protected ItemRing(int id) {
 		super(id);
 		setMaxDamage(0);
 		setMaxStackSize(1);
 		setCreativeTab(ItemGroups.TAB_RINGS);
 	}
 
-	public List<PotionEffect> getPotionEffects() {
+	protected List<PotionEffect> getPotionEffects() {
 		return new ArrayList<PotionEffect>();
 	}
 

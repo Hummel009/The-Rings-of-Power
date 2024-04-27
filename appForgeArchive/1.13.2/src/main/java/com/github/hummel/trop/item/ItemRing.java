@@ -19,12 +19,12 @@ import net.minecraft.world.World;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ItemRing extends Item {
-	public ItemRing() {
+public abstract class ItemRing extends Item {
+	protected ItemRing() {
 		super(new Properties().defaultMaxDamage(0).group(ItemGroups.TAB_RINGS));
 	}
 
-	public List<PotionEffect> getPotionEffects() {
+	protected List<PotionEffect> getPotionEffects() {
 		return new ArrayList<>();
 	}
 

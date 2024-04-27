@@ -19,12 +19,12 @@ import net.minecraft.world.World;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ItemRing extends Item {
-	public ItemRing() {
+public abstract class ItemRing extends Item {
+	protected ItemRing() {
 		super(new Properties().durability(0).tab(ItemGroups.TAB_RINGS));
 	}
 
-	public List<EffectInstance> getEffectInstances() {
+	protected List<EffectInstance> getEffectInstances() {
 		return new ArrayList<>();
 	}
 

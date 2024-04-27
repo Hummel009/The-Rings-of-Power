@@ -34,6 +34,7 @@ public class Items {
 	private Items() {
 	}
 
+	@SuppressWarnings("ValueOfIncrementOrDecrementUsed")
 	public static void preInit() {
 		ringGreat = new ItemRingGreat(Config.idRingGreat - 256);
 

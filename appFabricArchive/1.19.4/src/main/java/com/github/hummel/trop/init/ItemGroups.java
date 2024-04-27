@@ -17,6 +17,7 @@ public class ItemGroups {
 	private ItemGroups() {
 	}
 
+	@SuppressWarnings("EmptyMethod")
 	public static void forceClassLoad() {
 	}
 }
