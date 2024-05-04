@@ -27,10 +27,10 @@ public abstract class ItemRing extends Item {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack itemStack, Level level, List<Component> list, TooltipFlag tooltipFlag) {
+	public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> list, TooltipFlag tooltipFlag) {
 		var mobEffectInstances = getMobEffectInstances();
 		for (var mobEffectInstance : mobEffectInstances) {
-			list.add(Component.translatable(mobEffectInstance.getEffect().getDescriptionId()).withStyle(ChatFormatting.DARK_GREEN));
+			list.add(Component.translatable(mobEffectInstance.getEffect().value().getDescriptionId()).withStyle(ChatFormatting.DARK_GREEN));
 		}
 	}
 
