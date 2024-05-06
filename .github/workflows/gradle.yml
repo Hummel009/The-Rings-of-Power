@@ -47,9 +47,9 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@main
         with:
-          build-root-directory: ./appForgeArchive
           cache-disabled: true
       - name: Build with Gradle
+        working-directory: ./appForgeArchive
         run: ./gradlew :${{matrix.version}}:build
       - name: Upload Artifact
         uses: actions/upload-artifact@v3.1.3
@@ -71,9 +71,9 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@main
         with:
-          build-root-directory: ./appForgeArchive/${{matrix.version}}
           cache-disabled: true
       - name: Build with Gradle
+        working-directory: ./appForgeArchive/${{matrix.version}}
         run: ./gradlew build
       - name: Upload Artifact
         uses: actions/upload-artifact@v3.1.3
@@ -95,9 +95,9 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@main
         with:
-          build-root-directory: ./appFabricArchive
           cache-disabled: true
       - name: Build with Gradle
+        working-directory: ./appFabricArchive
         run: ./gradlew :${{matrix.version}}:build
       - name: Upload Artifact
         uses: actions/upload-artifact@v3.1.3
