@@ -23,9 +23,10 @@ jobs:
           distribution: temurin
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@main
+        with:
+          cache-disabled: true
       - name: Build with Gradle
         run: ./gradlew :${{matrix.version}}:build
-          cache-disabled: true
       - name: Upload Artifact
         uses: actions/upload-artifact@v3.1.3
         with:
@@ -47,8 +48,9 @@ jobs:
         uses: gradle/actions/setup-gradle@main
         with:
           build-root-directory: ./appForgeArchive
-          arguments: :${{matrix.version}}:build
           cache-disabled: true
+      - name: Build with Gradle
+        run: ./gradlew :${{matrix.version}}:build
       - name: Upload Artifact
         uses: actions/upload-artifact@v3.1.3
         with:
@@ -70,8 +72,9 @@ jobs:
         uses: gradle/actions/setup-gradle@main
         with:
           build-root-directory: ./appForgeArchive/${{matrix.version}}
-          arguments: build
           cache-disabled: true
+      - name: Build with Gradle
+        run: ./gradlew build
       - name: Upload Artifact
         uses: actions/upload-artifact@v3.1.3
         with:
@@ -93,8 +96,9 @@ jobs:
         uses: gradle/actions/setup-gradle@main
         with:
           build-root-directory: ./appFabricArchive
-          arguments: :${{matrix.version}}:build
           cache-disabled: true
+      - name: Build with Gradle
+        run: ./gradlew :${{matrix.version}}:build
       - name: Upload Artifact
         uses: actions/upload-artifact@v3.1.3
         with:
