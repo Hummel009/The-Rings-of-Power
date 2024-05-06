@@ -21,10 +21,10 @@ jobs:
         with:
           java-version: '21'
           distribution: temurin
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@main
       - name: Build with Gradle
-        uses: gradle/gradle-build-action@main
-        with:
-          arguments: :${{matrix.version}}:build
+        run: ./gradlew :${{matrix.version}}:build
           cache-disabled: true
       - name: Upload Artifact
         uses: actions/upload-artifact@v3.1.3
@@ -43,8 +43,8 @@ jobs:
         with:
           java-version: '21'
           distribution: temurin
-      - name: Build with Gradle
-        uses: gradle/gradle-build-action@main
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@main
         with:
           build-root-directory: ./appForgeArchive
           arguments: :${{matrix.version}}:build
@@ -66,8 +66,8 @@ jobs:
         with:
           java-version: '8'
           distribution: temurin
-      - name: Build with Gradle
-        uses: gradle/gradle-build-action@main
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@main
         with:
           build-root-directory: ./appForgeArchive/${{matrix.version}}
           arguments: build
@@ -89,8 +89,8 @@ jobs:
         with:
           java-version: '21'
           distribution: temurin
-      - name: Build with Gradle
-        uses: gradle/gradle-build-action@main
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@main
         with:
           build-root-directory: ./appFabricArchive
           arguments: :${{matrix.version}}:build
