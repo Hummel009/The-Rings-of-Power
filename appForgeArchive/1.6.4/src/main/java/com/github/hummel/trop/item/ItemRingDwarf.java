@@ -14,7 +14,7 @@ public class ItemRingDwarf extends ItemRing {
 	@Override
 	public List<PotionEffect> getPotionEffects() {
 		List<PotionEffect> potionEffects = new ArrayList<PotionEffect>();
-		potionEffects.add(new PotionEffect(Potion.moveSpeed.getId(), 20, 1));
+		potionEffects.add(new PotionEffect(Potion.digSpeed.getId(), 20, 1));
 		potionEffects.add(new PotionEffect(Potion.resistance.getId(), 20, 1));
 		return potionEffects;
 	}
