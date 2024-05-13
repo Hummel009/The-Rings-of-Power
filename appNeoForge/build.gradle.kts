@@ -9,7 +9,7 @@ group = "com.github.hummel"
 version = LocalDate.now().format(DateTimeFormatter.ofPattern("yy.MM.dd"))
 
 dependencies {
-	implementation("net.neoforged:neoforge:20.6.30-beta")
+	implementation("net.neoforged:neoforge:20.6.62-beta")
 }
 
 java {
