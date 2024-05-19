@@ -1,7 +1,6 @@
 item.ring_narya.name=§dRing Narya
 item.ring_nenya.name=§dRing Nenya
 item.ring_vilya.name=§dRing Vilya
-
 item.ring_thulin.name=§bThulin's Ring
 item.ring_khibil.name=§bKhibil's Ring
 item.ring_farin.name=§bFarin's Ring
@@ -9,7 +8,6 @@ item.ring_khain.name=§bKhain's Ring
 item.ring_baraz.name=§bBaraz's Ring
 item.ring_burin.name=§bBurin's Ring
 item.ring_thror.name=§bThror's Ring
-
 item.ring_murazor.name=§cMurazor's Ring
 item.ring_hoarmurath.name=§cHoarmurath's Ring
 item.ring_akhorahil.name=§cAkhorahil's Ring
@@ -19,7 +17,5 @@ item.ring_khamul.name=§cKhamul's Ring
 item.ring_uvatha.name=§cUvatha's Ring
 item.ring_ren.name=§cRen's Ring
 item.ring_dwar.name=§cDwar's Ring
-
 item.ring_great.name=§6The One Ring
-
 itemGroup.trop.rings=Rings of Power

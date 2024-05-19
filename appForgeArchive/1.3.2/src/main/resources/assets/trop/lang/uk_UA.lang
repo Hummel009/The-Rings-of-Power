@@ -1,7 +1,6 @@
 item.ring_narya.name=§dПерстень Нар'я
 item.ring_nenya.name=§dПерстень Ненья
 item.ring_vilya.name=§dПерстень Вілья
-
 item.ring_thulin.name=§bПерстень Туліна
 item.ring_khibil.name=§bПерстень Кібіла
 item.ring_farin.name=§bПерстень Фаріна
@@ -9,7 +8,6 @@ item.ring_khain.name=§bПерстень Кхаїна
 item.ring_baraz.name=§bПерстень Бараза
 item.ring_burin.name=§bПерстень Буріна
 item.ring_thror.name=§bПерстень Трора
-
 item.ring_murazor.name=§cПерстень Короля-Чародія
 item.ring_hoarmurath.name=§cПерстень Гоммурата
 item.ring_akhorahil.name=§cПерстень Ахорагіля
@@ -19,7 +17,5 @@ item.ring_khamul.name=§cПерстень Кхамула
 item.ring_uvatha.name=§cПерстень Увати
 item.ring_ren.name=§cПерстень Рена
 item.ring_dwar.name=§cПерстень Двара
-
 item.ring_great.name=§6Перстень Всевладдя
-
 itemGroup.trop.rings=Персні влади

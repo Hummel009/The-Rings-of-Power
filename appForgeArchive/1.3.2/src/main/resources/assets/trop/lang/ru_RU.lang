@@ -1,7 +1,6 @@
 item.ring_narya.name=§dКольцо Нарья
 item.ring_nenya.name=§dКольцо Нэнья
 item.ring_vilya.name=§dКольцо Вилья
-
 item.ring_thulin.name=§bКольцо Тулина
 item.ring_khibil.name=§bКольцо Кибила
 item.ring_farin.name=§bКольцо Фарина
@@ -9,7 +8,6 @@ item.ring_khain.name=§bКольцо Кхаина
 item.ring_baraz.name=§bКольцо Бараза
 item.ring_burin.name=§bКольцо Бурина
 item.ring_thror.name=§bКольцо Трора
-
 item.ring_murazor.name=§cКольцо Короля-Чародея
 item.ring_hoarmurath.name=§cКольцо Хоммурата
 item.ring_akhorahil.name=§cКольцо Ахорахиля
@@ -19,7 +17,5 @@ item.ring_khamul.name=§cКольцо Кхамула
 item.ring_uvatha.name=§cКольцо Уваты
 item.ring_ren.name=§cКольцо Рена
 item.ring_dwar.name=§cКольцо Двара
-
 item.ring_great.name=§6Кольцо Всевластия
-
 itemGroup.trop.rings=Кольца власти
