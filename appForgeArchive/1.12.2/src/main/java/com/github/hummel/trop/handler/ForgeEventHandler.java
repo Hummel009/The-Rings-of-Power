@@ -15,11 +15,13 @@ import java.util.Map;
 
 public class ForgeEventHandler {
 	@SubscribeEvent
+	@SuppressWarnings("MethodMayBeStatic")
 	public void onItemRegistry(RegistryEvent.Register<Item> event) {
 		Items.register();
 	}
 
 	@SubscribeEvent
+	@SuppressWarnings("MethodMayBeStatic")
 	public void onMissingMappings(RegistryEvent.MissingMappings<Item> event) {
 		Map<String, Item> renamed = new HashMap<>();
 		renamed.put("dvar", Items.ringDwar);
@@ -42,6 +44,7 @@ public class ForgeEventHandler {
 
 	@SubscribeEvent
 	@SideOnly(Side.CLIENT)
+	@SuppressWarnings("MethodMayBeStatic")
 	public void onModelRegistry(ModelRegistryEvent event) {
 		for (Item item : Items.CONTENT) {
 			String registryName = item.getRegistryName().toString();

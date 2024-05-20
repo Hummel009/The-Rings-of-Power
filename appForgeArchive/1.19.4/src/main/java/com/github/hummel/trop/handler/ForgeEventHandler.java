@@ -12,6 +12,7 @@ import java.util.Map;
 
 public class ForgeEventHandler {
 	@SubscribeEvent
+	@SuppressWarnings("MethodMayBeStatic")
 	public void onMissingMappings(MissingMappingsEvent event) {
 		Map<String, RegistryObject<Item>> renamed = new HashMap<>();
 		renamed.put("dvar", Items.RING_DWAR);

@@ -35,7 +35,7 @@ public class Items {
 	private Items() {
 	}
 
-	@SuppressWarnings("ValueOfIncrementOrDecrementUsed")
+	@SuppressWarnings({"ValueOfIncrementOrDecrementUsed", "UnusedAssignment"})
 	public static void preInit() {
 		ringGreat = new ItemRingGreat(Config.idRingGreat - 256);
 
@@ -81,7 +81,7 @@ public class Items {
 		ringThror.setIconIndex(id++);
 		ringThulin.setIconIndex(id++);
 		ringUvatha.setIconIndex(id++);
-		ringVilya.setIconIndex(id);
+		ringVilya.setIconIndex(id++);
 
 		register(ringGreat, "ringGreat");
 

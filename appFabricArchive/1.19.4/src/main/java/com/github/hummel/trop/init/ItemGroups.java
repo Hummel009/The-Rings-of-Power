@@ -6,7 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
-@SuppressWarnings("WeakerAccess")
+@SuppressWarnings({"WeakerAccess", "unused"})
 public class ItemGroups {
 	public static final CreativeModeTab TAB_RINGS = FabricItemGroup.builder(new ResourceLocation("trop", "rings")).icon(() -> new ItemStack(Items.RING_NARYA)).title(Component.translatable("itemGroup.trop.rings")).displayItems((context, populator) -> {
 		for (var item : Items.CONTENT) {

@@ -10,11 +10,13 @@ import java.util.Map;
 
 public class ModEventHandler {
 	@SubscribeEvent
+	@SuppressWarnings("MethodMayBeStatic")
 	public void onItemRegistry(RegistryEvent.Register<Item> event) {
 		Items.register();
 	}
 
 	@SubscribeEvent
+	@SuppressWarnings("MethodMayBeStatic")
 	public void onMissingMappings(RegistryEvent.MissingMappings<Item> event) {
 		Map<String, Item> renamed = new HashMap<>();
 		renamed.put("dvar", Items.ringDwar);

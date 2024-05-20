@@ -70,7 +70,7 @@ public class Config {
 			idRingRen = configuration.get("item", "Ring Ren", 908).getInt(908);
 			idRingDwar = configuration.get("item", "Ring Dwar", 909).getInt(909);
 		} catch (Exception e) {
-			FMLLog.log(Level.SEVERE, e, "TROP has a problem loading it's configuration");
+			FMLLog.log(Level.SEVERE, e, "Mod has a problem loading it's configuration");
 		} finally {
 			configuration.save();
 			loaded = true;

@@ -11,6 +11,7 @@ import java.util.Map;
 
 public class ModEventHandler {
 	@SubscribeEvent
+	@SuppressWarnings("MethodMayBeStatic")
 	public void onMissingMappings(RegistryEvent.MissingMappings<Item> event) {
 		Map<String, RegistryObject<Item>> renamed = new HashMap<>();
 		renamed.put("dvar", Items.RING_DWAR);
