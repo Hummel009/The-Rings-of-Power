@@ -10,17 +10,15 @@ plugins {
 group = "com.github.hummel"
 version = LocalDate.now().format(DateTimeFormatter.ofPattern("yy.MM.dd"))
 
+dependencies {
+	minecraft("com.mojang:minecraft:1.8.9")
+	mappings("de.oceanlabs.mcp:mcp_stable:22-1.8.9")
+	forge("net.minecraftforge:forge:1.8.9-11.15.1.2318-1.8.9")
+}
+
 java {
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(8)
-	}
-}
-
-sourceSets {
-	main {
-		output.setResourcesDir(sourceSets.main.flatMap {
-			it.java.classesDirectory
-		})
 	}
 }
 
@@ -34,10 +32,12 @@ loom {
 	}
 }
 
-dependencies {
-	minecraft("com.mojang:minecraft:1.8.9")
-	mappings("de.oceanlabs.mcp:mcp_stable:22-1.8.9")
-	forge("net.minecraftforge:forge:1.8.9-11.15.1.2318-1.8.9")
+sourceSets {
+	main {
+		output.setResourcesDir(sourceSets.main.flatMap {
+			it.java.classesDirectory
+		})
+	}
 }
 
 tasks {
