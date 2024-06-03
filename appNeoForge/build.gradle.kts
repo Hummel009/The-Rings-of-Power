@@ -20,10 +20,10 @@ java {
 
 minecraft {
 	runs {
-		create("client") {
+		named("client") {
 			modSource(project.sourceSets.main.get())
 		}
-		create("server") {
+		named("server") {
 			modSource(project.sourceSets.main.get())
 		}
 	}
