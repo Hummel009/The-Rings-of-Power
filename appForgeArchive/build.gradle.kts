@@ -1,5 +1,5 @@
 plugins {
 	id("net.minecraftforge.gradle") version "[6.0.24,6.2)" apply false
-	id("com.gtnewhorizons.retrofuturagradle") version "1.3.36" apply false
+	id("com.gtnewhorizons.retrofuturagradle") version "1.4.0" apply false
 	id("agency.highlysuspect.voldeloom") version "2.5-SNAPSHOT" apply false
 }
