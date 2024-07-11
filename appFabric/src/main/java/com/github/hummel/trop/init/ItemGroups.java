@@ -20,6 +20,6 @@ public class ItemGroups {
 	}
 
 	public static void register() {
-		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation("trop", "rings"), TAB_RINGS);
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, ResourceLocation.fromNamespaceAndPath("trop", "rings"), TAB_RINGS);
 	}
 }

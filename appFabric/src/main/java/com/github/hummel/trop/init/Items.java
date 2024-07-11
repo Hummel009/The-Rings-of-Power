@@ -65,7 +65,7 @@ public class Items {
 	}
 
 	private static void register(Item item, String name) {
-		Registry.register(BuiltInRegistries.ITEM, new ResourceLocation("trop", name), item);
+		Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath("trop", name), item);
 		CONTENT.add(item);
 	}
 }
