@@ -36,7 +36,7 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        version: [ '1.13.2', '1.14.4', '1.15.2', '1.16.5', '1.17.1', '1.18.2', '1.19.4' ]
+        version: [ '1.13.2', '1.14.4', '1.15.2', '1.16.5', '1.17.1', '1.18.2', '1.19.4', '1.20.6' ]
     steps:
       - uses: actions/checkout@main
       - name: Set up JDK 21
@@ -132,7 +132,7 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        version: [ '1.14.4', '1.15.2', '1.16.5', '1.17.1', '1.18.2', '1.19.4' ]
+        version: [ '1.14.4', '1.15.2', '1.16.5', '1.17.1', '1.18.2', '1.19.4', '1.20.6' ]
     steps:
       - uses: actions/checkout@main
       - name: Set up JDK 21
@@ -152,6 +152,30 @@ jobs:
         with:
           name: archive-fabric-${{matrix.version}}
           path: ./appFabricArchive/${{matrix.version}}/build/libs/*.jar
+  build-neoforge-archive:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        version: [ '1.20.6' ]
+    steps:
+      - uses: actions/checkout@main
+      - name: Set up JDK 21
+        uses: actions/setup-java@main
+        with:
+          java-version: '21'
+          distribution: temurin
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@main
+        with:
+          cache-disabled: true
+      - name: Build with Gradle
+        working-directory: ./appNeoForgeArchive
+        run: ./gradlew :${{matrix.version}}:build
+      - name: Upload Artifact
+        uses: actions/upload-artifact@main
+        with:
+          name: archive-neoforge-${{matrix.version}}
+          path: ./appNeoForgeArchive/${{matrix.version}}/build/libs/*.jar
 
   merge-current:
     runs-on: windows-latest
@@ -182,4 +206,14 @@ jobs:
         with:
           name: archive-fabric
           pattern: archive-fabric-*
+          delete-merged: true
+  merge-fabric-neoforge:
+    runs-on: windows-latest
+    needs: build-neoforge-archive
+    steps:
+      - name: Merge Artifacts
+        uses: actions/upload-artifact/merge@main
+        with:
+          name: archive-neoforge
+          pattern: archive-neoforge-*
           delete-merged: true
