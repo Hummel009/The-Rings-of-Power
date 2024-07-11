@@ -1,0 +1,28 @@
+{
+	"schemaVersion": 1,
+	"id": "trop",
+	"version": "24.05.05",
+	"name": "The Rings of Power",
+	"description": "This mod adds Rings of Power from the Lord of the Rings to Minecraft.",
+	"authors": [
+		"Hummel009"
+	],
+	"contact": {
+		"homepage": "https://github.com/Hummel009",
+		"sources": "https://github.com/Hummel009"
+	},
+	"license": "GPL-3.0-only",
+	"icon": "icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.github.hummel.trop.Main"
+		]
+	},
+	"depends": {
+		"fabricloader": "*",
+		"minecraft": "~1.20.6",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

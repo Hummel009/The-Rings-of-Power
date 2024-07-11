@@ -2,14 +2,14 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 plugins {
-	id("net.neoforged.gradle.userdev") version "7.0.154"
+	id("net.neoforged.gradle.userdev")
 }
 
 group = "com.github.hummel"
 version = LocalDate.now().format(DateTimeFormatter.ofPattern("yy.MM.dd"))
 
 dependencies {
-	implementation("net.neoforged:neoforge:21.0.83-beta")
+	implementation("net.neoforged:neoforge:20.6.119")
 }
 
 java {
