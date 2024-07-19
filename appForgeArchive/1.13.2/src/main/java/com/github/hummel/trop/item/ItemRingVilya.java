@@ -10,7 +10,7 @@ public class ItemRingVilya extends ItemRing {
 	@Override
 	public List<PotionEffect> getPotionEffects() {
 		List<PotionEffect> potionEffects = new ArrayList<>();
-		potionEffects.add(new PotionEffect(MobEffects.HASTE, 20, 1));
+		potionEffects.add(new PotionEffect(MobEffects.SPEED, 20, 1));
 		potionEffects.add(new PotionEffect(MobEffects.JUMP_BOOST, 20, 1));
 		return potionEffects;
 	}
