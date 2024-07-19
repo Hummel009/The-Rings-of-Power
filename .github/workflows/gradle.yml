@@ -207,7 +207,7 @@ jobs:
           name: archive-fabric
           pattern: archive-fabric-*
           delete-merged: true
-  merge-fabric-neoforge:
+  merge-neoforge-archive:
     runs-on: windows-latest
     needs: build-neoforge-archive
     steps:
