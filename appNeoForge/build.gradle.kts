@@ -2,7 +2,7 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 plugins {
-	id("net.neoforged.gradle.userdev") version "7.0.154"
+	id("net.neoforged.gradle.userdev") version "latest.release"
 }
 
 group = "com.github.hummel"
