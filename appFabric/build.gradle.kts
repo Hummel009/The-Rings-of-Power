@@ -9,10 +9,10 @@ group = "com.github.hummel"
 version = LocalDate.now().format(DateTimeFormatter.ofPattern("yy.MM.dd"))
 
 dependencies {
-	minecraft("com.mojang:minecraft:1.21")
+	minecraft("com.mojang:minecraft:1.21.1")
 	mappings(loom.officialMojangMappings())
 	modImplementation("net.fabricmc:fabric-loader:latest.release")
-	modImplementation("net.fabricmc.fabric-api:fabric-api:0.100.6+1.21")
+	modImplementation("net.fabricmc.fabric-api:fabric-api:0.102.0+1.21.1")
 }
 
 java {
