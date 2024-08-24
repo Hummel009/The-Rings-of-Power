@@ -15,13 +15,13 @@ The Rings of Power - простенький мод, который добавл�
 
 | Версия Minecraft | Gradle | Плагин сборки                          | Gradle JDK | Project JDK | Syntax |
 |------------------|--------|----------------------------------------|------------|-------------|--------|
-| 1.3.2 - 1.6.4    | 8.8    | Voldeloom                              | 21         | 11          | 6      |
-| 1.7.10, 1.12.2   | 8.8    | RetroFuturaGradle                      | 21         | 8           | 8      |
-| 1.8.9 - 1.11.2   | 8.8    | Essential Loom                         | 21         | 8           | 8      |
-| 1.13.2 - 1.16.5  | 8.8    | ForgeGradle 6.X; FabricLoom            | 21         | 8           | 8      |
-| 1.17.1           | 8.8    | ForgeGradle 6.X; FabricLoom            | 21         | 16          | 16     |
-| 1.18.2 - 1.19.4  | 8.8    | ForgeGradle 6.X; FabricLoom            | 21         | 17          | 17     |
-| 1.20.6 и новее   | 8.8    | ForgeGradle 6.X; FabricLoom; NeoGradle | 21         | 21          | 21     |
+| 1.3.2 - 1.6.4    | 8.10   | Voldeloom                              | 21         | 11          | 6      |
+| 1.7.10, 1.12.2   | 8.10   | RetroFuturaGradle                      | 21         | 8           | 8      |
+| 1.8.9 - 1.11.2   | 8.10   | Essential Loom                         | 21         | 8           | 8      |
+| 1.13.2 - 1.16.5  | 8.10   | ForgeGradle 6.X; FabricLoom            | 21         | 8           | 8      |
+| 1.17.1           | 8.10   | ForgeGradle 6.X; FabricLoom            | 21         | 16          | 16     |
+| 1.18.2 - 1.19.4  | 8.10   | ForgeGradle 6.X; FabricLoom            | 21         | 17          | 17     |
+| 1.20.6 и новее   | 8.10   | ForgeGradle 6.X; FabricLoom; NeoGradle | 21         | 21          | 21     |
 
 ### Примечания к таблице
 
