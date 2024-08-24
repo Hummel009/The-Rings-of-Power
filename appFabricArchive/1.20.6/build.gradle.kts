@@ -12,7 +12,7 @@ dependencies {
 	minecraft("com.mojang:minecraft:1.20.6")
 	mappings(loom.officialMojangMappings())
 	modImplementation("net.fabricmc:fabric-loader:latest.release")
-	modImplementation("net.fabricmc.fabric-api:fabric-api:0.100.4+1.20.6")
+	modImplementation("net.fabricmc.fabric-api:fabric-api:0.100.8+1.20.6")
 }
 
 java {
