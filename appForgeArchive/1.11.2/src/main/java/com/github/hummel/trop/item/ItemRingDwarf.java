@@ -1,7 +1,7 @@
 package com.github.hummel.trop.item;
 
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.init.MobEffects;
+import net.minecraft.potion.PotionEffect;
 
 import java.util.ArrayList;
 import java.util.List;
