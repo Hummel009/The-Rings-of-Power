@@ -34,7 +34,7 @@ public class ForgeEventHandler {
 		renamed.put("khommurat", Items.ringHoarmurath);
 		for (RegistryEvent.MissingMappings.Mapping<Item> mapping : event.getAllMappings()) {
 			for (Map.Entry<String, Item> entry : renamed.entrySet()) {
-				if (mapping.key.getPath().contains(entry.getKey())) {
+				if (mapping.key.getResourcePath().contains(entry.getKey())) {
 					mapping.remap(entry.getValue());
 					break;
 				}

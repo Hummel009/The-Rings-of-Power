@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 public class ItemGroups {
 	public static final CreativeTabs TAB_RINGS = new CreativeTabs("trop.rings") {
 		@Override
-		public ItemStack createIcon() {
+		public ItemStack getTabIconItem() {
 			return new ItemStack(Items.ringNarya);
 		}
 	};
