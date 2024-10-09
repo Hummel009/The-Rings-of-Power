@@ -2,7 +2,7 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 plugins {
-	id("agency.highlysuspect.voldeloom")
+	id("agency.highlysuspect.voldeloom") version "latest.release"
 }
 
 group = "com.github.hummel"
