@@ -1,5 +1,4 @@
 import dev.architectury.pack200.java.Pack200Adapter
-import org.gradle.kotlin.dsl.configureEach
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 

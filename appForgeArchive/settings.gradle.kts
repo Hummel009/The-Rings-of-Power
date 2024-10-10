@@ -43,6 +43,8 @@ dependencyResolutionManagement {
 		maven("https://maven.minecraftforge.net/")
 		maven("https://maven.fabricmc.net")
 		maven("https://repo.sleeping.town")
+		maven("https://maven.architectury.dev/")
+		maven("https://repo.sk1er.club/repository/maven-releases/")
 		mavenLocal()
 		mavenCentral()
 		gradlePluginPortal()
