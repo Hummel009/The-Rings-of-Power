@@ -44,6 +44,9 @@ tasks {
 	runClient {
 		dependsOn("copyForgeUnpacked")
 	}
+	runServer {
+		dependsOn("copyForgeUnpacked")
+	}
 	withType<JavaCompile>().configureEach {
 		options.encoding = "UTF-8"
 	}
